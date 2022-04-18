@@ -1,0 +1,10 @@
+**/libftTester/
+**/.vscode/
+
+**/*.a
+**/*.o
+**/*.gch
+**/main.c
+**/a.out
+**/tmp*
+**/temp*
