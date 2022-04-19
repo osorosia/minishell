@@ -9,5 +9,5 @@ void debug_lexer(t_token *tok) {
             kind[tok->kind], (int)tok->len, tok->str);
         tok = tok->next;
     }
-    fprintf(stderr, "}\n");
+    fprintf(stderr, "}\n\n");
 }
