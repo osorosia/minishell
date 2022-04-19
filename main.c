@@ -12,5 +12,6 @@ int main(int argc, char **argv, char **envp) {
         tok = lexer(str);
         debug_lexer(tok);
         free_lexer(tok);
+        free(str);
     }
 }
