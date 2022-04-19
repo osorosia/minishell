@@ -50,11 +50,8 @@ void debug_parser_rec(t_node *node, int indent) {
         print_indent(indent);
         fprintf(stderr, "cmd: ");
 
-        // word
         debug_word(node->cmd->word, indent);    
-        // redirect in
         debug_redir(node->cmd->redir_in, indent);
-        // redirect out
         debug_redir(node->cmd->redir_out, indent);
 
         fprintf(stderr, "\n");
