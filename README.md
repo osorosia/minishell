@@ -4,7 +4,7 @@
 ```ebnf
 parser    = stmt ";"? EOF
 stmt      = pipe ((";" | "||" | "&&") pipe)*
-pipe      = cmd ("|" cmd)*
+pipe_cmd  = cmd ("|" cmd)*
 cmd       = (word | redir_in | redir_out)*
 redir_in  = ("<" | "<<") word 
 redir_out = (">" | ">>") word
