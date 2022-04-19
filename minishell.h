@@ -24,6 +24,23 @@ enum e_token_kind {
     TK_EOF,
 };
 
+typedef enum e_node_kind t_node_kind;
+enum e_node_kind {
+    ND_STMT,
+    ND_AND,
+    ND_OR,
+    ND_PIPE,
+    ND_CMD,
+};
+
+typedef enum e_redir_kind t_redir_kind;
+enum e_redir_kind {
+    RD_OUT,
+    RD_IN,
+    RD_APPEND,
+    RD_HEREDOC,
+};
+
 typedef struct s_token t_token;
 struct s_token {
     t_token_kind kind;
@@ -33,21 +50,67 @@ struct s_token {
     long len;
 };
 
+// parser
 
-// utils.c
-bool starts_with(const char *dest, const char *src);
-void error(char *str);
+typedef struct s_redir t_redir;
+struct s_redir {
+    t_redir_kind kind;
+    t_redir *next;
+    char *str;
+};
+
+typedef struct s_word t_word;
+struct s_word {
+    t_word *next;
+    char *str;
+};
+
+typedef struct s_cmd t_cmd;
+struct s_cmd {
+    t_word *word;
+    t_redir *redir_in;
+    t_redir *redir_out;
+};
+
+typedef struct s_node t_node;
+struct s_node {
+    t_node_kind kind;
+    t_node *lhs;
+    t_node *rhs;
+    t_cmd *cmd;
+};
 
 //
-// lexer
+// utils ----------------------------------------------
+//
+
+bool starts_with(const char *dest, const char *src);
+void error(char *str);
+void print_indent(int indent);
+
+//
+// lexer ----------------------------------------------
 //
 
 // lexer.c
 t_token *lexer(char *p);
+// lexer_utils.c
+t_token *skip(t_token *tok, t_token_kind kind, char *str);
+bool equal(t_token *tok, t_token_kind kind, char *str);
 // debug_lexer.c
 void debug_lexer(t_token *tok);
 // free_lexer.c
 void free_lexer(t_token *tok);
 
+//
+// parser ----------------------------------------------
+//
+
+// parser.c
+t_node *parser(t_token *tok);
+// debug_parser.c
+void debug_parser(t_node *node);
+// free_parser.c
+void free_parser(t_node *node);
 
 #endif

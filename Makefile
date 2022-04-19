@@ -1,7 +1,8 @@
 NAME = minishell
 SRCS = $(wildcard *.c) \
 	$(wildcard ./utils/*.c) \
-	$(wildcard ./lexer/*.c)
+	$(wildcard ./lexer/*.c) \
+	$(wildcard ./parser/*.c)
 
 OBJS = $(SRCS:.c=.o)
 # CFLAGS = -Wall -Wextra -Werror -g
