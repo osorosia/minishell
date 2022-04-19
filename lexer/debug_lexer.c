@@ -5,7 +5,8 @@ void debug_lexer(t_token *tok) {
 
     fprintf(stderr, "lexer {\n");
     while (tok) {
-        fprintf(stderr, "    {kind: %7s, str: %.*s}\n",
+        print_indent(INDENT);
+        fprintf(stderr, "{kind: %7s, str: %.*s}\n",
             kind[tok->kind], (int)tok->len, tok->str);
         tok = tok->next;
     }

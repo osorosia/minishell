@@ -1,8 +1,9 @@
 NAME = minishell
 SRCS = $(wildcard *.c) \
 	$(wildcard ./utils/*.c) \
+	$(wildcard ./shell/*.c) \
 	$(wildcard ./lexer/*.c) \
-	$(wildcard ./parser/*.c)
+	$(wildcard ./parser/*.c) \
 
 OBJS = $(SRCS:.c=.o)
 # CFLAGS = -Wall -Wextra -Werror -g
@@ -31,6 +32,10 @@ re: fclean all
 
 norm:
 	python3 -m norminette $(SRCS) | grep Error | cat
+
+t:
+	cd tmp && gcc tmp.c
+	cd tmp && ./a.out
 
 # test:
 # 	cd tests && bash test.sh 2>/dev/null

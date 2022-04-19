@@ -1,7 +1,5 @@
 #include "../minishell.h"
 
-#define INDENT 4
-
 void debug_parser(t_node *node);
 void debug_stmt(t_node *node, int indent);
 void debug_pipe(t_node *node, int indent);

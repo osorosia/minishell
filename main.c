@@ -5,6 +5,9 @@ int main(int argc, char **argv, char **envp) {
     t_node *node;
 
     rl_outstream = stderr;
+
+    g_shell = create_shell(envp);
+    debug_env();
     
     while (true) {
         char *str = readline("minishell$ ");
@@ -22,14 +25,16 @@ int main(int argc, char **argv, char **envp) {
         // lexer
         tok = lexer(str);
         debug_lexer(tok);
-        
+
         // parser
         node = parser(tok);
+        debug_parser(node);
         free_lexer(tok);
 
-        debug_parser(node);
-        free_parser(node);
+        // expander
+        // expander(node);
 
+        free_parser(node);
         free(str);
     }
 }

@@ -17,6 +17,8 @@
 
 #include "./libft/libft.h"
 
+#define INDENT 4
+
 typedef enum e_token_kind t_token_kind;
 enum e_token_kind {
     TK_WORD,
@@ -80,6 +82,20 @@ struct s_node {
     t_cmd *cmd;
 };
 
+// shell
+
+typedef struct s_env t_env;
+struct s_env {
+    t_env *next;
+    char *name;
+    char *body;
+};
+
+typedef struct s_shell t_shell;
+struct s_shell {
+    t_env *env;
+};
+
 //
 // utils ----------------------------------------------
 //
@@ -112,5 +128,29 @@ t_node *parser(t_token *tok);
 void debug_parser(t_node *node);
 // free_parser.c
 void free_parser(t_node *node);
+
+//
+// expander ----------------------------------------------
+//
+
+// expander.c
+void expander(t_node *node);
+// debug_expander.c
+void debug_expander(t_node *node);
+
+//
+// shell ----------------------------------------------
+//
+
+// shell.c
+t_shell *create_shell(char **envp);
+// env.c
+t_env *create_env(char **envp);
+// debug_env.c
+void debug_env();
+
+// grobal variable ------------------------------------
+
+t_shell *g_shell;
 
 #endif
