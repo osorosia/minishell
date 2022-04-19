@@ -13,7 +13,7 @@ void _add_new_token(t_token *tok, t_token_kind kind, char *str, long len) {
 }
 
 long _get_operator_len(char *p) {
-    const char *kw[] = {"|", "<<", "<", ">>", ">", NULL};   
+    const char *kw[] = {"|", "<<", "<", ">>", ">", ";", NULL};   
     long i;
 
     i = 0;
