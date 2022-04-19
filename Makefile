@@ -1,6 +1,7 @@
 NAME = minishell
 NAME = minishell
-SRCS = $(wildcard *.c)
+SRCS = $(wildcard *.c) \
+	$(wildcard ./lexer/*.c)
 
 OBJS = $(SRCS:.c=.o)
 # CFLAGS = -Wall -Wextra -Werror
