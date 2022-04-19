@@ -46,6 +46,8 @@ void error(char *str);
 t_token *lexer(char *p);
 // debug_lexer.c
 void debug_lexer(t_token *tok);
+// free_lexer.c
+void free_lexer(t_token *tok);
 
 
 #endif
