@@ -3,7 +3,7 @@
 ## EBNF
 ```ebnf
 parser    = stmt ";"? EOF
-stmt      = pipe ((";" | "||" | "&&") pipe)*
+stmt      = pipe_cmd ((";" | "||" | "&&") pipe_cmd)*
 pipe_cmd  = cmd ("|" cmd)*
 cmd       = (word | redir_in | redir_out)*
 redir_in  = ("<" | "<<") word 
