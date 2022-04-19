@@ -1,6 +1,6 @@
 NAME = minishell
 SRCS = $(wildcard *.c) \
-	$(wildcard ./util/*.c) \
+	$(wildcard ./utils/*.c) \
 	$(wildcard ./lexer/*.c)
 
 OBJS = $(SRCS:.c=.o)
