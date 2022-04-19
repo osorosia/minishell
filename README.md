@@ -2,9 +2,8 @@
 
 ## EBNF
 ```ebnf
-parser    = stmt EOF
-stmt      = and_or (";" and_or)* ";"?
-and_or    = pipe ("&&" pipe | "||" pipe)
+parser    = stmt ";"? EOF
+stmt      = pipe ((";" | "||" | "&&") stmt)?
 pipe      = cmd ("|" cmd)*
 cmd       = (word | redir_in | redir_out)*
 redir_in  = ("<" | "<<") word 
