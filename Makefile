@@ -1,10 +1,10 @@
 NAME = minishell
-NAME = minishell
 SRCS = $(wildcard *.c) \
 	$(wildcard ./lexer/*.c)
 
 OBJS = $(SRCS:.c=.o)
-# CFLAGS = -Wall -Wextra -Werror
+# CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -g
 LIBFT = ./libft/libft.a
 READLINE = -L/usr/include -lreadline
 
@@ -17,7 +17,7 @@ $(LIBFT):
 all: $(NAME)
 
 %.o: %.c
-	gcc $(CFLAGS) $(DEBUG) -c -o $@ $<
+	gcc $(CFLAGS) -c -o $@ $<
 
 clean:
 	rm -f $(OBJS)
