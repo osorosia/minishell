@@ -3,9 +3,18 @@
 int main(int argc, char **argv, char **envp) {
     t_token *tok;
     t_node *node;
+
+    rl_outstream = stderr;
     
     while (true) {
         char *str = readline("minishell$ ");
+        
+        if (str == NULL)
+            exit(0);
+        if (str[0] == '\0') {
+            free(str);
+            continue;
+        }
         add_history(str);
 
         printf("%s\n", str);
