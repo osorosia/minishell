@@ -1,5 +1,14 @@
 #include "../minishell.h"
 
+void free_paths(char **paths) {
+    long i = 0;
+    while (paths[i]) {
+        free(paths[i]);
+        i++;
+    }
+    free(paths);
+}
+
 char *find_pathname(char *str) {
     char **paths;
     char *base;
@@ -19,11 +28,14 @@ char *find_pathname(char *str) {
         if (base == NULL)
             error("malloc error");
         pathname = ft_strjoin_with_free(base, true, str, false);
-        if (access(pathname, F_OK) == 0)
+        if (access(pathname, F_OK) == 0) {
+            free_paths(paths);
             return pathname;
+        }
         free(pathname);
         i++;
     }
+    free_paths(paths);
     return ft_strdup(str);
 }
 
