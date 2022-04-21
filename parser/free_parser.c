@@ -27,6 +27,7 @@ void free_parser(t_node *node) {
         free_word(node->cmd->word);
         free_redir(node->cmd->redir_in);
         free_redir(node->cmd->redir_out);
+        free(node->cmd->pathname);
         free(node->cmd);
     }
     free(node);
