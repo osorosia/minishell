@@ -1,6 +1,5 @@
 #include "../minishell.h"
 
-
 t_env *add_new_env(t_env *env, char *name, char *body) {
     t_env *now;
     t_env *new;

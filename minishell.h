@@ -95,6 +95,7 @@ struct s_env {
 typedef struct s_shell t_shell;
 struct s_shell {
     t_env *env;
+    int sts;
 };
 
 //
@@ -104,6 +105,9 @@ struct s_shell {
 bool starts_with(const char *dest, const char *src);
 void error(char *str);
 void print_indent(int indent);
+char *ft_strjoin_with_free(char *s1, bool f1, char *s2, bool f2);
+char *ft_str_add_char(char *str, char c);
+bool ft_strcmp(char *s1, char *s2);
 
 //
 // lexer ----------------------------------------------
@@ -137,7 +141,10 @@ void free_parser(t_node *node);
 // expander.c
 void expander(t_node *node);
 // debug_expander.c
-void debug_expander(t_node *node);
+void debug_expander(t_node *node, char *name);
+// expand_var.c
+void expand_var(t_node *node);
+
 
 //
 // shell ----------------------------------------------
@@ -147,6 +154,8 @@ void debug_expander(t_node *node);
 t_shell *create_shell(char **envp);
 // env.c
 t_env *create_env(char **envp);
+// get_env.c
+char *get_env_body(char *name);
 // debug_env.c
 void debug_env();
 
