@@ -27,7 +27,7 @@ int main(int argc, char **argv, char **envp) {
         }
         add_history(str);
 
-        printf("%s\n", str);
+        // printf("%s\n", str);
 
         // lexer
         tok = lexer(str);

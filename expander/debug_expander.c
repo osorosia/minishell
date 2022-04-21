@@ -66,7 +66,7 @@ void debug_expander_rec(t_node *node, int indent) {
 
 
 void debug_expander(t_node *node, char *name) {
-    printf("%s {\n", name);
+    fprintf(stderr, "%s {\n", name);
     debug_expander_rec(node, INDENT);
-    printf("}\n\n");
+    fprintf(stderr, "}\n\n");
 }
