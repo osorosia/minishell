@@ -150,6 +150,11 @@ void expand_var(t_node *node);
 void generate_pathname(t_node *node);
 
 //
+// exec ----------------------------------------------
+//
+void exec(t_node *node);
+
+//
 // shell ----------------------------------------------
 //
 
