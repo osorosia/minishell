@@ -55,6 +55,12 @@ void debug_expander_rec(t_node *node, int indent) {
         debug_redir_ex(node->cmd->redir_out, indent);
 
         fprintf(stderr, "\n");
+
+        indent += INDENT;
+        if (node->cmd->pathname) {
+            print_indent(indent);
+            fprintf(stderr, "pathname: %s\n", node->cmd->pathname);
+        }
     }
 }
 

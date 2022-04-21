@@ -73,6 +73,8 @@ struct s_cmd {
     t_word *word;
     t_redir *redir_in;
     t_redir *redir_out;
+    bool is_builtin;
+    char *pathname;
 };
 
 typedef struct s_node t_node;
@@ -144,7 +146,8 @@ void expander(t_node *node);
 void debug_expander(t_node *node, char *name);
 // expand_var.c
 void expand_var(t_node *node);
-
+// generate_pathname.c
+void generate_pathname(t_node *node);
 
 //
 // shell ----------------------------------------------
