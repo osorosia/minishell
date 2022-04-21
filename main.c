@@ -32,7 +32,7 @@ int main(int argc, char **argv, char **envp) {
         free_lexer(tok);
 
         // expander
-        // expander(node);
+        expander(node);
 
         free_parser(node);
         free(str);

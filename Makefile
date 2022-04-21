@@ -4,6 +4,7 @@ SRCS = $(wildcard *.c) \
 	$(wildcard ./shell/*.c) \
 	$(wildcard ./lexer/*.c) \
 	$(wildcard ./parser/*.c) \
+	$(wildcard ./expander/*.c) \
 
 OBJS = $(SRCS:.c=.o)
 # CFLAGS = -Wall -Wextra -Werror -g
