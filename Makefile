@@ -39,5 +39,5 @@ t:
 	cd tmp && gcc tmp.c
 	cd tmp && ./a.out
 
-# test:
-# 	cd tests && bash test.sh 2>/dev/null
+test:
+	cd tests && bash test.sh 2>/dev/null

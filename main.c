@@ -13,7 +13,7 @@ int main(int argc, char **argv, char **envp) {
     rl_outstream = stderr;
 
     g_shell = create_shell(envp);
-    debug_env();
+    //debug_env();
     
     while (true) {
         print_status();
@@ -31,18 +31,18 @@ int main(int argc, char **argv, char **envp) {
 
         // lexer
         tok = lexer(str);
-        debug_lexer(tok);
+        //debug_lexer(tok);
 
         // parser
         node = parser(tok);
-        debug_parser(node);
+        //debug_parser(node);
         free_lexer(tok);
 
         // expander
         expander(node);
 
         // exec
-        fprintf(stderr, "--- exec ---\n");
+        //fprintf(stderr, "--- exec ---\n");
         exec(node);
 
         free_parser(node);
