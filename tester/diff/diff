@@ -5,7 +5,5 @@
 [32mexpected output: 
 --------------------
 diff
-minishell
-test
 test.sh
 --------------------[0m
