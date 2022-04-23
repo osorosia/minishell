@@ -14,7 +14,7 @@ function test() {
   diff ./expected/output ./actual/output &> /dev/null
   result=$?
   if [ $result -eq 0 ]; then
-    echo -e ${BLUE}"OK:${input})"${NC}
+    echo -e ${BLUE}"OK:${input}"${NC}
   else
     echo -e ${RED}"KO!!:${input}" ${NC}
     diff ./expected/output ./actual/output > ./diff/diff
@@ -30,13 +30,26 @@ mkdir actual
 mkdir diff
 
 # basic test case
-echo ---------------------------------------
+echo ----------[basic]-----------------------------
 test "ls"
 test "ls -l"
 test "/bin/ls -l"
 test "ls | cat"
+test "ls \"|\" cat"
 test "ls -l | cat"
 test "/bin/ls -l | cat"
 test "/bin/ls -l | cat | echo hello"
-test "env"
-echo ---------------------------------------
+test "echo a b"
+test "echo hello > ./tmp/redirect_test"
+#出力結果以外の比較もできるようにする
+
+echo -----------[corner]----------------------------
+test "echo a\"\"b"#echo is built-in -> bashだとbinaryあり
+test "echo a \"  \" b"
+test "echo a       \"     \"    b | wc -c"
+test "echo -n hello"
+test "xxx | ls"
+test "xxx | ls | xx"
+test "xxx | ls | xx | cat"
+test "xxx | ls | xx | cat"
+test "ls > ./tmp/x > ./tmp/y > ./tmp/z"
