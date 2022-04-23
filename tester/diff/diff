@@ -4,5 +4,8 @@
 --------------------[0m
 [32mexpected output: 
 --------------------
-/Users/kodairaharyu/42tokyo/submit_minishell/tester
+diff
+minishell
+test
+test.sh
 --------------------[0m

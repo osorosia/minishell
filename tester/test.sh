@@ -3,7 +3,6 @@
 RESET="\033[0m"
 RED="\033[31m"
 GREEN="\033[32m"
-CYAN="\033[36m"
 
 make -C ../ >dev/null
 cp ../minishell .
@@ -11,42 +10,63 @@ chmod 755 minishell
 mkdir ./diff
 touch ./diff/diff
 
-function tester() {
-  INPUT=$(echo $@ "; exit" | ./minishell 2>&-)
-  ES_ACTUAL=$?  OUTPUT=$(echo $@ "; exit" | bash 2>&-)
-  ES_EXPECTED=$?
-  if [ "$INPUT" == "$OUTPUT" ] && [ "$ES_ACTUAL" == "$ES_EXPECTED" ]; then
+function test() {
+  ACTUAL_OUTPUT=$(echo $@ "; exit" | ./minishell 2>&-)
+  ACTUAL_STATUS=$?
+  EXPECTED_OUTPUT=$(echo $@ "; exit" | bash 2>&-)
+  EXPECTED_STATUS=$?
+  if [ "${ACTUAL_OUTPUT}" == "${EXPECTED_OUTPUT}" ] && [ "${ACTUAL_STATUS}" == "${EXPECTED_STATUS}" ]; then
     echo -en "${GREEN}OK:${RESET}"
     else
       echo -en "${RED}KO:${RESET}"
 	fi
-	echo  "$@ "
-	if [ "$INPUT" != "$OUTPUT" ]; then
-		printf $RED"actual output: \n%.20s\n$INPUT\n%.20s$RESET\n" \
+	echo  "$@"
+	if [ "${ACTUAL_OUTPUT}" != "${EXPECTED_OUTPUT}" ]; then
+		printf ${RED}"actual output: \n%.20s\n${ACTUAL_OUTPUT}\n%.20s${RESET}\n" \
 		"-----------------------------------------" "-----------------------------------------" \
 		> ./diff/diff
-		printf $GREEN"expected output: \n%.20s\n$OUTPUT\n%.20s$RESET\n" \
+		printf ${GREEN}"expected output: \n%.20s\n${EXPECTED_OUTPUT}\n%.20s${RESET}\n" \
 		"-----------------------------------------" "-----------------------------------------" \
 		>> ./diff/diff
 	fi
-	if [ "$ES_ACTUAL" != "$ES_EXPECTED" ]; then
-	  echo
-		printf $RED"actual status: $RED$ES_ACTUAL$RESET\n"
-		printf $GREEN"expected status : $GREEN$ES_EXPECTED$RESET\n"
-
+	if [ "$ACTUAL_STATUS" != "$EXPECTED_STATUS" ]; then
+		printf ${RED}"[actual status: ${RED}${ACTUAL_STATUS}${RESET} | "
+		printf ${GREEN}"expected status : ${GREEN}${EXPECTED_STATUS}${RESET}]\n"
 	fi
 }
 
-tester 'ls'
-tester '/bin/ls'
-tester 'env'
+test 'ls'
+test '/bin/ls'
+test '/bin/ls -l'
+test 'env'
+test 'cmd'
+test 'bash'
+test 'bash -x'
+test 'echo $PWD'
+test 'echo "$PWD"'
+test 'echo -n hello'
+test 'echo -n "HOGE"'
+test 'echo -n ls"'
+test 'echo -nn hello'
+test 'exit 42'
+test 'exit -42'
+test 'echo a a a "b"'
+test 'echo \"a      \"   \"     b\"'
+test 'echo hello|cat -e'
+test 'echo hello|cat -e|cat -e'
+test 'echo hello | cat -e | cat -e'
+test 'ls | ls'
+test 'ls| ls'
+test 'ls |ls'
+test 'ls|ls'
+
 #grepを使って違いを見つける-vオプションを使う
 #env | grep -v ~ | sort #->env&export系はsortする
-#tester 'exit -2'
-#tester '/bin/ls -l'
-#tester 'echo hello|cat -e|cat -e|cat -e'
-tester "echo a\"\"b"
-tester "echo a \"  \" b"
-tester "echo [a       \"     \"    b]"
-tester "echo -n hello"
-tester 'echo $PWD'
+#test 'exit -2'
+#test '/bin/ls -l'
+#test 'echo hello|cat -e|cat -e|cat -e'
+#test "echo a\"\"b"
+#test "echo a \"  \" b"
+#test "echo [a       \"     \"    b]"
+#test "echo -n hello"
+#test 'echo $PWD'
