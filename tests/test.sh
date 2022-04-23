@@ -48,6 +48,13 @@ test "echo hello > ./tmp/redirect_test"
 test "echo "'$HOME'""
 test 'echo '$PWD''
 test 'echo "$PWD"'
+test 'cat NOSUCHFILE'
+test 'exit -3'
+test 'exit 3'
+test 'exit | echo $?'
+test 'exit ls'
+test 'cd NOSUCHFILE'
+
 
 echo -----------[corner]----------------------------
 test "echo a\"\"b"
@@ -58,3 +65,4 @@ test "xxx | ls"
 test "xxx | ls | xx"
 test "xxx | ls | xx | cat"
 test "xxx | ls | xx | cat"
+test "xxx | ls | xx | cat | xxx"
