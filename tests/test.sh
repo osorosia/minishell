@@ -1,7 +1,7 @@
 #!/bin/bash
 
 RED='\033[0;31m'
-BLUE='\033[32m'
+GREEN='\033[32m'
 NC='\033[0m'
 
 function test() {
@@ -15,7 +15,7 @@ function test() {
   diff ./expected/output ./actual/output &> /dev/null
   result=$?
   if [ $result -eq 0 ]; then
-    echo -e ${BLUE}"OK:${input}"${NC}
+    echo -e ${GREEN}"OK:${input}"${NC}
   else
     echo -e ${RED}"KO!!:${input}" ${NC}
     diff ./expected/output ./actual/output > ./diff/diff
