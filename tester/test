@@ -49,4 +49,3 @@ tester "echo a\"\"b"
 tester "echo a \"  \" b"
 tester "echo [a       \"     \"    b]"
 tester "echo -n hello"
-tester 'echo $PWD'

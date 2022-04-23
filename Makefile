@@ -41,3 +41,4 @@ t:
 
 test:
 	cd tests && bash test.sh 2>/dev/null
+	cd tester && bash test.sh 2>/dev/null
