@@ -44,7 +44,7 @@ long _get_word_len(char *p) {
     long len;
 
     len = 0;
-    while (p[len] != ' ' && p[len] != '\0') {
+    while (p[len] != '\0' && !ft_strchr("|<>;& ", p[len])) {
         if (p[len] == '"' || p[len] == '\'')
             len += _get_quote_len(&(p[len]), p[len]);
         else
