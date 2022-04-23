@@ -1,8 +1,5 @@
-0a1,7
-> actual
-> bashだとbinaryあり
-> diff
-> expected
-> test
-> test.sh
-> tmp
+1c1
+< hello
+\ No newline at end of file
+---
+> hello

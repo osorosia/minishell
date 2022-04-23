@@ -3,6 +3,7 @@
 RED='\033[0;31m'
 BLUE='\033[32m'
 NC='\033[0m'
+
 function test() {
   input=$1
 
@@ -27,12 +28,15 @@ rm -rf actual
 rm -rf diff
 mkdir expected
 mkdir actual
-mkdir diff
+mkdir diff````````````````````````
 
 # basic test case
 echo ----------[basic]-----------------------------
 test "ls"
 test "ls -l"
+test "ls -la"
+test "ls -l -a"
+test "ls -llllllllllllllllllllllllllllllllllllllllllllllllllllllllll"
 test "/bin/ls -l"
 test "ls | cat"
 test "ls \"|\" cat"
@@ -41,10 +45,12 @@ test "/bin/ls -l | cat"
 test "/bin/ls -l | cat | echo hello"
 test "echo a b"
 test "echo hello > ./tmp/redirect_test"
-#出力結果以外の比較もできるようにする
+test "echo "'$HOME'""
+test 'echo '$PWD''
+test 'echo "$PWD"'
 
 echo -----------[corner]----------------------------
-test "echo a\"\"b"#echo is built-in -> bashだとbinaryあり
+test "echo a\"\"b"
 test "echo a \"  \" b"
 test "echo a       \"     \"    b | wc -c"
 test "echo -n hello"
@@ -52,4 +58,3 @@ test "xxx | ls"
 test "xxx | ls | xx"
 test "xxx | ls | xx | cat"
 test "xxx | ls | xx | cat"
-test "ls > ./tmp/x > ./tmp/y > ./tmp/z"
