@@ -40,4 +40,5 @@ t:
 	cd tmp && ./a.out
 
 test:
-	cd tester && bash test.sh 2>/dev/null
+	cd tester && ./test.sh 2>/dev/null
+.PHONY:all fclean clean re norm t test
