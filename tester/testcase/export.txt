@@ -1,0 +1,31 @@
+export
+export =
+export "="="="
+export "=""=""="
+export
+
+export A='hello'
+echo $A
+
+export pipe='|'
+ls $pipe cat
+ls "$pipe" cat
+ls '$pipe' cat
+
+export a='ls' b='ls' c='ls'
+echo $a $b $c
+echo "$a" "$b" "$c"
+echo '$a' '$b' '$c'
+echo '$a' "$b" '$c'
+echo "'$a' "$b" '$c'"
+echo '"'$a' "$b" '$c'"'
+
+export var1='/bin/ls'
+export var2=$var1
+echo $var1
+echo $var2
+
+export $A=$B
+
+export PWD
+echo $PWD
