@@ -1,0 +1,11 @@
+cd
+cd /
+cd/
+cd //
+cd ~/
+cd ~~/
+cd ./ | ls
+cd | cd
+cd / | cd
+cd | cd | cd
+cd NO_SUCH_FILE
