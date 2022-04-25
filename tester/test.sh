@@ -11,9 +11,9 @@ mkdir ./diff
 touch ./diff/diff
 
 function test() {
-  ACTUAL_OUTPUT=$(echo $@ "; exit" | ./minishell 2>&-)
+  ACTUAL_OUTPUT=$(echo $@ | ./minishell 2>&-)
   ACTUAL_STATUS=$?
-  EXPECTED_OUTPUT=$(echo $@ "; exit" | bash 2>&-)
+  EXPECTED_OUTPUT=$(echo $@ | bash 2>&-)
   EXPECTED_STATUS=$?
   if [ "${ACTUAL_OUTPUT}" == "${EXPECTED_OUTPUT}" ] && [ "${ACTUAL_STATUS}" == "${EXPECTED_STATUS}" ]; then
     echo -en "${GREEN}OK:${RESET}"
@@ -59,6 +59,8 @@ test 'ls | ls'
 test 'ls| ls'
 test 'ls |ls'
 test 'ls|ls'
+
+
 
 #grepを使って違いを見つける-vオプションを使う
 #env | grep -v ~ | sort #->env&export系はsortする
