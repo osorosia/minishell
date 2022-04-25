@@ -1,0 +1,29 @@
+echo -n
+echo -nn
+echo -nn hello
+echo -n -n -n -n -n -n
+echo
+echo a -n a
+echo -
+echo -x
+echo -n
+echo n-
+echo n- -n
+echo n- -n a
+
+export L='ls'
+echo L
+echo $L
+echo "$L"
+echo '$L'
+
+export N='-n'
+echo $N hello
+echo $N $N hello
+echo $N$N hello
+echo $$N hello
+echo '$N' hello
+echo $N hello $N world
+
+export N='-nn'
+echo $N hello $N world

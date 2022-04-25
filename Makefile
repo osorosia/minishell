@@ -41,4 +41,4 @@ t:
 
 test:
 	cd tester && ./test.sh 2>/dev/null
-.PHONY:all fclean clean re norm t test
+#.PHONY:all fclean clean re norm t test
