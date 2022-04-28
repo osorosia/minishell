@@ -60,15 +60,24 @@ test 'ls| ls'
 test 'ls |ls'
 test 'ls|ls'
 
+#echo
+test 'export N='-n''
+test 'echo $N hello'
+test 'echo $N $N hello'
+test 'echo $N$N hello'
+test 'echo $$N hello'
+test 'echo '$N' hello'
+test 'echo $N hello $N world'
 
+test 'export N=''-nn'''
+test 'echo $N hell $N world'
 
-#grepを使って違いを見つける-vオプションを使う
-#env | grep -v ~ | sort #->env&export系はsortする
-#test 'exit -2'
-#test '/bin/ls -l'
-#test 'echo hello|cat -e|cat -e|cat -e'
-#test "echo a\"\"b"
-#test "echo a \"  \" b"
-#test "echo [a       \"     \"    b]"
-#test "echo -n hello"
-#test 'echo $PWD'
+#asterisk
+test 'echo *'
+test 'echo **'
+test 'echo * * *'
+test 'echo *******'
+test 'echo -n ***'
+test 'echo -n * -n *'
+test 'echo "*"'
+test 'echo '*''
