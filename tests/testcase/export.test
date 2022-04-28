@@ -34,3 +34,16 @@ export a=NO
 echo $a
 export a=HELLOWORLD | echo $a
 unset a
+
+export a="a"
+echo $a$a
+echo $a$a$a
+echo $a$a$a$
+echo a$a$a$a$a
+
+export a=$a
+echo $a
+export a=$a$a
+echo $a
+export a=$a$a$a
+echo $a
