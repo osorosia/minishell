@@ -1,0 +1,29 @@
+./../../minishell "exit"
+echo $?
+
+./../../minishell "exit 0"
+echo $?
+
+./../../minishell "exit 1"
+echo $?
+
+./../../minishell "exit 2"
+echo $?
+
+./../../minishell "exit -1"
+echo $?
+
+./../../minishell "exit -2"
+echo $?
+
+./../../minishell "exit 100"
+echo $?
+
+./../../minishell "exit -100"
+echo $?
+
+./../../minishell "exit 2147483647"
+echo $?
+
+./../../minishell "exit -2147483648"
+echo $?
