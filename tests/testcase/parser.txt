@@ -1,0 +1,31 @@
+echo hello && echo world
+cmd hello && echo world
+echo hello && cmd
+cmd && cmd
+echo hello && echo world && echo
+echo hello && echo world && cmd
+echo hello && cmd && echo world
+cmd && echo hello && echo world
+
+echo hello || echo world
+echo hello || cmd
+cmd || echo world
+cmd || cmd
+echo hello || echo world || echo 42
+echo hello || echo world || cmd
+echo hello || cmd || cmd || echo world
+cmd || cmd || echo hello
+cmd || cmd || cmd || cmd
+
+echo hello || echo world && echo 42
+echo hello && echo world || echo 42
+cmd && echo world || echo 42
+echo hello && cmd || echo 42
+echo hello && cmd || cmd
+cmd && cmd || cmd
+cmd || cmd && cmd
+cmd && cmd && cmd || echo hello
+cmd || cmd || cmd && echo hello
+
+echo hello || "" && echo world
+echo hello && "" || echo world

@@ -1,0 +1,12 @@
+cat << a
+hello
+world
+a
+
+cat << a
+a
+
+cat << a
+*
+a
+

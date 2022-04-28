@@ -1,0 +1,36 @@
+chmod 000 tmp
+cat tmp
+
+chmod 111 tmp
+cat tmp
+
+
+
+
+chmod 222 tmp
+cat tmp
+
+
+
+chmod 333 tmp
+cat tmp
+
+
+
+chmod 444 tmp
+cat tmp
+
+
+
+chmod 555 tmp
+cat tmp
+
+
+
+chmod 666 tmp
+cat tmp
+
+
+
+chmod 777 tmp
+cat tmp
