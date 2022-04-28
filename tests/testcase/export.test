@@ -37,7 +37,7 @@ unset a
 
 export a="a"
 echo $a$a
-echo $a$a$a
+echo $a$a$
 echo $a$a$a$
 echo a$a$a$a$a
 

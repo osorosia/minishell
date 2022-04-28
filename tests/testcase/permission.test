@@ -1,36 +1,101 @@
-chmod 000 tmp
-cat tmp
+touch tmpfile
+chmod 000 tmpfile
+cat tmpfile
+echo hello > tmpfile
 
-chmod 111 tmp
-cat tmp
+chmod 111 tmpfile
+cat tmpfile
+echo hello > tmpfile
+
+chmod 222 tmpfile
+cat tmpfile
+echo hello > tmpfile
+
+chmod 333 tmpfile
+cat tmpfile
+echo hello > tmpfile
+
+chmod 444 tmpfile
+cat tmpfile
+echo hello > tmpfile
+
+chmod 555 tmpfile
+cat tmpfile
+echo hello > tmpfile
+
+chmod 666 tmpfile
+cat tmpfile
+echo hello > tmpfile
+
+chmod 777 tmpfile
+cat tmpfile
+echo hello > tmpfile
+
+rm -rf tmp file
 
 
+touch tmpfile
+chmod 000 tmpfile
+cat tmpfile
+echo hello >> tmpfile
+
+chmod 111 tmpfile
+cat tmpfile
+echo hello >> tmpfile
+
+chmod 222 tmpfile
+cat tmpfile
+echo hello >> tmpfile
+
+chmod 333 tmpfile
+cat tmpfile
+echo hello >> tmpfile
+
+chmod 444 tmpfile
+cat tmpfile
+echo hello >> tmpfile
+
+chmod 555 tmpfile
+cat tmpfile
+echo hello >> tmpfile
+
+chmod 666 tmpfile
+cat tmpfile
+echo hello >> tmpfile
+
+chmod 777 tmpfile
+cat tmpfile
+echo hello >> tmpfile
+
+rm -rf tmp file
 
 
-chmod 222 tmp
-cat tmp
+mkdir tmpdir
 
+chmod 000
+(cd tmpdir)
+pwd
 
+chmod 111
+(cd tmpdir)
+pwd
 
-chmod 333 tmp
-cat tmp
+chmod 222
+(cd tmpdir)
+pwd
 
+chmod 333
+(cd tmpdir)
 
+chmod 444
+(cd tmpdir)
 
-chmod 444 tmp
-cat tmp
+chmod 555
+(cd tmpdir)
 
+chmod 666
+(cd tmpdir)
 
-
-chmod 555 tmp
-cat tmp
-
-
-
-chmod 666 tmp
-cat tmp
-
-
-
-chmod 777 tmp
-cat tmp
+chmod 777
+(cd tmpdir)
+rm -rf tmpdir

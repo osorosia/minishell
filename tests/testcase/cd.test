@@ -10,3 +10,21 @@ cd / | cd
 cd | cd | cd
 cd NO_SUCH_FILE
 
+cd /
+pwd
+cd //
+pwd
+cd ///
+pwd
+cd ////
+pwd
+cd ./././././././
+pwd
+cd ./../.../..../
+pwd
+cd ..../
+pwd
+cd /.
+pwd
+cd /..
+pwd
