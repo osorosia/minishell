@@ -18,4 +18,47 @@ cat << "|"
 a
 |
 
-cat <<< ls
+cat NOSUCHFILE << a
+b
+c
+a
+
+echo hello << hello
+hello world
+hello
+
+echo hello << hello world
+42tokyo
+hello
+
+echo hello world << hello world
+42tokyo
+hello
+
+echo a b c << d e f
+d e f
+e f
+f
+d
+
+echo HELLO << EOS << EOS2
+EOS
+EOS2
+
+echo hello <<a<<b<<c<<d<<e
+a
+b
+c
+d
+e
+
+echo hello <<a<<b<<c<<d<<e
+a
+b
+c
+d
+d
+echo HELLO WORLD a<<b<<c<<d<<e<<f<<g<<h<<i<<j<<k<<l<<m<<n<<o<<p<<q<<r
+echo HELLO WORLD <<a<<b<<c<<d<<e<<f<<g<<h<<i<<j<<k<<l<<m<<n<<o<<p<<q<<r<<s<<t<<u<<v<<w<<x<<y<<z<<a<<b<<c<<d<<e<<f<<g<<h<<i<<j<<k<<l<<m<<n<<o<<p<<q<<r<<s<<t<<u<<v<<w<<x<<y<<z
+
+echo hello <<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a
