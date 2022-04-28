@@ -29,3 +29,38 @@ cmd || cmd || cmd && echo hello
 
 echo hello || "" && echo world
 echo hello && "" || echo world
+
+(cd ../)
+pwd
+(cd ../../)
+pwd
+(cd)
+pwd
+(echo hello) && (echo world)
+(echo hello) || (echo world)
+(cmd) || (echo world)
+(cd ./NOSUCHFILE)
+
+
+export a=hello
+(echo $a)
+(echo '$a')
+(echo "$a")
+
+(echo hello)
+echo $?
+(cmd)
+echo $?
+(echo hello | cmd)
+echo $?
+(cmd | echo hello)
+echo $?
+(cmd | cmd)
+echo $?
+(echo hello && echo world)
+echo $?
+(echo hello || echo world)
+echo $?
+(echo $?)
+echo $?
+(echo $? && echo $?)

@@ -29,3 +29,8 @@ export $A=$B
 
 export PWD
 echo $PWD
+
+export a=NO
+echo $a
+export a=HELLOWORLD | echo $a
+unset a
