@@ -1,4 +1,4 @@
-echo---------[> permission]------------------------------------------------------------------------
+echo ------------------------------
 touch tmpfile
 chmod 000 tmpfile
 cat tmpfile
@@ -32,8 +32,8 @@ chmod 777 tmpfile
 cat tmpfile
 echo hello > tmpfile
 
-rm -rf tmp file
-echo---------[>> permission]------------------------------------------------------------------------
+rm -rf tmpfile
+echo --------------------------------
 
 touch tmpfile
 chmod 000 tmpfile
@@ -68,8 +68,9 @@ chmod 777 tmpfile
 cat tmpfile
 echo hello >> tmpfile
 
-rm -rf tmp file
-echo---------[multi >> & > permission]------------------------------------------------------------------------
+rm -rf tmpfile
+
+echo ------------------------------
 
 touch tmpfile
 touch lstfile
@@ -106,9 +107,209 @@ chmod 777 tmpfile
 cat tmpfile
 echo hello >> tmpfile
 
-rm -rf tmp file
+rm -rf tmpfile
+echo ------------------------------
 
-echo--------[cd (file)]-------------------------------------------------------------------------
+echo hello > tmpfile
+ln -s tmpfile aliasfile
+chmod 000 aliasfile
+cat tmpfile > aliasfile
+chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
+
+echo hello > tmpfile
+ln -s tmpfile aliasfile
+chmod 111 aliasfile
+cat tmpfile > aliasfile
+chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
+
+echo hello > tmpfile
+ln -s tmpfile aliasfile
+chmod 222 aliasfile
+cat tmpfile > aliasfile
+chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
+
+echo hello > tmpfile
+ln -s tmpfile aliasfile
+chmod 333 aliasfile
+cat tmpfile > aliasfile
+chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
+
+echo hello > tmpfile
+ln -s tmpfile aliasfile
+chmod 444 aliasfile
+cat tmpfile > aliasfile
+chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
+
+echo hello > tmpfile
+ln -s tmpfile aliasfile
+chmod 555 aliasfile
+cat tmpfile > aliasfile
+chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
+
+echo hello > tmpfile
+ln -s tmpfile aliasfile
+chmod 666 aliasfile
+cat tmpfile > aliasfile
+chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
+
+echo hello > tmpfile
+ln -s tmpfile aliasfile
+chmod 777 aliasfile
+cat tmpfile > aliasfile
+chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
+
+echo ------------------------------
+
+echo hello > tmpfile
+ln -s tmpfile aliasflie
+chmod 000 tmpfile
+cat tmpfile > aliasfile
+chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
+
+echo hello > tmpfile
+ln -s tmpfile aliasflie
+chmod 111 tmpfile
+cat tmpfile > aliasfile
+chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
+
+echo hello > tmpfile
+ln -s tmpfile aliasflie
+chmod 222 tmpfile
+cat tmpfile > aliasfile
+chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
+
+echo hello > tmpfile
+ln -s tmpfile aliasflie
+chmod 333 tmpfile
+cat tmpfile > aliasfile
+chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
+
+echo hello > tmpfile
+ln -s tmpfile aliasflie
+chmod 444 tmpfile
+cat tmpfile > aliasfile
+chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
+
+echo hello > tmpfile
+ln -s tmpfile aliasflie
+chmod 555 tmpfile
+cat tmpfile > aliasfile
+chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
+
+echo hello > tmpfile
+ln -s tmpfile aliasflie
+chmod 666 tmpfile
+cat tmpfile > aliasfile
+chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
+
+echo hello > tmpfile
+ln -s tmpfile aliasflie
+chmod 777 tmpfile
+cat tmpfile > aliasfile
+chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
+
+echo ------------------------------
+
+touch a
+chmod 777 a
+touch b
+chmod 777 b
+touch c
+chmod 777 c
+
+echo hello > a > b > c
+cat a
+cat b
+cat c
+chmod 777 a b c
+rm -rf a b c
+
+touch a
+chmod 000 a
+touch b
+chmod 777 b
+touch c
+chmod 777 c
+
+echo hello > a > b > c
+cat a
+cat b
+cat c
+chmod 777 a b c
+rm -rf a b c
+
+touch a
+chmod 777 a
+touch b
+chmod 000 b
+touch c
+chmod 777 c
+
+echo hello > a > b > c
+cat a
+cat b
+cat c
+chmod 777 a b c
+rm -rf a b c
+
+
+touch a
+chmod 777 a
+touch b
+chmod 777 b
+touch c
+chmod 000 c
+
+echo hello > a > b > c
+cat a
+cat b
+cat c
+chmod 777 a b c
+rm -rf a b c
+
+touch a
+chmod 000 a
+touch b
+chmod 000 b
+touch c
+chmod 777 c
+
+echo hello > a > b > c
+cat a
+cat b
+cat c
+chmod 777 a b c
+rm -rf a b c
+
+touch a
+chmod 777 a
+touch b
+chmod 000 b
+touch c
+chmod 000 c
+
+echo hello > a > b > c
+cat a
+cat b
+cat c
+chmod 777 a b c
+rm -rf a b c
+
+touch a
+chmod 000 a
+touch b
+chmod 000 b
+touch c
+chmod 000 c
+
+echo hello > a > b > c
+cat a
+cat b
+cat c
+chmod 777 a b c
+rm -rf a b c
+
+echo ------------------------------
 
 mkdir tmpdir
 
