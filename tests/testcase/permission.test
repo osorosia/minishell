@@ -73,7 +73,6 @@ rm -rf tmpfile
 echo ------------------------------
 
 touch tmpfile
-touch lstfile
 
 chmod 000 tmpfile
 cat tmpfile
