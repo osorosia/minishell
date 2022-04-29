@@ -28,17 +28,17 @@ char *_expand_var_in_str(char *str) {
     single_quote = false;
     i = 0;
     while (str[i]) {
-        if (!single_quote && str[i] == '$' && !_is_var_name_char(str[i + 1])) {
-            new = ft_strjoin_with_free(new, true, "$", false);
-            i++;
-            continue;
-        }
         if (!single_quote && str[i] == '$' && str[i + 1] == '?') {
             char *sts = ft_itoa(g_shell->sts);
             if (sts == NULL)
                 error("malloc error");
             new = ft_strjoin_with_free(new, true, sts, true);
             i += 2;
+            continue;
+        }
+        if (!single_quote && str[i] == '$' && !_is_var_name_char(str[i + 1])) {
+            new = ft_strjoin_with_free(new, true, "$", false);
+            i++;
             continue;
         }
         if (!single_quote && str[i] == '$') {
