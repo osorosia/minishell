@@ -143,6 +143,7 @@ void free_parser(t_node *node);
 
 // expander.c
 void expander(t_node *node);
+void expander_and_debug(t_node *node);
 // debug_expander.c
 void debug_expander(t_node *node, char *name);
 // expand_var.c

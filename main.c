@@ -36,9 +36,14 @@ int main(int argc, char **argv, char **envp) {
         // parser
         node = parser(tok);
         debug_parser(node);
-        free_lexer(tok);
 
         // expander
+        {
+            t_node *tmp = parser(tok);
+            expander_and_debug(tmp);
+            free_parser(tmp);
+        }
+        free_lexer(tok);
         expander(node);
 
         // exec
