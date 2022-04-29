@@ -16,6 +16,7 @@ ls| ls
 ls |ls
 
 echo a |cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e
+echo|echo|echo|echo|echo
 
 |
 ||
