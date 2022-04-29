@@ -38,4 +38,3 @@ cat b
 cat c
 cat d
 rm -rf a b c d
-

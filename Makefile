@@ -43,4 +43,4 @@ test: all
 	cd tests && ./test.sh 2>/dev/null
 	cd ./tests/testcase && ./diff.sh 2>/dev/null
 	cat ./tests/testcase/diff_file
-#.PHONY:all fclean clean re norm t test
+.PHONY:all fclean clean re norm t test

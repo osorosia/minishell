@@ -2,14 +2,23 @@ echo -n
 echo -nn
 echo -nn hello
 echo -n -n -n -n -n -n
+echo -nnnnnnnna hello
+echo -nnnnnnaaaaaa hello
+echo -aaaaaaaaannn hello
+echo -annnnnnnnnnn hello
+
 echo
-echo a -n a
-echo -
-echo -x
-echo -n
-echo n-
-echo n- -n
-echo n- -n a
+echo a -n a hello
+echo - hello
+echo -x　hello
+echo -n　hello
+echo n-　hello
+echo n- -n　hello
+echo n- -n a　hello
+echo - n hello hello
+echo - n　hello
+echo "-n" hello
+echo '-n' hello
 
 export L='ls'
 echo L
@@ -20,6 +29,14 @@ echo 'ls'
 echo "ls"
 
 export N='-n'
+echo $N hello
+echo $N $N hello
+echo $N$N hello
+echo $$N hello
+echo '$N' hello
+echo $N hello $N world
+
+export N=' -n '
 echo $N hello
 echo $N $N hello
 echo $N$N hello
@@ -40,6 +57,7 @@ echo "*"
 echo '*'
 
 echo *.c
+echo *.c*
 echo .*
 echo *.c .*
 echo **.c
@@ -50,10 +68,11 @@ echo $wildcard
 echo "$wildcard"
 echo '$wildcard'
 
-echo "/bin/ls"
+echo "/bin/ls   "
 echo '/bin/ls'
 "echo" /bin/ls
 'echo' /bin/ls
 '  echo' /bin/ls
 echo " a "    ""   b    "  "
+
 

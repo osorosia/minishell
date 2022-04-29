@@ -1,9 +1,15 @@
 cd
+pwd
 cd /
+pwd
 cd/
+pwd
 cd //
+pwd
 cd ~/
+pwd
 cd ~~/
+pwd
 cd ./ | ls
 cd | cd
 cd / | cd

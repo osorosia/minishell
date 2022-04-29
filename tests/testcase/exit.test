@@ -4,6 +4,42 @@ echo $?
 ./../../minishell "exit 0"
 echo $?
 
+./../../minishell "exit a"
+       echo $?
+
+./../../minishell "exit ''"
+echo $?
+
+./../../minishell "exit 9a"
+echo $?
+
+./../../minishell "exit hello"
+echo $?
+
+./../../minishell "exit 38-"
+echo $?
+
+./../../minishell "exit +1"
+echo $?
+
+./../../minishell "exit -1"
+echo $?
+
+./../../minishell "exit -"
+echo $?
+
+./../../minishell "exit +"
+echo $?
+
+./../../minishell "exit -0"
+echo $?
+
+./../../minishell "exit +0"
+echo $?
+
+./../../minishell "exit 01"
+echo $?
+
 ./../../minishell "exit 1"
 echo $?
 
