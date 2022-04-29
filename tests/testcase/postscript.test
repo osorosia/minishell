@@ -19,3 +19,28 @@ echo hello >> A >> B >> C >> D >> E >> F
 cat A B C D E F
 rm -rf A B C D E F
 
+export a=hello
+echo world >> $a
+echo $a
+
+export a=hello
+echo world >> a >> b >> c >> $a
+cat a
+cat b
+cat c
+rm a b c
+
+export a=hello
+echo world >> a >> $a >> b >> c
+cat a
+cat b
+cat c
+rm a b c
+
+export a=hello
+echo world >> a >> b >> $a >> c
+cat a
+cat b
+cat c
+rm a b c
+

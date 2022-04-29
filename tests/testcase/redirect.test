@@ -38,3 +38,50 @@ cat b
 cat c
 cat d
 rm -rf a b c d
+
+export a=hello
+echo world > $a
+echo $a
+
+export a=hello
+echo world > a > b > c > $a
+cat a
+cat b
+cat c
+rm a b c
+
+export a=hello
+echo world > a > $a > b > c
+cat a
+cat b
+cat c
+rm a b c
+
+export a=hello
+echo world > a > b > $a > c
+cat a
+cat b
+cat c
+rm a b c
+
+export a=hello
+echo world > a >> b > c >> $a
+cat a
+cat b
+cat c
+rm a b c
+
+export a=hello
+echo world > a >> $a >> b >> c
+cat a
+cat b
+cat c
+rm a b c
+
+export a=hello
+echo world >> a > b > $a > c
+cat a
+cat b
+cat c
+rm a b c
+
