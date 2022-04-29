@@ -1,3 +1,41 @@
 > tmp1
 > tmp2
 echo hello > tmp1 | echo world > tmp2
+rm -rf tmp1 tmp2
+
+echo hello world > a > b > c
+cat a
+cat b
+cat c
+rm -rf a b c
+
+echo hello world >> a >> b >> c
+cat a
+cat b
+cat c
+rm -rf a b c
+
+echo hello >> a > b
+cat a
+cat b
+rm -rf a b
+
+echo hello > a >> b
+cat a
+cat b
+rm -rf a b
+
+echo hello > a >> b > c >> d
+cat a
+cat b
+cat c
+cat d
+rm -rf a b c d
+
+echo hello >> a > b >> c > d
+cat a
+cat b
+cat c
+cat d
+rm -rf a b c d
+

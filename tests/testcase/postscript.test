@@ -1,0 +1,21 @@
+>> ok
+abcdefghijklmnopqrstuvwxyz
+rm -rf ok
+
+>> ok >> ng
+ls
+rm -rf ok ng
+
+>> >>NOSUCHFILE
+rm -rf NOSUCHFILE
+
+>>A>>B>>C>>D>>E>>F>>G>>H
+rm -rf A B C D E F G H
+
+>>a >>b
+rm -rf a b
+
+echo hello >> A >> B >> C >> D >> E >> F
+cat A B C D E F
+rm -rf A B C D E F
+
