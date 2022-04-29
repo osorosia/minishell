@@ -6,7 +6,7 @@ void exec_pipe(t_node *pipe_node);
 void exec_bracket(t_node *pipe_node);
 void exec_stmt(t_node *stmt_node);
 
-char **get_argv(t_word *word) {
+char **create_argv(t_word *word) {
     char **argv;
     long len;
     t_word *now;
@@ -38,7 +38,9 @@ void exec_cmd(t_node *node) {
         int pid = fork();
 
         if (pid == 0) {
-            execve(cmd->pathname, get_argv(cmd->word), NULL);
+            char **cmd_argv = create_argv(cmd->word);
+            execve(cmd->pathname, cmd_argv, NULL);
+            free(cmd_argv);
             exit(127);
         }
         wait(&(g_shell->sts));
