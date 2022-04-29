@@ -40,7 +40,7 @@ int main(int argc, char **argv, char **envp) {
         // expander
         {
             t_node *tmp = parser(tok);
-            expander_and_debug(tmp);
+            expander_for_debug(tmp);
             free_parser(tmp);
         }
         free_lexer(tok);
