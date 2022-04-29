@@ -42,7 +42,7 @@ int main(int argc, char **argv, char **envp) {
         expander(node);
 
         // exec
-        //fprintf(stderr, "--- exec ---\n");
+        fprintf(stderr, "--- exec ---\n");
         exec(node);
 
         free_parser(node);
