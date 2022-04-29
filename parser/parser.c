@@ -11,10 +11,21 @@ t_node *_new_node_stmt(t_node_kind kind, t_node *pipe_cmd_node) {
     return node;
 }
 
-void _add_node_stmt(t_node *node, t_node_kind kind, t_node *pipe_cmd_node) {
+void _add_node_stmt(t_node *node, t_node_kind kind, t_node *bracket_node) {
     while (node->rhs)
         node = node->rhs;
-    node->rhs = _new_node_stmt(kind, pipe_cmd_node);;
+    node->rhs = _new_node_stmt(kind, bracket_node);;
+}
+
+void *_new_node_bracket(t_node *stmt_node) {
+    t_node *node;
+
+    node = ft_calloc(1, sizeof(t_node));
+    if (node == NULL)
+        error("malloc error");
+    node->kind = ND_BRACKET;
+    node->lhs = stmt_node;
+    return node;
 }
 
 t_node *_new_node_pipe(t_node *cmd_node) {
@@ -113,6 +124,7 @@ void _add_redir_out(t_cmd *cmd, t_redir_kind kind, char *str, long len) {
 
 t_node *parser(t_token *tok);
 t_node *stmt(t_token **tok);
+t_node *bracket(t_token **tok);
 t_node *pipe_cmd(t_token **tok);
 t_node *cmd(t_token **tok);
 
@@ -120,43 +132,59 @@ t_node *word(t_token **tok);
 t_node *redir_in(t_token **tok);
 t_node *redir_out(t_token **tok);
 
-// parser = stmt ";"? EOF
+// parser = stmt EOF
 t_node *parser(t_token *tok) {
     t_node *node;
 
     // stmt
     node = stmt(&tok);
-    // ";"?
-    if (equal(tok, TK_OP, ";"))
-        tok = skip(tok, TK_OP, ";");
     // EOF
     tok = skip(tok, TK_EOF, NULL);
     return node;
 }
 
-// stmt = pipe ((";" | "||" | "&&") pipe)*
+// stmt = bracket ((";" | "||" | "&&") bracket)* ";"?
 t_node *stmt(t_token **tok) {
     t_node *node;
 
     // pipe
-    node = _new_node_stmt(ND_STMT, pipe_cmd(tok));
+    node = _new_node_stmt(ND_STMT, bracket(tok));
     // ((";" | "||" | "&&") pipe)*
     while (true) {
-        if (equal(*tok, TK_OP, ";") && !equal((*tok)->next, TK_EOF, NULL)) {
+        if (equal(*tok, TK_OP, ";") && !equal((*tok)->next, TK_EOF, NULL) && !equal((*tok)->next, TK_OP, ")")) {
             *tok = skip(*tok, TK_OP, ";");
-            _add_node_stmt(node, ND_STMT, pipe_cmd(tok));
+            _add_node_stmt(node, ND_STMT, bracket(tok));
         }
         else if (equal(*tok, TK_OP, "||")) {
             *tok = skip(*tok, TK_OP, "||");
-            _add_node_stmt(node, ND_OR, pipe_cmd(tok));
+            _add_node_stmt(node, ND_OR, bracket(tok));
         }
         else if (equal(*tok, TK_OP, "&&")) {
             *tok = skip(*tok, TK_OP, "&&");
-            _add_node_stmt(node, ND_AND, pipe_cmd(tok));
+            _add_node_stmt(node, ND_AND, bracket(tok));
         }
         else
-            return node;
+            break;
     }
+    // ";"?
+    if (equal(*tok, TK_OP, ";"))
+        *tok = skip(*tok, TK_OP, ";");
+    return node;
+}
+
+// bracket = "(" stmt ")"
+//         | pipe_cmd
+t_node *bracket(t_token **tok) {
+    t_node *node;
+
+    if (equal(*tok, TK_OP, "(")) {
+        *tok = skip(*tok, TK_OP, "(");
+        node = _new_node_bracket(stmt(tok));
+        *tok = skip(*tok, TK_OP, ")");
+    }
+    else
+        node = pipe_cmd(tok);
+    return node;
 }
 
 // pipe_cmd = cmd ("|" cmd)*

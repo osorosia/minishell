@@ -34,6 +34,7 @@ enum e_node_kind {
     ND_OR,
     ND_PIPE,
     ND_CMD,
+    ND_BRACKET,
 };
 
 typedef enum e_redir_kind t_redir_kind;

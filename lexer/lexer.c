@@ -15,7 +15,7 @@ void _add_new_token(t_token *tok, t_token_kind kind, char *str, long len) {
 }
 
 long _get_operator_len(char *p) {
-    const char *kw[] = {"||", "&&", "<<", ">>", "<", ">", "|", ";", NULL};   
+    const char *kw[] = {"||", "&&", "<<", ">>", "<", ">", "|", ";", "(", ")", NULL};   
     long i;
 
     i = 0;
@@ -44,7 +44,7 @@ long _get_word_len(char *p) {
     long len;
 
     len = 0;
-    while (p[len] != '\0' && !ft_strchr("|<>;& ", p[len])) {
+    while (p[len] != '\0' && !ft_strchr("|<>;&() ", p[len])) {
         if (p[len] == '"' || p[len] == '\'')
             len += _get_quote_len(&(p[len]), p[len]);
         else

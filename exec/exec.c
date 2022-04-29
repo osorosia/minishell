@@ -1,5 +1,11 @@
 #include "../minishell.h"
 
+void exec_cmd(t_node *node);
+void exec_no_pipe(t_node *pipe_node);
+void exec_pipe(t_node *pipe_node);
+void exec_bracket(t_node *pipe_node);
+void exec_stmt(t_node *stmt_node);
+
 char **get_argv(t_word *word) {
     char **argv;
     long len;
@@ -70,6 +76,21 @@ void exec_pipe(t_node *pipe_node) {
     exit(g_shell->sts);
 }
 
+void exec_bracket(t_node *bracket_node) {
+    if (bracket_node->kind == ND_BRACKET) {
+        int pid = fork();
+        if (pid == 0) {
+            exec_stmt(bracket_node->lhs);
+            exit(g_shell->sts);
+        }
+        wait(&(g_shell->sts));
+        g_shell->sts = WEXITSTATUS(g_shell->sts);
+    }
+    else {
+        exec_pipe(bracket_node);
+    }
+}
+
 void exec_stmt(t_node *stmt_node) {
     t_node *pipe_node;
 
@@ -82,8 +103,10 @@ void exec_stmt(t_node *stmt_node) {
         exec_no_pipe(pipe_node);
     else {
         int pid = fork();
-        if (pid == 0)
+        if (pid == 0) {
             exec_pipe(pipe_node);
+            exit(g_shell->sts);
+        }
         wait(&(g_shell->sts));
         g_shell->sts = WEXITSTATUS(g_shell->sts);
     }

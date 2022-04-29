@@ -2,8 +2,10 @@
 
 ## EBNF
 ```ebnf
-parser    = stmt ";"? EOF
-stmt      = pipe_cmd ((";" | "||" | "&&") pipe_cmd)*
+parser    = stmt EOF
+stmt      = bracket ((";" | "||" | "&&") bracket)* ";"?
+bracket   = "(" stmt ")"
+          | pipe_cmd
 pipe_cmd  = cmd ("|" cmd)*
 cmd       = (word | redir_in | redir_out)*
 redir_in  = ("<" | "<<") word 

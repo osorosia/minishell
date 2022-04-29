@@ -38,6 +38,12 @@ void debug_expander_rec(t_node *node, int indent) {
         debug_expander_rec(node->rhs, indent);
     }
 
+    if (node->kind == ND_BRACKET) {
+        print_indent(indent);
+        fprintf(stderr, "bracket:\n");
+        debug_expander_rec(node->lhs, indent + INDENT);
+    }
+
     if (node->kind == ND_PIPE) {
         debug_expander_rec(node->lhs, indent);
         
