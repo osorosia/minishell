@@ -39,7 +39,7 @@ t:
 	cd tmp && gcc tmp.c
 	cd tmp && ./a.out
 
-test:
+test: all
 	cd tests && ./test.sh 2>/dev/null
 #	cd tester && ./test.sh 2>/dev/null
 #.PHONY:all fclean clean re norm t test
