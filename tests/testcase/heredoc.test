@@ -3,6 +3,25 @@ hello
 world
 a
 
+export a=HELLO
+cat << $a
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+$a
+unset a
+
+cat << a
+
+   a
+a
+
+cat << hello world
+hello world
+hello world
+hello world
+world
+hello
+
+
 cat << a
 a
 
