@@ -47,3 +47,15 @@ export a=$a$a
 echo $a
 export a=$a$a$a
 echo $a
+
+export L=' ls '
+$L
+
+export L=' ls -l'
+$L
+
+export L=' ls -lllllllllllllllllllllll'
+$L
+
+export L=' ls -alllllllllllllllllllllll'
+$L

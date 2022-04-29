@@ -64,3 +64,13 @@ echo $?
 (echo $?)
 echo $?
 (echo $? && echo $?)
+
+export and='&&'
+echo hello $and world
+echo hello '$and' world
+echo hello "$and" world
+
+export or='||'
+echo hello $or world
+echo hello '$or' world
+echo hello "$or" world
