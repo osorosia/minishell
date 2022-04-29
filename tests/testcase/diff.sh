@@ -5,7 +5,6 @@ function test() {
   bash < $@ > actual
   diff expected actual >> ./diff_file
   rm -rf expected actual
-  echo ---------------------------------
 };
 
 test 'cd.test'

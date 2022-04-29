@@ -541,3 +541,2772 @@
 > hello
 > hello
 > hello
+1,16c1,20
+< cd.test
+< diff.sh
+< diff_file
+< echo.test
+< env.test
+< exit.test
+< expected
+< export.test
+< heredoc.test
+< parser.test
+< path.test
+< permission.test
+< pipe.test
+< postscript.test
+< pwd.test
+< redirect.test
+---
+> 42tokyo
+> Applications
+> Creative Cloud Files
+> Creative Cloud Files 414592564814zz@gmail.com f47792976ce1dff6c0dd0aa9ebac9ce56723fbceb80bfc5a6a741554351c07ff
+> Desktop
+> Documents
+> Downloads
+> Google Drive
+> Library
+> MemoBook
+> Movies
+> Music
+> Pictures
+> Public
+> dotfiles
+> ex00
+> go
+> id_rsa.pub
+> install.sh
+> powerlevel10k
+18,26c22,30
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+---
+> /
+> //
+> /
+> /
+> /
+> /
+> /
+> /
+> /
+1,3c1
+< -nn
+< -nn hello
+< -n -n -n -n -n
+---
+> hello
+11,22c9,21
+< 
+< ""
+< '$L'
+< 'ls'
+< "ls"
+<  hello
+<   hello
+<  hello
+< $ hello
+< '$N' hello
+<  hello  world
+<  hello  world
+---
+> ls
+> ls
+> $L
+> ls
+> ls
+> hellohello-n-n hello
+> 73556N hello
+> $N hello
+> hello -n worldhello -nn worldactual cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
+> actual cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
+> actual cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample actual cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample actual cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
+> actual cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
+> actual cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sampleactual cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample -n actual cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample*
+24,28d22
+< **
+< * * *
+< *******
+< **** -n *"*"
+< '*'
+30,31c24,25
+< .*
+< *.c .*
+---
+> . ..
+> *.c . ..
+34,39c28,35
+< 
+< ""
+< '$wildcard'
+< "/bin/ls"
+< '/bin/ls'
+< " a " "" b "  "
+---
+> actual cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
+> *
+> $wildcard
+> /bin/ls
+> /bin/ls
+> /bin/ls
+> /bin/ls
+>  a   b   
+0a1,149
+> COMMAND_MODE=unix2003
+> DISPLAY=/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0
+> HOME=/Users/kodairaharyu
+> HOMEBREW_CELLAR=/opt/homebrew/Cellar
+> HOMEBREW_PREFIX=/opt/homebrew
+> HOMEBREW_REPOSITORY=/opt/homebrew
+> INFOPATH=/opt/homebrew/share/info:
+> LC_CTYPE=ja_JP.UTF-8
+> LOGIN_SHELL=1
+> LOGNAME=kodairaharyu
+> LSCOLORS=cxfxcxdxbxegedabagacad
+> LaunchInstanceID=C53264DD-9120-49EE-847C-ACCAFD5AE5C2
+> MAKEFLAGS=
+> MAKELEVEL=1
+> MANPATH=/opt/homebrew/share/man::
+> MFLAGS=
+> P9K_SSH=0
+> P9K_TTY=old
+> PATH=/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+> PMSPEC=0uUpiPsf
+> PWD=/Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> SECURITYSESSIONID=186b2
+> SHELL=/bin/zsh
+> SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners
+> TERM=xterm-256color
+> TERMINAL_EMULATOR=JetBrains-JediTerm
+> TERM_SESSION_ID=fa17cae7-55ee-4805-8cea-103ec616213b
+> TMPDIR=/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/
+> USER=kodairaharyu
+> XPC_FLAGS=0x0
+> XPC_SERVICE_NAME=0
+> ZPFX=/Users/kodairaharyu/.local/share/zinit/polaris
+> ZSH_CACHE_DIR=/Users/kodairaharyu/.cache/zinit
+> _=/usr/bin/env
+> _P9K_TTY=/dev/ttys006
+> __CFBundleIdentifier=com.jetbrains.CLion
+> __CF_USER_TEXT_ENCODING=0x1F5:0x1:0xE
+> COMMAND_MODE=unix2003
+> DISPLAY=/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0
+> HOME=/Users/kodairaharyu
+> HOMEBREW_CELLAR=/opt/homebrew/Cellar
+> HOMEBREW_PREFIX=/opt/homebrew
+> HOMEBREW_REPOSITORY=/opt/homebrew
+> INFOPATH=/opt/homebrew/share/info:
+> LC_CTYPE=ja_JP.UTF-8
+> LOGIN_SHELL=1
+> LOGNAME=kodairaharyu
+> LSCOLORS=cxfxcxdxbxegedabagacad
+> LaunchInstanceID=C53264DD-9120-49EE-847C-ACCAFD5AE5C2
+> MAKEFLAGS=
+> MAKELEVEL=1
+> MANPATH=/opt/homebrew/share/man::
+> MFLAGS=
+> P9K_SSH=0
+> P9K_TTY=old
+> PATH=/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+> PMSPEC=0uUpiPsf
+> PWD=/Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> SECURITYSESSIONID=186b2
+> SHELL=/bin/zsh
+> SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners
+> TERM=xterm-256color
+> TERMINAL_EMULATOR=JetBrains-JediTerm
+> TERM_SESSION_ID=fa17cae7-55ee-4805-8cea-103ec616213b
+> TMPDIR=/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/
+> USER=kodairaharyu
+> XPC_FLAGS=0x0
+> XPC_SERVICE_NAME=0
+> ZPFX=/Users/kodairaharyu/.local/share/zinit/polaris
+> ZSH_CACHE_DIR=/Users/kodairaharyu/.cache/zinit
+> _=/usr/bin/env
+> _P9K_TTY=/dev/ttys006
+> __CFBundleIdentifier=com.jetbrains.CLion
+> __CF_USER_TEXT_ENCODING=0x1F5:0x1:0xE
+> a=xxxxxxxx
+> COMMAND_MODE=unix2003
+> DISPLAY=/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0
+> HOME=/Users/kodairaharyu
+> HOMEBREW_CELLAR=/opt/homebrew/Cellar
+> HOMEBREW_PREFIX=/opt/homebrew
+> HOMEBREW_REPOSITORY=/opt/homebrew
+> INFOPATH=/opt/homebrew/share/info:
+> LC_CTYPE=ja_JP.UTF-8
+> LOGIN_SHELL=1
+> LOGNAME=kodairaharyu
+> LSCOLORS=cxfxcxdxbxegedabagacad
+> LaunchInstanceID=C53264DD-9120-49EE-847C-ACCAFD5AE5C2
+> MAKEFLAGS=
+> MAKELEVEL=1
+> MANPATH=/opt/homebrew/share/man::
+> MFLAGS=
+> P9K_SSH=0
+> P9K_TTY=old
+> PATH=/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+> PMSPEC=0uUpiPsf
+> PWD=/Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> SECURITYSESSIONID=186b2
+> SHELL=/bin/zsh
+> SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners
+> TERM=xterm-256color
+> TERMINAL_EMULATOR=JetBrains-JediTerm
+> TERM_SESSION_ID=fa17cae7-55ee-4805-8cea-103ec616213b
+> TMPDIR=/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/
+> USER=kodairaharyu
+> XPC_FLAGS=0x0
+> XPC_SERVICE_NAME=0
+> ZPFX=/Users/kodairaharyu/.local/share/zinit/polaris
+> ZSH_CACHE_DIR=/Users/kodairaharyu/.cache/zinit
+> _=/usr/bin/env
+> _P9K_TTY=/dev/ttys006
+> __CFBundleIdentifier=com.jetbrains.CLion
+> __CF_USER_TEXT_ENCODING=0x1F5:0x1:0xE
+> COMMAND_MODE=unix2003
+> DISPLAY=/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0
+> HOME=/Users/kodairaharyu
+> HOMEBREW_CELLAR=/opt/homebrew/Cellar
+> HOMEBREW_PREFIX=/opt/homebrew
+> HOMEBREW_REPOSITORY=/opt/homebrew
+> INFOPATH=/opt/homebrew/share/info:
+> LC_CTYPE=ja_JP.UTF-8
+> LOGIN_SHELL=1
+> LOGNAME=kodairaharyu
+> LSCOLORS=cxfxcxdxbxegedabagacad
+> LaunchInstanceID=C53264DD-9120-49EE-847C-ACCAFD5AE5C2
+> MAKEFLAGS=
+> MAKELEVEL=1
+> MANPATH=/opt/homebrew/share/man::
+> MFLAGS=
+> P9K_SSH=0
+> P9K_TTY=old
+> PATH=/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+> PMSPEC=0uUpiPsf
+> PWD=/Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> SECURITYSESSIONID=186b2
+> SHELL=/bin/zsh
+> SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners
+> TERM=xterm-256color
+> TERMINAL_EMULATOR=JetBrains-JediTerm
+> TERM_SESSION_ID=fa17cae7-55ee-4805-8cea-103ec616213b
+> TMPDIR=/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/
+> USER=kodairaharyu
+> XPC_FLAGS=0x0
+> XPC_SERVICE_NAME=0
+> ZPFX=/Users/kodairaharyu/.local/share/zinit/polaris
+> ZSH_CACHE_DIR=/Users/kodairaharyu/.cache/zinit
+> _=/usr/bin/env
+> _P9K_TTY=/dev/ttys006
+> __CFBundleIdentifier=com.jetbrains.CLion
+> __CF_USER_TEXT_ENCODING=0x1F5:0x1:0xE
+0a1
+> 0
+1,9c1,86
+< 
+<   
+< "" "" ""
+< '$a' '$b' '$c'
+< '$a' "" '$c'
+< "'' "" ''"
+< '"'' "$b" ''"'
+< 1
+< 2
+---
+> declare -x COMMAND_MODE="unix2003"
+> declare -x DISPLAY="/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0"
+> declare -x HOME="/Users/kodairaharyu"
+> declare -x HOMEBREW_CELLAR="/opt/homebrew/Cellar"
+> declare -x HOMEBREW_PREFIX="/opt/homebrew"
+> declare -x HOMEBREW_REPOSITORY="/opt/homebrew"
+> declare -x INFOPATH="/opt/homebrew/share/info:"
+> declare -x LC_CTYPE="ja_JP.UTF-8"
+> declare -x LOGIN_SHELL="1"
+> declare -x LOGNAME="kodairaharyu"
+> declare -x LSCOLORS="cxfxcxdxbxegedabagacad"
+> declare -x LaunchInstanceID="C53264DD-9120-49EE-847C-ACCAFD5AE5C2"
+> declare -x MAKEFLAGS=""
+> declare -x MAKELEVEL="1"
+> declare -x MANPATH="/opt/homebrew/share/man::"
+> declare -x MFLAGS=""
+> declare -x OLDPWD
+> declare -x P9K_SSH="0"
+> declare -x P9K_TTY="old"
+> declare -x PATH="/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+> declare -x PMSPEC="0uUpiPsf"
+> declare -x PWD="/Users/kodairaharyu/42tokyo/minishell/tests/testcase"
+> declare -x SECURITYSESSIONID="186b2"
+> declare -x SHELL="/bin/zsh"
+> declare -x SHLVL="4"
+> declare -x SSH_AUTH_SOCK="/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners"
+> declare -x TERM="xterm-256color"
+> declare -x TERMINAL_EMULATOR="JetBrains-JediTerm"
+> declare -x TERM_SESSION_ID="fa17cae7-55ee-4805-8cea-103ec616213b"
+> declare -x TMPDIR="/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/"
+> declare -x USER="kodairaharyu"
+> declare -x XPC_FLAGS="0x0"
+> declare -x XPC_SERVICE_NAME="0"
+> declare -x ZPFX="/Users/kodairaharyu/.local/share/zinit/polaris"
+> declare -x ZSH_CACHE_DIR="/Users/kodairaharyu/.cache/zinit"
+> declare -x _="/bin/bash"
+> declare -x _P9K_TTY="/dev/ttys006"
+> declare -x __CFBundleIdentifier="com.jetbrains.CLion"
+> declare -x __CF_USER_TEXT_ENCODING="0x1F5:0x1:0xE"
+> declare -x COMMAND_MODE="unix2003"
+> declare -x DISPLAY="/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0"
+> declare -x HOME="/Users/kodairaharyu"
+> declare -x HOMEBREW_CELLAR="/opt/homebrew/Cellar"
+> declare -x HOMEBREW_PREFIX="/opt/homebrew"
+> declare -x HOMEBREW_REPOSITORY="/opt/homebrew"
+> declare -x INFOPATH="/opt/homebrew/share/info:"
+> declare -x LC_CTYPE="ja_JP.UTF-8"
+> declare -x LOGIN_SHELL="1"
+> declare -x LOGNAME="kodairaharyu"
+> declare -x LSCOLORS="cxfxcxdxbxegedabagacad"
+> declare -x LaunchInstanceID="C53264DD-9120-49EE-847C-ACCAFD5AE5C2"
+> declare -x MAKEFLAGS=""
+> declare -x MAKELEVEL="1"
+> declare -x MANPATH="/opt/homebrew/share/man::"
+> declare -x MFLAGS=""
+> declare -x OLDPWD
+> declare -x P9K_SSH="0"
+> declare -x P9K_TTY="old"
+> declare -x PATH="/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+> declare -x PMSPEC="0uUpiPsf"
+> declare -x PWD="/Users/kodairaharyu/42tokyo/minishell/tests/testcase"
+> declare -x SECURITYSESSIONID="186b2"
+> declare -x SHELL="/bin/zsh"
+> declare -x SHLVL="4"
+> declare -x SSH_AUTH_SOCK="/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners"
+> declare -x TERM="xterm-256color"
+> declare -x TERMINAL_EMULATOR="JetBrains-JediTerm"
+> declare -x TERM_SESSION_ID="fa17cae7-55ee-4805-8cea-103ec616213b"
+> declare -x TMPDIR="/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/"
+> declare -x USER="kodairaharyu"
+> declare -x XPC_FLAGS="0x0"
+> declare -x XPC_SERVICE_NAME="0"
+> declare -x ZPFX="/Users/kodairaharyu/.local/share/zinit/polaris"
+> declare -x ZSH_CACHE_DIR="/Users/kodairaharyu/.cache/zinit"
+> declare -x _P9K_TTY="/dev/ttys006"
+> declare -x __CFBundleIdentifier="com.jetbrains.CLion"
+> declare -x __CF_USER_TEXT_ENCODING="0x1F5:0x1:0xE"
+> hello
+> ls ls ls
+> ls ls ls
+> $a $b $c
+> $a ls $c
+> 'ls' ls 'ls'
+> "ls "$b" ls"
+> /bin/ls
+> /bin/ls
+11,15c88,93
+< 
+< 
+< 
+< $
+< $
+---
+> NO
+> NO
+> aa
+> aa$
+> aaa$
+> aaaaa
+17,19c95,96
+< 
+< 
+< 
+---
+> aa
+> aaaaaa
+3,13d2
+< a
+< 
+< cat << a
+< a
+< 
+< cat << a
+< *
+< a
+< 
+< cat << "*"
+< a
+15,16d3
+< 
+< cat << "|"
+18,22d4
+< |
+< 
+< cat NOSUCHFILE << a
+< b
+< c
+24,26d5
+< 
+< echo hello << hello
+< hello world
+28,30c7,10
+< 
+< echo hello << hello world
+< 42tokyo
+---
+> hello world
+> hello world world
+> a b c e f
+> HELLO
+32,34d11
+< 
+< echo hello world << hello world
+< 42tokyo
+36,63d12
+< 
+< echo a b c << d e f
+< d e f
+< e f
+< f
+< d
+< 
+< echo HELLO << EOS << EOS2
+< EOS
+< EOS2
+< 
+< echo hello <<a<<b<<c<<d<<e
+< a
+< b
+< c
+< d
+< e
+< 
+< echo hello <<a<<b<<c<<d<<e
+< a
+< b
+< c
+< d
+< d
+< echo HELLO WORLD a<<b<<c<<d<<e<<f<<g<<h<<i<<j<<k<<l<<m<<n<<o<<p<<q<<r
+< echo HELLO WORLD <<a<<b<<c<<d<<e<<f<<g<<h<<i<<j<<k<<l<<m<<n<<o<<p<<q<<r<<s<<t<<u<<v<<w<<x<<y<<z<<a<<b<<c<<d<<e<<f<<g<<h<<i<<j<<k<<l<<m<<n<<o<<p<<q<<r<<s<<t<<u<<v<<w<<x<<y<<z
+< 
+< echo hello <<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a
+37,39c37,39
+< 
+< '$a'
+< ""
+---
+> hello
+> $a
+> hello
+45c45
+< 127
+---
+> 0
+47a48
+> world
+53a55
+> 0
+0a1
+> actual
+17a19
+> actual
+34a37
+> actual
+51a55
+> actual
+6,9d5
+< hello
+< hello
+< hello
+< hello
+19,26d14
+< ------------------------------
+< hello
+< hello
+< hello
+< hello
+< hello
+< hello
+< hello
+37,44d24
+< ------------------------------
+< hello
+< hello
+< hello
+< hello
+< hello
+< hello
+< hello
+47,52c27,28
+< hello
+< hello
+< hello
+< hello
+< hello
+< hello
+---
+> ------------------------------
+> ------------------------------
+0a1
+> actual
+18a20
+> actual
+36a39
+> actual
+0a1,21
+> actual
+> aliasflie
+> cd.test
+> diff.sh
+> diff_file
+> echo.test
+> env.test
+> exit.test
+> expected
+> export.test
+> heredoc.test
+> ng
+> ok
+> parser.test
+> path.test
+> permission.test
+> pipe.test
+> postscript.test
+> pwd.test
+> redirect.test
+> sample
+2a3,5
+> /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+3a7
+> /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+0a1,6
+> hello world
+> hello world
+> hello
+> hello
+> hello
+> hello
+1,17c1,20
+< aliasflie
+< cd.test
+< diff.sh
+< diff_file
+< echo.test
+< env.test
+< exit.test
+< expected
+< export.test
+< heredoc.test
+< parser.test
+< path.test
+< permission.test
+< pipe.test
+< postscript.test
+< pwd.test
+< redirect.test
+---
+> 42tokyo
+> Applications
+> Creative Cloud Files
+> Creative Cloud Files 414592564814zz@gmail.com f47792976ce1dff6c0dd0aa9ebac9ce56723fbceb80bfc5a6a741554351c07ff
+> Desktop
+> Documents
+> Downloads
+> Google Drive
+> Library
+> MemoBook
+> Movies
+> Music
+> Pictures
+> Public
+> dotfiles
+> ex00
+> go
+> id_rsa.pub
+> install.sh
+> powerlevel10k
+19,27c22,30
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+---
+> /
+> //
+> /
+> /
+> /
+> /
+> /
+> /
+> /
+1,3c1
+< -nn
+< -nn hello
+< -n -n -n -n -n
+---
+> hello
+11,22c9,21
+< 
+< ""
+< '$L'
+< 'ls'
+< "ls"
+<  hello
+<   hello
+<  hello
+< $ hello
+< '$N' hello
+<  hello  world
+<  hello  world
+---
+> ls
+> ls
+> $L
+> ls
+> ls
+> hellohello-n-n hello
+> 75200N hello
+> $N hello
+> hello -n worldhello -nn worldactual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
+> actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
+> actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
+> actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
+> actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sampleactual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample -n actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample*
+24,28d22
+< **
+< * * *
+< *******
+< **** -n *"*"
+< '*'
+30,31c24,25
+< .*
+< *.c .*
+---
+> . ..
+> *.c . ..
+34,39c28,35
+< 
+< ""
+< '$wildcard'
+< "/bin/ls"
+< '/bin/ls'
+< " a " "" b "  "
+---
+> actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
+> *
+> $wildcard
+> /bin/ls
+> /bin/ls
+> /bin/ls
+> /bin/ls
+>  a   b   
+0a1,149
+> COMMAND_MODE=unix2003
+> DISPLAY=/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0
+> HOME=/Users/kodairaharyu
+> HOMEBREW_CELLAR=/opt/homebrew/Cellar
+> HOMEBREW_PREFIX=/opt/homebrew
+> HOMEBREW_REPOSITORY=/opt/homebrew
+> INFOPATH=/opt/homebrew/share/info:
+> LC_CTYPE=ja_JP.UTF-8
+> LOGIN_SHELL=1
+> LOGNAME=kodairaharyu
+> LSCOLORS=cxfxcxdxbxegedabagacad
+> LaunchInstanceID=C53264DD-9120-49EE-847C-ACCAFD5AE5C2
+> MAKEFLAGS=
+> MAKELEVEL=1
+> MANPATH=/opt/homebrew/share/man::
+> MFLAGS=
+> P9K_SSH=0
+> P9K_TTY=old
+> PATH=/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+> PMSPEC=0uUpiPsf
+> PWD=/Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> SECURITYSESSIONID=186b2
+> SHELL=/bin/zsh
+> SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners
+> TERM=xterm-256color
+> TERMINAL_EMULATOR=JetBrains-JediTerm
+> TERM_SESSION_ID=fa17cae7-55ee-4805-8cea-103ec616213b
+> TMPDIR=/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/
+> USER=kodairaharyu
+> XPC_FLAGS=0x0
+> XPC_SERVICE_NAME=0
+> ZPFX=/Users/kodairaharyu/.local/share/zinit/polaris
+> ZSH_CACHE_DIR=/Users/kodairaharyu/.cache/zinit
+> _=/usr/bin/env
+> _P9K_TTY=/dev/ttys006
+> __CFBundleIdentifier=com.jetbrains.CLion
+> __CF_USER_TEXT_ENCODING=0x1F5:0x1:0xE
+> COMMAND_MODE=unix2003
+> DISPLAY=/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0
+> HOME=/Users/kodairaharyu
+> HOMEBREW_CELLAR=/opt/homebrew/Cellar
+> HOMEBREW_PREFIX=/opt/homebrew
+> HOMEBREW_REPOSITORY=/opt/homebrew
+> INFOPATH=/opt/homebrew/share/info:
+> LC_CTYPE=ja_JP.UTF-8
+> LOGIN_SHELL=1
+> LOGNAME=kodairaharyu
+> LSCOLORS=cxfxcxdxbxegedabagacad
+> LaunchInstanceID=C53264DD-9120-49EE-847C-ACCAFD5AE5C2
+> MAKEFLAGS=
+> MAKELEVEL=1
+> MANPATH=/opt/homebrew/share/man::
+> MFLAGS=
+> P9K_SSH=0
+> P9K_TTY=old
+> PATH=/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+> PMSPEC=0uUpiPsf
+> PWD=/Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> SECURITYSESSIONID=186b2
+> SHELL=/bin/zsh
+> SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners
+> TERM=xterm-256color
+> TERMINAL_EMULATOR=JetBrains-JediTerm
+> TERM_SESSION_ID=fa17cae7-55ee-4805-8cea-103ec616213b
+> TMPDIR=/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/
+> USER=kodairaharyu
+> XPC_FLAGS=0x0
+> XPC_SERVICE_NAME=0
+> ZPFX=/Users/kodairaharyu/.local/share/zinit/polaris
+> ZSH_CACHE_DIR=/Users/kodairaharyu/.cache/zinit
+> _=/usr/bin/env
+> _P9K_TTY=/dev/ttys006
+> __CFBundleIdentifier=com.jetbrains.CLion
+> __CF_USER_TEXT_ENCODING=0x1F5:0x1:0xE
+> a=xxxxxxxx
+> COMMAND_MODE=unix2003
+> DISPLAY=/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0
+> HOME=/Users/kodairaharyu
+> HOMEBREW_CELLAR=/opt/homebrew/Cellar
+> HOMEBREW_PREFIX=/opt/homebrew
+> HOMEBREW_REPOSITORY=/opt/homebrew
+> INFOPATH=/opt/homebrew/share/info:
+> LC_CTYPE=ja_JP.UTF-8
+> LOGIN_SHELL=1
+> LOGNAME=kodairaharyu
+> LSCOLORS=cxfxcxdxbxegedabagacad
+> LaunchInstanceID=C53264DD-9120-49EE-847C-ACCAFD5AE5C2
+> MAKEFLAGS=
+> MAKELEVEL=1
+> MANPATH=/opt/homebrew/share/man::
+> MFLAGS=
+> P9K_SSH=0
+> P9K_TTY=old
+> PATH=/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+> PMSPEC=0uUpiPsf
+> PWD=/Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> SECURITYSESSIONID=186b2
+> SHELL=/bin/zsh
+> SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners
+> TERM=xterm-256color
+> TERMINAL_EMULATOR=JetBrains-JediTerm
+> TERM_SESSION_ID=fa17cae7-55ee-4805-8cea-103ec616213b
+> TMPDIR=/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/
+> USER=kodairaharyu
+> XPC_FLAGS=0x0
+> XPC_SERVICE_NAME=0
+> ZPFX=/Users/kodairaharyu/.local/share/zinit/polaris
+> ZSH_CACHE_DIR=/Users/kodairaharyu/.cache/zinit
+> _=/usr/bin/env
+> _P9K_TTY=/dev/ttys006
+> __CFBundleIdentifier=com.jetbrains.CLion
+> __CF_USER_TEXT_ENCODING=0x1F5:0x1:0xE
+> COMMAND_MODE=unix2003
+> DISPLAY=/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0
+> HOME=/Users/kodairaharyu
+> HOMEBREW_CELLAR=/opt/homebrew/Cellar
+> HOMEBREW_PREFIX=/opt/homebrew
+> HOMEBREW_REPOSITORY=/opt/homebrew
+> INFOPATH=/opt/homebrew/share/info:
+> LC_CTYPE=ja_JP.UTF-8
+> LOGIN_SHELL=1
+> LOGNAME=kodairaharyu
+> LSCOLORS=cxfxcxdxbxegedabagacad
+> LaunchInstanceID=C53264DD-9120-49EE-847C-ACCAFD5AE5C2
+> MAKEFLAGS=
+> MAKELEVEL=1
+> MANPATH=/opt/homebrew/share/man::
+> MFLAGS=
+> P9K_SSH=0
+> P9K_TTY=old
+> PATH=/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+> PMSPEC=0uUpiPsf
+> PWD=/Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> SECURITYSESSIONID=186b2
+> SHELL=/bin/zsh
+> SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners
+> TERM=xterm-256color
+> TERMINAL_EMULATOR=JetBrains-JediTerm
+> TERM_SESSION_ID=fa17cae7-55ee-4805-8cea-103ec616213b
+> TMPDIR=/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/
+> USER=kodairaharyu
+> XPC_FLAGS=0x0
+> XPC_SERVICE_NAME=0
+> ZPFX=/Users/kodairaharyu/.local/share/zinit/polaris
+> ZSH_CACHE_DIR=/Users/kodairaharyu/.cache/zinit
+> _=/usr/bin/env
+> _P9K_TTY=/dev/ttys006
+> __CFBundleIdentifier=com.jetbrains.CLion
+> __CF_USER_TEXT_ENCODING=0x1F5:0x1:0xE
+0a1
+> 0
+1,9c1,86
+< 
+<   
+< "" "" ""
+< '$a' '$b' '$c'
+< '$a' "" '$c'
+< "'' "" ''"
+< '"'' "$b" ''"'
+< 1
+< 2
+---
+> declare -x COMMAND_MODE="unix2003"
+> declare -x DISPLAY="/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0"
+> declare -x HOME="/Users/kodairaharyu"
+> declare -x HOMEBREW_CELLAR="/opt/homebrew/Cellar"
+> declare -x HOMEBREW_PREFIX="/opt/homebrew"
+> declare -x HOMEBREW_REPOSITORY="/opt/homebrew"
+> declare -x INFOPATH="/opt/homebrew/share/info:"
+> declare -x LC_CTYPE="ja_JP.UTF-8"
+> declare -x LOGIN_SHELL="1"
+> declare -x LOGNAME="kodairaharyu"
+> declare -x LSCOLORS="cxfxcxdxbxegedabagacad"
+> declare -x LaunchInstanceID="C53264DD-9120-49EE-847C-ACCAFD5AE5C2"
+> declare -x MAKEFLAGS=""
+> declare -x MAKELEVEL="1"
+> declare -x MANPATH="/opt/homebrew/share/man::"
+> declare -x MFLAGS=""
+> declare -x OLDPWD
+> declare -x P9K_SSH="0"
+> declare -x P9K_TTY="old"
+> declare -x PATH="/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+> declare -x PMSPEC="0uUpiPsf"
+> declare -x PWD="/Users/kodairaharyu/42tokyo/minishell/tests/testcase"
+> declare -x SECURITYSESSIONID="186b2"
+> declare -x SHELL="/bin/zsh"
+> declare -x SHLVL="4"
+> declare -x SSH_AUTH_SOCK="/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners"
+> declare -x TERM="xterm-256color"
+> declare -x TERMINAL_EMULATOR="JetBrains-JediTerm"
+> declare -x TERM_SESSION_ID="fa17cae7-55ee-4805-8cea-103ec616213b"
+> declare -x TMPDIR="/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/"
+> declare -x USER="kodairaharyu"
+> declare -x XPC_FLAGS="0x0"
+> declare -x XPC_SERVICE_NAME="0"
+> declare -x ZPFX="/Users/kodairaharyu/.local/share/zinit/polaris"
+> declare -x ZSH_CACHE_DIR="/Users/kodairaharyu/.cache/zinit"
+> declare -x _="/bin/bash"
+> declare -x _P9K_TTY="/dev/ttys006"
+> declare -x __CFBundleIdentifier="com.jetbrains.CLion"
+> declare -x __CF_USER_TEXT_ENCODING="0x1F5:0x1:0xE"
+> declare -x COMMAND_MODE="unix2003"
+> declare -x DISPLAY="/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0"
+> declare -x HOME="/Users/kodairaharyu"
+> declare -x HOMEBREW_CELLAR="/opt/homebrew/Cellar"
+> declare -x HOMEBREW_PREFIX="/opt/homebrew"
+> declare -x HOMEBREW_REPOSITORY="/opt/homebrew"
+> declare -x INFOPATH="/opt/homebrew/share/info:"
+> declare -x LC_CTYPE="ja_JP.UTF-8"
+> declare -x LOGIN_SHELL="1"
+> declare -x LOGNAME="kodairaharyu"
+> declare -x LSCOLORS="cxfxcxdxbxegedabagacad"
+> declare -x LaunchInstanceID="C53264DD-9120-49EE-847C-ACCAFD5AE5C2"
+> declare -x MAKEFLAGS=""
+> declare -x MAKELEVEL="1"
+> declare -x MANPATH="/opt/homebrew/share/man::"
+> declare -x MFLAGS=""
+> declare -x OLDPWD
+> declare -x P9K_SSH="0"
+> declare -x P9K_TTY="old"
+> declare -x PATH="/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+> declare -x PMSPEC="0uUpiPsf"
+> declare -x PWD="/Users/kodairaharyu/42tokyo/minishell/tests/testcase"
+> declare -x SECURITYSESSIONID="186b2"
+> declare -x SHELL="/bin/zsh"
+> declare -x SHLVL="4"
+> declare -x SSH_AUTH_SOCK="/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners"
+> declare -x TERM="xterm-256color"
+> declare -x TERMINAL_EMULATOR="JetBrains-JediTerm"
+> declare -x TERM_SESSION_ID="fa17cae7-55ee-4805-8cea-103ec616213b"
+> declare -x TMPDIR="/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/"
+> declare -x USER="kodairaharyu"
+> declare -x XPC_FLAGS="0x0"
+> declare -x XPC_SERVICE_NAME="0"
+> declare -x ZPFX="/Users/kodairaharyu/.local/share/zinit/polaris"
+> declare -x ZSH_CACHE_DIR="/Users/kodairaharyu/.cache/zinit"
+> declare -x _P9K_TTY="/dev/ttys006"
+> declare -x __CFBundleIdentifier="com.jetbrains.CLion"
+> declare -x __CF_USER_TEXT_ENCODING="0x1F5:0x1:0xE"
+> hello
+> ls ls ls
+> ls ls ls
+> $a $b $c
+> $a ls $c
+> 'ls' ls 'ls'
+> "ls "$b" ls"
+> /bin/ls
+> /bin/ls
+11,15c88,93
+< 
+< 
+< 
+< $
+< $
+---
+> NO
+> NO
+> aa
+> aa$
+> aaa$
+> aaaaa
+17,19c95,96
+< 
+< 
+< 
+---
+> aa
+> aaaaaa
+3,13d2
+< a
+< 
+< cat << a
+< a
+< 
+< cat << a
+< *
+< a
+< 
+< cat << "*"
+< a
+15,16d3
+< 
+< cat << "|"
+18,22d4
+< |
+< 
+< cat NOSUCHFILE << a
+< b
+< c
+24,26d5
+< 
+< echo hello << hello
+< hello world
+28,30c7,10
+< 
+< echo hello << hello world
+< 42tokyo
+---
+> hello world
+> hello world world
+> a b c e f
+> HELLO
+32,34d11
+< 
+< echo hello world << hello world
+< 42tokyo
+36,63d12
+< 
+< echo a b c << d e f
+< d e f
+< e f
+< f
+< d
+< 
+< echo HELLO << EOS << EOS2
+< EOS
+< EOS2
+< 
+< echo hello <<a<<b<<c<<d<<e
+< a
+< b
+< c
+< d
+< e
+< 
+< echo hello <<a<<b<<c<<d<<e
+< a
+< b
+< c
+< d
+< d
+< echo HELLO WORLD a<<b<<c<<d<<e<<f<<g<<h<<i<<j<<k<<l<<m<<n<<o<<p<<q<<r
+< echo HELLO WORLD <<a<<b<<c<<d<<e<<f<<g<<h<<i<<j<<k<<l<<m<<n<<o<<p<<q<<r<<s<<t<<u<<v<<w<<x<<y<<z<<a<<b<<c<<d<<e<<f<<g<<h<<i<<j<<k<<l<<m<<n<<o<<p<<q<<r<<s<<t<<u<<v<<w<<x<<y<<z
+< 
+< echo hello <<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a
+37,39c37,39
+< 
+< '$a'
+< ""
+---
+> hello
+> $a
+> hello
+45c45
+< 127
+---
+> 0
+47a48
+> world
+53a55
+> 0
+0a1
+> actual
+18a20
+> actual
+36a39
+> actual
+54a58
+> actual
+6,9d5
+< hello
+< hello
+< hello
+< hello
+19,26d14
+< ------------------------------
+< hello
+< hello
+< hello
+< hello
+< hello
+< hello
+< hello
+37,44d24
+< ------------------------------
+< hello
+< hello
+< hello
+< hello
+< hello
+< hello
+< hello
+47,52c27,28
+< hello
+< hello
+< hello
+< hello
+< hello
+< hello
+---
+> ------------------------------
+> ------------------------------
+0a1
+> actual
+18a20
+> actual
+36a39
+> actual
+0a1,21
+> actual
+> aliasflie
+> cd.test
+> diff.sh
+> diff_file
+> echo.test
+> env.test
+> exit.test
+> expected
+> export.test
+> heredoc.test
+> ng
+> ok
+> parser.test
+> path.test
+> permission.test
+> pipe.test
+> postscript.test
+> pwd.test
+> redirect.test
+> sample
+2a3,5
+> /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+3a7
+> /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+0a1,6
+> hello world
+> hello world
+> hello
+> hello
+> hello
+> hello
+1,17c1,20
+< aliasflie
+< cd.test
+< diff.sh
+< diff_file
+< echo.test
+< env.test
+< exit.test
+< expected
+< export.test
+< heredoc.test
+< parser.test
+< path.test
+< permission.test
+< pipe.test
+< postscript.test
+< pwd.test
+< redirect.test
+---
+> 42tokyo
+> Applications
+> Creative Cloud Files
+> Creative Cloud Files 414592564814zz@gmail.com f47792976ce1dff6c0dd0aa9ebac9ce56723fbceb80bfc5a6a741554351c07ff
+> Desktop
+> Documents
+> Downloads
+> Google Drive
+> Library
+> MemoBook
+> Movies
+> Music
+> Pictures
+> Public
+> dotfiles
+> ex00
+> go
+> id_rsa.pub
+> install.sh
+> powerlevel10k
+19,27c22,30
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+---
+> /
+> //
+> /
+> /
+> /
+> /
+> /
+> /
+> /
+1,3c1
+< -nn
+< -nn hello
+< -n -n -n -n -n
+---
+> hello
+11,22c9,21
+< 
+< ""
+< '$L'
+< 'ls'
+< "ls"
+<  hello
+<   hello
+<  hello
+< $ hello
+< '$N' hello
+<  hello  world
+<  hello  world
+---
+> ls
+> ls
+> $L
+> ls
+> ls
+> hellohello-n-n hello
+> 76969N hello
+> $N hello
+> hello -n worldhello -nn worldactual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
+> actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
+> actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
+> actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
+> actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sampleactual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample -n actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample*
+24,28d22
+< **
+< * * *
+< *******
+< **** -n *"*"
+< '*'
+30,31c24,25
+< .*
+< *.c .*
+---
+> . ..
+> *.c . ..
+34,39c28,35
+< 
+< ""
+< '$wildcard'
+< "/bin/ls"
+< '/bin/ls'
+< " a " "" b "  "
+---
+> actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
+> *
+> $wildcard
+> /bin/ls
+> /bin/ls
+> /bin/ls
+> /bin/ls
+>  a   b   
+0a1,149
+> COMMAND_MODE=unix2003
+> DISPLAY=/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0
+> HOME=/Users/kodairaharyu
+> HOMEBREW_CELLAR=/opt/homebrew/Cellar
+> HOMEBREW_PREFIX=/opt/homebrew
+> HOMEBREW_REPOSITORY=/opt/homebrew
+> INFOPATH=/opt/homebrew/share/info:
+> LC_CTYPE=ja_JP.UTF-8
+> LOGIN_SHELL=1
+> LOGNAME=kodairaharyu
+> LSCOLORS=cxfxcxdxbxegedabagacad
+> LaunchInstanceID=C53264DD-9120-49EE-847C-ACCAFD5AE5C2
+> MAKEFLAGS=
+> MAKELEVEL=1
+> MANPATH=/opt/homebrew/share/man::
+> MFLAGS=
+> P9K_SSH=0
+> P9K_TTY=old
+> PATH=/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+> PMSPEC=0uUpiPsf
+> PWD=/Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> SECURITYSESSIONID=186b2
+> SHELL=/bin/zsh
+> SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners
+> TERM=xterm-256color
+> TERMINAL_EMULATOR=JetBrains-JediTerm
+> TERM_SESSION_ID=fa17cae7-55ee-4805-8cea-103ec616213b
+> TMPDIR=/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/
+> USER=kodairaharyu
+> XPC_FLAGS=0x0
+> XPC_SERVICE_NAME=0
+> ZPFX=/Users/kodairaharyu/.local/share/zinit/polaris
+> ZSH_CACHE_DIR=/Users/kodairaharyu/.cache/zinit
+> _=/usr/bin/env
+> _P9K_TTY=/dev/ttys006
+> __CFBundleIdentifier=com.jetbrains.CLion
+> __CF_USER_TEXT_ENCODING=0x1F5:0x1:0xE
+> COMMAND_MODE=unix2003
+> DISPLAY=/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0
+> HOME=/Users/kodairaharyu
+> HOMEBREW_CELLAR=/opt/homebrew/Cellar
+> HOMEBREW_PREFIX=/opt/homebrew
+> HOMEBREW_REPOSITORY=/opt/homebrew
+> INFOPATH=/opt/homebrew/share/info:
+> LC_CTYPE=ja_JP.UTF-8
+> LOGIN_SHELL=1
+> LOGNAME=kodairaharyu
+> LSCOLORS=cxfxcxdxbxegedabagacad
+> LaunchInstanceID=C53264DD-9120-49EE-847C-ACCAFD5AE5C2
+> MAKEFLAGS=
+> MAKELEVEL=1
+> MANPATH=/opt/homebrew/share/man::
+> MFLAGS=
+> P9K_SSH=0
+> P9K_TTY=old
+> PATH=/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+> PMSPEC=0uUpiPsf
+> PWD=/Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> SECURITYSESSIONID=186b2
+> SHELL=/bin/zsh
+> SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners
+> TERM=xterm-256color
+> TERMINAL_EMULATOR=JetBrains-JediTerm
+> TERM_SESSION_ID=fa17cae7-55ee-4805-8cea-103ec616213b
+> TMPDIR=/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/
+> USER=kodairaharyu
+> XPC_FLAGS=0x0
+> XPC_SERVICE_NAME=0
+> ZPFX=/Users/kodairaharyu/.local/share/zinit/polaris
+> ZSH_CACHE_DIR=/Users/kodairaharyu/.cache/zinit
+> _=/usr/bin/env
+> _P9K_TTY=/dev/ttys006
+> __CFBundleIdentifier=com.jetbrains.CLion
+> __CF_USER_TEXT_ENCODING=0x1F5:0x1:0xE
+> a=xxxxxxxx
+> COMMAND_MODE=unix2003
+> DISPLAY=/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0
+> HOME=/Users/kodairaharyu
+> HOMEBREW_CELLAR=/opt/homebrew/Cellar
+> HOMEBREW_PREFIX=/opt/homebrew
+> HOMEBREW_REPOSITORY=/opt/homebrew
+> INFOPATH=/opt/homebrew/share/info:
+> LC_CTYPE=ja_JP.UTF-8
+> LOGIN_SHELL=1
+> LOGNAME=kodairaharyu
+> LSCOLORS=cxfxcxdxbxegedabagacad
+> LaunchInstanceID=C53264DD-9120-49EE-847C-ACCAFD5AE5C2
+> MAKEFLAGS=
+> MAKELEVEL=1
+> MANPATH=/opt/homebrew/share/man::
+> MFLAGS=
+> P9K_SSH=0
+> P9K_TTY=old
+> PATH=/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+> PMSPEC=0uUpiPsf
+> PWD=/Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> SECURITYSESSIONID=186b2
+> SHELL=/bin/zsh
+> SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners
+> TERM=xterm-256color
+> TERMINAL_EMULATOR=JetBrains-JediTerm
+> TERM_SESSION_ID=fa17cae7-55ee-4805-8cea-103ec616213b
+> TMPDIR=/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/
+> USER=kodairaharyu
+> XPC_FLAGS=0x0
+> XPC_SERVICE_NAME=0
+> ZPFX=/Users/kodairaharyu/.local/share/zinit/polaris
+> ZSH_CACHE_DIR=/Users/kodairaharyu/.cache/zinit
+> _=/usr/bin/env
+> _P9K_TTY=/dev/ttys006
+> __CFBundleIdentifier=com.jetbrains.CLion
+> __CF_USER_TEXT_ENCODING=0x1F5:0x1:0xE
+> COMMAND_MODE=unix2003
+> DISPLAY=/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0
+> HOME=/Users/kodairaharyu
+> HOMEBREW_CELLAR=/opt/homebrew/Cellar
+> HOMEBREW_PREFIX=/opt/homebrew
+> HOMEBREW_REPOSITORY=/opt/homebrew
+> INFOPATH=/opt/homebrew/share/info:
+> LC_CTYPE=ja_JP.UTF-8
+> LOGIN_SHELL=1
+> LOGNAME=kodairaharyu
+> LSCOLORS=cxfxcxdxbxegedabagacad
+> LaunchInstanceID=C53264DD-9120-49EE-847C-ACCAFD5AE5C2
+> MAKEFLAGS=
+> MAKELEVEL=1
+> MANPATH=/opt/homebrew/share/man::
+> MFLAGS=
+> P9K_SSH=0
+> P9K_TTY=old
+> PATH=/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+> PMSPEC=0uUpiPsf
+> PWD=/Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> SECURITYSESSIONID=186b2
+> SHELL=/bin/zsh
+> SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners
+> TERM=xterm-256color
+> TERMINAL_EMULATOR=JetBrains-JediTerm
+> TERM_SESSION_ID=fa17cae7-55ee-4805-8cea-103ec616213b
+> TMPDIR=/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/
+> USER=kodairaharyu
+> XPC_FLAGS=0x0
+> XPC_SERVICE_NAME=0
+> ZPFX=/Users/kodairaharyu/.local/share/zinit/polaris
+> ZSH_CACHE_DIR=/Users/kodairaharyu/.cache/zinit
+> _=/usr/bin/env
+> _P9K_TTY=/dev/ttys006
+> __CFBundleIdentifier=com.jetbrains.CLion
+> __CF_USER_TEXT_ENCODING=0x1F5:0x1:0xE
+0a1
+> 0
+1,9c1,86
+< 
+<   
+< "" "" ""
+< '$a' '$b' '$c'
+< '$a' "" '$c'
+< "'' "" ''"
+< '"'' "$b" ''"'
+< 1
+< 2
+---
+> declare -x COMMAND_MODE="unix2003"
+> declare -x DISPLAY="/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0"
+> declare -x HOME="/Users/kodairaharyu"
+> declare -x HOMEBREW_CELLAR="/opt/homebrew/Cellar"
+> declare -x HOMEBREW_PREFIX="/opt/homebrew"
+> declare -x HOMEBREW_REPOSITORY="/opt/homebrew"
+> declare -x INFOPATH="/opt/homebrew/share/info:"
+> declare -x LC_CTYPE="ja_JP.UTF-8"
+> declare -x LOGIN_SHELL="1"
+> declare -x LOGNAME="kodairaharyu"
+> declare -x LSCOLORS="cxfxcxdxbxegedabagacad"
+> declare -x LaunchInstanceID="C53264DD-9120-49EE-847C-ACCAFD5AE5C2"
+> declare -x MAKEFLAGS=""
+> declare -x MAKELEVEL="1"
+> declare -x MANPATH="/opt/homebrew/share/man::"
+> declare -x MFLAGS=""
+> declare -x OLDPWD
+> declare -x P9K_SSH="0"
+> declare -x P9K_TTY="old"
+> declare -x PATH="/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+> declare -x PMSPEC="0uUpiPsf"
+> declare -x PWD="/Users/kodairaharyu/42tokyo/minishell/tests/testcase"
+> declare -x SECURITYSESSIONID="186b2"
+> declare -x SHELL="/bin/zsh"
+> declare -x SHLVL="4"
+> declare -x SSH_AUTH_SOCK="/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners"
+> declare -x TERM="xterm-256color"
+> declare -x TERMINAL_EMULATOR="JetBrains-JediTerm"
+> declare -x TERM_SESSION_ID="fa17cae7-55ee-4805-8cea-103ec616213b"
+> declare -x TMPDIR="/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/"
+> declare -x USER="kodairaharyu"
+> declare -x XPC_FLAGS="0x0"
+> declare -x XPC_SERVICE_NAME="0"
+> declare -x ZPFX="/Users/kodairaharyu/.local/share/zinit/polaris"
+> declare -x ZSH_CACHE_DIR="/Users/kodairaharyu/.cache/zinit"
+> declare -x _="/bin/bash"
+> declare -x _P9K_TTY="/dev/ttys006"
+> declare -x __CFBundleIdentifier="com.jetbrains.CLion"
+> declare -x __CF_USER_TEXT_ENCODING="0x1F5:0x1:0xE"
+> declare -x COMMAND_MODE="unix2003"
+> declare -x DISPLAY="/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0"
+> declare -x HOME="/Users/kodairaharyu"
+> declare -x HOMEBREW_CELLAR="/opt/homebrew/Cellar"
+> declare -x HOMEBREW_PREFIX="/opt/homebrew"
+> declare -x HOMEBREW_REPOSITORY="/opt/homebrew"
+> declare -x INFOPATH="/opt/homebrew/share/info:"
+> declare -x LC_CTYPE="ja_JP.UTF-8"
+> declare -x LOGIN_SHELL="1"
+> declare -x LOGNAME="kodairaharyu"
+> declare -x LSCOLORS="cxfxcxdxbxegedabagacad"
+> declare -x LaunchInstanceID="C53264DD-9120-49EE-847C-ACCAFD5AE5C2"
+> declare -x MAKEFLAGS=""
+> declare -x MAKELEVEL="1"
+> declare -x MANPATH="/opt/homebrew/share/man::"
+> declare -x MFLAGS=""
+> declare -x OLDPWD
+> declare -x P9K_SSH="0"
+> declare -x P9K_TTY="old"
+> declare -x PATH="/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+> declare -x PMSPEC="0uUpiPsf"
+> declare -x PWD="/Users/kodairaharyu/42tokyo/minishell/tests/testcase"
+> declare -x SECURITYSESSIONID="186b2"
+> declare -x SHELL="/bin/zsh"
+> declare -x SHLVL="4"
+> declare -x SSH_AUTH_SOCK="/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners"
+> declare -x TERM="xterm-256color"
+> declare -x TERMINAL_EMULATOR="JetBrains-JediTerm"
+> declare -x TERM_SESSION_ID="fa17cae7-55ee-4805-8cea-103ec616213b"
+> declare -x TMPDIR="/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/"
+> declare -x USER="kodairaharyu"
+> declare -x XPC_FLAGS="0x0"
+> declare -x XPC_SERVICE_NAME="0"
+> declare -x ZPFX="/Users/kodairaharyu/.local/share/zinit/polaris"
+> declare -x ZSH_CACHE_DIR="/Users/kodairaharyu/.cache/zinit"
+> declare -x _P9K_TTY="/dev/ttys006"
+> declare -x __CFBundleIdentifier="com.jetbrains.CLion"
+> declare -x __CF_USER_TEXT_ENCODING="0x1F5:0x1:0xE"
+> hello
+> ls ls ls
+> ls ls ls
+> $a $b $c
+> $a ls $c
+> 'ls' ls 'ls'
+> "ls "$b" ls"
+> /bin/ls
+> /bin/ls
+11,15c88,93
+< 
+< 
+< 
+< $
+< $
+---
+> NO
+> NO
+> aa
+> aa$
+> aaa$
+> aaaaa
+17,19c95,96
+< 
+< 
+< 
+---
+> aa
+> aaaaaa
+3,13d2
+< a
+< 
+< cat << a
+< a
+< 
+< cat << a
+< *
+< a
+< 
+< cat << "*"
+< a
+15,16d3
+< 
+< cat << "|"
+18,22d4
+< |
+< 
+< cat NOSUCHFILE << a
+< b
+< c
+24,26d5
+< 
+< echo hello << hello
+< hello world
+28,30c7,10
+< 
+< echo hello << hello world
+< 42tokyo
+---
+> hello world
+> hello world world
+> a b c e f
+> HELLO
+32,34d11
+< 
+< echo hello world << hello world
+< 42tokyo
+36,63d12
+< 
+< echo a b c << d e f
+< d e f
+< e f
+< f
+< d
+< 
+< echo HELLO << EOS << EOS2
+< EOS
+< EOS2
+< 
+< echo hello <<a<<b<<c<<d<<e
+< a
+< b
+< c
+< d
+< e
+< 
+< echo hello <<a<<b<<c<<d<<e
+< a
+< b
+< c
+< d
+< d
+< echo HELLO WORLD a<<b<<c<<d<<e<<f<<g<<h<<i<<j<<k<<l<<m<<n<<o<<p<<q<<r
+< echo HELLO WORLD <<a<<b<<c<<d<<e<<f<<g<<h<<i<<j<<k<<l<<m<<n<<o<<p<<q<<r<<s<<t<<u<<v<<w<<x<<y<<z<<a<<b<<c<<d<<e<<f<<g<<h<<i<<j<<k<<l<<m<<n<<o<<p<<q<<r<<s<<t<<u<<v<<w<<x<<y<<z
+< 
+< echo hello <<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a
+37,39c37,39
+< 
+< '$a'
+< ""
+---
+> hello
+> $a
+> hello
+45c45
+< 127
+---
+> 0
+47a48
+> world
+53a55
+> 0
+0a1
+> actual
+18a20
+> actual
+36a39
+> actual
+54a58
+> actual
+6,9d5
+< hello
+< hello
+< hello
+< hello
+19,26d14
+< ------------------------------
+< hello
+< hello
+< hello
+< hello
+< hello
+< hello
+< hello
+37,44d24
+< ------------------------------
+< hello
+< hello
+< hello
+< hello
+< hello
+< hello
+< hello
+47,52c27,28
+< hello
+< hello
+< hello
+< hello
+< hello
+< hello
+---
+> ------------------------------
+> ------------------------------
+0a1
+> actual
+18a20
+> actual
+36a39
+> actual
+0a1,21
+> actual
+> aliasflie
+> cd.test
+> diff.sh
+> diff_file
+> echo.test
+> env.test
+> exit.test
+> expected
+> export.test
+> heredoc.test
+> ng
+> ok
+> parser.test
+> path.test
+> permission.test
+> pipe.test
+> postscript.test
+> pwd.test
+> redirect.test
+> sample
+2a3,5
+> /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+3a7
+> /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+0a1,6
+> hello world
+> hello world
+> hello
+> hello
+> hello
+> hello
+1,17c1,20
+< aliasflie
+< cd.test
+< diff.sh
+< diff_file
+< echo.test
+< env.test
+< exit.test
+< expected
+< export.test
+< heredoc.test
+< parser.test
+< path.test
+< permission.test
+< pipe.test
+< postscript.test
+< pwd.test
+< redirect.test
+---
+> 42tokyo
+> Applications
+> Creative Cloud Files
+> Creative Cloud Files 414592564814zz@gmail.com f47792976ce1dff6c0dd0aa9ebac9ce56723fbceb80bfc5a6a741554351c07ff
+> Desktop
+> Documents
+> Downloads
+> Google Drive
+> Library
+> MemoBook
+> Movies
+> Music
+> Pictures
+> Public
+> dotfiles
+> ex00
+> go
+> id_rsa.pub
+> install.sh
+> powerlevel10k
+19,27c22,30
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+---
+> /
+> //
+> /
+> /
+> /
+> /
+> /
+> /
+> /
+1,3c1
+< -nn
+< -nn hello
+< -n -n -n -n -n
+---
+> hello
+11,22c9,21
+< 
+< ""
+< '$L'
+< 'ls'
+< "ls"
+<  hello
+<   hello
+<  hello
+< $ hello
+< '$N' hello
+<  hello  world
+<  hello  world
+---
+> ls
+> ls
+> $L
+> ls
+> ls
+> hellohello-n-n hello
+> 78675N hello
+> $N hello
+> hello -n worldhello -nn worldactual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
+> actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
+> actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
+> actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
+> actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sampleactual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample -n actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample*
+24,28d22
+< **
+< * * *
+< *******
+< **** -n *"*"
+< '*'
+30,31c24,25
+< .*
+< *.c .*
+---
+> . ..
+> *.c . ..
+34,39c28,35
+< 
+< ""
+< '$wildcard'
+< "/bin/ls"
+< '/bin/ls'
+< " a " "" b "  "
+---
+> actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
+> *
+> $wildcard
+> /bin/ls
+> /bin/ls
+> /bin/ls
+> /bin/ls
+>  a   b   
+0a1,149
+> COMMAND_MODE=unix2003
+> DISPLAY=/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0
+> HOME=/Users/kodairaharyu
+> HOMEBREW_CELLAR=/opt/homebrew/Cellar
+> HOMEBREW_PREFIX=/opt/homebrew
+> HOMEBREW_REPOSITORY=/opt/homebrew
+> INFOPATH=/opt/homebrew/share/info:
+> LC_CTYPE=ja_JP.UTF-8
+> LOGIN_SHELL=1
+> LOGNAME=kodairaharyu
+> LSCOLORS=cxfxcxdxbxegedabagacad
+> LaunchInstanceID=C53264DD-9120-49EE-847C-ACCAFD5AE5C2
+> MAKEFLAGS=
+> MAKELEVEL=1
+> MANPATH=/opt/homebrew/share/man::
+> MFLAGS=
+> P9K_SSH=0
+> P9K_TTY=old
+> PATH=/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+> PMSPEC=0uUpiPsf
+> PWD=/Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> SECURITYSESSIONID=186b2
+> SHELL=/bin/zsh
+> SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners
+> TERM=xterm-256color
+> TERMINAL_EMULATOR=JetBrains-JediTerm
+> TERM_SESSION_ID=fa17cae7-55ee-4805-8cea-103ec616213b
+> TMPDIR=/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/
+> USER=kodairaharyu
+> XPC_FLAGS=0x0
+> XPC_SERVICE_NAME=0
+> ZPFX=/Users/kodairaharyu/.local/share/zinit/polaris
+> ZSH_CACHE_DIR=/Users/kodairaharyu/.cache/zinit
+> _=/usr/bin/env
+> _P9K_TTY=/dev/ttys006
+> __CFBundleIdentifier=com.jetbrains.CLion
+> __CF_USER_TEXT_ENCODING=0x1F5:0x1:0xE
+> COMMAND_MODE=unix2003
+> DISPLAY=/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0
+> HOME=/Users/kodairaharyu
+> HOMEBREW_CELLAR=/opt/homebrew/Cellar
+> HOMEBREW_PREFIX=/opt/homebrew
+> HOMEBREW_REPOSITORY=/opt/homebrew
+> INFOPATH=/opt/homebrew/share/info:
+> LC_CTYPE=ja_JP.UTF-8
+> LOGIN_SHELL=1
+> LOGNAME=kodairaharyu
+> LSCOLORS=cxfxcxdxbxegedabagacad
+> LaunchInstanceID=C53264DD-9120-49EE-847C-ACCAFD5AE5C2
+> MAKEFLAGS=
+> MAKELEVEL=1
+> MANPATH=/opt/homebrew/share/man::
+> MFLAGS=
+> P9K_SSH=0
+> P9K_TTY=old
+> PATH=/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+> PMSPEC=0uUpiPsf
+> PWD=/Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> SECURITYSESSIONID=186b2
+> SHELL=/bin/zsh
+> SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners
+> TERM=xterm-256color
+> TERMINAL_EMULATOR=JetBrains-JediTerm
+> TERM_SESSION_ID=fa17cae7-55ee-4805-8cea-103ec616213b
+> TMPDIR=/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/
+> USER=kodairaharyu
+> XPC_FLAGS=0x0
+> XPC_SERVICE_NAME=0
+> ZPFX=/Users/kodairaharyu/.local/share/zinit/polaris
+> ZSH_CACHE_DIR=/Users/kodairaharyu/.cache/zinit
+> _=/usr/bin/env
+> _P9K_TTY=/dev/ttys006
+> __CFBundleIdentifier=com.jetbrains.CLion
+> __CF_USER_TEXT_ENCODING=0x1F5:0x1:0xE
+> a=xxxxxxxx
+> COMMAND_MODE=unix2003
+> DISPLAY=/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0
+> HOME=/Users/kodairaharyu
+> HOMEBREW_CELLAR=/opt/homebrew/Cellar
+> HOMEBREW_PREFIX=/opt/homebrew
+> HOMEBREW_REPOSITORY=/opt/homebrew
+> INFOPATH=/opt/homebrew/share/info:
+> LC_CTYPE=ja_JP.UTF-8
+> LOGIN_SHELL=1
+> LOGNAME=kodairaharyu
+> LSCOLORS=cxfxcxdxbxegedabagacad
+> LaunchInstanceID=C53264DD-9120-49EE-847C-ACCAFD5AE5C2
+> MAKEFLAGS=
+> MAKELEVEL=1
+> MANPATH=/opt/homebrew/share/man::
+> MFLAGS=
+> P9K_SSH=0
+> P9K_TTY=old
+> PATH=/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+> PMSPEC=0uUpiPsf
+> PWD=/Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> SECURITYSESSIONID=186b2
+> SHELL=/bin/zsh
+> SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners
+> TERM=xterm-256color
+> TERMINAL_EMULATOR=JetBrains-JediTerm
+> TERM_SESSION_ID=fa17cae7-55ee-4805-8cea-103ec616213b
+> TMPDIR=/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/
+> USER=kodairaharyu
+> XPC_FLAGS=0x0
+> XPC_SERVICE_NAME=0
+> ZPFX=/Users/kodairaharyu/.local/share/zinit/polaris
+> ZSH_CACHE_DIR=/Users/kodairaharyu/.cache/zinit
+> _=/usr/bin/env
+> _P9K_TTY=/dev/ttys006
+> __CFBundleIdentifier=com.jetbrains.CLion
+> __CF_USER_TEXT_ENCODING=0x1F5:0x1:0xE
+> COMMAND_MODE=unix2003
+> DISPLAY=/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0
+> HOME=/Users/kodairaharyu
+> HOMEBREW_CELLAR=/opt/homebrew/Cellar
+> HOMEBREW_PREFIX=/opt/homebrew
+> HOMEBREW_REPOSITORY=/opt/homebrew
+> INFOPATH=/opt/homebrew/share/info:
+> LC_CTYPE=ja_JP.UTF-8
+> LOGIN_SHELL=1
+> LOGNAME=kodairaharyu
+> LSCOLORS=cxfxcxdxbxegedabagacad
+> LaunchInstanceID=C53264DD-9120-49EE-847C-ACCAFD5AE5C2
+> MAKEFLAGS=
+> MAKELEVEL=1
+> MANPATH=/opt/homebrew/share/man::
+> MFLAGS=
+> P9K_SSH=0
+> P9K_TTY=old
+> PATH=/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+> PMSPEC=0uUpiPsf
+> PWD=/Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> SECURITYSESSIONID=186b2
+> SHELL=/bin/zsh
+> SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners
+> TERM=xterm-256color
+> TERMINAL_EMULATOR=JetBrains-JediTerm
+> TERM_SESSION_ID=fa17cae7-55ee-4805-8cea-103ec616213b
+> TMPDIR=/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/
+> USER=kodairaharyu
+> XPC_FLAGS=0x0
+> XPC_SERVICE_NAME=0
+> ZPFX=/Users/kodairaharyu/.local/share/zinit/polaris
+> ZSH_CACHE_DIR=/Users/kodairaharyu/.cache/zinit
+> _=/usr/bin/env
+> _P9K_TTY=/dev/ttys006
+> __CFBundleIdentifier=com.jetbrains.CLion
+> __CF_USER_TEXT_ENCODING=0x1F5:0x1:0xE
+0a1
+> 0
+1,9c1,86
+< 
+<   
+< "" "" ""
+< '$a' '$b' '$c'
+< '$a' "" '$c'
+< "'' "" ''"
+< '"'' "$b" ''"'
+< 1
+< 2
+---
+> declare -x COMMAND_MODE="unix2003"
+> declare -x DISPLAY="/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0"
+> declare -x HOME="/Users/kodairaharyu"
+> declare -x HOMEBREW_CELLAR="/opt/homebrew/Cellar"
+> declare -x HOMEBREW_PREFIX="/opt/homebrew"
+> declare -x HOMEBREW_REPOSITORY="/opt/homebrew"
+> declare -x INFOPATH="/opt/homebrew/share/info:"
+> declare -x LC_CTYPE="ja_JP.UTF-8"
+> declare -x LOGIN_SHELL="1"
+> declare -x LOGNAME="kodairaharyu"
+> declare -x LSCOLORS="cxfxcxdxbxegedabagacad"
+> declare -x LaunchInstanceID="C53264DD-9120-49EE-847C-ACCAFD5AE5C2"
+> declare -x MAKEFLAGS=""
+> declare -x MAKELEVEL="1"
+> declare -x MANPATH="/opt/homebrew/share/man::"
+> declare -x MFLAGS=""
+> declare -x OLDPWD
+> declare -x P9K_SSH="0"
+> declare -x P9K_TTY="old"
+> declare -x PATH="/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+> declare -x PMSPEC="0uUpiPsf"
+> declare -x PWD="/Users/kodairaharyu/42tokyo/minishell/tests/testcase"
+> declare -x SECURITYSESSIONID="186b2"
+> declare -x SHELL="/bin/zsh"
+> declare -x SHLVL="4"
+> declare -x SSH_AUTH_SOCK="/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners"
+> declare -x TERM="xterm-256color"
+> declare -x TERMINAL_EMULATOR="JetBrains-JediTerm"
+> declare -x TERM_SESSION_ID="fa17cae7-55ee-4805-8cea-103ec616213b"
+> declare -x TMPDIR="/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/"
+> declare -x USER="kodairaharyu"
+> declare -x XPC_FLAGS="0x0"
+> declare -x XPC_SERVICE_NAME="0"
+> declare -x ZPFX="/Users/kodairaharyu/.local/share/zinit/polaris"
+> declare -x ZSH_CACHE_DIR="/Users/kodairaharyu/.cache/zinit"
+> declare -x _="/bin/bash"
+> declare -x _P9K_TTY="/dev/ttys006"
+> declare -x __CFBundleIdentifier="com.jetbrains.CLion"
+> declare -x __CF_USER_TEXT_ENCODING="0x1F5:0x1:0xE"
+> declare -x COMMAND_MODE="unix2003"
+> declare -x DISPLAY="/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0"
+> declare -x HOME="/Users/kodairaharyu"
+> declare -x HOMEBREW_CELLAR="/opt/homebrew/Cellar"
+> declare -x HOMEBREW_PREFIX="/opt/homebrew"
+> declare -x HOMEBREW_REPOSITORY="/opt/homebrew"
+> declare -x INFOPATH="/opt/homebrew/share/info:"
+> declare -x LC_CTYPE="ja_JP.UTF-8"
+> declare -x LOGIN_SHELL="1"
+> declare -x LOGNAME="kodairaharyu"
+> declare -x LSCOLORS="cxfxcxdxbxegedabagacad"
+> declare -x LaunchInstanceID="C53264DD-9120-49EE-847C-ACCAFD5AE5C2"
+> declare -x MAKEFLAGS=""
+> declare -x MAKELEVEL="1"
+> declare -x MANPATH="/opt/homebrew/share/man::"
+> declare -x MFLAGS=""
+> declare -x OLDPWD
+> declare -x P9K_SSH="0"
+> declare -x P9K_TTY="old"
+> declare -x PATH="/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+> declare -x PMSPEC="0uUpiPsf"
+> declare -x PWD="/Users/kodairaharyu/42tokyo/minishell/tests/testcase"
+> declare -x SECURITYSESSIONID="186b2"
+> declare -x SHELL="/bin/zsh"
+> declare -x SHLVL="4"
+> declare -x SSH_AUTH_SOCK="/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners"
+> declare -x TERM="xterm-256color"
+> declare -x TERMINAL_EMULATOR="JetBrains-JediTerm"
+> declare -x TERM_SESSION_ID="fa17cae7-55ee-4805-8cea-103ec616213b"
+> declare -x TMPDIR="/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/"
+> declare -x USER="kodairaharyu"
+> declare -x XPC_FLAGS="0x0"
+> declare -x XPC_SERVICE_NAME="0"
+> declare -x ZPFX="/Users/kodairaharyu/.local/share/zinit/polaris"
+> declare -x ZSH_CACHE_DIR="/Users/kodairaharyu/.cache/zinit"
+> declare -x _P9K_TTY="/dev/ttys006"
+> declare -x __CFBundleIdentifier="com.jetbrains.CLion"
+> declare -x __CF_USER_TEXT_ENCODING="0x1F5:0x1:0xE"
+> hello
+> ls ls ls
+> ls ls ls
+> $a $b $c
+> $a ls $c
+> 'ls' ls 'ls'
+> "ls "$b" ls"
+> /bin/ls
+> /bin/ls
+11,15c88,93
+< 
+< 
+< 
+< $
+< $
+---
+> NO
+> NO
+> aa
+> aa$
+> aaa$
+> aaaaa
+17,19c95,96
+< 
+< 
+< 
+---
+> aa
+> aaaaaa
+3,13d2
+< a
+< 
+< cat << a
+< a
+< 
+< cat << a
+< *
+< a
+< 
+< cat << "*"
+< a
+15,16d3
+< 
+< cat << "|"
+18,22d4
+< |
+< 
+< cat NOSUCHFILE << a
+< b
+< c
+24,26d5
+< 
+< echo hello << hello
+< hello world
+28,30c7,10
+< 
+< echo hello << hello world
+< 42tokyo
+---
+> hello world
+> hello world world
+> a b c e f
+> HELLO
+32,34d11
+< 
+< echo hello world << hello world
+< 42tokyo
+36,63d12
+< 
+< echo a b c << d e f
+< d e f
+< e f
+< f
+< d
+< 
+< echo HELLO << EOS << EOS2
+< EOS
+< EOS2
+< 
+< echo hello <<a<<b<<c<<d<<e
+< a
+< b
+< c
+< d
+< e
+< 
+< echo hello <<a<<b<<c<<d<<e
+< a
+< b
+< c
+< d
+< d
+< echo HELLO WORLD a<<b<<c<<d<<e<<f<<g<<h<<i<<j<<k<<l<<m<<n<<o<<p<<q<<r
+< echo HELLO WORLD <<a<<b<<c<<d<<e<<f<<g<<h<<i<<j<<k<<l<<m<<n<<o<<p<<q<<r<<s<<t<<u<<v<<w<<x<<y<<z<<a<<b<<c<<d<<e<<f<<g<<h<<i<<j<<k<<l<<m<<n<<o<<p<<q<<r<<s<<t<<u<<v<<w<<x<<y<<z
+< 
+< echo hello <<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a
+37,39c37,39
+< 
+< '$a'
+< ""
+---
+> hello
+> $a
+> hello
+45c45
+< 127
+---
+> 0
+47a48
+> world
+53a55
+> 0
+0a1
+> actual
+18a20
+> actual
+36a39
+> actual
+54a58
+> actual
+6,9d5
+< hello
+< hello
+< hello
+< hello
+19,26d14
+< ------------------------------
+< hello
+< hello
+< hello
+< hello
+< hello
+< hello
+< hello
+37,44d24
+< ------------------------------
+< hello
+< hello
+< hello
+< hello
+< hello
+< hello
+< hello
+47,52c27,28
+< hello
+< hello
+< hello
+< hello
+< hello
+< hello
+---
+> ------------------------------
+> ------------------------------
+0a1
+> actual
+18a20
+> actual
+36a39
+> actual
+0a1,21
+> actual
+> aliasflie
+> cd.test
+> diff.sh
+> diff_file
+> echo.test
+> env.test
+> exit.test
+> expected
+> export.test
+> heredoc.test
+> ng
+> ok
+> parser.test
+> path.test
+> permission.test
+> pipe.test
+> postscript.test
+> pwd.test
+> redirect.test
+> sample
+2a3,5
+> /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+3a7
+> /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+0a1,6
+> hello world
+> hello world
+> hello
+> hello
+> hello
+> hello
+1,17c1,20
+< aliasflie
+< cd.test
+< diff.sh
+< diff_file
+< echo.test
+< env.test
+< exit.test
+< expected
+< export.test
+< heredoc.test
+< parser.test
+< path.test
+< permission.test
+< pipe.test
+< postscript.test
+< pwd.test
+< redirect.test
+---
+> 42tokyo
+> Applications
+> Creative Cloud Files
+> Creative Cloud Files 414592564814zz@gmail.com f47792976ce1dff6c0dd0aa9ebac9ce56723fbceb80bfc5a6a741554351c07ff
+> Desktop
+> Documents
+> Downloads
+> Google Drive
+> Library
+> MemoBook
+> Movies
+> Music
+> Pictures
+> Public
+> dotfiles
+> ex00
+> go
+> id_rsa.pub
+> install.sh
+> powerlevel10k
+19,27c22,30
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+< /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+---
+> /
+> //
+> /
+> /
+> /
+> /
+> /
+> /
+> /
+1,3c1
+< -nn
+< -nn hello
+< -n -n -n -n -n
+---
+> hello
+11,22c9,21
+< 
+< ""
+< '$L'
+< 'ls'
+< "ls"
+<  hello
+<   hello
+<  hello
+< $ hello
+< '$N' hello
+<  hello  world
+<  hello  world
+---
+> ls
+> ls
+> $L
+> ls
+> ls
+> hellohello-n-n hello
+> 80346N hello
+> $N hello
+> hello -n worldhello -nn worldactual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
+> actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
+> actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
+> actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
+> actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sampleactual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample -n actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample*
+24,28d22
+< **
+< * * *
+< *******
+< **** -n *"*"
+< '*'
+30,31c24,25
+< .*
+< *.c .*
+---
+> . ..
+> *.c . ..
+34,39c28,35
+< 
+< ""
+< '$wildcard'
+< "/bin/ls"
+< '/bin/ls'
+< " a " "" b "  "
+---
+> actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
+> *
+> $wildcard
+> /bin/ls
+> /bin/ls
+> /bin/ls
+> /bin/ls
+>  a   b   
+0a1,149
+> COMMAND_MODE=unix2003
+> DISPLAY=/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0
+> HOME=/Users/kodairaharyu
+> HOMEBREW_CELLAR=/opt/homebrew/Cellar
+> HOMEBREW_PREFIX=/opt/homebrew
+> HOMEBREW_REPOSITORY=/opt/homebrew
+> INFOPATH=/opt/homebrew/share/info:
+> LC_CTYPE=ja_JP.UTF-8
+> LOGIN_SHELL=1
+> LOGNAME=kodairaharyu
+> LSCOLORS=cxfxcxdxbxegedabagacad
+> LaunchInstanceID=C53264DD-9120-49EE-847C-ACCAFD5AE5C2
+> MAKEFLAGS=
+> MAKELEVEL=1
+> MANPATH=/opt/homebrew/share/man::
+> MFLAGS=
+> P9K_SSH=0
+> P9K_TTY=old
+> PATH=/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+> PMSPEC=0uUpiPsf
+> PWD=/Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> SECURITYSESSIONID=186b2
+> SHELL=/bin/zsh
+> SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners
+> TERM=xterm-256color
+> TERMINAL_EMULATOR=JetBrains-JediTerm
+> TERM_SESSION_ID=fa17cae7-55ee-4805-8cea-103ec616213b
+> TMPDIR=/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/
+> USER=kodairaharyu
+> XPC_FLAGS=0x0
+> XPC_SERVICE_NAME=0
+> ZPFX=/Users/kodairaharyu/.local/share/zinit/polaris
+> ZSH_CACHE_DIR=/Users/kodairaharyu/.cache/zinit
+> _=/usr/bin/env
+> _P9K_TTY=/dev/ttys006
+> __CFBundleIdentifier=com.jetbrains.CLion
+> __CF_USER_TEXT_ENCODING=0x1F5:0x1:0xE
+> COMMAND_MODE=unix2003
+> DISPLAY=/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0
+> HOME=/Users/kodairaharyu
+> HOMEBREW_CELLAR=/opt/homebrew/Cellar
+> HOMEBREW_PREFIX=/opt/homebrew
+> HOMEBREW_REPOSITORY=/opt/homebrew
+> INFOPATH=/opt/homebrew/share/info:
+> LC_CTYPE=ja_JP.UTF-8
+> LOGIN_SHELL=1
+> LOGNAME=kodairaharyu
+> LSCOLORS=cxfxcxdxbxegedabagacad
+> LaunchInstanceID=C53264DD-9120-49EE-847C-ACCAFD5AE5C2
+> MAKEFLAGS=
+> MAKELEVEL=1
+> MANPATH=/opt/homebrew/share/man::
+> MFLAGS=
+> P9K_SSH=0
+> P9K_TTY=old
+> PATH=/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+> PMSPEC=0uUpiPsf
+> PWD=/Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> SECURITYSESSIONID=186b2
+> SHELL=/bin/zsh
+> SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners
+> TERM=xterm-256color
+> TERMINAL_EMULATOR=JetBrains-JediTerm
+> TERM_SESSION_ID=fa17cae7-55ee-4805-8cea-103ec616213b
+> TMPDIR=/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/
+> USER=kodairaharyu
+> XPC_FLAGS=0x0
+> XPC_SERVICE_NAME=0
+> ZPFX=/Users/kodairaharyu/.local/share/zinit/polaris
+> ZSH_CACHE_DIR=/Users/kodairaharyu/.cache/zinit
+> _=/usr/bin/env
+> _P9K_TTY=/dev/ttys006
+> __CFBundleIdentifier=com.jetbrains.CLion
+> __CF_USER_TEXT_ENCODING=0x1F5:0x1:0xE
+> a=xxxxxxxx
+> COMMAND_MODE=unix2003
+> DISPLAY=/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0
+> HOME=/Users/kodairaharyu
+> HOMEBREW_CELLAR=/opt/homebrew/Cellar
+> HOMEBREW_PREFIX=/opt/homebrew
+> HOMEBREW_REPOSITORY=/opt/homebrew
+> INFOPATH=/opt/homebrew/share/info:
+> LC_CTYPE=ja_JP.UTF-8
+> LOGIN_SHELL=1
+> LOGNAME=kodairaharyu
+> LSCOLORS=cxfxcxdxbxegedabagacad
+> LaunchInstanceID=C53264DD-9120-49EE-847C-ACCAFD5AE5C2
+> MAKEFLAGS=
+> MAKELEVEL=1
+> MANPATH=/opt/homebrew/share/man::
+> MFLAGS=
+> P9K_SSH=0
+> P9K_TTY=old
+> PATH=/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+> PMSPEC=0uUpiPsf
+> PWD=/Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> SECURITYSESSIONID=186b2
+> SHELL=/bin/zsh
+> SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners
+> TERM=xterm-256color
+> TERMINAL_EMULATOR=JetBrains-JediTerm
+> TERM_SESSION_ID=fa17cae7-55ee-4805-8cea-103ec616213b
+> TMPDIR=/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/
+> USER=kodairaharyu
+> XPC_FLAGS=0x0
+> XPC_SERVICE_NAME=0
+> ZPFX=/Users/kodairaharyu/.local/share/zinit/polaris
+> ZSH_CACHE_DIR=/Users/kodairaharyu/.cache/zinit
+> _=/usr/bin/env
+> _P9K_TTY=/dev/ttys006
+> __CFBundleIdentifier=com.jetbrains.CLion
+> __CF_USER_TEXT_ENCODING=0x1F5:0x1:0xE
+> COMMAND_MODE=unix2003
+> DISPLAY=/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0
+> HOME=/Users/kodairaharyu
+> HOMEBREW_CELLAR=/opt/homebrew/Cellar
+> HOMEBREW_PREFIX=/opt/homebrew
+> HOMEBREW_REPOSITORY=/opt/homebrew
+> INFOPATH=/opt/homebrew/share/info:
+> LC_CTYPE=ja_JP.UTF-8
+> LOGIN_SHELL=1
+> LOGNAME=kodairaharyu
+> LSCOLORS=cxfxcxdxbxegedabagacad
+> LaunchInstanceID=C53264DD-9120-49EE-847C-ACCAFD5AE5C2
+> MAKEFLAGS=
+> MAKELEVEL=1
+> MANPATH=/opt/homebrew/share/man::
+> MFLAGS=
+> P9K_SSH=0
+> P9K_TTY=old
+> PATH=/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+> PMSPEC=0uUpiPsf
+> PWD=/Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> SECURITYSESSIONID=186b2
+> SHELL=/bin/zsh
+> SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners
+> TERM=xterm-256color
+> TERMINAL_EMULATOR=JetBrains-JediTerm
+> TERM_SESSION_ID=fa17cae7-55ee-4805-8cea-103ec616213b
+> TMPDIR=/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/
+> USER=kodairaharyu
+> XPC_FLAGS=0x0
+> XPC_SERVICE_NAME=0
+> ZPFX=/Users/kodairaharyu/.local/share/zinit/polaris
+> ZSH_CACHE_DIR=/Users/kodairaharyu/.cache/zinit
+> _=/usr/bin/env
+> _P9K_TTY=/dev/ttys006
+> __CFBundleIdentifier=com.jetbrains.CLion
+> __CF_USER_TEXT_ENCODING=0x1F5:0x1:0xE
+0a1
+> 0
+1,9c1,86
+< 
+<   
+< "" "" ""
+< '$a' '$b' '$c'
+< '$a' "" '$c'
+< "'' "" ''"
+< '"'' "$b" ''"'
+< 1
+< 2
+---
+> declare -x COMMAND_MODE="unix2003"
+> declare -x DISPLAY="/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0"
+> declare -x HOME="/Users/kodairaharyu"
+> declare -x HOMEBREW_CELLAR="/opt/homebrew/Cellar"
+> declare -x HOMEBREW_PREFIX="/opt/homebrew"
+> declare -x HOMEBREW_REPOSITORY="/opt/homebrew"
+> declare -x INFOPATH="/opt/homebrew/share/info:"
+> declare -x LC_CTYPE="ja_JP.UTF-8"
+> declare -x LOGIN_SHELL="1"
+> declare -x LOGNAME="kodairaharyu"
+> declare -x LSCOLORS="cxfxcxdxbxegedabagacad"
+> declare -x LaunchInstanceID="C53264DD-9120-49EE-847C-ACCAFD5AE5C2"
+> declare -x MAKEFLAGS=""
+> declare -x MAKELEVEL="1"
+> declare -x MANPATH="/opt/homebrew/share/man::"
+> declare -x MFLAGS=""
+> declare -x OLDPWD
+> declare -x P9K_SSH="0"
+> declare -x P9K_TTY="old"
+> declare -x PATH="/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+> declare -x PMSPEC="0uUpiPsf"
+> declare -x PWD="/Users/kodairaharyu/42tokyo/minishell/tests/testcase"
+> declare -x SECURITYSESSIONID="186b2"
+> declare -x SHELL="/bin/zsh"
+> declare -x SHLVL="4"
+> declare -x SSH_AUTH_SOCK="/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners"
+> declare -x TERM="xterm-256color"
+> declare -x TERMINAL_EMULATOR="JetBrains-JediTerm"
+> declare -x TERM_SESSION_ID="fa17cae7-55ee-4805-8cea-103ec616213b"
+> declare -x TMPDIR="/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/"
+> declare -x USER="kodairaharyu"
+> declare -x XPC_FLAGS="0x0"
+> declare -x XPC_SERVICE_NAME="0"
+> declare -x ZPFX="/Users/kodairaharyu/.local/share/zinit/polaris"
+> declare -x ZSH_CACHE_DIR="/Users/kodairaharyu/.cache/zinit"
+> declare -x _="/bin/bash"
+> declare -x _P9K_TTY="/dev/ttys006"
+> declare -x __CFBundleIdentifier="com.jetbrains.CLion"
+> declare -x __CF_USER_TEXT_ENCODING="0x1F5:0x1:0xE"
+> declare -x COMMAND_MODE="unix2003"
+> declare -x DISPLAY="/private/tmp/com.apple.launchd.qKrHn26PQS/org.xquartz:0"
+> declare -x HOME="/Users/kodairaharyu"
+> declare -x HOMEBREW_CELLAR="/opt/homebrew/Cellar"
+> declare -x HOMEBREW_PREFIX="/opt/homebrew"
+> declare -x HOMEBREW_REPOSITORY="/opt/homebrew"
+> declare -x INFOPATH="/opt/homebrew/share/info:"
+> declare -x LC_CTYPE="ja_JP.UTF-8"
+> declare -x LOGIN_SHELL="1"
+> declare -x LOGNAME="kodairaharyu"
+> declare -x LSCOLORS="cxfxcxdxbxegedabagacad"
+> declare -x LaunchInstanceID="C53264DD-9120-49EE-847C-ACCAFD5AE5C2"
+> declare -x MAKEFLAGS=""
+> declare -x MAKELEVEL="1"
+> declare -x MANPATH="/opt/homebrew/share/man::"
+> declare -x MFLAGS=""
+> declare -x OLDPWD
+> declare -x P9K_SSH="0"
+> declare -x P9K_TTY="old"
+> declare -x PATH="/Users/kodairaharyu/.local/share/zinit/polaris/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+> declare -x PMSPEC="0uUpiPsf"
+> declare -x PWD="/Users/kodairaharyu/42tokyo/minishell/tests/testcase"
+> declare -x SECURITYSESSIONID="186b2"
+> declare -x SHELL="/bin/zsh"
+> declare -x SHLVL="4"
+> declare -x SSH_AUTH_SOCK="/private/tmp/com.apple.launchd.LGnlDnqbso/Listeners"
+> declare -x TERM="xterm-256color"
+> declare -x TERMINAL_EMULATOR="JetBrains-JediTerm"
+> declare -x TERM_SESSION_ID="fa17cae7-55ee-4805-8cea-103ec616213b"
+> declare -x TMPDIR="/var/folders/25/5zvr44td2s3b0w7jzvwptshr0000gn/T/"
+> declare -x USER="kodairaharyu"
+> declare -x XPC_FLAGS="0x0"
+> declare -x XPC_SERVICE_NAME="0"
+> declare -x ZPFX="/Users/kodairaharyu/.local/share/zinit/polaris"
+> declare -x ZSH_CACHE_DIR="/Users/kodairaharyu/.cache/zinit"
+> declare -x _P9K_TTY="/dev/ttys006"
+> declare -x __CFBundleIdentifier="com.jetbrains.CLion"
+> declare -x __CF_USER_TEXT_ENCODING="0x1F5:0x1:0xE"
+> hello
+> ls ls ls
+> ls ls ls
+> $a $b $c
+> $a ls $c
+> 'ls' ls 'ls'
+> "ls "$b" ls"
+> /bin/ls
+> /bin/ls
+11,15c88,93
+< 
+< 
+< 
+< $
+< $
+---
+> NO
+> NO
+> aa
+> aa$
+> aaa$
+> aaaaa
+17,19c95,96
+< 
+< 
+< 
+---
+> aa
+> aaaaaa
+3,13d2
+< a
+< 
+< cat << a
+< a
+< 
+< cat << a
+< *
+< a
+< 
+< cat << "*"
+< a
+15,16d3
+< 
+< cat << "|"
+18,22d4
+< |
+< 
+< cat NOSUCHFILE << a
+< b
+< c
+24,26d5
+< 
+< echo hello << hello
+< hello world
+28,30c7,10
+< 
+< echo hello << hello world
+< 42tokyo
+---
+> hello world
+> hello world world
+> a b c e f
+> HELLO
+32,34d11
+< 
+< echo hello world << hello world
+< 42tokyo
+36,63d12
+< 
+< echo a b c << d e f
+< d e f
+< e f
+< f
+< d
+< 
+< echo HELLO << EOS << EOS2
+< EOS
+< EOS2
+< 
+< echo hello <<a<<b<<c<<d<<e
+< a
+< b
+< c
+< d
+< e
+< 
+< echo hello <<a<<b<<c<<d<<e
+< a
+< b
+< c
+< d
+< d
+< echo HELLO WORLD a<<b<<c<<d<<e<<f<<g<<h<<i<<j<<k<<l<<m<<n<<o<<p<<q<<r
+< echo HELLO WORLD <<a<<b<<c<<d<<e<<f<<g<<h<<i<<j<<k<<l<<m<<n<<o<<p<<q<<r<<s<<t<<u<<v<<w<<x<<y<<z<<a<<b<<c<<d<<e<<f<<g<<h<<i<<j<<k<<l<<m<<n<<o<<p<<q<<r<<s<<t<<u<<v<<w<<x<<y<<z
+< 
+< echo hello <<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a<<a
+37,39c37,39
+< 
+< '$a'
+< ""
+---
+> hello
+> $a
+> hello
+45c45
+< 127
+---
+> 0
+47a48
+> world
+53a55
+> 0
+0a1
+> actual
+18a20
+> actual
+36a39
+> actual
+54a58
+> actual
+6,9d5
+< hello
+< hello
+< hello
+< hello
+19,26d14
+< ------------------------------
+< hello
+< hello
+< hello
+< hello
+< hello
+< hello
+< hello
+37,44d24
+< ------------------------------
+< hello
+< hello
+< hello
+< hello
+< hello
+< hello
+< hello
+47,52c27,28
+< hello
+< hello
+< hello
+< hello
+< hello
+< hello
+---
+> ------------------------------
+> ------------------------------
+0a1
+> actual
+18a20
+> actual
+36a39
+> actual
+0a1,21
+> actual
+> aliasflie
+> cd.test
+> diff.sh
+> diff_file
+> echo.test
+> env.test
+> exit.test
+> expected
+> export.test
+> heredoc.test
+> ng
+> ok
+> parser.test
+> path.test
+> permission.test
+> pipe.test
+> postscript.test
+> pwd.test
+> redirect.test
+> sample
+2a3,5
+> /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+> /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+3a7
+> /Users/kodairaharyu/42tokyo/minishell/tests/testcase
+0a1,6
+> hello world
+> hello world
+> hello
+> hello
+> hello
+> hello
