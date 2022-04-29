@@ -52,7 +52,7 @@ void exec_no_pipe(t_node *pipe_node) {
     exec_cmd(pipe_node->rhs);
 }
 
-void exec_pipe(t_node *pipe_node) {
+void exec_pipes(t_node *pipe_node) {
     int fd[2];
 
     if (pipe_node->lhs == NULL) {
@@ -78,6 +78,20 @@ void exec_pipe(t_node *pipe_node) {
     exit(g_shell->sts);
 }
 
+void exec_pipe(t_node *pipe_node) {
+    if (pipe_node->lhs == NULL)
+        exec_no_pipe(pipe_node);
+    else {
+        int pid = fork();
+        if (pid == 0) {
+            exec_pipes(pipe_node);
+            exit(g_shell->sts);
+        }
+        wait(&(g_shell->sts));
+        g_shell->sts = WEXITSTATUS(g_shell->sts);
+    }
+}
+
 void exec_bracket(t_node *bracket_node) {
     if (bracket_node->kind == ND_BRACKET) {
         int pid = fork();
@@ -88,30 +102,19 @@ void exec_bracket(t_node *bracket_node) {
         wait(&(g_shell->sts));
         g_shell->sts = WEXITSTATUS(g_shell->sts);
     }
-    else {
+    else
         exec_pipe(bracket_node);
-    }
 }
 
 void exec_stmt(t_node *stmt_node) {
-    t_node *pipe_node;
+    t_node *bracket_node;
 
     if (stmt_node->kind == ND_OR && g_shell->sts == 0)
         return;
     if (stmt_node->kind == ND_AND && g_shell->sts != 0)
         return;
-    pipe_node = stmt_node->lhs;
-    if (pipe_node->lhs == NULL)
-        exec_no_pipe(pipe_node);
-    else {
-        int pid = fork();
-        if (pid == 0) {
-            exec_pipe(pipe_node);
-            exit(g_shell->sts);
-        }
-        wait(&(g_shell->sts));
-        g_shell->sts = WEXITSTATUS(g_shell->sts);
-    }
+    bracket_node = stmt_node->lhs;
+    exec_bracket(bracket_node);
 }
 
 void exec(t_node *node) {
