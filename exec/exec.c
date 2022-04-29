@@ -79,6 +79,7 @@ void exec_pipes(t_node *pipe_node) {
 }
 
 void exec_pipe(t_node *pipe_node) {
+    expander(pipe_node);
     if (pipe_node->lhs == NULL)
         exec_no_pipe(pipe_node);
     else {
