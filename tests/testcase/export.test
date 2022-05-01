@@ -2,6 +2,7 @@ export
 export =
 export "="="="
 export "=""=""="
+
 export
 
 export A='hello'
@@ -59,3 +60,23 @@ $L
 
 export L=' ls -alllllllllllllllllllllll'
 $L
+
+export a=
+echo $a
+export a==
+echo $a
+export a===
+echo $a
+export a====
+echo $a
+export "a"="a"
+echo $a
+export '='='='
+echo $=
+export '='="="
+echo $=
+ecport "="='='
+echo $=
+export '==='
+echo $=
+
