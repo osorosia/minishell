@@ -263,7 +263,7 @@ echo hello > a > b > c
 cat a
 cat b
 cat c
-chmod 777 a b c
+chmod 777https://saiyasu-syuuri.com/blog/macbook-good-repairshop-akihabara/#i a b c
 rm -rf a b c
 
 touch a
@@ -336,3 +336,57 @@ chmod 666
 chmod 777
 (cd tmpdir && pwd)
 rm -rf tmpdir
+
+echo ---------------------------------
+
+mkdir tmpdir
+ln -s tmpdir aliasdir
+chmod 000 aliasdir
+(cd tmpdir && pwd)
+
+chmod 222 aliasdir
+(cd tmpdir && pwd)
+
+chmod 333 aliasdir
+(cd tmpdir && pwd)
+
+chmod 444 aliasdir
+(cd tmpdir && pwd)
+
+chmod 555 aliasdir
+(cd tmpdir && pwd)
+
+chmod 666 aliasdir
+(cd tmpdir && pwd)
+
+chmod 777 aliasdir
+(cd tmpdir && pwd)
+
+rm -rf tmpdir aliasdir
+
+echo ------------------------------------
+
+mkdir tmpdir
+ln -s tmpdir aliasdir
+chmod 000 tmpdir
+(cd aliasdir && pwd)
+
+chmod 222 tmpdir
+(cd aliasdir && pwd)
+
+chmod 333 tmpdir
+(cd aliasdir && pwd)
+
+chmod 444 tmpdir
+(cd aliasdir && pwd)
+
+chmod 555 tmpdir
+(cd aliasdir && pwd)
+
+chmod 666 tmpdir
+(cd aliasdir && pwd)
+
+chmod 777 tmpdir
+(cd aliasdir && pwd)
+
+rm -rf tmpdir aliasdir

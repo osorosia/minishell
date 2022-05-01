@@ -37,7 +37,6 @@ function test() {
 
 test 'ls'
 test '/bin/ls'
-test '/bin/ls -l'
 test 'env'
 test 'cmd'
 test 'bash'
