@@ -263,7 +263,7 @@ echo hello > a > b > c
 cat a
 cat b
 cat c
-chmod 777https://saiyasu-syuuri.com/blog/macbook-good-repairshop-akihabara/#i a b c
+chmod 777 a b c
 rm -rf a b c
 
 touch a
