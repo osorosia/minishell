@@ -1,0 +1,33 @@
+export UNSET_TEST=hello
+unset UNSET_TEST
+export | grep UNSET_TEST
+
+export UNSET_TEST=hello
+unset 'UNSET_TEST'
+export | grep ENVTEST
+
+export UNSET_TEST=hello
+unset UNSET_TEST
+export | grep UNSET_TEST
+
+export UNSET_TEST1=hello UNSET_TEST2=world
+unset UNSET_TEST1
+export | grep UNSET_TEST
+
+export UNSET_TEST1=hello UNSET_TEST2=world
+unset UNSET_TEST1 UNSET_TEST2
+export | grep UNSET_TEST
+
+export UNSET_TEST1=hello UNSET_TEST2=world
+unset UNSET_TEST1 UNSET_TEST2
+export | grep UNSET_TEST
+
+export UNSET_TEST=hello
+unset XXX
+echo $?
+
+unset XXX UNSET_TEST
+echo $?
+
+
+
