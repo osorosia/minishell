@@ -1,0 +1,84 @@
+cmd
+echo $?
+
+true
+echo $?
+
+false
+echo $?
+
+true | false
+echo $?
+
+false | true
+echo $?
+
+true | true
+echo $?
+
+false | false
+echo $?
+
+true | true | true
+echo $?
+
+false | false | false
+echo $?
+
+cmd | cmd | true
+echo $?
+
+cmd | cmd | false
+echo $?
+
+true && true
+echo $?
+
+true || true
+echo $?
+
+false && false
+echo $?
+
+false || false
+echo $?
+
+false || true
+echo $?
+
+true || false
+echo $?
+
+false && true
+echo $?
+
+true && false
+echo $?
+
+export ?=100
+echo $?
+
+export '?'=100
+echo $?
+
+export "?"=100
+echo $?
+
+(true)
+echo $?
+
+(false)
+echo $?
+
+(true && echo $?)
+
+(false && echo $?)
+
+(true) && echo $?
+
+(false) && echo $?
+
+(true) || echo $?
+
+(false) || echo $?
+
