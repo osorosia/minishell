@@ -143,25 +143,25 @@ t_node *parser(t_token *tok) {
     return node;
 }
 
-// stmt = bracket ((";" | "||" | "&&") bracket)* ";"?
+// stmt = pipe_cmd ((";" | "||" | "&&") pipe_cmd)* ";"?
 t_node *stmt(t_token **tok) {
     t_node *node;
 
     // pipe
-    node = _new_node_stmt(ND_STMT, bracket(tok));
+    node = _new_node_stmt(ND_STMT, pipe_cmd(tok));
     // ((";" | "||" | "&&") pipe)*
     while (true) {
         if (equal(*tok, TK_OP, ";") && !equal((*tok)->next, TK_EOF, NULL) && !equal((*tok)->next, TK_OP, ")")) {
             *tok = skip(*tok, TK_OP, ";");
-            _add_node_stmt(node, ND_STMT, bracket(tok));
+            _add_node_stmt(node, ND_STMT, pipe_cmd(tok));
         }
         else if (equal(*tok, TK_OP, "||")) {
             *tok = skip(*tok, TK_OP, "||");
-            _add_node_stmt(node, ND_OR, bracket(tok));
+            _add_node_stmt(node, ND_OR, pipe_cmd(tok));
         }
         else if (equal(*tok, TK_OP, "&&")) {
             *tok = skip(*tok, TK_OP, "&&");
-            _add_node_stmt(node, ND_AND, bracket(tok));
+            _add_node_stmt(node, ND_AND, pipe_cmd(tok));
         }
         else
             break;
@@ -172,8 +172,20 @@ t_node *stmt(t_token **tok) {
     return node;
 }
 
+// pipe_cmd = bracket ("|" bracket)*
+t_node *pipe_cmd(t_token **tok) {
+    t_node *node;
+
+    node = _new_node_pipe(bracket(tok));
+    while (equal(*tok, TK_OP, "|")) {
+        *tok = skip(*tok, TK_OP, "|");
+        node = _add_node_pipe(node, bracket(tok));
+    }
+    return node;
+}
+
 // bracket = "(" stmt ")"
-//         | pipe_cmd
+//         | cmd
 t_node *bracket(t_token **tok) {
     t_node *node;
 
@@ -183,19 +195,7 @@ t_node *bracket(t_token **tok) {
         *tok = skip(*tok, TK_OP, ")");
     }
     else
-        node = pipe_cmd(tok);
-    return node;
-}
-
-// pipe_cmd = cmd ("|" cmd)*
-t_node *pipe_cmd(t_token **tok) {
-    t_node *node;
-
-    node = _new_node_pipe(cmd(tok));
-    while (equal(*tok, TK_OP, "|")) {
-        *tok = skip(*tok, TK_OP, "|");
-        node = _add_node_pipe(node, cmd(tok));
-    }
+        node = cmd(tok);
     return node;
 }
 
