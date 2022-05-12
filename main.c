@@ -44,7 +44,6 @@ int main(int argc, char **argv, char **envp) {
             free_parser(tmp);
         }
         free_lexer(tok);
-        // expander(node);
 
         // exec
         fprintf(stderr, "--- exec ---\n");
