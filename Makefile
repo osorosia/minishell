@@ -19,26 +19,28 @@ $(NAME): $(OBJS) $(LIBFT) ./minishell.h
 $(LIBFT):
 	make -C ./libft
 
-all: $(NAME)
-
 %.o: %.c
 	gcc $(CFLAGS) -c -o $@ $<
 
+.PHONY: all
+all: $(NAME)
+
+.PHONY: clean
 clean:
 	rm -f $(OBJS)
 
+.PHONY: fclean
 fclean: clean
 	rm -f $(NAME)
 
+.PHONY: norm
 re: fclean all
 
+.PHONY: norm
 norm:
 	python3 -m norminette $(SRCS) | grep Error | cat
 
-t:
-	cd tmp && gcc tmp.c
-	cd tmp && ./a.out
-
+.PHONY: test
 test: all
 	cd tests && ./test.sh 2>/dev/null
 	cd ./tests/testcase && ./diff.sh 2>/dev/null
