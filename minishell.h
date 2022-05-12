@@ -150,6 +150,8 @@ void debug_expander(t_node *node, char *name);
 void expand_var(t_node *node);
 // generate_pathname.c
 void generate_pathname(t_node *node);
+// split_space.c
+void split_space(t_node *node);
 
 //
 // exec ----------------------------------------------
