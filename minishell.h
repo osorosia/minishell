@@ -152,6 +152,8 @@ void expand_var(t_node *node);
 void generate_pathname(t_node *node);
 // split_space.c
 void split_space(t_node *node);
+// delete_quote.c
+void delete_quote(t_node *node);
 
 //
 // exec ----------------------------------------------

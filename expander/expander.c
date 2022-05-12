@@ -7,6 +7,9 @@ void expander(t_node *node) {
     split_space(node);
     // debug_expander(node, "split_space");
 
+    delete_quote(node);
+    // debug_expander(node, "delete_quote");
+
     generate_pathname(node);
     // debug_expander(node, "generate_pathname");
 }
@@ -17,6 +20,9 @@ void expander_for_debug(t_node *node) {
 
     split_space(node);
     debug_expander(node, "split_space");
+
+    delete_quote(node);
+    debug_expander(node, "delete_quote");
 
     generate_pathname(node);
     debug_expander(node, "generate_pathname");
