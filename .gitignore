@@ -18,6 +18,8 @@
 **/expected
 **/output
 **/sample
+**/log
+**/gen_*.txt
 
 **/aaa
 **/bbb

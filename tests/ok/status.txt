@@ -1,0 +1,16 @@
+false || echo $?
+echo $?
+false | echo $?
+echo $?
+false && echo $?
+echo $?
+echo
+
+true || echo $?
+echo $?
+true | echo $?
+echo $?
+true && echo $?
+echo $?
+echo
+

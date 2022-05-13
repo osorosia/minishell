@@ -10,7 +10,7 @@ SRCS = $(wildcard *.c) \
 
 OBJS = $(SRCS:.c=.o)
 # CFLAGS = -Wall -Wextra -Werror -g
-CFLAGS = -g
+CFLAGS = -g3
 LIBFT = ./libft/libft.a
 READLINE = -L/usr/include -lreadline
 
@@ -46,4 +46,14 @@ test: all
 	cd tests && ./test.sh 2>/dev/null
 	cd ./tests/testcase && ./diff.sh 2>/dev/null
 	cat ./tests/testcase/diff_file
-.PHONY:all fclean clean re norm t test
+
+.PHONY: ok
+ok: all
+	@cd tests && cat test.sh case.sh > tmp.sh && bash tmp.sh 2>/dev/null
+	@cd tests && cat leak.sh case.sh > tmp.sh && bash tmp.sh 2>/dev/null
+
+.PHONY: gen
+gen:
+	cd tests/gen && bash gen.sh
+	@cd tests && cat test.sh gen_case.sh > tmp.sh && bash tmp.sh 2>/dev/null
+	@cd tests && cat leak.sh gen_case.sh > tmp.sh && bash tmp.sh 2>/dev/null

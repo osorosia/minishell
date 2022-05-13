@@ -1,0 +1,8 @@
+echo $CAT
+echo '$CAT'
+echo "$CAT"
+echo
+
+echo " $CAT "
+echo '" $CAT "'
+echo "' $CAT '"

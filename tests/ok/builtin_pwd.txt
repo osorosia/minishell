@@ -1,0 +1,13 @@
+pwd
+echo $?
+
+false
+pwd
+echo $?
+
+pwd | echo aaa
+pwd || echo aaa
+pwd && echo aaa
+
+pwd aaa
+pwd ''

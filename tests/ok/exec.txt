@@ -1,0 +1,9 @@
+ls -a
+/bin/ls -a
+/bin/ls -a | cat
+ls -a | ls
+ls | cat
+
+$LS
+$LS | cat
+$LS | $CAT

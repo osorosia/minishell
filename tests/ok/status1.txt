@@ -1,70 +1,50 @@
 cmd
 echo $?
-
 true
 echo $?
-
 false
 echo $?
+echo
 
 true | false
 echo $?
-
 false | true
 echo $?
-
 true | true
 echo $?
-
 false | false
 echo $?
+echo
 
 true | true | true
 echo $?
-
 false | false | false
 echo $?
+cmd | cmd | true
+echo $?
+cmd | cmd | false
+echo $?
+echo
 
 true && true
 echo $?
-
 true || true
 echo $?
+echo
 
 false && false
 echo $?
-
 false || false
 echo $?
+echo
 
 false || true
 echo $?
-
 true || false
 echo $?
+echo
 
 false && true
 echo $?
-
 true && false
 echo $?
-
-
-(true)
-echo $?
-
-(false)
-echo $?
-
-(true && echo $?)
-
-(false && echo $?)
-
-(true) && echo $?
-
-(false) && echo $?
-
-(true) || echo $?
-
-(false) || echo $?
-

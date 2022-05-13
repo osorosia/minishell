@@ -1,9 +1,0 @@
-pwd
-pwd ""
-pwd ls ls ls
-pwd aaaaaa
-ls pwd
-echo hello | pwd
-pwd | echo hello
-pwd pwd
-./pwd
