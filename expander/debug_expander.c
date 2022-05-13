@@ -67,6 +67,10 @@ void debug_expander_rec(t_node *node, int indent) {
             print_indent(indent);
             fprintf(stderr, "pathname: %s\n", node->cmd->pathname);
         }
+        if (node->cmd->is_builtin) {
+            print_indent(indent);
+            fprintf(stderr, "(builtin)\n");
+        }
     }
 }
 

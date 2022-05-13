@@ -113,6 +113,13 @@ char *ft_str_add_char(char *str, char c);
 bool ft_strcmp(char *s1, char *s2);
 
 //
+// builtin ----------------------------------------------
+//
+
+// is_builtin.c
+bool is_builtin(char *str);
+
+//
 // lexer ----------------------------------------------
 //
 

@@ -57,7 +57,10 @@ void generate_pathname(t_node *node) {
     if (node->kind == ND_STMT)
         return;
     if (node->kind == ND_CMD) {
-        node->cmd->pathname = get_pathname_str(node->cmd->word->str);
+        if (is_builtin(node->cmd->word->str))
+            node->cmd->is_builtin = true;
+        else
+            node->cmd->pathname = get_pathname_str(node->cmd->word->str);
     }
     else {
         generate_pathname(node->lhs);
