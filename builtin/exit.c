@@ -44,7 +44,7 @@ int exec_exit(t_word *word) {
     // too many arguments
     if (word->next->next) {
         ft_putstr_fd("exit: too many arguments\n", 2);
-        exit(2);
+        exit(1);
     }
 
     // ok
