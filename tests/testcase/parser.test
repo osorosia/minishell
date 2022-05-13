@@ -109,3 +109,14 @@ echo $=
 
 >> >>NOSUCHFILE
 rm -rf NOSUCHFILE
+
+export "?"=100
+echo $?
+export '?'=100
+echo $?
+export ?=100
+echo $?
+cmd | cmd | false
+echo $?
+cmd | cmd | true
+echo $?
