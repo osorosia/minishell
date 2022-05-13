@@ -119,6 +119,14 @@ bool ft_strcmp(char *s1, char *s2);
 // is_builtin.c
 bool is_builtin(char *str);
 
+int exec_echo(t_word *word);
+int exec_cd(t_word *word);
+int exec_pwd(t_word *word);
+int exec_export(t_word *word);
+int exec_unset(t_word *word);
+int exec_env(t_word *word);
+int exec_exit(t_word *word);
+
 //
 // lexer ----------------------------------------------
 //

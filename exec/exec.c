@@ -28,11 +28,32 @@ char **create_argv(t_word *word) {
     return argv;
 }
 
+void exec_builtin(t_node *node) {
+    t_cmd *cmd = node->cmd;
+
+    int (*builtin_fn[])(t_word *) = {
+        exec_echo, exec_cd, exec_pwd, exec_export, exec_unset, exec_env, exec_exit, NULL
+    };
+    char *kw[] = {"echo", "cd", "pwd", "export", "unset", "env", "exit", NULL};
+
+    long i = 0;
+    while (kw[i]) {
+        if (strcmp(kw[i], cmd->word->str) == 0) {
+            g_shell->sts = builtin_fn[i](cmd->word);
+            break;
+        }
+        i++;
+    }
+    if (kw[i] == NULL) {
+        error("no match builtin");
+    }
+}
+
 void exec_cmd(t_node *node) {
     t_cmd *cmd = node->cmd;
 
     if (cmd->is_builtin) {
-        // TODO
+        exec_builtin(node);
     }
     else {
         int pid = fork();
