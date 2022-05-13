@@ -1,66 +1,44 @@
---- expected	2022-04-29 20:38:05.000000000 +0900
-+++ actual	2022-04-29 20:38:05.000000000 +0900
+--- expected	2022-05-13 20:08:55.000000000 +0900
++++ actual	2022-05-13 20:08:55.000000000 +0900
 @@ -1,6 +1,4 @@
 --nn
 --nn hello
---n -n -n -n -n
-+hello
- a -n a
- -
- -x
-@@ -8,32 +6,30 @@
- n- -n
- n- -n a
- L
+--n -n -n -n -n-nnnnnnnna hello
++hello-nnnnnnnna hello
+ -nnnnnnaaaaaa hello
+ -aaaaaaaaannn hello
+ -annnnnnnnnnn hello
+@@ -15,26 +13,18 @@
+ - n hello hello
+ - n　hello
+ hellohelloL
 -
--""
--'$L'
--'ls'
--"ls"
-- hello
--  hello
-- hello
+-
++ls
++ls
+ $L
+ ls
+ ls
+-hello
+-hello
+-hello
 -$ hello
--'$N' hello
-- hello  world
-- hello  world
-+ls
-+ls
-+$L
-+ls
-+ls
 +hellohello-n-n hello
-+90342N hello
-+$N hello
-+hello -n worldhello -nn worldactual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
-+actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
-+actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
-+actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
-+actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sampleactual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample -n actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample*
- *
--**
--* * *
--*******
--**** -n *"*"
--'*'
- *.c
--.*
--*.c .*
-+. ..
-+*.c . ..
- **.c
- .c**
--
--""
--'$wildcard'
--"/bin/ls"
--'/bin/ls'
--" a " "" b "  "
-+actual aliasflie cd.test diff.sh diff_file echo.test env.test exit.test expected export.test heredoc.test parser.test path.test permission.test pipe.test postscript.test pwd.test redirect.test sample
-+*
-+$wildcard
-+/bin/ls
-+/bin/ls
-+/bin/ls
-+/bin/ls
++58973N hello
+ $N hello
+-hello world
+-hello
+-hello
+-hello
+-$ hello
++hello -n worldhellohellohello58973N hello
+ $N hello
+-hello world
+-hello world
+-/bin/ls   
++hello -n worldhello -nn world/bin/ls   
+ /bin/ls
+ /bin/ls
+ /bin/ls
+- a 
 + a   b   

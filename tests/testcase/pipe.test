@@ -1,27 +1,25 @@
-ls | cat
-ls|ls
-ls|ls|ls
-cat|cat|cat|cat|cat
-NOSUCH|ls
-NOSUCH|ls|NOSUCHFILE
-NOSUCH|ls|NOSUCHFILE|ls
-
-pipe='ls'
-ls $pipe cat
-ls "$pipe" cat
-ls 'pipe' cat
-
-ls|ls
+ls | ls
 ls| ls
 ls |ls
+ls | ls | ls | ls | ls
+ls -n | ls
+ls -nn | ls
+ls | ls -n
+ls | ls -nn
 
-echo a |cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e|cat -e
-echo|echo|echo|echo|echo
+NOSUCHFILE|ls
+ls|NOSUCHFILE
+NOSUCHFILE|ls|NOSUCHFILE
+NOSUCHFILE|ls|NOSUCHFILE|ls
 
-|
-||
-| |
+echo hello | cat -n
+echo hello | cat -e
+echo hello | cat -e | cat -e | cat -e
+echo hello | cat -n | cat -e | cat -n
+echo hello | cat -e | ls | cat -e
+echo hello | cat -e | cat -e -n | cat -e
 
-echo hello | echo world | echo 42 | echo tokyo
-echo "|" | echo "|"
-echo $? | echo $?
+echo | echo | echo | echo | echo | echo | echo
+
+hello|world
+hello|world|echo hello
