@@ -43,8 +43,9 @@ void exec_cmd(t_node *node) {
             free(cmd_argv);
             exit(127);
         }
-        wait(&(g_shell->sts));
-        g_shell->sts = WEXITSTATUS(g_shell->sts);
+        int sts = 0;
+        waitpid(pid, &sts, 0);
+        g_shell->sts = WEXITSTATUS(sts);
     }
 }
 
@@ -55,8 +56,9 @@ void exec_bracket(t_node *bracket_node) {
             exec_stmt(bracket_node->lhs);
             exit(g_shell->sts);
         }
-        wait(&(g_shell->sts));
-        g_shell->sts = WEXITSTATUS(g_shell->sts);
+        int sts = 0;
+        waitpid(pid, &sts, 0);
+        g_shell->sts = WEXITSTATUS(sts);
     }
     else
         exec_cmd(bracket_node);
@@ -67,29 +69,30 @@ void exec_no_pipe(t_node *pipe_node) {
 }
 
 void exec_pipes(t_node *pipe_node) {
-    int fd[2];
-
-    if (pipe_node->lhs == NULL) {
-        exec_bracket(pipe_node->rhs);
+    if (pipe_node == NULL)
         return;
-    }
-    
-    pipe(fd);
-    int pid = fork();
 
+    int fd[2];
+    pipe(fd);
+    
+    int pid = fork();
     if (pid == 0) {
+        if (pipe_node->lhs)
+            dup2(fd[0], 0);
+        close(fd[1]);
+        close(fd[0]);
+        exec_bracket(pipe_node->rhs);
+        exit(g_shell->sts);
+    }
+    else {
         dup2(fd[1], 1);
         close(fd[1]);
         close(fd[0]);
-        exec_pipe(pipe_node->lhs);
+        exec_pipes(pipe_node->lhs);
     }
-    else {
-        dup2(fd[0], 0);
-        close(fd[1]);
-        close(fd[0]);
-        exec_bracket(pipe_node->rhs);
-    }
-    exit(g_shell->sts);
+    int sts = 0;
+    waitpid(pid, &sts, 0);
+    g_shell->sts = WEXITSTATUS(sts);
 }
 
 void exec_pipe(t_node *pipe_node) {
@@ -102,26 +105,28 @@ void exec_pipe(t_node *pipe_node) {
             exec_pipes(pipe_node);
             exit(g_shell->sts);
         }
-        wait(&(g_shell->sts));
-        g_shell->sts = WEXITSTATUS(g_shell->sts);
+        int sts = 0;
+        waitpid(pid, &sts, 0);
+        g_shell->sts = WEXITSTATUS(sts);
     }
 }
 
 void exec_stmt(t_node *stmt_node) {
     if (stmt_node == NULL)
         return;
-    if (stmt_node->kind == ND_OR && g_shell->sts == 0)
+    if (stmt_node->kind == ND_OR && g_shell->sts == 0) {
+        exec_stmt(stmt_node->rhs);
         return;
-    if (stmt_node->kind == ND_AND && g_shell->sts != 0)
+    }
+    if (stmt_node->kind == ND_AND && g_shell->sts != 0) {
+        exec_stmt(stmt_node->rhs);
         return;
+    }
     t_node *pipe_node = stmt_node->lhs;
     exec_pipe(pipe_node);
     exec_stmt(stmt_node->rhs);
 }
 
 void exec(t_node *node) {
-    t_node *stmt_node;
-
-    stmt_node = node;
-    exec_stmt(stmt_node);
+    exec_stmt(node);
 }
