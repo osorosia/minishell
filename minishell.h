@@ -172,6 +172,9 @@ t_env *create_env(char **envp);
 char *get_env_body(char *name);
 // debug_env.c
 void debug_env();
+// envp.c
+char **create_envp();
+void free_envp(char **envp);
 
 // grobal variable ------------------------------------
 

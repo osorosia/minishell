@@ -39,8 +39,10 @@ void exec_cmd(t_node *node) {
 
         if (pid == 0) {
             char **cmd_argv = create_argv(cmd->word);
-            execve(cmd->pathname, cmd_argv, NULL);
+            char **cmd_envp = create_envp();
+            execve(cmd->pathname, cmd_argv, cmd_envp);
             free(cmd_argv);
+            free_envp(cmd_envp);
             exit(127);
         }
         int sts = 0;
