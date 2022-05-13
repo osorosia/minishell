@@ -2,12 +2,23 @@
 
 char *_delete_quote_in_str(char *str) {
     char *new;
+    bool single_quote = false;
+    bool double_quote = false;
 
     new = NULL;
     long i = 0;
     while (str[i]) {
-        if (str[i] != '\'' && str[i] != '"')
+        if (!single_quote && !double_quote && str[i] == '"') {
+            double_quote = true;
+        } else if (!single_quote && !double_quote && str[i] == '\'') {
+            single_quote = true;
+        } else if (double_quote && str[i] == '"') {
+            double_quote = false;
+        } else if (single_quote && str[i] == '\'') {
+            single_quote = false;
+        } else {
             new = ft_str_add_char(new, str[i]);
+        }
         i++;
     }
     free(str);
