@@ -1,4 +1,3 @@
-echo ------------------------------
 touch tmpfile
 chmod 000 tmpfile
 cat tmpfile
