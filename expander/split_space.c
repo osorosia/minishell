@@ -64,6 +64,7 @@ t_word *_split_space_in_word(t_word *word) {
     }
     t_word *last = word_last(&new_word);
     last->next = _split_space_in_word(word->next);
+    free(word->str);
     free(word);
     return new_word.next;
 }
