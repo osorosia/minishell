@@ -31,6 +31,23 @@ void _delete_quote_in_word(t_word *word) {
 void delete_quote(t_node *node) {
     if (node == NULL)
         return;
+    if (node->kind == ND_STMT)
+        return;
+    if (node->kind == ND_CMD) {
+        _delete_quote_in_word(node->cmd->word);
+        _delete_quote_in_redir(node->cmd->redir_in);
+        _delete_quote_in_redir(node->cmd->redir_out);
+    } else {
+        delete_quote(node->lhs);
+        delete_quote(node->rhs);
+    }
+}
+
+void delete_quote_for_debug(t_node *node) {
+    if (node == NULL)
+        return;
+    // if (node->kind == ND_STMT)
+    //     return;
     if (node->kind == ND_CMD) {
         _delete_quote_in_word(node->cmd->word);
         _delete_quote_in_redir(node->cmd->redir_in);

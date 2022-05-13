@@ -54,6 +54,22 @@ char *get_pathname_str(char *str) {
 void generate_pathname(t_node *node) {
     if (node == NULL)
         return;
+    if (node->kind == ND_STMT)
+        return;
+    if (node->kind == ND_CMD) {
+        node->cmd->pathname = get_pathname_str(node->cmd->word->str);
+    }
+    else {
+        generate_pathname(node->lhs);
+        generate_pathname(node->rhs);
+    }
+}
+
+void generate_pathname_for_debug(t_node *node) {
+    if (node == NULL)
+        return;
+    // if (node->kind == ND_STMT)
+    //     return;
     if (node->kind == ND_CMD) {
         node->cmd->pathname = get_pathname_str(node->cmd->word->str);
     }

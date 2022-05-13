@@ -71,6 +71,24 @@ t_word *_split_space_in_word(t_word *word) {
 void split_space(t_node *node) {
     if (node == NULL)
         return;
+    if (node->kind == ND_STMT)
+        return;
+    if (node->kind == ND_CMD) {
+        node->cmd->word = _split_space_in_word(node->cmd->word);
+        // node->cmd->redir_in = _split_space_in_redir(node->cmd->redir_in);
+        // node->cmd->redir_out = _split_space_in_redir(node->cmd->redir_out);
+    }
+    else {
+        split_space(node->lhs);
+        split_space(node->rhs);
+    }
+}
+
+void split_space_for_debug(t_node *node) {
+    if (node == NULL)
+        return;
+    // if (node->kind == ND_STMT)
+    //     return;
     if (node->kind == ND_CMD) {
         node->cmd->word = _split_space_in_word(node->cmd->word);
         // node->cmd->redir_in = _split_space_in_redir(node->cmd->redir_in);

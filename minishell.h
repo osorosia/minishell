@@ -148,12 +148,16 @@ void expander_for_debug(t_node *node);
 void debug_expander(t_node *node, char *name);
 // expand_var.c
 void expand_var(t_node *node);
+void expand_var_for_debug(t_node *node);
 // generate_pathname.c
 void generate_pathname(t_node *node);
+void generate_pathname_for_debug(t_node *node);
 // split_space.c
 void split_space(t_node *node);
+void split_space_for_debug(t_node *node);
 // delete_quote.c
 void delete_quote(t_node *node);
+void delete_quote_for_debug(t_node *node);
 
 //
 // exec ----------------------------------------------
