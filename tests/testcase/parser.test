@@ -87,3 +87,22 @@ echo "|" | ls
 ls "|" echo "|"
 echo "|" | echo "|"
 echo "|" | echo "|" | echo "|" | echo "|" | echo "|"
+
+export a=
+echo $a
+export a==
+echo $a
+export a===
+echo $a
+export a====
+echo $a
+export "a"="a"
+echo $a
+export '='='='
+echo $=
+export '='="="
+echo $=
+ecport "="='='
+echo $=
+export '==='
+echo $=
