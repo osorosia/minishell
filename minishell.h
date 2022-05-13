@@ -194,6 +194,10 @@ void debug_env();
 // envp.c
 char **create_envp();
 void free_envp(char **envp);
+// free_env.c
+void free_env(t_env *env);
+// del_env.c
+void del_env(char *name);
 
 // grobal variable ------------------------------------
 

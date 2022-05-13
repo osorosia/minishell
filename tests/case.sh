@@ -12,7 +12,7 @@ test 'quote'
 # test 'builtin_cd'
 test 'builtin_pwd'
 # test 'builtin_export'
-# test 'builtin_unset'
+test 'builtin_unset'
 test 'builtin_env'
 test 'builtin_exit'
 
