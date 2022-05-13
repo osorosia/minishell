@@ -6,9 +6,6 @@ rm -rf ok
 ls
 rm -rf ok ng
 
->> >>NOSUCHFILE
-rm -rf NOSUCHFILE
-
 >>A>>B>>C>>D>>E>>F>>G>>H
 rm -rf A B C D E F G H
 
@@ -44,3 +41,4 @@ cat b
 cat c
 rm a b c
 
+rm -rf hello

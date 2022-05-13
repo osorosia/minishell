@@ -106,3 +106,6 @@ ecport "="='='
 echo $=
 export '==='
 echo $=
+
+>> >>NOSUCHFILE
+rm -rf NOSUCHFILE
