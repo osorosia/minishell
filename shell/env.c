@@ -20,33 +20,6 @@ t_env *add_new_env(t_env *env, char *name, char *body) {
     return env;
 }
 
-char *create_env_name(char *str) {
-    char *name;
-    char *eq;
-
-    eq = ft_strchr(str, '=');
-    if (eq == NULL)
-        name = ft_strdup(str);
-    else
-        name = ft_strndup(str, eq - str);
-    if (name == NULL)
-        error("malloc error");
-    return name;
-}
-
-char *create_env_body(char *str) {
-    char *body;
-    char *eq;
-
-    eq = ft_strchr(str, '=');
-    if (eq == NULL)
-        return NULL;
-    body = ft_strdup(eq + 1);
-    if (body == NULL)
-        error("malloc error");
-    return body;
-}
-
 t_env *create_env(char **envp) {
     t_env *env;
     long i;

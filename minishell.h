@@ -196,8 +196,18 @@ char **create_envp();
 void free_envp(char **envp);
 // free_env.c
 void free_env(t_env *env);
+// new_env.c
+t_env *new_env(char *name, char *body);
 // del_env.c
 void del_env(char *name);
+// add_env.c
+void add_env(char *str);
+void add_env_plus(char *str);
+// env_utils.c
+char *create_env_name(char *str);
+char *create_env_body(char *str);
+char *create_env_name_plus(char *str);
+char *create_env_body_plus(char *str);
 
 // grobal variable ------------------------------------
 
