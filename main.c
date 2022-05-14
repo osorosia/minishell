@@ -1,9 +1,18 @@
 #include "minishell.h"
 
 void print_status() {
+    if (g_shell->sts != 0)
+        ft_putstr_fd("\033[0;31m", 2);
     ft_putstr_fd("[", 2);
     ft_putnbr_fd(g_shell->sts, 2);
-    ft_putstr_fd("]", 2);
+    ft_putstr_fd("] ", 2);
+    if (g_shell->sts != 0)
+        ft_putstr_fd("\033[0m", 2);
+    
+    char cwd[PATH_MAX + 1];
+    getcwd(cwd, sizeof(cwd));
+    ft_putstr_fd(cwd, 2);
+    ft_putstr_fd("\n", 2);
 }
 
 int main(int argc, char **argv, char **envp) {
