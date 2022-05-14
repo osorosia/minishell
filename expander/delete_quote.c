@@ -64,7 +64,7 @@ void delete_quote_for_debug(t_node *node) {
         _delete_quote_in_redir(node->cmd->redir_in);
         _delete_quote_in_redir(node->cmd->redir_out);
     } else {
-        delete_quote(node->lhs);
-        delete_quote(node->rhs);
+        delete_quote_for_debug(node->lhs);
+        delete_quote_for_debug(node->rhs);
     }
 }

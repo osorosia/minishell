@@ -96,7 +96,7 @@ void split_space_for_debug(t_node *node) {
         // node->cmd->redir_out = _split_space_in_redir(node->cmd->redir_out);
     }
     else {
-        split_space(node->lhs);
-        split_space(node->rhs);
+        split_space_for_debug(node->lhs);
+        split_space_for_debug(node->rhs);
     }
 }

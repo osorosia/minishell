@@ -105,7 +105,7 @@ void expand_var_for_debug(t_node *node) {
         _expand_var_in_redir(node->cmd->redir_out);
     }
     else {
-        expand_var(node->lhs);
-        expand_var(node->rhs);
+        expand_var_for_debug(node->lhs);
+        expand_var_for_debug(node->rhs);
     }
 }
