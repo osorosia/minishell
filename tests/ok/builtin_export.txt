@@ -1,4 +1,4 @@
-export | grep -v '^declare -x _=' | grep -v '^declare -x SHLVL=' | sort
+export | grep -v '^declare -x _=' | grep -v '^declare -x SHLVL=' | grep -v '^declare -x OLDPWD' | sort
 export AAA=a
 export | grep '^declare -x AAA'
 export AAA+=a
