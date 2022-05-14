@@ -1,5 +1,9 @@
 #!/bin/bash
 
+RED='\033[0;31m'
+GREEN='\033[32m'
+NC='\033[0m'
+
 function test() {
   file="${1}.txt"
 
@@ -11,9 +15,9 @@ function test() {
 
   result=$?
   if [ "$result" = "0" ]; then
-    echo "OK: ${1}"
+    echo -e "${GREEN}OK:${NC} ${1}"
   else
-    echo "KO!!!!!!!!!!: ${1}"
+    echo -e "${RED}KO!!!!!!!!!!:${NC} ${1}"
     # cat ./diff/${file} | grep -v '^+++' | grep -v '^---'
     sdiff ./actual/${file} ./expected/${file}
   fi
