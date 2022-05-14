@@ -1,6 +1,9 @@
 #include "../minishell.h"
 
 bool is_number(char *str) {
+    if (str[0] == '\0')
+        return false;
+
     long i = 0;
     if (str[i] == '-' || str[i] == '+') {
         i++;
@@ -9,6 +12,27 @@ bool is_number(char *str) {
     }
     while (str[i]) {
         if (!ft_isdigit(str[i]))
+            return false;
+        i++;
+    }
+    return true;
+}
+
+bool check_overflow(char *str) {
+    unsigned long num = 0;
+    bool minus = false;
+
+    long i = 0;
+    if (str[i] == '-' || str[i] == '+') {
+        minus = (str[i] == '-');
+        i++;
+    }
+    while (str[i]) {
+        if ((num * 10 + str[i] - '0') / 10 != num) {
+            return false;
+        }
+        num = num * 10 + str[i] - '0';
+        if (num > (unsigned long)LONG_MAX + minus)
             return false;
         i++;
     }
@@ -37,6 +61,11 @@ int exec_exit(t_word *word) {
 
     // numeric argument required
     if (!is_number(word->next->str)) {
+        ft_putstr_fd("exit: numeric argument required\n", 2);
+        exit(2);
+    }
+
+    if (!check_overflow(word->next->str)) {
         ft_putstr_fd("exit: numeric argument required\n", 2);
         exit(2);
     }
