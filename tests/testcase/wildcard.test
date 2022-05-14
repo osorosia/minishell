@@ -1,9 +1,12 @@
 echo *
 echo **
 echo * * *
+echo ** ** ** ** **
+echo ******************* *********************
 echo *******
 echo -n ***
 echo -n * -n *
+echo -nn *
 echo "*"
 echo '*'
 
@@ -16,5 +19,24 @@ echo .c**
 
 export wildcard='*'
 echo $wildcard
+echo $wildcard $wildcard
+echo $wildcard $wildcard $wildcard
+
 echo "$wildcard"
 echo '$wildcard'
+echo $wildcard "$wildcard" '$wildcard'
+
+echo *c*
+echo **c
+echo c**
+echo *****c******
+echo *********c
+echo c*********
+echo * *c*
+echo *c* *
+echo *
+ls **
+ls ****
+ls * * *
+ls *c* * *c*
+ls *c* * *c* *

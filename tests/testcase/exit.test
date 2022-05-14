@@ -1,35 +1,39 @@
-exit | echo $?
-exit 0 | echo $?
-exit 10 | echo $?
-exit 100 | echo $?
-exit 1000 | echo $?
-exit 2147483647 | echo $?
-exit 2147483648 | echo $?
-exit -2147483648 | echo $?
-exit -2147483649 | echo $?
-exit 9223372036854775807 | echo $?
-exit 9223372036854775807 | echo $?
-exit 9223372036854775808 | echo $?
-exit -9223372036854775808 | echo $?
-exit -9223372036854775809 | echo $?
-exit 18446744073709551615 | echo $?
-exit -18446744073709551615 | echo $?
-exit "100*100" | echo $?
-exit '100*100' | echo $?
-exit '100 * 100' | echo $?
-exit '1 0 0 * 1 0 0' | echo $?
+(exit 1); echo $?
+(exit 0); echo $?
+(exit -1); echo $?
+(exit); echo $?
+(exit 10); echo $?
+(exit -10); echo $?
+(exit 100); echo $?
+(exit -100); echo $?
+(exit 1000); echo $?
+(exit -1000); echo $?
+(exit 2147483647); echo $?
+(exit -2147483648); echo $?
+(exit -2147483649); echo $?
+(exit 9223372036854775807); echo $?
+(exit -9223372036854775808); echo $?
+(exit 9223372036854775808); echo $?
+(exit -9223372036854775809); echo $?
 
-exit a | echo $?
-exit 'a' | echo $?
-exit "a" | echo $?
-exit '' | echo $?
-exit a1 | echo $?
-exit 1a | echo $?
-exit +1 | echo $?
-exit 1- | echo $?
-exit 1- | echo $?
-exit -0 | echo $?
-exit +0 | echo $?
-exit - | echo $?
-exit + | echo $?
-exit 01 | echo $?
+(exit "100*100"); echo $?
+(exit '100*100'); echo $?
+(exit '100 * 100'); echo $?
+(exit '1 0 0 * 1 0 0'); echo $?
+
+(exit a); echo $?
+(exit 'a'); echo $?
+(exit "a"); echo $?
+(exit ""); echo $?
+(exit ''); echo $?
+(exit a1); echo $?
+(exit 1a); echo $?
+(exit +1); echo $?
+(exit ++1); echo $?
+(exit 1+1); echo $?
+(exit 1-); echo $?
+(exit -0); echo $?
+(exit +0); echo $?
+(exit +); echo $?
+(exit -); echo $?
+(exit 01); echo $?
