@@ -24,5 +24,20 @@ int exec_cd(t_word *word) {
     if (ret != 0)
         return 1;
 
+    char *pwd_body = get_env_body("PWD");
+    if (pwd_body) {
+        char *str = ft_strjoin("OLDPWD=", pwd_body);
+        add_env(str);
+        free(str);
+    }
+
+    char path[PATH_MAX + 1];
+    getcwd(path, sizeof(path));
+    {
+        char *str = ft_strjoin("PWD=", path);
+        add_env(str);
+        free(str);
+    }
+
     return 0;
 }
