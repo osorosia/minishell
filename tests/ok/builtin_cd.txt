@@ -1,0 +1,4 @@
+pwd
+cd tmpdir
+echo $?
+pwd
