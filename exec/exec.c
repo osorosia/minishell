@@ -105,6 +105,7 @@ void exec_cmd(t_node *node) {
     if ( !set_redir_in(cmd->redir_in)
         || !set_redir_out(cmd->redir_out))
     {
+        g_shell->sts = 1;
         dup2(g_shell->stdout, 1);
         dup2(g_shell->stdin, 0);
         return;
