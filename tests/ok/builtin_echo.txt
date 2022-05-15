@@ -6,3 +6,6 @@ echo $?
 
 echo -n aaa
 echo $?
+
+echo -n -n -nnnn aaa
+echo $?
