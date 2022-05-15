@@ -87,6 +87,7 @@ void _add_redir_in(t_cmd *cmd, t_redir_kind kind, char *str, long len) {
     redir = ft_calloc(1, sizeof(t_redir));
     if (redir == NULL)
         error("malloc error");
+    redir->fd = -1;
     redir->str = ft_strndup(str, len);
     if (redir->str == NULL)
         error("malloc error");
@@ -108,6 +109,7 @@ void _add_redir_out(t_cmd *cmd, t_redir_kind kind, char *str, long len) {
     redir = ft_calloc(1, sizeof(t_redir));
     if (redir == NULL)
         error("malloc error");
+    redir->fd = -1;
     redir->str = ft_strndup(str, len);
     if (redir->str == NULL)
         error("malloc error");

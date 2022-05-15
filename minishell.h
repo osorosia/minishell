@@ -65,6 +65,7 @@ struct s_redir {
     t_redir_kind kind;
     t_redir *next;
     char *str;
+    int fd;
 };
 
 typedef struct s_word t_word;

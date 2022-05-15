@@ -10,6 +10,8 @@ void free_word(t_word *word) {
 void free_redir(t_redir *redir) {
     if (!redir)
         return;
+    if (redir->fd >= 0)
+        close(redir->fd);
     free_redir(redir->next);
     free(redir->str);
     free(redir);
