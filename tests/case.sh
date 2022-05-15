@@ -6,6 +6,9 @@ mkdir tmpdir
 
 test 'exec'
 
+# parser
+test 'pipe'
+
 # expander
 test 'quote'
 

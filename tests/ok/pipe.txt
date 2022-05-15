@@ -23,5 +23,3 @@ echo | echo | echo | echo | echo | echo | echo
 
 hello|world
 hello|world|echo hello
-
-||
