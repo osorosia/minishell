@@ -3,3 +3,6 @@ echo $?
 
 echo
 echo $?
+
+echo -n aaa
+echo $?

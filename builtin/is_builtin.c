@@ -1,8 +1,7 @@
 #include "../minishell.h"
 
 bool is_builtin(char *str) {
-    char *kw[] = {/*"echo",*/ "cd", "pwd", "export", "unset", "env", "exit", NULL};
-    // char *kw[] = {"echo", "cd", "pwd", "export", "unset", "env", "exit", NULL};
+    char *kw[] = {"echo", "cd", "pwd", "export", "unset", "env", "exit", NULL};
 
     long i = 0;
     while (kw[i]) {

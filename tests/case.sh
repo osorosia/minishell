@@ -5,13 +5,12 @@ rm -rf tmpdir
 mkdir tmpdir
 
 test 'exec'
-test 'echo'
-test 'echo_opt'
 
+# expander
 test 'quote'
 
 # builtin
-# test 'builtin_echo'
+test 'builtin_echo'
 test 'builtin_cd'
 test 'builtin_pwd'
 test 'builtin_export'
