@@ -54,7 +54,13 @@ bool set_redir_in(t_redir *redir_in) {
         return true;
 
     if (redir_in->kind == RD_IN) {
-
+        int fd = open(redir_in->str, O_RDONLY);
+        if (fd < 0) {
+            ft_putstr_fd("redir_in: in: error\n", 2);
+            return false;
+        }
+        dup2(fd, 0);
+        close(fd);
     } else if (redir_in->kind == RD_HEREDOC) {
 
     } else {
@@ -95,10 +101,10 @@ void exec_cmd(t_node *node) {
     t_cmd *cmd = node->cmd;
 
     // redir in
-    set_redir_in(cmd->redir_in);
-
     // redir out
-    if (!set_redir_out(cmd->redir_out)) {
+    if ( !set_redir_in(cmd->redir_in)
+        || !set_redir_out(cmd->redir_out))
+    {
         dup2(g_shell->stdout, 1);
         dup2(g_shell->stdin, 0);
         return;
