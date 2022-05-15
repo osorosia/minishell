@@ -68,3 +68,11 @@ void delete_quote_for_debug(t_node *node) {
         delete_quote_for_debug(node->rhs);
     }
 }
+
+void delete_quote_in_heredoc(t_redir *redir) {
+    if (redir == NULL)
+        return;
+    if (redir->kind == RD_HEREDOC)
+        redir->str = _delete_quote_in_str(redir->str);
+    delete_quote_in_heredoc(redir->next);
+}

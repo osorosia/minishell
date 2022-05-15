@@ -34,6 +34,7 @@ void expander_set_heredoc(t_node *node) {
     if (node == NULL)
         return;
     if (node->kind == ND_CMD) {
+        delete_quote_in_heredoc(node->cmd->redir_in);
         set_heredoc(node->cmd->redir_in);
     } else {
         expander_set_heredoc(node->lhs);

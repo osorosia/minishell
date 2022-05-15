@@ -13,3 +13,7 @@ cat << a
 
    a
 a
+
+cat << "a"
+hello
+a
