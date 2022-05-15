@@ -1,55 +1,145 @@
 echo -n
+echo $?
+
 echo -nn
+echo $?
+
+
 echo -nn hello
+echo $?
+
 echo -n -n -n -n -n -n
+echo $?
+
 echo -nnnnnnnna hello
+echo $?
+
 echo -nnnnnnaaaaaa hello
+echo $?
+
 echo -aaaaaaaaannn hello
+echo $?
+
 echo -annnnnnnnnnn hello
+echo $?
 
 echo
+echo $?
+
 echo a -n a hello
+echo $?
+
 echo - hello
+echo $?
+
 echo -x　hello
+echo $?
+
 echo -n　hello
+echo $?
+
 echo n-　hello
+echo $?
+
 echo n- -n　hello
+echo $?
+
 echo n- -n a　hello
+echo $?
+
 echo - n hello hello
+echo $?
+
 echo - n　hello
+echo $?
+
 echo "-n" hello
+echo $?
+
 echo '-n' hello
+echo $?
 
 export L='ls'
 echo L
+echo $?
+
 echo $L
+echo $?
+
 echo "$L"
+echo $?
+
 echo '$L'
+echo $?
+
 echo 'ls'
+echo $?
+
 echo "ls"
+echo $?
+
 
 export N='-n'
 echo $N hello
+echo $?
+
 echo $N $N hello
+echo $?
+
 echo $N$N hello
+echo $?
+
 echo $$N hello
+echo $?
+
 echo '$N' hello
+echo $?
+
 echo $N hello $N world
+echo $?
+
 
 export N=' -n '
 echo $N hello
+echo $?
+
 echo $N $N hello
+echo $?
+
 echo $N$N hello
+echo $?
+
 echo $$N hello
+echo $?
+
 echo '$N' hello
+echo $?
+
 echo $N hello $N world
+echo $?
+
 
 export N='-nn'
+echo $?
+
 echo $N hello $N world
+echo $?
 
 echo "/bin/ls   "
+echo $?
+
 echo '/bin/ls'
+echo $?
+
 "echo" /bin/ls
+echo $?
+
 'echo' /bin/ls
+echo $?
+
 '  echo' /bin/ls
+echo $?
+
 echo " a "    ""   b    "  "
+echo $?
+
