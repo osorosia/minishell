@@ -1,26 +1,32 @@
 export UNSET_TEST=hello
 unset UNSET_TEST
 export | grep UNSET_TEST
+echo $?
 
 export UNSET_TEST=hello
 unset 'UNSET_TEST'
 export | grep ENVTEST
+echo $?
 
 export UNSET_TEST=hello
 unset UNSET_TEST
 export | grep UNSET_TEST
+echo $?
 
 export UNSET_TEST1=hello UNSET_TEST2=world
 unset UNSET_TEST1
 export | grep UNSET_TEST
+echo $?
 
 export UNSET_TEST1=hello UNSET_TEST2=world
 unset UNSET_TEST1 UNSET_TEST2
 export | grep UNSET_TEST
+echo $?
 
 export UNSET_TEST1=hello UNSET_TEST2=world
 unset UNSET_TEST1 UNSET_TEST2
 export | grep UNSET_TEST
+echo $?
 
 export UNSET_TEST=hello
 unset XXX
