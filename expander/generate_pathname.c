@@ -57,6 +57,8 @@ void generate_pathname(t_node *node) {
     if (node->kind == ND_STMT)
         return;
     if (node->kind == ND_CMD) {
+        if (node->cmd->word == NULL)
+            return;
         if (is_builtin(node->cmd->word->str))
             node->cmd->is_builtin = true;
         else
@@ -74,6 +76,8 @@ void generate_pathname_for_debug(t_node *node) {
     // if (node->kind == ND_STMT)
     //     return;
     if (node->kind == ND_CMD) {
+        if (node->cmd->word == NULL)
+            return;
         if (is_builtin(node->cmd->word->str))
             node->cmd->is_builtin = true;
         else

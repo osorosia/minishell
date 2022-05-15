@@ -114,6 +114,13 @@ void exec_cmd(t_node *node) {
         return;
     }
 
+    if (cmd->word == NULL) {
+        dup2(g_shell->stdout, 1);
+        dup2(g_shell->stdin, 0);
+        g_shell->sts = 0;
+        return;
+    }
+
     if (cmd->is_builtin) {
         exec_builtin(node);
     }
