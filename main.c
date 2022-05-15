@@ -29,7 +29,7 @@ int main(int argc, char **argv, char **envp) {
         char *str = readline("minishell$ ");
         
         if (str == NULL)
-            exit(0);
+            break;
         if (str[0] == '\0') {
             free(str);
             continue;
@@ -65,4 +65,6 @@ int main(int argc, char **argv, char **envp) {
         free_parser(node);
         free(str);
     }
+    ft_putstr_fd("exit\n", 2);
+    exit(0);
 }
