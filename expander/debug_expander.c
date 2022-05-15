@@ -16,7 +16,10 @@ void debug_redir_ex(t_redir *redir, int indent) {
     };
     
     while (redir) {
-        fprintf(stderr, "%s'%s' ", kw[redir->kind], redir->str);
+        if (redir->fd < 0)
+            fprintf(stderr, "%s'%s' ", kw[redir->kind], redir->str);
+        else
+            fprintf(stderr, "%s'%s'(%d) ", kw[redir->kind], redir->str, redir->fd);
         redir = redir->next;
     }
 }

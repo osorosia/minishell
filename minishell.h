@@ -180,6 +180,8 @@ void split_space_for_debug(t_node *node);
 // delete_quote.c
 void delete_quote(t_node *node);
 void delete_quote_for_debug(t_node *node);
+// expander_set_heredoc.c
+void expander_set_heredoc(t_node *node);
 
 //
 // exec ----------------------------------------------

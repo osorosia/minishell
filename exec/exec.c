@@ -62,7 +62,10 @@ bool set_redir_in(t_redir *redir_in) {
         dup2(fd, 0);
         close(fd);
     } else if (redir_in->kind == RD_HEREDOC) {
-
+        if (redir_in->fd >= 0)
+            dup2(redir_in->fd, 0);
+        else
+            error("error: redir_in: heredoc");
     } else {
         error("error: set_redir_in()");
     }

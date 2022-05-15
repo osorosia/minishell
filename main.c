@@ -54,6 +54,10 @@ int main(int argc, char **argv, char **envp) {
         }
         free_lexer(tok);
 
+        ft_putstr_fd("--- heredoc ---\n", 2);
+        expander_set_heredoc(node);
+        debug_expander(node, "set_heredoc");
+
         // exec
         fprintf(stderr, "--- exec ---\n");
         exec(node);
