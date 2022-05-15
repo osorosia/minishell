@@ -1,0 +1,4 @@
+cat << a
+hello
+world
+a

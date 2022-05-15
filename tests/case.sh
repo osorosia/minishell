@@ -18,6 +18,9 @@ test 'builtin_unset'
 test 'builtin_env'
 test 'builtin_exit'
 
+# redirect
+test 'redirect_heredoc'
+
 # status
 test 'status'
 test 'status1'

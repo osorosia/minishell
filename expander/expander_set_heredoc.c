@@ -19,9 +19,11 @@ void set_heredoc(t_redir *redir) {
                 break;
             }
             if (ft_strncmp(line, redir->str, ft_strlen(line) - 1) == 0) {
+                free(line);
                 break;
             }
             write(fd[1], line, ft_strlen(line));
+            free(line);
         }
         close(fd[1]);
     }
