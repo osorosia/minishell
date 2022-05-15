@@ -77,7 +77,13 @@ bool set_redir_out(t_redir *redir_out) {
         dup2(fd, 1);
         close(fd);
     } else if (redir_out->kind == RD_APPEND) {
-
+        int fd = open(redir_out->str, (O_WRONLY | O_CREAT | O_APPEND), 0664);
+        if (fd < 0) {
+            ft_putstr_fd("redir_out: append: error\n", 2);
+            return false;
+        }
+        dup2(fd, 1);
+        close(fd);
     } else {
         error("error: set_redir_out()");
     }
