@@ -1,7 +1,7 @@
 export CAT='cat -e'
 export LS='ls -a'
 
-rm -rf tmpdir
+rm -rf tmp*
 mkdir tmpdir
 
 test 'exec'
