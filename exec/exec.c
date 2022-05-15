@@ -49,8 +49,54 @@ void exec_builtin(t_node *node) {
     }
 }
 
+bool set_redir_in(t_redir *redir_in) {
+    if (redir_in == NULL)
+        return true;
+
+    if (redir_in->kind == RD_IN) {
+
+    } else if (redir_in->kind == RD_HEREDOC) {
+
+    } else {
+        error("error: set_redir_in()");
+    }
+
+    return set_redir_in(redir_in->next);
+}
+
+bool set_redir_out(t_redir *redir_out) {
+    if (redir_out == NULL)
+        return true;
+
+    if (redir_out->kind == RD_OUT) {
+        int fd = open(redir_out->str, (O_WRONLY | O_CREAT | O_TRUNC), 0664);
+        if (fd < 0) {
+            ft_putstr_fd("redir_out: out: error\n", 2);
+            return false;
+        }
+        dup2(fd, 1);
+        close(fd);
+    } else if (redir_out->kind == RD_APPEND) {
+
+    } else {
+        error("error: set_redir_out()");
+    }
+
+    return set_redir_in(redir_out->next);
+}
+
 void exec_cmd(t_node *node) {
     t_cmd *cmd = node->cmd;
+
+    // redir in
+    set_redir_in(cmd->redir_in);
+
+    // redir out
+    if (!set_redir_out(cmd->redir_out)) {
+        dup2(g_shell->stdout, 1);
+        dup2(g_shell->stdin, 0);
+        return;
+    }
 
     if (cmd->is_builtin) {
         exec_builtin(node);
