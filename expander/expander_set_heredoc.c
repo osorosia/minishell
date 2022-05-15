@@ -18,7 +18,7 @@ void set_heredoc(t_redir *redir) {
                 ft_putstr_fd("warning: here-document\n", 2);
                 break;
             }
-            if (ft_strncmp(line, redir->str, ft_strlen(line) - 1) == 0) {
+            if (ft_strlen(line) > 1 && ft_strncmp(line, redir->str, ft_strlen(line) - 1) == 0) {
                 free(line);
                 break;
             }
