@@ -66,5 +66,5 @@ int main(int argc, char **argv, char **envp) {
         free(str);
     }
     ft_putstr_fd("exit\n", 2);
-    exit(0);
+    exit(g_shell->sts);
 }
