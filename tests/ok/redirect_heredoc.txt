@@ -2,3 +2,8 @@ cat << a
 hello
 world
 a
+
+cat << a
+hello
+world
+a
