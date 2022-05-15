@@ -2,6 +2,7 @@ NAME = minishell
 SRCS = $(wildcard *.c) \
 	$(wildcard ./utils/*.c) \
 	$(wildcard ./shell/*.c) \
+	$(wildcard ./signal/*.c) \
 	$(wildcard ./builtin/*.c) \
 	$(wildcard ./lexer/*.c) \
 	$(wildcard ./parser/*.c) \

@@ -219,6 +219,11 @@ char *create_env_body(char *str);
 char *create_env_name_plus(char *str);
 char *create_env_body_plus(char *str);
 
+// signal ---------------------------------------------
+
+// signal_init.c
+void signal_init();
+
 // grobal variable ------------------------------------
 
 t_shell *g_shell;

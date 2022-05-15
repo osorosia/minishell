@@ -25,6 +25,7 @@ int main(int argc, char **argv, char **envp) {
     debug_env();
     
     while (true) {
+        signal_init();
         print_status();
         char *str = readline("minishell$ ");
         
