@@ -13,6 +13,8 @@ void set_heredoc(t_redir *redir) {
         redir->fd = fd[0];
         char *line;
         while (1) {
+            ft_putstr_fd("> ", 2);
+            
             line = get_next_line(0);
             if (line == NULL) {
                 ft_putstr_fd("warning: here-document\n", 2);
