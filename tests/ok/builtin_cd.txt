@@ -26,3 +26,7 @@ pwd
 
 cd .. | echo aaa
 pwd
+
+cd /
+echo $?
+pwd
