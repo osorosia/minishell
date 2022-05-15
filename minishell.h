@@ -20,6 +20,10 @@
 
 #define INDENT 4
 
+#ifndef PATH_MAX
+#define PATH_MAX 4096
+#endif
+
 typedef enum e_token_kind t_token_kind;
 enum e_token_kind {
     TK_WORD,
