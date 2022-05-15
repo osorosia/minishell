@@ -20,7 +20,9 @@ int exec_cd(t_word *word) {
         return 1;
     }
 
-    chdir(word->next->str);
+    int ret = chdir(word->next->str);
+    if (ret != 0)
+        return 1;
 
     return 0;
 }

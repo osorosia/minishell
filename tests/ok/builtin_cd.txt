@@ -1,4 +1,21 @@
 pwd
+
 cd tmpdir
+echo $?
+pwd
+
+cd ..
+echo $?
+pwd
+
+cd .
+echo $?
+pwd
+
+cd TMPDIR
+echo $?
+pwd
+
+cd tmpdir tmpdir
 echo $?
 pwd
