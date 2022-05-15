@@ -49,11 +49,11 @@ test: all
 
 .PHONY: ok
 ok: all
-	@cd tests && cat test.sh case.sh > tmp.sh && bash tmp.sh 2>/dev/null
-	@cd tests && cat leak.sh case.sh > tmp.sh && bash tmp.sh 2>/dev/null
+	@cd tests && cat test.sh case.sh > temp.sh && bash temp.sh 2>/dev/null
+	@cd tests && cat leak.sh case.sh > temp.sh && bash temp.sh 2>/dev/null
 
 .PHONY: gen
 gen:
 	cd tests/gen && bash gen.sh
-	@cd tests && cat test.sh gen_case.sh > tmp.sh && bash tmp.sh 2>/dev/null
-	@cd tests && cat leak.sh gen_case.sh > tmp.sh && bash tmp.sh 2>/dev/null
+	@cd tests && cat test.sh gen_case.sh > temp.sh && bash temp.sh 2>/dev/null
+	@cd tests && cat leak.sh gen_case.sh > temp.sh && bash temp.sh 2>/dev/null
