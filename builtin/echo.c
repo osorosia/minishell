@@ -17,7 +17,7 @@ int exec_echo(t_word *word) {
     bool opt_n = false;
     t_word *w = word->next;
 
-    if (w && is_opt_n(w->str)) {
+    while (w && is_opt_n(w->str)) {
         opt_n = true;
         w = w->next;
     }
