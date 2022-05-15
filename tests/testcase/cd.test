@@ -1,71 +1,72 @@
 cd
-pwd
 echo $?
+pwd
 
 cd /
-pwd
 echo $?
+pwd
 
 cd/
-pwd
 echo $?
+pwd
 
 cd //
-pwd
 echo $?
+pwd
 
 cd ./ | ls
-pwd
 echo $?
+pwd
 
 cd | cd
-pwd
 echo $?
+pwd
 
 cd / | cd
-pwd
 echo $?
+pwd
 
 cd | cd | cd
-pwd
 echo $?
+pwd
 
 cd NO_SUCH_FILE
-pwd
 echo $?
+pwd
 
 cd /
-pwd
 echo $?
+pwd
 
 cd //
-pwd
 echo $?
+pwd
 
 cd ///
-pwd
 echo $?
+pwd
+
 
 cd ////
-pwd
 echo $?
+pwd
 
 cd ./././././././
-pwd
 echo $?
+pwd
 
 cd ./../.../..../
-pwd
 echo $?
+pwd
 
 cd ..../
-pwd
 echo $?
+pwd
 
 cd /.
-pwd
 echo $?
+pwd
 
 cd /..
-pwd
 echo $?
+pwd
