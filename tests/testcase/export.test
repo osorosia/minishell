@@ -1,65 +1,118 @@
 export
+echo $?
+
 export =
+echo $?
+
 export "="="="
+echo $?
+
 export "=""=""="
+echo $?
 
 export
+echo $?
 
 export A='hello'
 echo $A
+echo $?
 
 export pipe='|'
+echo $?
 ls $pipe cat
+echo $?
 ls "$pipe" cat
+echo $?
 ls '$pipe' cat
+echo $?
 
 export a='ls' b='ls' c='ls'
+echo $?
+
 echo $a $b $c
+echo $?
+
 echo "$a" "$b" "$c"
+echo $?
+
 echo '$a' '$b' '$c'
+echo $?
+
 echo '$a' "$b" '$c'
+echo $?
+
 echo "'$a' "$b" '$c'"
+echo $?
 echo '"'$a' "$b" '$c'"'
+echo $?
 
 export var1='/bin/ls'
+echo $?
 export var2=$var1
+echo $?
 echo $var1
+echo $?
 echo $var2
+echo $?
 
 export $A=$B
+echo $?
 
 export PWD
+echo $?
 echo $PWD
+echo $?
 
 export a=NO
+echo $?
+
 echo $a
+echo $?
+
 export a=HELLOWORLD | echo $a
+echo $?
 unset a
 
 export a="a"
+echo $?
+
 echo $a$a
+echo $?
+
 echo $a$a$
+echo $?
+
 echo $a$a$a$
+echo $?
+
 echo a$a$a$a$a
+echo $?
 
 export a=$a
 echo $a
+echo $?
+
 export a=$a$a
 echo $a
+echo $?
+
 export a=$a$a$a
 echo $a
+echo $?
 
 export L=' ls '
 $L
+echo $?
 
 export L=' ls -l'
 $L
+echo $?
 
 export L=' ls -lllllllllllllllllllllll'
 $L
+echo $?
 
 export L=' ls -alllllllllllllllllllllll'
 $L
-
-
+echo $?
 
