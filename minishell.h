@@ -99,6 +99,8 @@ typedef struct s_shell t_shell;
 struct s_shell {
     t_env *env;
     int sts;
+    int stdout;
+    int stdin;
 };
 
 //

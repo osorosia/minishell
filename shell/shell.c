@@ -7,5 +7,7 @@ t_shell *create_shell(char **envp) {
     if (shell == NULL)
         error("malloc error");
     shell->env = create_env(envp);
+    shell->stdout = dup(1);
+    shell->stdin = dup(0);
     return shell;
 }

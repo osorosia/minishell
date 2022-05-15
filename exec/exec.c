@@ -70,6 +70,9 @@ void exec_cmd(t_node *node) {
         waitpid(pid, &sts, 0);
         g_shell->sts = WEXITSTATUS(sts);
     }
+
+    dup2(g_shell->stdout, 1);
+    dup2(g_shell->stdin, 0);
 }
 
 void exec_bracket(t_node *bracket_node) {
