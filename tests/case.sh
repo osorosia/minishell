@@ -8,6 +8,7 @@ test 'exec'
 
 # parser
 test 'pipe'
+test 'parser_error'
 
 # expander
 test 'quote'
