@@ -10,10 +10,17 @@ SRCS = $(wildcard *.c) \
 	$(wildcard ./exec/*.c) \
 
 OBJS = $(SRCS:.c=.o)
-CFLAGS = -g3 -I $(shell brew --prefix readline)/include
 
 LIBFT = ./libft/libft.a
-READLINE = -L/usr/include -lreadline -lhistory -L$(shell brew --prefix readline)/lib
+
+OS = $(shell uname)
+ifeq ($(OS), Linux)
+	CFLAGS = -g3
+	READLINE = -L/usr/include -lreadline
+else
+	CFLAGS = -g3 -I $(shell brew --prefix readline)/include 
+	READLINE = -L/usr/include -lreadline -lhistory -L$(shell brew --prefix readline)/lib
+endif
 
 $(NAME): $(OBJS) $(LIBFT) ./minishell.h
 	gcc $(CFLAGS) -o $@ $(OBJS) $(LIBFT) $(READLINE)
