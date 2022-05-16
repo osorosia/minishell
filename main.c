@@ -38,6 +38,22 @@ int main(int argc, char **argv, char **envp) {
         add_history(str);
 
         // printf("%s\n", str);
+        {
+            int pid = fork();
+            if (pid == 0) {
+                tok = lexer(str);
+                node = parser(tok);
+                exit(0);
+            }
+            int sts;
+            wait(&sts);
+
+            if (sts != 0) {
+                free(str);
+                g_shell->sts = 2;
+                continue;
+            }
+        }
 
         // lexer
         tok = lexer(str);
