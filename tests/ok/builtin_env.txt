@@ -1,1 +1,1 @@
-env | grep -v '^_=' | grep -v '^SHLVL=' | grep -v '^OLDPWD=' | sort
+env | grep -v '^_=' | grep -v '^SHLVL=' | grep -v '^OLDPWD=' | grep -v '^PS1=' | sort

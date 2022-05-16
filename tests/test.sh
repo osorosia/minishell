@@ -8,7 +8,7 @@ function test() {
   file="${1}.txt"
 
   ../minishell < ./ok/${file} > ./actual/${file}
-  bash < ./ok/${file} > ./expected/${file}
+  bash -i < ./ok/${file} > ./expected/${file}
 
   diff -U 0 ./actual/${file} ./expected/${file} > ./diff/${file}
   # diff ./actual/${file} ./expected/${file}
