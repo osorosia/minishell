@@ -51,6 +51,9 @@ test: all
 .PHONY: ok
 ok: all
 	@cd tests && cat test.sh case.sh > temp.sh && bash temp.sh 2>/dev/null
+
+.PHONY: leak
+leak: all
 	@cd tests && cat leak.sh case.sh > temp.sh && bash temp.sh 2>/dev/null
 
 .PHONY: gen
