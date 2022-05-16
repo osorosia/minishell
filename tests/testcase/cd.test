@@ -2,15 +2,7 @@ cd
 echo $?
 pwd
 
-cd /
-echo $?
-pwd
-
 cd/
-echo $?
-pwd
-
-cd //
 echo $?
 pwd
 
@@ -35,10 +27,6 @@ echo $?
 pwd
 
 cd /
-echo $?
-pwd
-
-cd //
 echo $?
 pwd
 

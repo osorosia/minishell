@@ -78,7 +78,6 @@ echo $?
 echo "ls"
 echo $?
 
-
 export N='-n'
 echo $N hello
 echo $?
@@ -87,9 +86,6 @@ echo $N $N hello
 echo $?
 
 echo $N$N hello
-echo $?
-
-echo $$N hello
 echo $?
 
 echo '$N' hello
@@ -109,20 +105,10 @@ echo $?
 echo $N$N hello
 echo $?
 
-echo $$N hello
-echo $?
-
 echo '$N' hello
 echo $?
 
-echo $N hello $N world
-echo $?
-
-
 export N='-nn'
-echo $?
-
-echo $N hello $N world
 echo $?
 
 echo "/bin/ls   "
