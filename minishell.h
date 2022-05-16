@@ -118,6 +118,7 @@ void print_indent(int indent);
 char *ft_strjoin_with_free(char *s1, bool f1, char *s2, bool f2);
 char *ft_str_add_char(char *str, char c);
 bool ft_strcmp(char *s1, char *s2);
+bool is_only_space(char *str);
 
 //
 // builtin ----------------------------------------------

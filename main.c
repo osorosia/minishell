@@ -31,7 +31,7 @@ int main(int argc, char **argv, char **envp) {
         
         if (str == NULL)
             break;
-        if (str[0] == '\0') {
+        if (is_only_space(str)) {
             free(str);
             continue;
         }
