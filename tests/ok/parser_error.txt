@@ -27,3 +27,6 @@ echo $?
 
 () echo hello
 echo $?
+
+(())
+echo $? | sed 's/1/2/g'
