@@ -225,8 +225,11 @@ t_node *cmd(t_token **tok) {
             *tok = skip(*tok, TK_OP, ">");
             _add_redir_out(node->cmd, RD_OUT, (*tok)->str, (*tok)->len);
         }
-        else
+        else {
+            if (node->cmd->word == NULL && node->cmd->redir_in == NULL && node->cmd->redir_out == NULL)
+                error("syntax error");
             return node;
+        }
         *tok = skip(*tok, TK_WORD, NULL);
     }
 }
