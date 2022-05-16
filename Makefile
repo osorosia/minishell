@@ -10,10 +10,10 @@ SRCS = $(wildcard *.c) \
 	$(wildcard ./exec/*.c) \
 
 OBJS = $(SRCS:.c=.o)
-# CFLAGS = -Wall -Wextra -Werror -g
-CFLAGS = -g3
+CFLAGS = -g3 -I $(shell brew --prefix readline)/include
+
 LIBFT = ./libft/libft.a
-READLINE = -L/usr/include -lreadline
+READLINE = -L/usr/include -lreadline -lhistory -L$(shell brew --prefix readline)/lib
 
 $(NAME): $(OBJS) $(LIBFT) ./minishell.h
 	gcc $(CFLAGS) -o $@ $(OBJS) $(LIBFT) $(READLINE)
