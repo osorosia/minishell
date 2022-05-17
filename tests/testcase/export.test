@@ -1,117 +1,90 @@
 export | grep -v '^SHLVL=' | grep -v '^_=' | sort
-echo $?
 
 export =| grep -v '^SHLVL=' | grep -v '^_=' | sort
-echo $?
 
 export "="="="| grep -v '^SHLVL=' | grep -v '^_=' | sort
-echo $?
 
 export "=""=""="| grep -v '^SHLVL=' | grep -v '^_=' | sort
-echo $?
 
 export| grep -v '^SHLVL=' | grep -v '^_=' | sort
-echo $?
 
 export A='hello'| grep -v '^SHLVL=' | grep -v '^_=' | sort
 echo $A
-echo $?
 
 export pipe='|'| grep -v '^SHLVL=' | grep -v '^_=' | sort
-echo $?
+
 ls $pipe cat
-echo $?
+
 ls "$pipe" cat
-echo $?
+
 ls '$pipe' cat
-echo $?
+
 
 export a='ls' b='ls' c='ls'| grep -v '^SHLVL=' | grep -v '^_=' | sort
-echo $?
 
 echo $a $b $c
-echo $?
 
 echo "$a" "$b" "$c"
-echo $?
 
 echo '$a' '$b' '$c'
-echo $?
 
 echo '$a' "$b" '$c'
-echo $?
 
 echo "'$a' "$b" '$c'"
-echo $?
+
 echo '"'$a' "$b" '$c'"'
-echo $?
 
 export var1='/bin/ls'| grep -v '^SHLVL=' | grep -v '^_=' | sort
-echo $?
+
 export var2=$var1| grep -v '^SHLVL=' | grep -v '^_=' | sort
-echo $?
+
 echo $var1
-echo $?
+
 echo $var2
-echo $?
 
 export $A=$B| grep -v '^SHLVL=' | grep -v '^_=' | sort
-echo $?
 
 export PWD| grep -v '^SHLVL=' | grep -v '^_=' | sort
-echo $?
+
 echo $PWD
-echo $?
+
 
 export a=NO| grep -v '^SHLVL=' | grep -v '^_=' | sort
-echo $?
+
 
 echo $a
-echo $?
 
 export a=HELLOWORLD | echo $a| grep -v '^SHLVL=' | grep -v '^_=' | sort
-echo $?
 unset a
 
 export a="a"| grep -v '^SHLVL=' | grep -v '^_=' | sort
-echo $?
 
 echo $a$a
-echo $?
+
 
 echo $a$a$
-echo $?
 
 echo $a$a$a$
-echo $?
 
 echo a$a$a$a$a
-echo $?
 
 export a=$a| grep -v '^SHLVL=' | grep -v '^_=' | sort
 echo $a
-echo $?
 
 export a=$a$a| grep -v '^SHLVL=' | grep -v '^_=' | sort
 echo $a
-echo $?
 
 export a=$a$a$a| grep -v '^SHLVL=' | grep -v '^_=' | sort
 echo $a
-echo $?
 
 export L=' ls '| grep -v '^SHLVL=' | grep -v '^_=' | sort
 $L
-echo $?
 
 export L=' ls -l'| grep -v '^SHLVL=' | grep -v '^_=' | sort
 $L
-echo $?
 
 export L=' ls -lllllllllllllllllllllll'| grep -v '^SHLVL=' | grep -v '^_=' | sort
 $L
-echo $?
 
 export L=' ls -alllllllllllllllllllllll'| grep -v '^SHLVL=' | grep -v '^_=' | sort
 $L
-echo $?
