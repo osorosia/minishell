@@ -88,3 +88,6 @@ $L
 
 export L=' ls -alllllllllllllllllllllll'| grep -v '^SHLVL=' | grep -v '^_=' | sort
 $L
+
+export > /dev/null
+echo $?
