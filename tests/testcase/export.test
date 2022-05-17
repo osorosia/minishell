@@ -1,23 +1,23 @@
-export
+export | grep -v '^SHLVL=' | grep -v '^_=' | sort
 echo $?
 
-export =
+export =| grep -v '^SHLVL=' | grep -v '^_=' | sort
 echo $?
 
-export "="="="
+export "="="="| grep -v '^SHLVL=' | grep -v '^_=' | sort
 echo $?
 
-export "=""=""="
+export "=""=""="| grep -v '^SHLVL=' | grep -v '^_=' | sort
 echo $?
 
-export
+export| grep -v '^SHLVL=' | grep -v '^_=' | sort
 echo $?
 
-export A='hello'
+export A='hello'| grep -v '^SHLVL=' | grep -v '^_=' | sort
 echo $A
 echo $?
 
-export pipe='|'
+export pipe='|'| grep -v '^SHLVL=' | grep -v '^_=' | sort
 echo $?
 ls $pipe cat
 echo $?
@@ -26,7 +26,7 @@ echo $?
 ls '$pipe' cat
 echo $?
 
-export a='ls' b='ls' c='ls'
+export a='ls' b='ls' c='ls'| grep -v '^SHLVL=' | grep -v '^_=' | sort
 echo $?
 
 echo $a $b $c
@@ -46,34 +46,34 @@ echo $?
 echo '"'$a' "$b" '$c'"'
 echo $?
 
-export var1='/bin/ls'
+export var1='/bin/ls'| grep -v '^SHLVL=' | grep -v '^_=' | sort
 echo $?
-export var2=$var1
+export var2=$var1| grep -v '^SHLVL=' | grep -v '^_=' | sort
 echo $?
 echo $var1
 echo $?
 echo $var2
 echo $?
 
-export $A=$B
+export $A=$B| grep -v '^SHLVL=' | grep -v '^_=' | sort
 echo $?
 
-export PWD
+export PWD| grep -v '^SHLVL=' | grep -v '^_=' | sort
 echo $?
 echo $PWD
 echo $?
 
-export a=NO
+export a=NO| grep -v '^SHLVL=' | grep -v '^_=' | sort
 echo $?
 
 echo $a
 echo $?
 
-export a=HELLOWORLD | echo $a
+export a=HELLOWORLD | echo $a| grep -v '^SHLVL=' | grep -v '^_=' | sort
 echo $?
 unset a
 
-export a="a"
+export a="a"| grep -v '^SHLVL=' | grep -v '^_=' | sort
 echo $?
 
 echo $a$a
@@ -88,31 +88,30 @@ echo $?
 echo a$a$a$a$a
 echo $?
 
-export a=$a
+export a=$a| grep -v '^SHLVL=' | grep -v '^_=' | sort
 echo $a
 echo $?
 
-export a=$a$a
+export a=$a$a| grep -v '^SHLVL=' | grep -v '^_=' | sort
 echo $a
 echo $?
 
-export a=$a$a$a
+export a=$a$a$a| grep -v '^SHLVL=' | grep -v '^_=' | sort
 echo $a
 echo $?
 
-export L=' ls '
+export L=' ls '| grep -v '^SHLVL=' | grep -v '^_=' | sort
 $L
 echo $?
 
-export L=' ls -l'
+export L=' ls -l'| grep -v '^SHLVL=' | grep -v '^_=' | sort
 $L
 echo $?
 
-export L=' ls -lllllllllllllllllllllll'
+export L=' ls -lllllllllllllllllllllll'| grep -v '^SHLVL=' | grep -v '^_=' | sort
 $L
 echo $?
 
-export L=' ls -alllllllllllllllllllllll'
+export L=' ls -alllllllllllllllllllllll'| grep -v '^SHLVL=' | grep -v '^_=' | sort
 $L
 echo $?
-

@@ -58,3 +58,43 @@ pwd
 cd /..
 echo $?
 pwd
+
+echo $HOME
+cd
+echo $?
+pwd
+
+unset $HOME
+cd
+echo $?
+pwd
+
+export HOME='x'
+cd
+echo $?
+pwd
+
+export HOME='Users'
+cd
+echo $?
+pwd
+
+export HOME='/Users'
+cd
+echo $?
+pwd
+
+export HOME='../'
+cd
+echo $?
+pwd
+
+export HOME='/Users/'
+cd
+echo $?
+pwd
+
+export HOME='../../'
+cd
+echo $?
+pwd
