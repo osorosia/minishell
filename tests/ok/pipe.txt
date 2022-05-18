@@ -2,10 +2,10 @@ ls | ls
 ls| ls
 ls |ls
 ls | ls | ls | ls | ls
-ls -n | ls
-ls -nn | ls
-ls | ls -n
-ls | ls -nn
+ls -a | ls
+ls -aa | ls
+ls | ls -a
+ls | ls -aa
 
 NOSUCHFILE|ls
 ls|NOSUCHFILE
