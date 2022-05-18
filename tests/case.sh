@@ -3,10 +3,7 @@ export LS='ls -a'
 
 rm -rf tmp*
 mkdir tmpdir
-#folder用意等のテストの方がみやすいものに関してはこっちに足す
 
-test 'temptest'
-exit
 test 'exec'
 
 # parser
@@ -27,11 +24,6 @@ test 'builtin_exit'
 
 # redirect
 test 'redirect_heredoc'
-##redirectあと3つ分類
-#redirect_out
-#redirect_in
-#redirect_append
-
 
 # status
 test 'status'
