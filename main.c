@@ -50,7 +50,7 @@ int main(int argc, char **argv, char **envp) {
 
             if (sts != 0) {
                 free(str);
-                g_shell->sts = 2;
+                g_shell->sts = 258;
                 continue;
             }
         }
