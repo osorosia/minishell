@@ -12,10 +12,6 @@ cd .
 echo $?
 pwd
 
-cd TMPDIR
-echo $?
-pwd
-
 cd tmpdir tmpdir
 echo $?
 pwd
