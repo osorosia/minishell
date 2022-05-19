@@ -20,6 +20,7 @@ function test() {
     fi
 
     cat ./expected/${file}.tmp2 \
+        | sed 's/ \r//g' \
         | sed 's/^.*bash-3.2\$/%/g' \
         | sed 's/^bash:/minishell:/g' \
         > ./expected/${file}
