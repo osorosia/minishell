@@ -226,8 +226,12 @@ t_node *cmd(t_token **tok) {
             _add_redir_out(node->cmd, RD_OUT, (*tok)->str, (*tok)->len);
         }
         else {
-            if (node->cmd->word == NULL && node->cmd->redir_in == NULL && node->cmd->redir_out == NULL)
-                error("syntax error");
+            if (node->cmd->word == NULL && node->cmd->redir_in == NULL && node->cmd->redir_out == NULL) {
+                ft_putstr_fd("minishell: syntax error near unexpected token `", 2);
+                ft_putnstr_fd((*tok)->str, (*tok)->len, 2);
+                ft_putstr_fd("'\n", 2);
+                exit(1);
+            }
             return node;
         }
         *tok = skip(*tok, TK_WORD, NULL);
