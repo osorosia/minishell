@@ -7,10 +7,12 @@ echo ** ** ** ** **
 echo ******************* *********************
 echo *******
 
+echo *.c
 echo *.c*
 echo *.c .*
 echo **.c
 echo .c**
+echo .*
 
 export wildcard='*'
 echo $wildcard
