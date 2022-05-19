@@ -14,7 +14,7 @@ echo $?
 pwd
 
 
-unset $HOME
+unset HOME
 cd
 echo $?
 pwd
