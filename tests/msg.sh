@@ -26,6 +26,7 @@ function test() {
         | sed 's/ \r//g' \
         | sed 's/bash-3.2\$/%/g' \
         | sed 's/^bash:/minishell:/g' \
+        | grep -v 'Inappropriate ioctl for devic' \
         > ./expected/${file}
 
     rm -rf ./expected/*.tmp*
