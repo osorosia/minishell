@@ -62,18 +62,18 @@ int exec_exit(t_word *word) {
     // numeric argument required
     if (!is_number(word->next->str)) {
         ft_putstr_fd("exit: numeric argument required\n", 2);
-        exit(2);
+        exit(255);
     }
 
     if (!check_overflow(word->next->str)) {
         ft_putstr_fd("exit: numeric argument required\n", 2);
-        exit(2);
+        exit(255);
     }
 
     // too many arguments
     if (word->next->next) {
         ft_putstr_fd("exit: too many arguments\n", 2);
-        exit(1);
+        return 1;
     }
 
     // ok
