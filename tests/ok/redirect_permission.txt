@@ -6,10 +6,15 @@ echo hello > tmpfile707; chmod 707 tmpfile707
 echo hello > tmpfile077; chmod 077 tmpfile077
 
 echo world > tmpfile000
+echo $?
 echo world > tmpfile777
+echo $?
 echo world > tmpfile770
+echo $?
 echo world > tmpfile707
+echo $?
 echo world > tmpfile077
+echo $?
 
 chmod 777 tmpfile000; cat tmpfile000; rm -f tmpfile000
 chmod 777 tmpfile777; cat tmpfile777; rm -f tmpfile777
@@ -26,10 +31,15 @@ echo hello > tmpfile707; chmod 707 tmpfile707
 echo hello > tmpfile077; chmod 077 tmpfile077
 
 echo world >> tmpfile000
+echo $?
 echo world >> tmpfile777
+echo $?
 echo world >> tmpfile770
+echo $?
 echo world >> tmpfile707
+echo $?
 echo world >> tmpfile077
+echo $?
 
 chmod 777 tmpfile000; cat tmpfile000; rm -f tmpfile000
 chmod 777 tmpfile777; cat tmpfile777; rm -f tmpfile777
