@@ -106,6 +106,8 @@ struct s_shell {
     int sts;
     int stdout;
     int stdin;
+    // debug
+    bool is_debug;
 };
 
 //

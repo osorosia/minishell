@@ -22,11 +22,15 @@ int main(int argc, char **argv, char **envp) {
     rl_outstream = stderr;
 
     g_shell = create_shell(envp);
-    debug_env();
+    if (argc >= 2)
+        g_shell->is_debug = true;
+    if (g_shell->is_debug)
+        debug_env();
     
     while (true) {
         signal_init();
-        print_status();
+        if (g_shell->is_debug)
+            print_status();
         char *str = readline("minishell$ ");
         
         if (str == NULL)
@@ -57,26 +61,31 @@ int main(int argc, char **argv, char **envp) {
 
         // lexer
         tok = lexer(str);
-        debug_lexer(tok);
+        if (g_shell->is_debug)
+            debug_lexer(tok);
 
         // parser
         node = parser(tok);
-        debug_parser(node);
+        if (g_shell->is_debug)
+            debug_parser(node);
 
         // expander
-        {
+        if (g_shell->is_debug) {
             t_node *tmp = parser(tok);
             expander_for_debug(tmp);
             free_parser(tmp);
         }
         free_lexer(tok);
 
-        ft_putstr_fd("--- heredoc ---\n", 2);
+        if (g_shell->is_debug)
+            ft_putstr_fd("--- heredoc ---\n", 2);
         expander_set_heredoc(node);
-        debug_expander(node, "set_heredoc");
+        if (g_shell->is_debug)   
+            debug_expander(node, "set_heredoc");
 
         // exec
-        fprintf(stderr, "--- exec ---\n");
+        if (g_shell->is_debug)
+            fprintf(stderr, "--- exec ---\n");
         exec(node);
 
         free_parser(node);

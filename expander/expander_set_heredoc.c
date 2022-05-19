@@ -4,9 +4,11 @@ void set_heredoc(t_redir *redir) {
     if (redir == NULL)
         return;
     if (redir->kind == RD_HEREDOC) {
-        ft_putstr_fd("heredoc: ", 2);
-        ft_putstr_fd(redir->str, 2);
-        ft_putstr_fd("\n", 2);
+        if (g_shell->is_debug) {
+            ft_putstr_fd("heredoc: ", 2);
+            ft_putstr_fd(redir->str, 2);
+            ft_putstr_fd("\n", 2);
+        }
         
         int fd[2];
         pipe(fd);
@@ -39,7 +41,7 @@ void expander_set_heredoc(t_node *node) {
         delete_quote_in_heredoc(node->cmd->redir_in);
         set_heredoc(node->cmd->redir_in);
     } else {
-        expander_set_heredoc(node->lhs);
         expander_set_heredoc(node->rhs);
+        expander_set_heredoc(node->lhs);
     }
 }
