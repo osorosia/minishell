@@ -9,8 +9,8 @@ set -m
 function test() {
     file="${1}.txt"
 
-    ../minishell < ./msg/${file} &> ./actual/${file}
-    bash -i < ./msg/${file} &> ./expected/${file}.tmp
+    ../minishell < ./ok/${file} &> ./actual/${file}
+    bash -i < ./ok/${file} &> ./expected/${file}.tmp
 
     cat ./expected/${file}.tmp | grep 'The default interactive shell is now zsh.' > /dev/null
     if [ "$?" = 0 ]; then
