@@ -6,6 +6,7 @@ test 'parser_error'
 
 # expander
 test 'quote'
+test 'wildcard'
 
 # exec
 test 'exec'
