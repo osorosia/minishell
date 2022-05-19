@@ -85,7 +85,7 @@ endif
 .PHONY: msg
 msg: all
 ifeq ($(OS), Linux)
-	@cd tests && bash msg.sh
+	@cd tests && cat msg.sh msg_case.sh > temp.sh && bash temp.sh
 else
-	@cd tests && zsh msg.sh
+	@cd tests && cat msg.sh msg_case.sh > temp.sh && zsh temp.sh
 endif

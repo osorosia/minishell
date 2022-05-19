@@ -24,6 +24,8 @@ function test() {
         | sed 's/^bash:/minishell:/g' \
         > ./expected/${file}
 
+    rm -rf ./expected/*.tmp*
+
     diff -U 0 ./actual/${file} ./expected/${file} > ./diff/${file}
     result=$?
     if [ "$result" = "0" ]; then
@@ -42,9 +44,3 @@ rm -rf expected
 mkdir diff
 mkdir actual
 mkdir expected
-
-test 'test'
-test 'builtin_cd'
-test 'parser_error'
-
-rm -rf ./expected/*.tmp*
