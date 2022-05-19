@@ -15,10 +15,10 @@ int exec_cd(t_word *word) {
         return cd_home();        
     }
 
-    if (word->next->next != NULL) {
-        ft_putstr_fd("cd: too many arguments\n", 2);
-        return 1;
-    }
+    // if (word->next->next != NULL) {
+    //     ft_putstr_fd("cd: too many arguments\n", 2);
+    //     return 1;
+    // }
 
     int ret = chdir(word->next->str);
     if (ret != 0)
