@@ -27,6 +27,3 @@ echo $?
 
 () echo hello
 echo $?
-
-(())
-echo $? | sed 's/1/258/g'
