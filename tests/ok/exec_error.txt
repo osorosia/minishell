@@ -3,3 +3,6 @@ echo $?
 
 ./tmpdir
 echo $?
+
+./tmp000.out
+echo $?
