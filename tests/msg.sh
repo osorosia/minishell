@@ -20,7 +20,8 @@ function test() {
     fi
 
     cat ./expected/${file}.tmp2 \
-        | sed 's/^.*bash-3.2/minishell/g' \
+        | sed 's/^.*bash-3.2\$/%/g' \
+        | sed 's/^bash:/minishell:/g' \
         > ./expected/${file}
 
     diff -U 0 ./actual/${file} ./expected/${file} > ./diff/${file}
@@ -44,5 +45,6 @@ mkdir expected
 
 test 'test'
 test 'builtin_cd'
+test 'parser_error'
 
 rm -rf ./expected/*.tmp*

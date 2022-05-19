@@ -31,7 +31,7 @@ int main(int argc, char **argv, char **envp) {
         signal_init();
         if (g_shell->is_debug)
             print_status();
-        char *str = readline("minishell$ ");
+        char *str = readline("% ");
         
         if (str == NULL)
             break;
