@@ -21,5 +21,5 @@ echo hello | cat -e | cat -e -n | cat -e
 
 echo | echo | echo | echo | echo | echo | echo
 
-hello|world
-hello|world|echo hello
+hello|hello
+echo hello|hello|hello

@@ -1,7 +1,7 @@
 # lexer
 
 # parser
-# test 'pipe'
+test 'pipe'
 test 'parser_error'
 
 # expander
