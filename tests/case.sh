@@ -9,6 +9,7 @@ test 'quote'
 
 # exec
 test 'exec'
+
 # test 'exec_error'
 
 # builtin
@@ -29,3 +30,6 @@ test 'redirect_out'
 test 'status'
 test 'status1'
 test 'status_()'
+
+#path
+test 'path'
