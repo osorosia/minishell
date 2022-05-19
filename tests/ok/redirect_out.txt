@@ -5,15 +5,18 @@ rm -rf tmp1 tmp2
 
 export a=hello
 echo world > a > b > c > $a
+echo $?
 cat a
 cat b
 cat c
-rm a b c
+ls
+rm a b c hello
 
 export a=hello
 echo world > a >> b > c >> $a
+echo $?
 cat a
 cat b
 cat c
-rm a b c
-
+ls
+rm a b c hello
