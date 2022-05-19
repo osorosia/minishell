@@ -1,3 +1,14 @@
+# tmp
 test 'test'
-test 'builtin_cd'
+
+# parser
 test 'parser_error'
+
+# builtin
+# test 'builtin_echo'
+test 'builtin_cd'
+# test 'builtin_pwd'
+# test 'builtin_export'
+# test 'builtin_unset'
+# test 'builtin_env'
+# test 'builtin_exit'
