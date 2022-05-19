@@ -14,7 +14,7 @@ test 'exec_error'
 
 # builtin
 test 'builtin_echo'
-# test 'builtin_cd'
+test 'builtin_cd'
 test 'builtin_pwd'
 test 'builtin_export'
 test 'builtin_unset'
