@@ -29,5 +29,3 @@ test 'redirect_heredoc'
 test 'status'
 test 'status1'
 test 'status_()'
-
-
