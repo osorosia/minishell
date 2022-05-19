@@ -14,14 +14,17 @@ function test() {
 
     cat ./expected/${file}.tmp | grep 'The default interactive shell is now zsh.' > /dev/null
     if [ "$?" = 0 ]; then
-        cat ./expected/${file}.tmp | awk 'NR>4' > ./expected/${file}.tmp2
+        cat ./expected/${file}.tmp \
+            | awk 'NR>4' \
+            | sed $'s/[\x1B][\x5B][\x3F][\x31][\x30][\x33][\x34][\x68]//g' \
+            > ./expected/${file}.tmp2
     else
         cat ./expected/${file}.tmp > ./expected/${file}.tmp2
     fi
 
     cat ./expected/${file}.tmp2 \
         | sed 's/ \r//g' \
-        | sed 's/^.*bash-3.2\$/%/g' \
+        | sed 's/bash-3.2\$/%/g' \
         | sed 's/^bash:/minishell:/g' \
         > ./expected/${file}
 
