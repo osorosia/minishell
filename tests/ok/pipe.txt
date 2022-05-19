@@ -7,10 +7,8 @@ ls -aa | ls
 ls | ls -a
 ls | ls -aa
 
-NOSUCHFILE|ls
 ls|NOSUCHFILE
 NOSUCHFILE|ls|NOSUCHFILE
-NOSUCHFILE|ls|NOSUCHFILE|ls
 
 echo hello | cat -n
 echo hello | cat -e
