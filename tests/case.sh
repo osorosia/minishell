@@ -4,7 +4,7 @@ export LS='ls -a'
 rm -rf tmp*
 mkdir tmpdir
 
-test 'exec'
+# lexer
 
 # parser
 test 'pipe'
@@ -12,6 +12,10 @@ test 'parser_error'
 
 # expander
 test 'quote'
+
+# exec
+test 'exec'
+test 'exec_error'
 
 # builtin
 test 'builtin_echo'
