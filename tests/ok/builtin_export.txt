@@ -9,3 +9,5 @@ export BBB+=a
 export | grep '^declare -x BBB'
 export NOBODY
 export | grep '^declare -x NOBODY'
+
+export =

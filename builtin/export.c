@@ -24,7 +24,7 @@ int exec_export(t_word *word) {
     word = word->next;
     while (word) {
         if (ft_strncmp(word->str, "+=", 2) == 0 || word->str[0] == '=') {
-            ft_putstr_fd("export: `", 2);
+            ft_putstr_fd("minishell: export: `", 2);
             ft_putstr_fd(word->str, 2);
             ft_putstr_fd("': not a valid identifier\n", 2);
         } else if (ft_strnstr(word->str, "+=", ft_strlen(word->str))) {
