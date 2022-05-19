@@ -22,6 +22,8 @@ void set_heredoc(t_redir *redir) {
                 ft_putstr_fd("warning: here-document\n", 2);
                 break;
             }
+            if (g_shell->is_debug_heredoc)
+                write(1, line, ft_strlen(line));
             if (ft_strlen(line) > 1 && ft_strncmp(line, redir->str, ft_strlen(line) - 1) == 0) {
                 free(line);
                 break;

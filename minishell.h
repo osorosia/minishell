@@ -108,6 +108,7 @@ struct s_shell {
     int stdin;
     // debug
     bool is_debug;
+    bool is_debug_heredoc;
 };
 
 //

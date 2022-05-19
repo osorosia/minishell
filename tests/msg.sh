@@ -9,7 +9,7 @@ set -m
 function test() {
     file="${1}.txt"
 
-    ../minishell < ./ok/${file} &> ./actual/${file}
+    ../minishell heredoc < ./ok/${file} &> ./actual/${file}
     bash -i < ./ok/${file} &> ./expected/${file}.tmp
 
     cat ./expected/${file}.tmp | grep 'The default interactive shell is now zsh.' > /dev/null

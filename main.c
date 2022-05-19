@@ -22,8 +22,12 @@ int main(int argc, char **argv, char **envp) {
     rl_outstream = stderr;
 
     g_shell = create_shell(envp);
-    if (argc >= 2)
-        g_shell->is_debug = true;
+    if (argc >= 2) {
+        if (ft_strcmp(argv[1], "heredoc") == 0)
+            g_shell->is_debug_heredoc = true;
+        else
+            g_shell->is_debug = true;
+    }
     if (g_shell->is_debug)
         debug_env();
     

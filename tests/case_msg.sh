@@ -27,7 +27,7 @@ test 'builtin_env'
 test 'builtin_exit'
 
 # redirect
-# test 'redirect_heredoc'
+test 'redirect_heredoc'
 
 # status
 # test 'status'
