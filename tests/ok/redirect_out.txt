@@ -1,0 +1,19 @@
+> tmp1
+> tmp2
+echo hello > tmp1 | echo world > tmp2
+rm -rf tmp1 tmp2
+
+export a=hello
+echo world > a > b > c > $a
+cat a
+cat b
+cat c
+rm a b c
+
+export a=hello
+echo world > a >> b > c >> $a
+cat a
+cat b
+cat c
+rm a b c
+

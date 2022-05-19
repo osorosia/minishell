@@ -22,6 +22,8 @@ test 'builtin_exit'
 
 # redirect
 test 'redirect_heredoc'
+test 'redirect_in'
+test 'redirect_out'
 
 # status
 test 'status'
