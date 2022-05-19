@@ -72,7 +72,7 @@ else
 endif
 
 .PHONY: gen
-gen:
+gen: all
 	cd tests/gen && bash gen.sh
 ifeq ($(OS), Linux)
 	@cd tests && cat test.sh gen_case.sh > temp.sh && bash temp.sh 2>/dev/null
@@ -80,4 +80,12 @@ ifeq ($(OS), Linux)
 else
 	@cd tests && cat test.sh gen_case.sh > temp.sh && zsh temp.sh 2>/dev/null
 	@cd tests && cat leak.sh gen_case.sh > temp.sh && zsh temp.sh 2>/dev/null
+endif
+
+.PHONY: msg
+msg: all
+ifeq ($(OS), Linux)
+	@cd tests && bash msg.sh
+else
+	@cd tests && zsh msg.sh
 endif

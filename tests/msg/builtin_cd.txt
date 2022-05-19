@@ -1,0 +1,28 @@
+pwd
+
+cd tmpdir
+echo $?
+pwd
+
+cd ..
+echo $?
+pwd
+
+cd .
+echo $?
+pwd
+
+cd tmpdir tmpdir
+echo $?
+pwd
+
+(cd ..)
+echo $?
+pwd
+
+cd .. | echo aaa
+pwd
+
+cd /
+echo $?
+pwd
