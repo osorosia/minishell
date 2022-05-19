@@ -28,6 +28,8 @@ test 'env_pwd_oldpwd'
 test 'redirect_heredoc'
 test 'redirect_in'
 # test 'redirect_out'
+# test 'redirect_permission'
+test 'redirect_directory'
 
 # status
 test 'status'
