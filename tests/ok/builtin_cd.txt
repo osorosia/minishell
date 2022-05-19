@@ -26,3 +26,71 @@ pwd
 cd /
 echo $?
 pwd
+
+cd/
+echo $?
+pwd
+
+cd ./ | ls
+echo $?
+pwd
+
+cd | cd
+echo $?
+pwd
+
+cd / | cd
+echo $?
+pwd
+
+cd | cd | cd
+echo $?
+pwd
+
+cd NO_SUCH_FILE
+echo $?
+pwd
+
+cd /
+echo $?
+pwd
+
+cd ///
+echo $?
+pwd
+
+
+cd ////
+echo $?
+pwd
+
+cd ./././././././
+echo $?
+pwd
+
+cd ./../.../..../
+echo $?
+pwd
+
+cd ..../
+echo $?
+pwd
+
+cd /.
+echo $?
+pwd
+
+cd /..
+echo $?
+pwd
+
+export HOME='../'
+cd
+echo $?
+pwd
+
+
+export HOME='../../'
+cd
+echo $?
+pwd
