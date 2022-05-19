@@ -27,7 +27,7 @@ test 'env_pwd_oldpwd'
 # redirect
 test 'redirect_heredoc'
 test 'redirect_in'
-# test 'redirect_out'
+test 'redirect_out'
 test 'redirect_permission'
 test 'redirect_directory'
 

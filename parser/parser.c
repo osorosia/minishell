@@ -96,7 +96,7 @@ void _add_redir_in(t_cmd *cmd, t_redir_kind kind, char *str, long len) {
         cmd->redir_in = redir;
     else {
         now = cmd->redir_in;
-        if (now->next)
+        while (now->next)
             now = now->next;
         now->next = redir;
     }
@@ -118,7 +118,7 @@ void _add_redir_out(t_cmd *cmd, t_redir_kind kind, char *str, long len) {
         cmd->redir_out = redir;
     else {
         now = cmd->redir_out;
-        if (now->next)
+        while (now->next)
             now = now->next;
         now->next = redir;
     }
