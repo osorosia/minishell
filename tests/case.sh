@@ -21,6 +21,9 @@ test 'builtin_unset'
 test 'builtin_env'
 test 'builtin_exit'
 
+# env
+test 'env_pwd_oldpwd'
+
 # redirect
 test 'redirect_heredoc'
 test 'redirect_in'

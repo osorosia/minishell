@@ -1,43 +1,36 @@
+cd .
+cd .
+echo $PWD, $OLDPWD
+
+cd | cd
+echo $PWD, $OLDPWD
+
+cd .. | cd ..
+echo $PWD, $OLDPWD
+
+cd / | cd
+echo $PWD, $OLDPWD
+
+cd | cd | cd
+echo $PWD, $OLDPWD
+
+cd NO_SUCH_FILE
+echo $PWD, $OLDPWD
+
 cd
 echo $PWD, $OLDPWD
 
 cd /
 echo $PWD, $OLDPWD
 
-cd/
-echo $PWD, $OLDPWD
-
-cd ./ | ls
-echo $PWD, $OLDPWD
-
-
-cd | cd
-echo $PWD, $OLDPWD
-
-
-cd / | cd
-echo $PWD, $OLDPWD
-
-
-cd | cd | cd
-echo $PWD, $OLDPWD
-
-
-cd NO_SUCH_FILE
-echo $PWD, $OLDPWD
-
-
-cd /
-echo $PWD, $OLDPWD
-
-
 cd ///
 echo $PWD, $OLDPWD
-
 
 cd ////
 echo $PWD, $OLDPWD
 
+cd
+echo $PWD, $OLDPWD
 
 cd ./././././././
 echo $PWD, $OLDPWD
