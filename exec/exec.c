@@ -105,7 +105,7 @@ bool set_redir_out(t_redir *redir_out) {
         error("error: set_redir_out()");
     }
 
-    return set_redir_in(redir_out->next);
+    return set_redir_out(redir_out->next);
 }
 
 bool is_directory(char *pathname) {
