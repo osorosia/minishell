@@ -20,7 +20,7 @@ test 'builtin_pwd'
 test 'builtin_export'
 test 'builtin_unset'
 test 'builtin_env'
-# test 'builtin_exit'
+test 'builtin_exit'
 
 # redirect
 # test 'redirect_heredoc'
