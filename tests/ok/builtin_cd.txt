@@ -94,3 +94,8 @@ export HOME='../../'
 cd
 echo $?
 pwd
+
+unset HOME
+cd
+echo $?
+pwd

@@ -3,7 +3,7 @@
 int cd_home() {
     char *home = get_env_body("HOME");
     if (home == NULL) {
-        ft_putstr_fd("cd: HOME not set\n", 2);
+        ft_putstr_fd("minishell: cd: HOME not set\n", 2);
         return 1;
     }
     int ret = chdir(home);
