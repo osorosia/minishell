@@ -30,6 +30,6 @@ test 'builtin_exit'
 test 'redirect_heredoc'
 
 # status
-# test 'status'
+test 'status'
 # test 'status1'
 # test 'status_()'
