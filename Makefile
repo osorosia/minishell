@@ -75,17 +75,17 @@ endif
 gen: all
 	cd tests/gen && bash gen.sh
 ifeq ($(OS), Linux)
-	@cd tests && cat test.sh gen_case.sh > temp.sh && bash temp.sh 2>/dev/null
-	@cd tests && cat leak.sh gen_case.sh > temp.sh && bash temp.sh 2>/dev/null
+	@cd tests && cat test.sh case_gen.sh > temp.sh && bash temp.sh 2>/dev/null
+	@cd tests && cat leak.sh case_gen.sh > temp.sh && bash temp.sh 2>/dev/null
 else
-	@cd tests && cat test.sh gen_case.sh > temp.sh && zsh temp.sh 2>/dev/null
-	@cd tests && cat leak.sh gen_case.sh > temp.sh && zsh temp.sh 2>/dev/null
+	@cd tests && cat test.sh case_gen.sh > temp.sh && zsh temp.sh 2>/dev/null
+	@cd tests && cat leak.sh case_gen.sh > temp.sh && zsh temp.sh 2>/dev/null
 endif
 
 .PHONY: msg
 msg: all
 ifeq ($(OS), Linux)
-	@cd tests && cat msg.sh msg_case.sh > temp.sh && bash temp.sh
+	@cd tests && cat msg.sh case_msg.sh > temp.sh && bash temp.sh
 else
-	@cd tests && cat msg.sh msg_case.sh > temp.sh && zsh temp.sh
+	@cd tests && cat msg.sh case_msg.sh > temp.sh && zsh temp.sh
 endif
