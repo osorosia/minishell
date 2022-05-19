@@ -37,8 +37,3 @@ pwd
 ---------
 
 
-
-export HOME='../../'
-cd
-echo $?
-pwd
