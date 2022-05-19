@@ -57,14 +57,27 @@ test: all
 
 .PHONY: ok
 ok: all
+ifeq ($(OS), Linux)
 	@cd tests && cat test.sh case.sh > temp.sh && bash temp.sh 2>/dev/null
+else
+	@cd tests && cat test.sh case.sh > temp.sh && zsh temp.sh 2>/dev/null
+endif
 
 .PHONY: leak
 leak: all
+ifeq ($(OS), Linux)
 	@cd tests && cat leak.sh case.sh > temp.sh && bash temp.sh 2>/dev/null
+else
+	@cd tests && cat leak.sh case.sh > temp.sh && zsh temp.sh 2>/dev/null
+endif
 
 .PHONY: gen
 gen:
 	cd tests/gen && bash gen.sh
+ifeq ($(OS), Linux)
 	@cd tests && cat test.sh gen_case.sh > temp.sh && bash temp.sh 2>/dev/null
 	@cd tests && cat leak.sh gen_case.sh > temp.sh && bash temp.sh 2>/dev/null
+else
+	@cd tests && cat test.sh gen_case.sh > temp.sh && zsh temp.sh 2>/dev/null
+	@cd tests && cat leak.sh gen_case.sh > temp.sh && zsh temp.sh 2>/dev/null
+endif
