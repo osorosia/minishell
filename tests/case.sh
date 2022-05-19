@@ -1,9 +1,3 @@
-export CAT='cat -e'
-export LS='ls -a'
-
-rm -rf tmp*
-mkdir tmpdir
-
 # lexer
 
 # parser
