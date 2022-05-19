@@ -28,6 +28,8 @@ char *find_pathname(char *str) {
         if (base == NULL)
             error("malloc error");
         pathname = ft_strjoin_with_free(base, true, str, false);
+        if (pathname == NULL)
+            error("malloc error");
         if (access(pathname, F_OK) == 0) {
             free_paths(paths);
             return pathname;
@@ -36,18 +38,20 @@ char *find_pathname(char *str) {
         i++;
     }
     free_paths(paths);
-    return ft_strdup(str);
+    return NULL;
 }
 
 char *get_pathname_str(char *str) {
     char *pathname;
 
-    if (ft_strchr(str, '/'))
+    if (ft_strchr(str, '/')) {
         pathname = ft_strdup(str);
+        if (pathname == NULL) {
+            error("malloc error");
+        }
+    }
     else
         pathname = find_pathname(str);
-    if (pathname == NULL)
-        error("malloc error");
     return pathname;
 }
 

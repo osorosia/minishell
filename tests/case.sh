@@ -10,8 +10,7 @@ test 'wildcard'
 
 # exec
 test 'exec'
-
-# test 'exec_error'
+test 'exec_error'
 
 # builtin
 test 'builtin_echo'

@@ -100,6 +100,14 @@ bool set_redir_out(t_redir *redir_out) {
     return set_redir_in(redir_out->next);
 }
 
+bool is_directory(char *pathname) {
+    struct stat st;
+    
+    if (stat(pathname, &st) != 0)
+        return false;
+    return S_ISDIR(st.st_mode);
+}
+
 void exec_cmd(t_node *node) {
     t_cmd *cmd = node->cmd;
 
@@ -128,12 +136,31 @@ void exec_cmd(t_node *node) {
         int pid = fork();
 
         if (pid == 0) {
+            if (cmd->pathname == NULL) {
+                ft_putstr_fd("minishell: ", 2);
+                ft_putstr_fd(cmd->word->str, 2);
+                ft_putstr_fd(": command not found\n", 2);
+                exit(127);
+            }
+            if (is_directory(cmd->pathname)) {
+                ft_putstr_fd("minishell: ", 2);
+                ft_putstr_fd(cmd->pathname, 2);
+                ft_putstr_fd(": is a directory\n", 2);
+                exit(126);
+            }
             char **cmd_argv = create_argv(cmd->word);
             char **cmd_envp = create_envp();
             execve(cmd->pathname, cmd_argv, cmd_envp);
+            int eno = errno;
+            ft_putstr_fd("minishell: ", 2);
+            ft_putstr_fd(cmd->pathname, 2);
+            ft_putstr_fd(": ", 2);
+            ft_putendl_fd(strerror(eno), 2);
             free(cmd_argv);
             free_envp(cmd_envp);
-            exit(127);
+            if (eno == ENOENT)
+                exit(127);
+            exit(126);
         }
         int sts = 0;
         waitpid(pid, &sts, 0);
