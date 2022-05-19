@@ -80,7 +80,11 @@ bool set_redir_out(t_redir *redir_out) {
     if (redir_out->kind == RD_OUT) {
         int fd = open(redir_out->str, (O_WRONLY | O_CREAT | O_TRUNC), 0664);
         if (fd < 0) {
-            ft_putstr_fd("redir_out: out: error\n", 2);
+            int eno = errno;
+            ft_putstr_fd("minishell: ", 2);
+            ft_putstr_fd(redir_out->str, 2);
+            ft_putstr_fd(": ", 2);
+            ft_putendl_fd(strerror(eno), 2);
             return false;
         }
         dup2(fd, 1);
@@ -88,7 +92,11 @@ bool set_redir_out(t_redir *redir_out) {
     } else if (redir_out->kind == RD_APPEND) {
         int fd = open(redir_out->str, (O_WRONLY | O_CREAT | O_APPEND), 0664);
         if (fd < 0) {
-            ft_putstr_fd("redir_out: append: error\n", 2);
+            int eno = errno;
+            ft_putstr_fd("minishell: ", 2);
+            ft_putstr_fd(redir_out->str, 2);
+            ft_putstr_fd(": ", 2);
+            ft_putendl_fd(strerror(eno), 2);
             return false;
         }
         dup2(fd, 1);

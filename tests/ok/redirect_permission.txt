@@ -18,3 +18,21 @@ chmod 777 tmpfile707; cat tmpfile707; rm -f tmpfile707
 chmod 777 tmpfile077; cat tmpfile077; rm -f tmpfile077
 
 echo -append----------------------
+
+echo hello > tmpfile000; chmod 000 tmpfile000
+echo hello > tmpfile777; chmod 777 tmpfile777
+echo hello > tmpfile770; chmod 770 tmpfile770
+echo hello > tmpfile707; chmod 707 tmpfile707
+echo hello > tmpfile077; chmod 077 tmpfile077
+
+echo world >> tmpfile000
+echo world >> tmpfile777
+echo world >> tmpfile770
+echo world >> tmpfile707
+echo world >> tmpfile077
+
+chmod 777 tmpfile000; cat tmpfile000; rm -f tmpfile000
+chmod 777 tmpfile777; cat tmpfile777; rm -f tmpfile777
+chmod 777 tmpfile770; cat tmpfile770; rm -f tmpfile770
+chmod 777 tmpfile707; cat tmpfile707; rm -f tmpfile707
+chmod 777 tmpfile077; cat tmpfile077; rm -f tmpfile077
