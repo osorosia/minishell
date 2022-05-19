@@ -6,4 +6,5 @@ t_env *new_env(char *name, char *body) {
         error("malloc error");
     env->name = name;
     env->body = body;
+    return env;
 }

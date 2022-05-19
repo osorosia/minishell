@@ -60,7 +60,7 @@ t_node *_new_node_cmd() {
     return node;
 }
 
-void *_add_word(t_cmd *cmd, char *str, long len) {
+void _add_word(t_cmd *cmd, char *str, long len) {
     t_word *word;
     t_word *now;
 
