@@ -5,24 +5,16 @@ GREEN='\033[32m'
 NC='\033[0m'
 
 set -m
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 function test() {
     file="${1}.txt"
 
     ../minishell heredoc < ./ok/${file} &> ./actual/${file}
-    bash -i < ./ok/${file} &> ./expected/${file}.tmp
+    bash -fi < ./ok/${file} &> ./expected/${file}.tmp
 
-    cat ./expected/${file}.tmp | grep 'The default interactive shell is now zsh.' > /dev/null
-    if [ "$?" = 0 ]; then
-        cat ./expected/${file}.tmp \
-            | awk 'NR>4' \
-            | sed $'s/[\x1B][\x5B][\x3F][\x31][\x30][\x33][\x34][\x68]//g' \
-            > ./expected/${file}.tmp2
-    else
-        cat ./expected/${file}.tmp > ./expected/${file}.tmp2
-    fi
-
-    cat ./expected/${file}.tmp2 \
+    cat ./expected/${file}.tmp \
+        | sed $'s/[\x1B][\x5B][\x3F][\x31][\x30][\x33][\x34][\x68]//g' \
         | sed 's/ \r//g' \
         | sed 's/bash-3.2\$/%/g' \
         | sed 's/^bash:/minishell:/g' \
