@@ -27,3 +27,19 @@ echo $?
 
 () echo hello
 echo $?
+
+> >> NOSUCHFILE
+echo $?
+ls
+rm -f NOSUCHFILE
+
+>> > NOSUCHFILE
+echo $?
+ls
+rm -f NOSUCHFILE
+
+<< < EOF
+echo $?
+
+< << EOF
+echo $?
