@@ -2,33 +2,19 @@ export "?"=100
 echo $?
 export '?'=100
 echo $?
+
 export ?=100
 echo $?
 
-export a=
+export '==='
 echo $?
-echo $a
-export a==
-echo $?
-echo $a
-export a===
-echo $?
-echo $a
-export a====
-echo $?
-echo $a
-export "a"="a"
-echo $?
-echo $a
+echo $=
+
+
 export '='='='
 echo $?
 echo $=
+
 export '='="="
-echo $?
-echo $=
-ecport "="='='
-echo $?
-echo $=
-export '==='
 echo $?
 echo $=

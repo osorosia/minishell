@@ -24,7 +24,6 @@ ls "$pipe" cat
 ls '$pipe' cat
 export a='ls' b='ls' c='ls'
 echo $?
-
 echo $a $b $c
 
 echo "$a" "$b" "$c"
@@ -87,4 +86,31 @@ echo $?
 export a=HELLOWORLD
 echo $?
 unset a
+
+export a=
+echo $?
+echo $a
+echo $a
+export a==
+echo $?
+echo $a
+echo $a
+export a==
+echo $?
+echo $a
+export a===
+echo $?
+echo $a
+
+export a====
+echo $?
+echo $a
+export "a"="a"
+export "a"="a"
+echo $?
+echo $a
+
+ecport "="='='
+echo $?
+echo $=
 
