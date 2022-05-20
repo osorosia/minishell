@@ -9,3 +9,6 @@ echo $?
 
 cmd_not_found
 echo $?
+
+""
+echo $?

@@ -9,6 +9,16 @@ void free_paths(char **paths) {
     free(paths);
 }
 
+bool check_pathname(char *pathname) {
+    struct stat st;
+    
+    if (access(pathname, F_OK) != 0)
+        return false;
+    if (stat(pathname, &st) != 0)
+        return false;
+    return !S_ISDIR(st.st_mode);
+}
+
 char *find_pathname(char *str) {
     char **paths;
     char *base;
@@ -30,7 +40,7 @@ char *find_pathname(char *str) {
         pathname = ft_strjoin_with_free(base, true, str, false);
         if (pathname == NULL)
             error("malloc error");
-        if (access(pathname, F_OK) == 0) {
+        if (check_pathname(pathname)) {
             free_paths(paths);
             return pathname;
         }
