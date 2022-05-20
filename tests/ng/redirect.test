@@ -1,8 +1,3 @@
-echo hello world > a > b > c
-cat a
-cat b
-cat c
-rm -rf a b c
 
 echo hello world >> a >> b >> c
 cat a
@@ -49,11 +44,6 @@ echo world > $a
 echo $a
 export a=hello
 
-echo world > a > b > $a > c
-cat a
-cat b
-cat c
-rm a b c
 
 echo hello >> a > b >> c > d
 cat a

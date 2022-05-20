@@ -82,3 +82,9 @@ $L
 
 export > /dev/null
 echo $?
+
+
+export a=HELLOWORLD
+echo $?
+unset a
+

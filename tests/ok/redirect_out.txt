@@ -20,3 +20,15 @@ cat b
 cat c
 ls
 rm a b c hello
+
+echo hello world > a > b > c
+cat a
+cat b
+cat c
+rm -rf a b c
+
+echo world > a > b > $a > c
+cat a
+cat b
+cat c
+rm a b c
