@@ -8,36 +8,6 @@ echo $?
 export "=""=""="
 echo $?
 
-export | grep -v '^SHLVL=' | grep -v '^_=' | sort
-
-export A='hello'
-echo $A
-
-export pipe='|'
-echo $?
-
-ls $pipe cat
-
-ls "$pipe" cat
-
-ls '$pipe' cat
-
-
-export a='ls' b='ls' c='ls'
-echo $?
-
-echo $a $b $c
-
-echo "$a" "$b" "$c"
-
-echo '$a' '$b' '$c'
-
-echo '$a' "$b" '$c'
-
-echo "'$a' "$b" '$c'"
-
-echo '"'$a' "$b" '$c'"'
-
 export var1='/bin/ls'
 echo $?
 
@@ -48,57 +18,18 @@ echo $var1
 
 echo $var2
 
-export $A=$B
-echo $?
+export | grep -v '^SHLVL=' | grep -v '^_=' | sort
 
-export PWD
-echo $?
 
-echo $PWD
 
-export a=NO
-echo $?
 
-echo $a
+
 
 export a=HELLOWORLD
 echo $?
 unset a
 
-export a="a"
-echo $?
 
-echo $a$a
 
-echo $a$a$
 
-echo $a$a$a$
 
-echo a$a$a$a$a
-
-export a=$a
-echo $?
-echo $a
-
-export a=$a$a
-echo $?
-echo $a
-
-export a=$a$a$a
-echo $?
-echo $a
-
-export L=' ls '
-echo $?
-$L
-
-export L=' ls -a'
-echo $?
-$L
-
-export L=' ls -aaaa'
-echo $?
-$L
-
-export > /dev/null
-echo $?
