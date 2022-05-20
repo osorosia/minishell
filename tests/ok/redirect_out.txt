@@ -32,3 +32,15 @@ cat a
 cat b
 cat c
 rm a b c
+
+export a=hello
+echo world > $a
+echo $a
+export a=hello
+
+export a=hello
+echo world > a > $a > b > c
+cat a
+cat b
+cat c
+rm a b c

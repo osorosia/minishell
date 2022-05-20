@@ -1,0 +1,30 @@
+echo hello > a >> b
+cat a
+cat b
+rm -rf a b
+
+
+
+echo hello > a >> b > c >> d
+cat a
+cat b
+cat c
+cat d
+rm -rf a b c d
+
+
+export a=hello
+echo world >> a > b > $a > c
+cat a
+cat b
+cat c
+rm a b c
+
+
+echo hello >> a > b >> c > d
+cat a
+cat b
+cat c
+cat d
+rm -rf a b c d
+
