@@ -53,8 +53,6 @@ echo $?
 echo $?
 (echo hello | cmd)
 echo $?
-(cmd | echo hello)
-echo $?
 (cmd | cmd)
 echo $?
 (echo hello && echo world)
@@ -88,34 +86,6 @@ ls "|" echo "|"
 echo "|" | echo "|"
 echo "|" | echo "|" | echo "|" | echo "|" | echo "|"
 
-export a=
-echo $a
-export a==
-echo $a
-export a===
-echo $a
-export a====
-echo $a
-export "a"="a"
-echo $a
-export '='='='
-echo $=
-export '='="="
-echo $=
-ecport "="='='
-echo $=
-export '==='
-echo $=
-
->> >>NOSUCHFILE
-rm -rf NOSUCHFILE
-
-export "?"=100
-echo $?
-export '?'=100
-echo $?
-export ?=100
-echo $?
 cmd | cmd | false
 echo $?
 cmd | cmd | true

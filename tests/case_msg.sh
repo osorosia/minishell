@@ -2,6 +2,7 @@
 
 # parser
 test 'pipe'
+test 'parser'
 test 'parser_error'
 
 # expander
