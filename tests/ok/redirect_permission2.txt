@@ -143,19 +143,19 @@ chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 echo ------------------------------
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 000 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 111 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 222 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
@@ -210,49 +210,49 @@ chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 echo ------------------------------
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 000 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 111 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 222 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 333 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 444 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 555 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 666 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 777 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
@@ -307,49 +307,49 @@ chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 echo ------------------------------
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 000 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 111 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 222 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 333 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 444 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 555 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 666 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 777 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
@@ -461,49 +461,49 @@ chmod 777 aliasfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 000 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 111 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 222 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 333 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 444 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 555 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 666 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
 
 echo hello > tmpfile
-ln -s tmpfile aliasflie
+ln -s tmpfile aliasfile
 chmod 777 tmpfile
 cat tmpfile > aliasfile
 chmod 777 tmpfile aliasfile; rm -rf tmpfile aliasfile
