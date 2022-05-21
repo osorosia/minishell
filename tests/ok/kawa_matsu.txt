@@ -19,3 +19,27 @@ rm -rf outfile
 echo 55
 (xxx && yyy || zzz)
 xxx && yy || zz
+
+echo 53
+export str='  a bb ccc   '
+echo $str$str$str
+
+echo 52
+pwd && (pwd && cd .. && pwd) && pwd
+
+echo 47
+cat << EOF | usleep 1 | cat << EOF
+EOF
+EOF
+
+
+echo 43
+cat << EOT << EOT << EOT
+xxx
+EOT
+yyy
+EOT
+zzz
+EOT
+
+

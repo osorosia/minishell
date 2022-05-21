@@ -10,3 +10,14 @@ rm -rf outfile
 echo 57
 export str="a "; echo $str"" | cat -e
 
+echo 44
+env -i ./minishell
+export
+export VAR=test
+echo $VAR
+
+echo 40
+export com="export"
+export c="a b"
+$com b="a"$c'b'
+echo $b
