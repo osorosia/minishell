@@ -1,2 +1,13 @@
 export ,
 echo $?
+
+export =
+echo $?
+
+export 0a
+echo $?
+
+export AAAAA=a , ZZZZZ=z
+echo $?
+export | grep AAAAA
+export | grep ZZZZZ
