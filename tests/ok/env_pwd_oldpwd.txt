@@ -51,14 +51,10 @@ echo $PWD, $OLDPWD
 cd /..
 echo $PWD, $OLDPWD
 
-mkdir tmpdir
-
 unset PWD OLDPWD
 cd tmpdir
 echo $PWD, $OLDPWD
 cd ..
-
-rm -rf tmpdir
 
 unset PWD OLDPWD
 cd ../
