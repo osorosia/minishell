@@ -1,0 +1,21 @@
+echo 59
+cat << a
+hello
+"a
+a"
+a
+
+echo 58
+
+cat << "a"
+hello
+a
+"a"
+
+echo 56
+(echo hello && echo world) > outfile
+rm -rf outfile
+
+echo 55
+(xxx && yyy || zzz)
+xxx && yy || zz

@@ -1,6 +1,12 @@
+echo 61
+
 echo hello 3> outfile
 echo hello 4> outfile
 echo hello 5> outfile
 echo >
 cat -e outfile
 rm -rf outfile
+
+echo 57
+export str="a "; echo $str"" | cat -e
+

@@ -1,3 +1,6 @@
+#kawamatsu issues
+test 'kawa_matsu'
+
 # lexer
 
 # parser
@@ -48,3 +51,4 @@ test 'status_()'
 
 #path
 test 'path'
+
