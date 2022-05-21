@@ -1,5 +1,11 @@
 cat << a
 hello
+"a
+a"
+a
+
+cat << a
+hello
 world
 a
 

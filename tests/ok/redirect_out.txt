@@ -1,3 +1,4 @@
+
 > tmp1
 > tmp2
 echo hello > tmp1 | echo world > tmp2
