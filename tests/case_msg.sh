@@ -24,6 +24,7 @@ test 'builtin_exit'
 
 # env
 test 'env_pwd_oldpwd'
+test 'env_path'
 
 # redirect
 test 'redirect_heredoc'
