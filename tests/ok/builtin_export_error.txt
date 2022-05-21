@@ -27,4 +27,24 @@ echo $?
 echo $var1
 echo $var2
 
-export | grep -v -e ' SHLVL=' -v -e ' _=' -v -e 'OLDPWD' | sort
+export "?"=100
+echo $?
+export '?'=100
+echo $?
+
+export ?=100
+echo $?
+
+export '==='
+echo $?
+echo $=
+
+export '='='='
+echo $?
+echo $=
+
+export '='="="
+echo $?
+echo $=
+
+export | grep -v -e ' SHLVL=' -v -e ' _=' -v -e ' OLDPWD' | sort
