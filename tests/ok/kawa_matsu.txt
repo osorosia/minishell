@@ -43,3 +43,12 @@ zzz
 EOT
 
 
+echo 36
+mkdir tmp
+cd tmp
+cd ./
+rm -rf tmp
+
+echo 30
+(echo x)
+echo $?
