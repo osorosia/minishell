@@ -1,7 +1,11 @@
 #include "../minishell.h"
 
-bool _is_var_name_char(char c) {
+bool _is_var_first_name_char(char c) {
     return ft_isalpha(c) || c == '_';
+}
+
+bool _is_var_name_char(char c) {
+    return ft_isalnum(c) || c == '_';
 }
 
 char *_get_var_name(char *str) {
@@ -36,7 +40,7 @@ char *_expand_var_in_str(char *str) {
             i += 2;
             continue;
         }
-        if (!single_quote && str[i] == '$' && !_is_var_name_char(str[i + 1])) {
+        if (!single_quote && str[i] == '$' && !_is_var_first_name_char(str[i + 1])) {
             new = ft_strjoin_with_free(new, true, "$", false);
             i++;
             continue;

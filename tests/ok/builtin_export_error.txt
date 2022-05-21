@@ -11,3 +11,20 @@ export AAAAA=a , ZZZZZ=z
 echo $?
 export | grep AAAAA
 export | grep ZZZZZ
+
+export "="="="
+echo $?
+
+export "=""=""="
+echo $?
+
+export var1='/bin/ls'
+echo $?
+
+export var2=$var1
+echo $?
+
+echo $var1
+echo $var2
+
+export | grep -v -e ' SHLVL=' -v -e ' _=' -v -e 'OLDPWD' | sort
