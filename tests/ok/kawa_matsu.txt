@@ -52,3 +52,31 @@ rm -rf tmp
 echo 30
 (echo x)
 echo $?
+
+echo 22
+./minishell -c "./"
+echo "./"
+./
+./minishell -c "."
+
+echo 21
+cat << "EOT"
+"EOT"
+
+echo 19
+export a=l
+export a+=s
+echo $a
+export a-=s
+echo $a
+
+echo 16
+man man
+
+echo 13
+export =a ===a 123456789=a
+
+echo 1
+echo >
+echo $?
+

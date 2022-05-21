@@ -26,3 +26,16 @@ echo 38
 export VAR='$X' BAR='$' CAR='$$'
 export | grep AR=
 
+echo 28
+export COMMAND=ech
+${COMMAND}o a
+
+echo 24
+export VAR=var
+echo "VAR
+echo $VAR"
+echo '$VAR
+echo $VAR'
+echo "$VAR'
+echo '$VAR"
+
