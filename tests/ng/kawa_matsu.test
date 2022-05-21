@@ -1,5 +1,13 @@
-echo 61
+echo 44
+env -i ./minishell
+export
+export VAR=test
+echo $VAR
 
+######## 以下は対応しない
+
+# 1> や 2> のリダイレクトは対応しないため
+echo 61
 echo hello 3> outfile
 echo hello 4> outfile
 echo hello 5> outfile
@@ -7,29 +15,28 @@ echo >
 cat -e outfile
 rm -rf outfile
 
+# zshに合わせるため
 echo 57
 export str="a "; echo $str"" | cat -e
 
-echo 44
-env -i ./minishell
-export
-export VAR=test
-echo $VAR
-
+# zshに合わせるため
 echo 40
 export com="export"
 export c="a b"
 $com b="a"$c'b'
 echo $b
 
+# zshに合わせるため
 echo 38
 export VAR='$X' BAR='$' CAR='$$'
 export | grep AR=
 
+# $VARは対応するけど、${VAR}は対応しないため
 echo 28
 export COMMAND=ech
 ${COMMAND}o a
 
+# クォートが閉じない場合はlexer errorにするため
 echo 24
 export VAR=var
 echo "VAR
@@ -38,4 +45,3 @@ echo '$VAR
 echo $VAR'
 echo "$VAR'
 echo '$VAR"
-
