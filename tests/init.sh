@@ -15,3 +15,6 @@ int main() {
 EOF
 gcc tmp.c -o tmp.out
 cp tmp.out tmp000.out; chmod 000 tmp000.out;
+
+# 環境変数
+export PATH="${PATH}:${PWD}"

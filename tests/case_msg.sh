@@ -29,8 +29,13 @@ test 'env_pwd_oldpwd'
 test 'redirect_heredoc'
 test 'redirect_in'
 test 'redirect_out'
+test 'redirect_append'
 test 'redirect_permission'
+# test 'redirect_permission2'
 test 'redirect_directory'
+test 'redirect_in_mix'
+test 'redirect_out_mix'
+test 'redirect_all'
 
 # status
 test 'status'
