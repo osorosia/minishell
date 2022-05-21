@@ -16,17 +16,34 @@ void show_envs() {
     }
 }
 
+bool validate_name(char *str) {
+    if (ft_strncmp(str, "+=", 2) == 0 || str[0] == '=')
+        return false;
+    long i = 0;
+    while (str[i] && str[i] != '=' && (str[i] != '+' || str[i + 1] != '=')) {
+        if (i == 0 && ft_isdigit(str[i]))
+            return false;
+        if (!ft_isalnum(str[i]) && str[i] != '_')
+            return false;
+        i++;
+    }
+    return true;
+}
+
 int exec_export(t_word *word) {
+    int ret = 0;
+
     if (word->next == NULL) {
         show_envs();
         return 0;
     }
     word = word->next;
     while (word) {
-        if (ft_strncmp(word->str, "+=", 2) == 0 || word->str[0] == '=') {
+        if (!validate_name(word->str)) {
             ft_putstr_fd("minishell: export: `", 2);
             ft_putstr_fd(word->str, 2);
             ft_putstr_fd("': not a valid identifier\n", 2);
+            ret = 1;
         } else if (ft_strnstr(word->str, "+=", ft_strlen(word->str))) {
             add_env_plus(word->str);
         } else {
@@ -34,5 +51,5 @@ int exec_export(t_word *word) {
         }
         word = word->next;
     }
-    return 0;
+    return ret;
 }

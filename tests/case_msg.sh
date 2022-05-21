@@ -22,6 +22,9 @@ test 'builtin_unset'
 test 'builtin_env'
 test 'builtin_exit'
 
+# builtin error
+test 'builtin_export_error'
+
 # env
 test 'env_pwd_oldpwd'
 test 'env_path'
