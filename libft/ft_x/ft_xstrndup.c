@@ -6,13 +6,13 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 18:02:30 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/05/30 16:51:56 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/06/28 12:42:21 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strndup(const char *s1, size_t n)
+char	*ft_xstrndup(const char *s1, size_t n)
 {
 	char	*str;
 	size_t	i;

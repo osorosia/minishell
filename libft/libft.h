@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 20:47:03 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/06/01 21:52:35 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/06/28 12:42:30 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ char	    *ft_xstrdup_to_c(const char *s1, char c);
 char		*ft_xstrdup(const char *s1);
 char		*ft_xstrjoin_with_free(char *s1, bool b1, char *s2, bool b2);
 char		*ft_xstrjoin(char const *s1, char const *s2);
-char		*ft_strndup(const char *s1, size_t n);
+char		*ft_xstrndup(const char *s1, size_t n);
 
 // ft_xstd
 void	    *ft_xmalloc(size_t size);
