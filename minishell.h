@@ -106,6 +106,7 @@ struct s_shell {
     int sts;
     int stdout;
     int stdin;
+    bool interrupt;
     // debug
     bool is_debug;
     bool is_debug_heredoc;
@@ -225,8 +226,9 @@ char *create_env_body_plus(char *str);
 
 // signal ---------------------------------------------
 
-// signal_init.c
+void signal_exec();
 void signal_init();
+void signal_heredoc();
 
 // grobal variable ------------------------------------
 

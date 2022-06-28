@@ -12,4 +12,5 @@ void _sigint_init(int signal) {
 void signal_init() {
     signal(SIGQUIT, SIG_IGN);
     signal(SIGINT, _sigint_init);
+    g_shell->interrupt = false;
 }

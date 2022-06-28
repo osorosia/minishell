@@ -121,6 +121,9 @@ bool is_directory(char *pathname) {
 }
 
 void exec_cmd(t_node *node) {
+    if (g_shell->interrupt)
+        return;
+    
     t_cmd *cmd = node->cmd;
 
     // redir in

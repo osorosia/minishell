@@ -90,6 +90,7 @@ int main(int argc, char **argv, char **envp) {
         // exec
         if (g_shell->is_debug)
             fprintf(stderr, "--- exec ---\n");
+        signal_exec();
         exec(node);
 
         free_parser(node);
