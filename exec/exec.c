@@ -84,11 +84,7 @@ bool set_redir_out(t_redir *redir_out) {
     if (redir_out->kind == RD_OUT) {
         int fd = open(redir_out->str, (O_WRONLY | O_CREAT | O_TRUNC), 0664);
         if (fd < 0) {
-            int eno = errno;
-            ft_putstr_fd("minishell: ", 2);
-            ft_putstr_fd(redir_out->str, 2);
-            ft_putstr_fd(": ", 2);
-            ft_putendl_fd(strerror(eno), 2);
+            ft_dprintf(2, "minishell: %s: %s\n", redir_out->str, strerror(errno));
             return false;
         }
         dup2(fd, 1);
@@ -96,11 +92,7 @@ bool set_redir_out(t_redir *redir_out) {
     } else if (redir_out->kind == RD_APPEND) {
         int fd = open(redir_out->str, (O_WRONLY | O_CREAT | O_APPEND), 0664);
         if (fd < 0) {
-            int eno = errno;
-            ft_putstr_fd("minishell: ", 2);
-            ft_putstr_fd(redir_out->str, 2);
-            ft_putstr_fd(": ", 2);
-            ft_putendl_fd(strerror(eno), 2);
+            ft_dprintf(2, "minishell: %s: %s\n", redir_out->str, strerror(errno));
             return false;
         }
         dup2(fd, 1);
@@ -152,25 +144,18 @@ void exec_cmd(t_node *node) {
 
         if (pid == 0) {
             if (cmd->pathname == NULL) {
-                ft_putstr_fd("minishell: ", 2);
-                ft_putstr_fd(cmd->word->str, 2);
-                ft_putstr_fd(": command not found\n", 2);
+                ft_dprintf(2, "minishell: %s: command not found\n", cmd->word->str);
                 exit(127);
             }
             if (is_directory(cmd->pathname)) {
-                ft_putstr_fd("minishell: ", 2);
-                ft_putstr_fd(cmd->pathname, 2);
-                ft_putstr_fd(": is a directory\n", 2);
+                ft_dprintf(2, "minishell: %s: is a directory\n", cmd->pathname);
                 exit(126);
             }
             char **cmd_argv = create_argv(cmd->word);
             char **cmd_envp = create_envp();
             execve(cmd->pathname, cmd_argv, cmd_envp);
             int eno = errno;
-            ft_putstr_fd("minishell: ", 2);
-            ft_putstr_fd(cmd->pathname, 2);
-            ft_putstr_fd(": ", 2);
-            ft_putendl_fd(strerror(eno), 2);
+            ft_dprintf(2, "minishell: %s: %s\n", cmd->pathname, strerror(eno));
             free(cmd_argv);
             free_envp(cmd_envp);
             if (eno == ENOENT)
