@@ -1,15 +1,27 @@
 NAME = minishell
-SRCS = $(wildcard *.c) \
-	$(wildcard ./utils/*.c) \
-	$(wildcard ./shell/*.c) \
-	$(wildcard ./signal/*.c) \
-	$(wildcard ./builtin/*.c) \
-	$(wildcard ./lexer/*.c) \
-	$(wildcard ./parser/*.c) \
-	$(wildcard ./expander/*.c) \
-	$(wildcard ./exec/*.c) \
 
-OBJS = $(SRCS:.c=.o)
+OBJ_DIR += ./
+SRCS += $(wildcard *.c)
+OBJ_DIR += utils/
+SRCS += $(wildcard utils/*.c)
+OBJ_DIR += shell/
+SRCS += $(wildcard shell/*.c)
+OBJ_DIR += signal/
+SRCS += $(wildcard signal/*.c)
+OBJ_DIR += builtin/
+SRCS += $(wildcard builtin/*.c)
+OBJ_DIR += lexer/
+SRCS += $(wildcard lexer/*.c)
+OBJ_DIR += parser/
+SRCS += $(wildcard parser/*.c)
+OBJ_DIR += expander/
+SRCS += $(wildcard expander/*.c)
+OBJ_DIR += exec/
+SRCS += $(wildcard exec/*.c)
+
+OBJS = $(SRCS:%.c=obj/%.o)
+OBJ_DIR := $(addprefix obj/, $(OBJ_DIR))
+OBJ_DIR := $(addsuffix .keep, $(OBJ_DIR))
 
 LIBFT = ./libft/libft.a
 
@@ -28,8 +40,12 @@ $(NAME): $(OBJS) $(LIBFT) ./minishell.h
 $(LIBFT):
 	make -C ./libft
 
-%.o: %.c
+obj/%.o: %.c $(OBJ_DIR)
 	gcc $(CFLAGS) -c -o $@ $<
+
+$(OBJ_DIR):
+	mkdir -p $(@D)
+	touch $@
 
 .PHONY: all
 all: $(NAME)
@@ -42,7 +58,7 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 
-.PHONY: norm
+.PHONY: re
 re: fclean all
 
 .PHONY: norm
