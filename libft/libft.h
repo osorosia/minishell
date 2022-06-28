@@ -6,68 +6,74 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 20:47:03 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/05/16 03:07:34 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/06/01 21:52:35 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdio.h>
+# include <fcntl.h>
 # include <limits.h>
+# include <stdarg.h>
 # include <stdint.h>
 # include <stddef.h>
 # include <stdlib.h>
-# include <stdbool.h>
 # include <unistd.h>
+# include <stdbool.h>
+# include <sys/stat.h>
 # include <sys/errno.h>
+# include <sys/types.h>
+
+# include "./ft_printf/ft_printf.h"
 
 # define FD_MAX 256
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1
 # endif
 
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}	t_list;
+// ft_free
+void		ft_free_strs(char **strs);
 
-int			ft_abs(int num);
-long		ft_abs_l(long num);
-long long	ft_abs_ll(long long num);
-int			ft_atoi(const char *str);
-void		ft_bzero(void *s, size_t n);
-void		*ft_calloc(size_t count, size_t size);
+// ft_is
 int			ft_isalnum(int c);
 int			ft_isalpha(int c);
 int			ft_isascii(int c);
 int			ft_isdigit(int c);
 bool		ft_isnumber(char *str);
 int			ft_isprint(int c);
-char		*ft_itoa(int n);
-void		ft_lstadd_back(t_list **lst, t_list *new_lst);
-void		ft_lstadd_front(t_list **lst, t_list *new_lst);
-void		ft_lstclear(t_list **lst, void (*del)(void*));
-void		ft_lstdelone(t_list *lst, void (*del)(void*));
-void		ft_lstiter(t_list *lst, void (*f)(void *));
-t_list		*ft_lstlast(t_list *lst);
-t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-t_list		*ft_lstnew(void *content);
-int			ft_lstsize(t_list *lst);
+bool		ft_isspace(int c);
+
+// ft_mem
+void		ft_bzero(void *s, size_t n);
+void		*ft_calloc(size_t count, size_t size);
 void		*ft_memchr(const void *s, int c, size_t n);
 int			ft_memcmp(const void *s1, const void *s2, size_t n);
 void		*ft_memcpy(void *dst, const void *src, size_t n);
 void		*ft_memmove(void *dest, const void *src, size_t n);
 void		*ft_memset(void *buf, int ch, size_t n);
-size_t		ft_numlen(long long num);
-size_t		ft_numlen_base(long long num, int base);
-size_t		ft_numlen_u(unsigned long long num);
-size_t		ft_numlen_u_base(unsigned long long num, unsigned int base);
+
+// ft_num
+long		ft_numlen(long num, long base);
+long		ft_unumlen(size_t num, long base);
+
+// ft_printf
+int			ft_printf(const char *format, ...);
+int			ft_dprintf(int fd, const char *format, ...);
+
+// ft_put
 void		ft_putchar_fd(char c, int fd);
 void		ft_putendl_fd(char *s, int fd);
+void		ft_putnbr_base_fd(long num, char *base, int fd);
 void		ft_putnbr_fd(int n, int fd);
 void		ft_putnstr_fd(char *s, size_t n, int fd);
 void		ft_putstr_fd(char *s, int fd);
+void		ft_putunbr_base_fd(size_t num, char *base, int fd);
+
+// ft_str
+int			ft_atoi(const char *str);
+char		*ft_itoa(int n);
 char		**ft_split(char const *s, char c);
 char		*ft_strchr(const char *s, int c);
 char		*ft_strdup(const char *s1);
@@ -87,6 +93,23 @@ char		*ft_strtrim(char const *s1, char const *set);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 int			ft_toupper(int c);
 int			ft_tolower(int c);
+
+// ft_x
+void		*ft_xcalloc(size_t count, size_t size);
+char		**ft_xsplit(char const *s, char c);
+char	    *ft_xstrdup_to_c(const char *s1, char c);
+char		*ft_xstrdup(const char *s1);
+char		*ft_xstrjoin_with_free(char *s1, bool b1, char *s2, bool b2);
+char		*ft_xstrjoin(char const *s1, char const *s2);
+char		*ft_strndup(const char *s1, size_t n);
+
+// ft_xstd
+void	    *ft_xmalloc(size_t size);
+int			ft_xopen(const char *path, int oflag);
+ssize_t		ft_xread(int fd, void *buf, size_t n);
+
+// get_next_line
 char		*get_next_line(int fd);
+char	    *xget_next_line(int fd);
 
 #endif

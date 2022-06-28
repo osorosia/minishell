@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   spec_u.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 16:31:07 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/01/08 07:44:24 by rnishimo         ###   ########.fr       */
+/*   Created: 2022/05/28 19:27:13 by rnishimo          #+#    #+#             */
+/*   Updated: 2022/05/28 19:27:14 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new_lst)
+long	spec_u(va_list ap, int fd)
 {
-	if (lst == NULL || new_lst == NULL)
-		return ;
-	new_lst->next = *lst;
-	*lst = new_lst;
+	unsigned int	num;
+
+	num = va_arg(ap, unsigned int);
+	ft_putunbr_base_fd(num, "0123456789", fd);
+	return (ft_unumlen(num, 10));
 }

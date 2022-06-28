@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_abs.c                                           :+:      :+:    :+:   */
+/*   spec_c.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 18:23:51 by rnishimo          #+#    #+#             */
-/*   Updated: 2021/12/10 18:26:04 by rnishimo         ###   ########.fr       */
+/*   Created: 2022/05/28 19:27:27 by rnishimo          #+#    #+#             */
+/*   Updated: 2022/05/28 19:27:27 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long	ft_abs_l(long num)
+long	spec_c(va_list ap, int fd)
 {
-	if (num < 0)
-		return (num * -1);
-	return (num);
+	char	c;
+
+	c = (char)va_arg(ap, int);
+	ft_putchar_fd(c, fd);
+	return (1);
 }

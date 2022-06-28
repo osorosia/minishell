@@ -12,46 +12,10 @@
 
 #include "libft.h"
 
-static bool	_isspace(int c)
-{
-	return (c == '\t'
-			|| c == '\n'
-			|| c == '\v'
-			|| c == '\f'
-			|| c == '\r'
-			|| c == ' ');
-}
-
-static bool	_is_overflow(const char *s, long long num, long long sign)
-{
-	long long	div;
-	long long	mod;
-
-	div = LONG_MAX / 10;
-	mod = LONG_MAX % 10;
-	if (sign == -1)
-	{
-		mod++;
-		if (mod == 10)
-		{
-			div++;
-			mod = 0;
-		}
-	}
-	return (num > div || (num == div && *s - '0' > mod));
-}
-
 static long	long	_atoll(const char *s, long long num, long long sign)
 {
 	while (ft_isdigit(*s))
 	{
-		if (_is_overflow(s, num, sign))
-		{
-			if (sign == -1)
-				return (LONG_MIN);
-			else
-				return (LONG_MAX);
-		}
 		num = num * 10 + *s - '0';
 		s++;
 	}
@@ -66,13 +30,11 @@ int	ft_atoi(const char *s)
 
 	num = 0;
 	sign = 1;
-	while (_isspace(*s))
+	while (ft_isspace(*s))
 		s++;
+	if (*s == '-')
+		sign *= -1;
 	if (*s == '+' || *s == '-')
-	{
-		if (*s == '-')
-			sign *= -1;
 		s++;
-	}
 	return ((int)_atoll(s, num, sign));
 }

@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_numlen_u_base.c                                 :+:      :+:    :+:   */
+/*   ft_putnbr_base_fd.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/29 16:49:06 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/01/29 22:31:00 by rnishimo         ###   ########.fr       */
+/*   Created: 2022/05/28 19:22:53 by rnishimo          #+#    #+#             */
+/*   Updated: 2022/05/28 19:24:29 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_numlen_u_base(unsigned long long num, unsigned int base)
+void	ft_putnbr_base_fd(long num, char *base, int fd)
 {
-	size_t	len;
+	const long	base_len = ft_strlen(base);
 
-	if (base == 0)
-		return (0);
-	if (num == 0)
-		return (1);
-	len = 0;
-	while (num != 0)
+	if (num < 0)
 	{
-		num /= base;
-		len++;
+		ft_putchar_fd('-', 1);
+		num *= -1;
 	}
-	return (len);
+	if (num / base_len != 0)
+		ft_putnbr_base_fd(num / base_len, base, fd);
+	ft_putchar_fd(base[num % base_len], 1);
 }

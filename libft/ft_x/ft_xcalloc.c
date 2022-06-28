@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_numlen_u.c                                      :+:      :+:    :+:   */
+/*   ft_xcalloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/29 16:49:06 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/01/29 22:30:39 by rnishimo         ###   ########.fr       */
+/*   Created: 2022/05/29 18:02:36 by rnishimo          #+#    #+#             */
+/*   Updated: 2022/06/06 00:12:33 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_numlen_u(unsigned long long num)
+static bool	_is_overflow(size_t count, size_t size)
 {
-	size_t		len;
-	const int	base = 10;
+	return (size > SIZE_MAX / count);
+}
 
-	if (base == 0)
-		return (0);
-	if (num == 0)
-		return (1);
-	len = 0;
-	while (num != 0)
+void	*ft_xcalloc(size_t count, size_t size)
+{
+	void	*ptr;
+
+	if (count == 0 || size == 0)
 	{
-		num /= base;
-		len++;
+		count = 1;
+		size = 1;
 	}
-	return (len);
+	if (_is_overflow(count, size))
+	{
+		errno = ENOMEM;
+		perror("malloc");
+		exit(1);
+	}
+	ptr = (void *)ft_xmalloc(count * size);
+	ft_memset(ptr, 0, count * size);
+	return (ptr);
 }

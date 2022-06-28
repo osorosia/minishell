@@ -6,112 +6,143 @@
 #    By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/08 19:29:20 by rnishimo          #+#    #+#              #
-#    Updated: 2022/01/29 18:02:01 by rnishimo         ###   ########.fr        #
+#    Updated: 2022/06/01 21:56:20 by rnishimo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-RM = rm -f
-AR = ar rcs
 
-SRCS = ft_abs.c \
-ft_abs_l.c \
-ft_abs_ll.c \
-ft_atoi.c \
-ft_bzero.c \
-ft_calloc.c \
-ft_isalnum.c \
-ft_isalpha.c \
-ft_isascii.c \
-ft_isdigit.c \
-ft_isnumber.c \
-ft_isprint.c \
-ft_itoa.c \
-ft_lstadd_back.c \
-ft_lstadd_front.c \
-ft_lstclear.c \
-ft_lstdelone.c \
-ft_lstiter.c \
-ft_lstlast.c \
-ft_lstmap.c \
-ft_lstnew.c \
-ft_lstsize.c \
-ft_memchr.c \
-ft_memcmp.c \
-ft_memcpy.c \
-ft_memmove.c \
-ft_memset.c \
-ft_numlen.c \
-ft_numlen_base.c \
-ft_numlen_u.c \
-ft_numlen_u_base.c \
-ft_putchar_fd.c \
-ft_putendl_fd.c \
-ft_putnbr_fd.c \
-ft_putnstr_fd.c \
-ft_putstr_fd.c \
-ft_split.c \
-ft_strchr.c \
-ft_strdup.c \
-ft_strdup_to_c.c \
-ft_striteri.c \
-ft_strjoin.c \
-ft_strlcat.c \
-ft_strlcpy.c \
-ft_strlen.c \
-ft_strlen_to_c.c \
-ft_strmapi.c \
-ft_strncmp.c \
-ft_strndup.c \
-ft_strnstr.c \
-ft_strrchr.c \
-ft_strtrim.c \
-ft_substr.c \
-ft_tolower.c \
-ft_toupper.c \
-get_next_line.c \
+OBJ_DIR += ft_free/
+SRCS += $(addprefix ft_free/, \
+	ft_free_strs.c \
+	)
 
-OBJS = $(SRCS:.c=.o)
+OBJ_DIR += ft_is/
+SRCS += $(addprefix ft_is/, \
+	ft_isalnum.c \
+	ft_isalpha.c \
+	ft_isascii.c \
+	ft_isdigit.c \
+	ft_isnumber.c \
+	ft_isprint.c \
+	ft_isspace.c \
+	)
 
-$(NAME): $(OBJS) libft.h
-	$(AR) $(NAME) $(OBJS)
+OBJ_DIR += ft_mem/
+SRCS += $(addprefix ft_mem/, \
+	ft_bzero.c \
+	ft_calloc.c \
+	ft_memchr.c \
+	ft_memcmp.c \
+	ft_memcpy.c \
+	ft_memmove.c \
+	ft_memset.c \
+	)
 
-.c.o: $(SRCS)
-	$(CC) $(CFLAGS) -c -o $@ $<
+OBJ_DIR += ft_num/
+SRCS += $(addprefix ft_num/, \
+	ft_numlen.c \
+	ft_unumlen.c \
+	)
 
-.PHONY: all
+OBJ_DIR += ft_printf/
+SRCS += $(addprefix ft_printf/, \
+	ft_printf.c \
+	spec_c.c \
+	spec_d.c \
+	spec_p.c \
+	spec_s.c \
+	spec_u.c \
+	spec_xX.c \
+	spec.c \
+	)
+
+OBJ_DIR += ft_put/
+SRCS += $(addprefix ft_put/, \
+	ft_putchar_fd.c \
+	ft_putendl_fd.c \
+	ft_putnbr_base_fd.c \
+	ft_putnbr_fd.c \
+	ft_putnstr_fd.c \
+	ft_putstr_fd.c \
+	ft_putunbr_base_fd.c \
+	)
+
+OBJ_DIR += ft_str/
+SRCS += $(addprefix ft_str/, \
+	ft_atoi.c \
+	ft_itoa.c \
+	ft_split.c \
+	ft_strchr.c \
+	ft_strdup.c \
+	ft_strdup_to_c.c \
+	ft_striteri.c \
+	ft_strjoin.c \
+	ft_strlcat.c \
+	ft_strlcpy.c \
+	ft_strlen.c \
+	ft_strlen_to_c.c \
+	ft_strmapi.c \
+	ft_strncmp.c \
+	ft_strndup.c \
+	ft_strnstr.c \
+	ft_strrchr.c \
+	ft_strtrim.c \
+	ft_substr.c \
+	ft_tolower.c \
+	ft_toupper.c \
+	)
+
+OBJ_DIR += ft_x/
+SRCS += $(addprefix ft_x/, \
+	ft_xcalloc.c \
+	ft_xsplit.c \
+	ft_xstrdup.c \
+	ft_xstrdup_to_c.c \
+	ft_xstrjoin.c \
+	ft_xstrjoin_with_free.c \
+	ft_xstrndup.c \
+	)
+
+OBJ_DIR += ft_xstd/
+SRCS += $(addprefix ft_xstd/, \
+	ft_xmalloc.c \
+	ft_xopen.c \
+	ft_xread.c \
+	)
+
+OBJ_DIR += get_next_line/
+SRCS += $(addprefix get_next_line/, \
+	get_next_line.c \
+	xget_next_line.c \
+	)
+
+OBJS = $(SRCS:%.c=obj/%.o)
+OBJ_DIR := $(addprefix obj/, $(OBJ_DIR))
+OBJ_DIR := $(addsuffix .keep, $(OBJ_DIR))
+
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
+
+obj/%.o: %.c libft.h $(OBJ_DIR)
+	gcc $(CFLAGS) -I. -c -o $@ $<
+
+$(OBJ_DIR):
+	mkdir -p $(@D)
+	touch $@
+
 all: $(NAME)
 
-.PHONY: clean
 clean:
-	$(RM) $(OBJS)
-	$(RM) $(OBJS_BONUS)
+	rm -f $(OBJS)
 
-.PHONY: fclean
 fclean: clean
-	$(RM) $(NAME)
+	rm -f $(NAME)
 
-.PHONY: re
 re: fclean all
 
-.PHONY: bonus
-bonus: all
-
-.PHONY: norm
 norm:
-	norminette | grep Error
+	norminette | grep -v 'OK!' || echo norm: OK
 
-.PHONY: test
-test: all
-	cd ./.test && bash ./test.sh
-
-.PHONY: tester
-tester: all
-	if [ ! -d ./libftTester ]; then git clone -q https://github.com/Tripouille/libftTester.git; fi
-	cd libftTester && make m b
-
-.PHONY: ls
-ls:
-	echo -n 'SRCS = ' && ls *.c | awk '{printf "%s \\\n", $$0}'
+.PHONY: all clean fclean re norm

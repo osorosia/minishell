@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_numlen.c                                        :+:      :+:    :+:   */
+/*   ft_unumlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/29 16:49:06 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/01/29 17:06:44 by rnishimo         ###   ########.fr       */
+/*   Created: 2022/05/28 19:23:54 by rnishimo          #+#    #+#             */
+/*   Updated: 2022/05/28 19:24:20 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_numlen(long long num)
+long	ft_unumlen(size_t num, long base)
 {
-	size_t		len;
-	const int	base = 10;
+	long	len;
 
-	if (base == 0)
-		return (0);
-	if (num == 0)
-		return (1);
-	if (num == LONG_MIN)
-		num++;
 	len = 0;
-	if (num < 0)
-		len++;
-	while (num != 0)
+	while (true)
 	{
-		num /= base;
 		len++;
+		num /= base;
+		if (num == 0)
+			break ;
 	}
 	return (len);
 }

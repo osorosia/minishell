@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   spec_p.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 16:37:29 by rnishimo          #+#    #+#             */
-/*   Updated: 2021/11/01 20:53:13 by rnishimo         ###   ########.fr       */
+/*   Created: 2022/05/28 19:27:22 by rnishimo          #+#    #+#             */
+/*   Updated: 2022/05/28 19:27:23 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+long	spec_p(va_list ap, int fd)
 {
-	int	lst_size;
+	size_t	p;
 
-	lst_size = 0;
-	while (lst)
-	{
-		lst_size++;
-		lst = lst->next;
-	}
-	return (lst_size);
+	p = va_arg(ap, size_t);
+	ft_putstr_fd("0x", fd);
+	ft_putunbr_base_fd(p, "0123456789abcdef", fd);
+	return (2 + ft_unumlen(p, 16));
 }

@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   spec_xX.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 20:21:36 by rnishimo          #+#    #+#             */
-/*   Updated: 2021/11/13 06:28:57 by rnishimo         ###   ########.fr       */
+/*   Created: 2022/05/28 19:27:15 by rnishimo          #+#    #+#             */
+/*   Updated: 2022/05/28 19:27:17 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+long	spec_x(va_list ap, int fd)
 {
-	t_list	*lst_next;
+	unsigned int	num;
 
-	if (lst == NULL)
-		return ;
-	while (*lst)
-	{
-		lst_next = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = lst_next;
-	}
+	num = va_arg(ap, unsigned int);
+	ft_putunbr_base_fd(num, "0123456789abcdef", fd);
+	return (ft_unumlen(num, 16));
+}
+
+long	spec_X(va_list ap, int fd)
+{
+	unsigned int	num;
+
+	num = va_arg(ap, unsigned int);
+	ft_putunbr_base_fd(num, "0123456789ABCDEF", fd);
+	return (ft_unumlen(num, 16));
 }

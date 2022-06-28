@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_putunbr_base_fd.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 20:53:51 by rnishimo          #+#    #+#             */
-/*   Updated: 2021/11/13 07:02:39 by rnishimo         ###   ########.fr       */
+/*   Created: 2022/05/28 19:24:36 by rnishimo          #+#    #+#             */
+/*   Updated: 2022/05/28 19:24:52 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_putunbr_base_fd(size_t num, char *base, int fd)
 {
-	if (f == NULL)
-		return ;
-	while (lst)
-	{
-		(*f)(lst->content);
-		lst = lst->next;
-	}
+	const long	base_len = ft_strlen(base);
+
+	if (num / base_len != 0)
+		ft_putunbr_base_fd(num / base_len, base, fd);
+	ft_putchar_fd(base[num % base_len], 1);
 }

@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_xopen.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/13 17:10:33 by rnishimo          #+#    #+#             */
-/*   Updated: 2021/10/13 18:13:48 by rnishimo         ###   ########.fr       */
+/*   Created: 2022/05/30 01:53:31 by rnishimo          #+#    #+#             */
+/*   Updated: 2022/05/30 01:54:36 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+int	ft_xopen(const char *path, int oflag)
 {
-	if (lst == NULL)
-		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	int	fd;
+
+	fd = open(path, oflag);
+	if (fd < 0)
+	{
+		perror("open");
+		exit(1);
+	}
+	return (fd);
 }
