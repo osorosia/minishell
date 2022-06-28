@@ -5,9 +5,7 @@ void _add_new_token(t_token *tok, t_token_kind kind, char *str, long len) {
     
     while (tok->next)
         tok = tok->next;
-    new = ft_calloc(1, sizeof(t_token));
-    if (new == NULL)
-        error("malloc error");
+    new = ft_xcalloc(1, sizeof(t_token));
     new->kind = kind;
     new->str = str;
     new->len = len;

@@ -14,9 +14,7 @@ long _get_env_size() {
 char **create_envp() {
     long sz = _get_env_size();
 
-    char **envp = ft_calloc(sz + 1, sizeof(char *));
-    if (envp == NULL)
-        error("malloc error");
+    char **envp = ft_xcalloc(sz + 1, sizeof(char *));
     
     t_env *env = g_shell->env;
     long i = 0;

@@ -3,9 +3,7 @@
 t_node *_new_node_stmt(t_node_kind kind, t_node *pipe_cmd_node) {
     t_node *node;
 
-    node = ft_calloc(1, sizeof(t_node));
-    if (node == NULL)
-        error("malloc error");
+    node = ft_xcalloc(1, sizeof(t_node));
     node->kind = kind;
     node->lhs = pipe_cmd_node;
     return node;
@@ -20,9 +18,7 @@ void _add_node_stmt(t_node *node, t_node_kind kind, t_node *bracket_node) {
 void *_new_node_bracket(t_node *stmt_node) {
     t_node *node;
 
-    node = ft_calloc(1, sizeof(t_node));
-    if (node == NULL)
-        error("malloc error");
+    node = ft_xcalloc(1, sizeof(t_node));
     node->kind = ND_BRACKET;
     node->lhs = stmt_node;
     return node;
@@ -31,9 +27,7 @@ void *_new_node_bracket(t_node *stmt_node) {
 t_node *_new_node_pipe(t_node *cmd_node) {
     t_node *node;
 
-    node = ft_calloc(1, sizeof(t_node));
-    if (node == NULL)
-        error("malloc error");
+    node = ft_xcalloc(1, sizeof(t_node));
     node->kind = ND_PIPE;
     node->rhs = cmd_node;
     return node;
@@ -50,12 +44,8 @@ t_node *_add_node_pipe(t_node *node, t_node *cmd_node) {
 t_node *_new_node_cmd() {
     t_node *node;
 
-    node = ft_calloc(1, sizeof(t_node));
-    if (node == NULL)
-        error("malloc error");
-    node->cmd = ft_calloc(1, sizeof(t_cmd));
-    if (node == NULL)
-        error("malloc error");
+    node = ft_xcalloc(1, sizeof(t_node));
+    node->cmd = ft_xcalloc(1, sizeof(t_cmd));
     node->kind = ND_CMD;
     return node;
 }
@@ -64,12 +54,8 @@ void _add_word(t_cmd *cmd, char *str, long len) {
     t_word *word;
     t_word *now;
 
-    word = ft_calloc(1, sizeof(t_word));
-    if (word == NULL)
-        error("malloc error");
-    word->str = ft_strndup(str, len);
-    if (word->str == NULL)
-        error("malloc error");
+    word = ft_xcalloc(1, sizeof(t_word));
+    word->str = ft_xstrndup(str, len);
     if (!cmd->word)
         cmd->word = word;
     else {
@@ -84,13 +70,9 @@ void _add_redir_in(t_cmd *cmd, t_redir_kind kind, char *str, long len) {
     t_redir *redir;
     t_redir *now;
     
-    redir = ft_calloc(1, sizeof(t_redir));
-    if (redir == NULL)
-        error("malloc error");
+    redir = ft_xcalloc(1, sizeof(t_redir));
     redir->fd = -1;
-    redir->str = ft_strndup(str, len);
-    if (redir->str == NULL)
-        error("malloc error");
+    redir->str = ft_xstrndup(str, len);
     redir->kind = kind;
     if (!cmd->redir_in)
         cmd->redir_in = redir;
@@ -106,13 +88,9 @@ void _add_redir_out(t_cmd *cmd, t_redir_kind kind, char *str, long len) {
     t_redir *redir;
     t_redir *now;
     
-    redir = ft_calloc(1, sizeof(t_redir));
-    if (redir == NULL)
-        error("malloc error");
+    redir = ft_xcalloc(1, sizeof(t_redir));
     redir->fd = -1;
-    redir->str = ft_strndup(str, len);
-    if (redir->str == NULL)
-        error("malloc error");
+    redir->str = ft_xstrndup(str, len);
     redir->kind = kind;
     if (!cmd->redir_out)
         cmd->redir_out = redir;

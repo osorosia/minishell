@@ -18,7 +18,7 @@ char **create_argv(t_word *word) {
         now = now->next;
     }
 
-    argv = ft_calloc(len + 1, sizeof(char *));
+    argv = ft_xcalloc(len + 1, sizeof(char *));
     long i = 0;
     while (word) {
         argv[i] = word->str;
