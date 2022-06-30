@@ -1,12 +1,13 @@
 #include "../minishell.h"
 
 void del_env(char *name) {
-    t_env *env = g_shell->env;
+    t_env *env;
     t_env *prev;
-    long i = 0;
+
+    env = g_shell->env;
     while (env) {
         if (ft_strcmp(name, env->name) == 0) {
-            if (i == 0) {
+            if (env == g_shell->env) {
                 g_shell->env = env->next;
             } else {
                 prev->next = env->next;
@@ -14,7 +15,6 @@ void del_env(char *name) {
             free_env(env);
             return;
         }
-        i++;
         prev = env;
         env = env->next;
     }
