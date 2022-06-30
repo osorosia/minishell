@@ -12,12 +12,14 @@ long _get_env_size() {
 }
 
 char **create_envp() {
-    long sz = _get_env_size();
-
-    char **envp = ft_xcalloc(sz + 1, sizeof(char *));
+    char **envp;
+    t_env *env;
+    long i;
+    const long sz = _get_env_size();
     
-    t_env *env = g_shell->env;
-    long i = 0;
+    envp = ft_xcalloc(sz + 1, sizeof(char *));
+    env = g_shell->env;
+    i = 0;
     while (env) {
         if (env->body) {
             envp[i] = ft_strjoin(env->name, "=");
