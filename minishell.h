@@ -120,7 +120,6 @@ bool starts_with(const char *dest, const char *src);
 void error(char *str);
 void print_indent(int indent);
 char *ft_str_add_char(char *str, char c);
-bool ft_strcmp(char *s1, char *s2);
 bool is_only_space(char *str);
 
 //

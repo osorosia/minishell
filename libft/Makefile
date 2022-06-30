@@ -6,7 +6,7 @@
 #    By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/08 19:29:20 by rnishimo          #+#    #+#              #
-#    Updated: 2022/06/01 21:56:20 by rnishimo         ###   ########.fr        #
+#    Updated: 2022/07/01 07:30:29 by rnishimo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,6 +75,7 @@ SRCS += $(addprefix ft_str/, \
 	ft_itoa.c \
 	ft_split.c \
 	ft_strchr.c \
+	ft_strcmp.c \
 	ft_strdup.c \
 	ft_strdup_to_c.c \
 	ft_striteri.c \
