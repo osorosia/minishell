@@ -31,9 +31,7 @@ char *_expand_var_in_str(char *str) {
     i = 0;
     while (str[i]) {
         if (!single_quote && str[i] == '$' && str[i + 1] == '?') {
-            char *sts = ft_itoa(g_shell->sts);
-            if (sts == NULL)
-                error("malloc error");
+            char *sts = ft_xitoa(g_shell->sts);
             new = ft_xstrjoin_with_free(new, true, sts, true);
             i += 2;
             continue;
