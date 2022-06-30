@@ -26,9 +26,7 @@ char *find_pathname(char *str) {
 
     paths = ft_split(get_env_body("PATH"), ':');
     if (paths == NULL) {
-        str = ft_strdup(str);
-        if (str == NULL)
-            error("malloc error");
+        str = ft_xstrdup(str);
         return str;
     }
 
@@ -51,10 +49,7 @@ char *get_pathname_str(char *str) {
     char *pathname;
 
     if (ft_strchr(str, '/')) {
-        pathname = ft_strdup(str);
-        if (pathname == NULL) {
-            error("malloc error");
-        }
+        pathname = ft_xstrdup(str);
     }
     else
         pathname = find_pathname(str);

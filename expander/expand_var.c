@@ -27,7 +27,7 @@ char *_expand_var_in_str(char *str) {
     bool double_quote;
     bool single_quote;
 
-    new = ft_strdup("");
+    new = ft_xstrdup("");
     double_quote = false;
     single_quote = false;
     i = 0;
