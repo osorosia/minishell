@@ -22,8 +22,8 @@ char **create_envp() {
     i = 0;
     while (env) {
         if (env->body) {
-            envp[i] = ft_strjoin(env->name, "=");
-            envp[i] = ft_strjoin_with_free(envp[i], true, env->body, false);
+            envp[i] = ft_xstrjoin(env->name, "=");
+            envp[i] = ft_xstrjoin_with_free(envp[i], true, env->body, false);
             i++;
         }
         env = env->next;

@@ -36,12 +36,12 @@ char *_expand_var_in_str(char *str) {
             char *sts = ft_itoa(g_shell->sts);
             if (sts == NULL)
                 error("malloc error");
-            new = ft_strjoin_with_free(new, true, sts, true);
+            new = ft_xstrjoin_with_free(new, true, sts, true);
             i += 2;
             continue;
         }
         if (!single_quote && str[i] == '$' && !_is_var_first_name_char(str[i + 1])) {
-            new = ft_strjoin_with_free(new, true, "$", false);
+            new = ft_xstrjoin_with_free(new, true, "$", false);
             i++;
             continue;
         }
@@ -50,7 +50,7 @@ char *_expand_var_in_str(char *str) {
             char *name = _get_var_name(&str[i]);
             if (name[0] != '\0') {
                 char *body = get_env_body(name);
-                new = ft_strjoin_with_free(new, true, body, false);
+                new = ft_xstrjoin_with_free(new, true, body, false);
                 i += ft_strlen(name);
             }
             free(name);

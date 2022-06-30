@@ -5,5 +5,5 @@ char *ft_str_add_char(char *str, char c) {
 
     ch[0] = c;
     ch[1] = '\0';
-    return ft_strjoin_with_free(str, true, ch, false);
+    return ft_xstrjoin_with_free(str, true, ch, false);
 }

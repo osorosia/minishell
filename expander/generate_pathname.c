@@ -34,12 +34,8 @@ char *find_pathname(char *str) {
 
     long i = 0;
     while (paths[i]) {
-        base = ft_strjoin(paths[i], "/");
-        if (base == NULL)
-            error("malloc error");
-        pathname = ft_strjoin_with_free(base, true, str, false);
-        if (pathname == NULL)
-            error("malloc error");
+        base = ft_xstrjoin(paths[i], "/");
+        pathname = ft_xstrjoin_with_free(base, true, str, false);
         if (check_pathname(pathname)) {
             free_paths(paths);
             return pathname;
