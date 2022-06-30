@@ -1,19 +1,16 @@
 #include "../minishell.h"
 
 void set_heredoc(t_redir *redir) {
+    int fd[2];
+    char *line;
+
     if (redir == NULL)
         return;
     if (redir->kind == RD_HEREDOC) {
-        if (g_shell->is_debug) {
-            ft_putstr_fd("heredoc: ", 2);
-            ft_putstr_fd(redir->str, 2);
-            ft_putstr_fd("\n", 2);
-        }
-        
-        int fd[2];
+        if (g_shell->is_debug)
+            ft_dprintf(2, "heredoc: %s\n", redir->str);
         pipe(fd);
         redir->fd = fd[0];
-        char *line;
         while (1) {
             ft_putstr_fd("> ", 2);
             
@@ -31,7 +28,7 @@ void set_heredoc(t_redir *redir) {
             write(fd[1], line, ft_strlen(line));
             free(line);
         }
-        close(fd[1]);
+        ft_xclose(fd[1]);
     }
     set_heredoc(redir->next);
 }
