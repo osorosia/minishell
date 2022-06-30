@@ -15,9 +15,7 @@ char *_get_var_name(char *str) {
     len = 0;
     while (str[len] && _is_var_name_char(str[len]))
         len++;
-    name = ft_strndup(str, len);
-    if (name == NULL)
-        error("malloc error");
+    name = ft_xstrndup(str, len);
     return name;
 }
 

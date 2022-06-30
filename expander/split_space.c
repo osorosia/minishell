@@ -54,9 +54,7 @@ t_word *_split_space_in_word(t_word *word) {
         if (word->str[i] == '\0')
             break;
         long len = _get_word_len_to_space(&(word->str[i]));
-        str = ft_strndup(&(word->str[i]), len);
-        if (str == NULL)
-            error("malloc error");
+        str = ft_xstrndup(&(word->str[i]), len);
         word_add_back(&new_word, str);
         i += len;
     }
