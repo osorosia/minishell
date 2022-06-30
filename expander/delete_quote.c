@@ -5,7 +5,7 @@ char *_delete_quote_in_str(char *str) {
     bool single_quote = false;
     bool double_quote = false;
 
-    new = ft_strdup("");
+    new = ft_xstrdup("");
     long i = 0;
     while (str[i]) {
         if (!single_quote && !double_quote && str[i] == '"') {
