@@ -1,12 +1,10 @@
 #include "../minishell.h"
 
-t_env *add_new_env(t_env *env, char *name, char *body) {
+t_env *_add_new_env(t_env *env, char *name, char *body) {
     t_env *now;
     t_env *new;
 
-    new = ft_calloc(1, sizeof(t_env));
-    if (new == NULL)
-        error("malloc error");
+    new = ft_xcalloc(1, sizeof(t_env));
     new->name = name;
     new->body = body;
     if (env == NULL)
@@ -27,7 +25,7 @@ t_env *create_env(char **envp) {
     env = NULL;
     i = 0;
     while (envp[i]) {
-        env = add_new_env(env, create_env_name(envp[i]), create_env_body(envp[i]));
+        env = _add_new_env(env, create_env_name(envp[i]), create_env_body(envp[i]));
         i++;
     }
     return (env);

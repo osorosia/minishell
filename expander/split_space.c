@@ -32,9 +32,7 @@ void word_add_back(t_word *word, char *str) {
 
     if (str == NULL)
         return;
-    new = ft_calloc(1, sizeof(t_word));
-    if (new == NULL)
-        error("malloc error");
+    new = ft_xcalloc(1, sizeof(t_word));
     new->str = str;
     last = word_last(word);
     last->next = new;
