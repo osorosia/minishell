@@ -13,10 +13,37 @@ char *_get_var_name(char *str) {
     long len;
 
     len = 0;
-    while (str[len] && _is_var_name_char(str[len]))
+    while (str[len]) {
+        if (len == 0 && !_is_var_name_char(str[len]))
+            break;
+        else if (!_is_var_name_char(str[len]))
+            break;
         len++;
+    }
     name = ft_xstrndup(str, len);
     return name;
+}
+
+long _expand_var_at_doller_mark(char *str, char **new, long i) {
+    if (ft_strncmp(&(str[i]), "$?", 2) == 0) {
+        *new = ft_xstrjoin_with_free(*new, true, ft_xitoa(g_shell->sts), true);
+        i += 2;
+    }
+    if (str[i] == '$' && !_is_var_name_char_1st(str[i + 1])) {
+        *new = ft_xstrjoin_with_free(*new, true, "$", false);
+        i++;
+    }
+    if (str[i] == '$') {
+        i++;
+        char *name = _get_var_name(&str[i]);
+        if (name[0] != '\0') {
+            char *body = get_env_body(name);
+            *new = ft_xstrjoin_with_free(*new, true, body, false);
+            i += ft_strlen(name);
+        }
+        free(name);
+    }
+    return i;
 }
 
 char *_expand_var_in_str(char *str) {
@@ -30,26 +57,8 @@ char *_expand_var_in_str(char *str) {
     single_quote = false;
     i = 0;
     while (str[i]) {
-        if (!single_quote && str[i] == '$' && str[i + 1] == '?') {
-            char *sts = ft_xitoa(g_shell->sts);
-            new = ft_xstrjoin_with_free(new, true, sts, true);
-            i += 2;
-            continue;
-        }
-        if (!single_quote && str[i] == '$' && !_is_var_name_char_1st(str[i + 1])) {
-            new = ft_xstrjoin_with_free(new, true, "$", false);
-            i++;
-            continue;
-        }
         if (!single_quote && str[i] == '$') {
-            i++;
-            char *name = _get_var_name(&str[i]);
-            if (name[0] != '\0') {
-                char *body = get_env_body(name);
-                new = ft_xstrjoin_with_free(new, true, body, false);
-                i += ft_strlen(name);
-            }
-            free(name);
+            i = _expand_var_at_doller_mark(str, &new, i);
             continue;
         }
         if (str[i] == '"' && !single_quote)
