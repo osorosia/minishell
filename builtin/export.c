@@ -36,9 +36,7 @@ int exec_export(t_word *word) {
     word = word->next;
     while (word) {
         if (!validate_name(word->str)) {
-            ft_putstr_fd("minishell: export: `", 2);
-            ft_putstr_fd(word->str, 2);
-            ft_putstr_fd("': not a valid identifier\n", 2);
+            ft_dprintf(2, "minishell: export: `%s': not a valid identifier\n", word->str);
             ret = 1;
         } else if (ft_strnstr(word->str, "+=", ft_strlen(word->str))) {
             add_env_plus(word->str);
