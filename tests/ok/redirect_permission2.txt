@@ -363,9 +363,6 @@ chmod 000 aliasdir
 chmod 222 aliasdir
 (cd tmp_dir && pwd)
 
-chmod 333 aliasdir
-(cd tmp_dir && pwd)
-
 chmod 444 aliasdir
 (cd tmp_dir && pwd)
 
