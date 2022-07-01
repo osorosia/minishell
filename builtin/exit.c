@@ -55,32 +55,23 @@ int _atoi(char *str) {
     return sign * num;
 }
 
+bool _is_too_many_arguments(t_word *word) {
+    return word->next->next != NULL;
+}
+
 int exec_exit(t_word *word) {
     if (word->next == NULL)
         exit(g_shell->sts);
-
-    // numeric argument required
-    if (!is_number(word->next->str)) {
-        ft_putstr_fd("minishell: exit: ", 2);
-        ft_putstr_fd(word->next->str, 2);
-        ft_putstr_fd(": numeric argument required\n", 2);
+    if (!is_number(word->next->str)
+        || !check_overflow(word->next->str))
+    {
+        ft_dprintf(2, "minishell: exit: %s: numeric argument required\n", word->next->str);
         exit(255);
     }
-
-    if (!check_overflow(word->next->str)) {
-        ft_putstr_fd("minishell: exit: ", 2);
-        ft_putstr_fd(word->next->str, 2);
-        ft_putstr_fd(": numeric argument required\n", 2);
-        exit(255);
-    }
-
-    // too many arguments
-    if (word->next->next) {
+    if (_is_too_many_arguments(word)) {
         ft_putstr_fd("minishell: exit: too many arguments\n", 2);
         return 1;
     }
-
-    // ok
     exit(_atoi(word->next->str));
     return 0;
 }
