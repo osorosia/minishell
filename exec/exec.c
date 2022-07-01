@@ -57,10 +57,7 @@ bool set_redir_in(t_redir *redir_in) {
         int fd = open(redir_in->str, O_RDONLY);
         if (fd < 0) {
             int eno = errno;
-            ft_putstr_fd("minishell: ", 2);
-            ft_putstr_fd(redir_in->str, 2);
-            ft_putstr_fd(": ", 2);
-            ft_putendl_fd(strerror(eno), 2);
+            ft_dprintf(2, "minishell: %s: %s\n", redir_in->str);
             return false;
         }
         dup2(fd, 0);
