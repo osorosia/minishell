@@ -378,6 +378,7 @@ chmod 666 aliasdir
 chmod 777 aliasdir
 (cd tmp_dir && pwd)
 
+chmod 777 tmp_dir aliasdir
 rm -rf tmp_dir aliasdir
 
 mkdir tmp_dir
