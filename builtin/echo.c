@@ -21,17 +21,14 @@ int exec_echo(t_word *word) {
         opt_n = true;
         w = w->next;
     }
-
     while (w) {
         ft_putstr_fd(w->str, 1);
         w = w->next;
         if (w)
             ft_putstr_fd(" ", 1);
     }
-
     if (!opt_n) {
         ft_putstr_fd("\n", 1);
     }
-
     return 0;
 }
