@@ -7,6 +7,10 @@ NC='\033[0m'
 set -m
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
+if [[ -x `which colordiff` ]]; then
+    alias sdiff='colordiff -y'
+fi
+
 function test() {
     file="${1}.txt"
 

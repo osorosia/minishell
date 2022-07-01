@@ -4,6 +4,10 @@ RED='\033[0;31m'
 GREEN='\033[32m'
 NC='\033[0m'
 
+if [[ -x `which colordiff` ]]; then
+    alias sdiff='colordiff -y'
+fi
+
 function test() {
   file="${1}.txt"
 
