@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:01:32 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 16:01:48 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/01 18:51:55 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,14 @@
 
 int	exec_pwd(t_word *word)
 {
-	char	cwd[PATH_MAX + 1];
+	char	cwd[PATH_MAX];
 
-	ft_memset(cwd, 0, PATH_MAX + 1);
-	getcwd(cwd, sizeof(cwd));
+	ft_memset(cwd, 0, PATH_MAX);
+	if (!getcwd(cwd, sizeof(cwd)))
+	{
+		perror("getcwd");
+		return (0);
+	}
 	ft_putendl_fd(cwd, 1);
 	return (0);
 }

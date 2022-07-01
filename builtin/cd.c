@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:30:33 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 15:41:23 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/01 19:08:47 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	after_cd(void)
 {
-	char	path[PATH_MAX + 1];
+	char	path[PATH_MAX];
 	char	*str;
 
 	if (get_env_body("PWD"))
@@ -23,8 +23,12 @@ void	after_cd(void)
 		add_env(str);
 		free(str);
 	}
-	ft_memset(path, 0, PATH_MAX + 1);
-	getcwd(path, sizeof(path));
+	ft_memset(path, 0, PATH_MAX);
+	if (!getcwd(path, sizeof(path)))
+	{
+		perror("getcwd");
+		return ;
+	}
 	str = ft_xstrjoin("PWD=", path);
 	add_env(str);
 	free(str);
