@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 20:47:03 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 08:19:08 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/01 12:05:47 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ int			ft_tolower(int c);
 // ft_x
 void		*ft_xcalloc(size_t count, size_t size);
 char		*ft_xitoa(int n);
+char		*ft_xitoa_base(int n, char *base);
 char		**ft_xsplit(char const *s, char c);
 char		*ft_xstrdup_to_c(const char *s1, char c);
 char		*ft_xstrdup(const char *s1);

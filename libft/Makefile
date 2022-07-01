@@ -6,7 +6,7 @@
 #    By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/08 19:29:20 by rnishimo          #+#    #+#              #
-#    Updated: 2022/07/01 08:19:21 by rnishimo         ###   ########.fr        #
+#    Updated: 2022/07/01 08:59:21 by rnishimo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -99,6 +99,7 @@ OBJ_DIR += ft_x/
 SRCS += $(addprefix ft_x/, \
 	ft_xcalloc.c \
 	ft_xitoa.c \
+	ft_xitoa_base.c \
 	ft_xsplit.c \
 	ft_xstrdup.c \
 	ft_xstrdup_to_c.c \
