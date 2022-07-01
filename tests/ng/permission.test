@@ -1,6 +1,5 @@
-
-
-
+# 'pwd -P'相当で実装することにしたため対応しない
+# https://qiita.com/ko1nksm/items/fbc20859354196722cfb
 
 mkdir tmpdir
 ln -s tmpdir aliasdir
@@ -25,37 +24,5 @@ chmod 666 tmpdir
 chmod 777 tmpdir
 (cd aliasdir && pwd)
 
+chmod 777 tmpdir aliasdir
 rm -rf tmpdir aliasdir
-
-
-echo ------------------------------
-
-touch a
-chmod 777 a
-touch b
-chmod 777 b
-touch c
-chmod 777 c
-
-echo hello > a > b > c
-cat a
-cat b
-cat c
-chmod 777 a b c
-rm -rf a b c
-
-touch a
-chmod 000 a
-touch b
-chmod 777 b
-touch c
-chmod 777 c
-
-touch a
-chmod 777 a
-touch b
-chmod 000 b
-touch c
-chmod 777 c
-
--------------------------
