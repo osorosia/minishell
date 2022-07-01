@@ -63,7 +63,7 @@ re: fclean all
 
 .PHONY: norm
 norm:
-	python3 -m norminette $(SRCS) | grep Error | cat
+	python3 -m norminette $(SRCS) minishell.h | grep Error | cat
 
 .PHONY: test
 test: all
