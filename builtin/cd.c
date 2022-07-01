@@ -3,16 +3,12 @@
 int cd_home() {
     char *home = get_env_body("HOME");
     if (home == NULL) {
-        ft_putstr_fd("minishell: cd: HOME not set\n", 2);
+        ft_dprintf(2, "minishell: cd: HOME not set\n");
         return 1;
     }
     int ret = chdir(home);
     if (ret != 0) {
-        int eno = errno;
-        ft_putstr_fd("minishell: cd: ", 2);
-        ft_putstr_fd(home, 2);
-        ft_putstr_fd(": ", 2);
-        ft_putendl_fd(strerror(eno), 2);
+        ft_dprintf(2, "minishell: cd: %s: %s\n", home, strerror(errno));
         return 1;
     }
 
@@ -47,11 +43,7 @@ int exec_cd(t_word *word) {
 
     int ret = chdir(word->next->str);
     if (ret != 0) {
-        int eno = errno;
-        ft_putstr_fd("minishell: cd: ", 2);
-        ft_putstr_fd(word->next->str, 2);
-        ft_putstr_fd(": ", 2);
-        ft_putendl_fd(strerror(eno), 2);
+        ft_dprintf(2, "minishell: cd: %s: %s\n", word->next->str, strerror(errno));
         return 1;
     }
 
