@@ -1,7 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   free_env.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/01 16:20:18 by rnishimo          #+#    #+#             */
+/*   Updated: 2022/07/01 16:20:21 by rnishimo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../minishell.h"
 
-void free_env(t_env *env) {
-    free(env->name);
-    free(env->body);
-    free(env);
+void	free_env(t_env *env)
+{
+	free(env->name);
+	free(env->body);
+	free(env);
 }
