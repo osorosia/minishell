@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:26:18 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 15:29:27 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/01 16:49:12 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ long	_get_word_len_to_space(char *str)
 	return (i);
 }
 
-t_word *word_last(t_word *word)
+t_word	*word_last(t_word *word)
 {
 	while (word->next)
 		word = word->next;
@@ -96,7 +96,8 @@ void	split_space(t_node *node)
 		return ;
 	if (node->kind == ND_CMD)
 		node->cmd->word = _split_space_in_word(node->cmd->word);
-	else {
+	else
+	{
 		split_space(node->lhs);
 		split_space(node->rhs);
 	}

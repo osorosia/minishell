@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:07:28 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 16:12:28 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/01 16:52:57 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ void	_add_redir_out(t_cmd *cmd, t_redir_kind kind, char *str, long len)
 {
 	t_redir	*redir;
 	t_redir	*now;
-	
+
 	redir = ft_xcalloc(1, sizeof(t_redir));
 	redir->fd = -1;
 	redir->str = ft_xstrndup(str, len);

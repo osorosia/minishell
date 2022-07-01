@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:26:05 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 16:38:31 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/01 16:51:36 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,6 +148,8 @@ void	exec_cmd(t_node *node)
 	t_cmd	*cmd;
 	int		pid;
 	int		sts;
+	char	**cmd_argv;
+	char	**cmd_envp;
 
 	if (g_shell->interrupt)
 		return ;
@@ -184,13 +186,13 @@ void	exec_cmd(t_node *node)
 				ft_dprintf(2, "minishell: %s: is a directory\n", cmd->pathname);
 				exit(126);
 			}
-			char **cmd_argv = create_argv(cmd->word);
-			char **cmd_envp = create_envp();
+			cmd_argv = create_argv(cmd->word);
+			cmd_envp = create_envp();
 			execve(cmd->pathname, cmd_argv, cmd_envp);
 			sts = 126;
 			if (errno == ENOENT)
 				sts = 127;
-			ft_dprintf(2, "minishell: %s: %s\n", cmd->pathname, strerror(eno));
+			ft_dprintf(2, "minishell: %s: %s\n", cmd->pathname, strerror(errno));
 			free(cmd_argv);
 			free_envp(cmd_envp);
 			exit(sts);

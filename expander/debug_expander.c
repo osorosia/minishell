@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:04:06 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 16:05:22 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/01 16:52:45 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,9 +77,7 @@ void	debug_expander_rec(t_node *node, int indent)
 		debug_word_ex(node->cmd->word, indent);
 		debug_redir_ex(node->cmd->redir_in, indent);
 		debug_redir_ex(node->cmd->redir_out, indent);
-
 		fprintf(stderr, "\n");
-
 		indent += INDENT;
 		if (node->cmd->pathname)
 		{

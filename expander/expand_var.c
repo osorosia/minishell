@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:17:31 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 15:21:35 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/01 16:51:15 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,9 @@ char	*_get_var_name(char *str)
 
 long	_expand_var_at_doller_mark(char *str, char **new, long i)
 {
+	char	*name;
+	char	*body;
+
 	if (ft_strncmp(&(str[i]), "$?", 2) == 0)
 	{
 		*new = ft_xstrjoin_with_free(*new, true, ft_xitoa(g_shell->sts), true);
@@ -55,10 +58,10 @@ long	_expand_var_at_doller_mark(char *str, char **new, long i)
 	if (str[i] == '$')
 	{
 		i++;
-		char *name = _get_var_name(&str[i]);
+		name = _get_var_name(&str[i]);
 		if (name[0] != '\0')
 		{
-			char *body = get_env_body(name);
+			body = get_env_body(name);
 			*new = ft_xstrjoin_with_free(*new, true, body, false);
 			i += ft_strlen(name);
 		}
@@ -93,7 +96,7 @@ char	*_expand_var_in_str(char *str)
 		i++;
 	}
 	free(str);
-	return new;
+	return (new);
 }
 
 void	_expand_var_in_redir(t_redir *redir)
@@ -132,7 +135,7 @@ void	expand_var(t_node *node)
 	}
 }
 
-void expand_var_for_debug(t_node *node)
+void	expand_var_for_debug(t_node *node)
 {
 	if (node == NULL)
 		return ;

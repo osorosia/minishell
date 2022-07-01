@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:16:14 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 16:17:02 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/01 17:00:33 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*create_env_name_plus(char *str)
 		name = ft_xstrdup(str);
 	else
 		name = ft_xstrndup(str, eq - str);
-	return	name;
+	return (name);
 }
 
 char	*create_env_body_plus(char *str)

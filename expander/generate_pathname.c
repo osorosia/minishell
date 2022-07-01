@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:23:46 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 15:26:04 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/01 16:49:34 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	*find_pathname(char *str)
 
 char	*get_pathname_str(char *str)
 {
-	char *pathname;
+	char	*pathname;
 
 	if (ft_strchr(str, '/'))
 		pathname = ft_xstrdup(str);

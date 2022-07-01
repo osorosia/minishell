@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:18:40 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 16:20:11 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/01 17:00:11 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ long	_get_env_size(void)
 {
 	long	sz;
 	t_env	*env;
-
 
 	sz = 0;
 	env = g_shell->env;

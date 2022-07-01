@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:05:35 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 16:06:38 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/01 16:53:11 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	debug_parser_rec(t_node *node, int indent)
 {
 	if (!node)
 		return ;
-
 	if (node->kind == ND_STMT || node->kind == ND_AND || node->kind == ND_OR)
 	{
 		print_indent(indent);
