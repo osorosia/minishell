@@ -29,6 +29,8 @@ void	set_heredoc(t_redir *redir)
 			line = get_next_line(0);
 			if (line == NULL)
 				break ;
+			if (g_shell->is_test)
+				write(1, line, ft_strlen(line));
 			if (ft_strlen(line) > 1
 				&& ft_strncmp(line, redir->str, ft_strlen(line) - 1) == 0)
 			{

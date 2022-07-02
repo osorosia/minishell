@@ -14,7 +14,7 @@ fi
 function test() {
     file="${1}.txt"
 
-    ../minishell heredoc < ./ok/${file} &> ./actual/${file}
+    ../minishell test < ./ok/${file} &> ./actual/${file}
     bash -fi < ./ok/${file} &> ./expected/${file}.tmp
 
     cat ./expected/${file}.tmp \

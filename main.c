@@ -23,6 +23,8 @@ int	main(int argc, char **argv, char **envp)
 
 	rl_outstream = stderr;
 	g_shell = create_shell(envp);
+	if (argc == 2 && ft_strcmp(argv[1], "test") == 0)
+		g_shell->is_test = true;
 	while (true)
 	{
 		signal_init();

@@ -118,6 +118,7 @@ struct s_shell {
 	int		fd_stdout;
 	int		fd_stdin;
 	bool	interrupt;
+	bool	is_test;
 };
 
 //
