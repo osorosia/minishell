@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:26:18 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 16:49:12 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 20:07:17 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,18 +100,5 @@ void	split_space(t_node *node)
 	{
 		split_space(node->lhs);
 		split_space(node->rhs);
-	}
-}
-
-void	split_space_for_debug(t_node *node)
-{
-	if (node == NULL)
-		return ;
-	if (node->kind == ND_CMD)
-		node->cmd->word = _split_space_in_word(node->cmd->word);
-	else
-	{
-		split_space_for_debug(node->lhs);
-		split_space_for_debug(node->rhs);
 	}
 }

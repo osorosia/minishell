@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:21:53 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 21:36:49 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 20:11:02 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ void	set_heredoc(t_redir *redir)
 		return ;
 	if (redir->kind == RD_HEREDOC)
 	{
-		if (g_shell->is_debug)
-			ft_dprintf(2, "heredoc: %s\n", redir->str);
 		pipe(fd);
 		redir->fd = fd[0];
 		while (1)
@@ -31,8 +29,6 @@ void	set_heredoc(t_redir *redir)
 			line = get_next_line(0);
 			if (line == NULL)
 				break ;
-			if (g_shell->is_debug_heredoc)
-				write(1, line, ft_strlen(line));
 			if (ft_strlen(line) > 1
 				&& ft_strncmp(line, redir->str, ft_strlen(line) - 1) == 0)
 			{

@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:15:04 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 15:16:33 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 20:06:51 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,23 +73,6 @@ void	delete_quote(t_node *node)
 	{
 		delete_quote(node->lhs);
 		delete_quote(node->rhs);
-	}
-}
-
-void	delete_quote_for_debug(t_node *node)
-{
-	if (node == NULL)
-		return ;
-	if (node->kind == ND_CMD)
-	{
-		_delete_quote_in_word(node->cmd->word);
-		_delete_quote_in_redir(node->cmd->redir_in);
-		_delete_quote_in_redir(node->cmd->redir_out);
-	}
-	else
-	{
-		delete_quote_for_debug(node->lhs);
-		delete_quote_for_debug(node->rhs);
 	}
 }
 

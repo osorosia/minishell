@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:40:22 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 17:23:20 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 20:09:45 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,8 +118,6 @@ struct s_shell {
 	int		fd_stdout;
 	int		fd_stdin;
 	bool	interrupt;
-	bool	is_debug;
-	bool	is_debug_heredoc;
 };
 
 //
@@ -128,7 +126,6 @@ struct s_shell {
 
 bool	starts_with(const char *dest, const char *src);
 void	error(char *str);
-void	print_indent(int indent);
 char	*ft_str_add_char(char *str, char c);
 bool	is_only_space(char *str);
 
@@ -155,8 +152,6 @@ t_token	*lexer(char *p);
 // lexer_utils.c
 t_token	*skip(t_token *tok, t_token_kind kind, char *str);
 bool	equal(t_token *tok, t_token_kind kind, char *str);
-// debug_lexer.c
-void	debug_lexer(t_token *tok);
 // free_lexer.c
 void	free_lexer(t_token *tok);
 
@@ -166,8 +161,6 @@ void	free_lexer(t_token *tok);
 
 // parser.c
 t_node	*parser(t_token *tok);
-// debug_parser.c
-void	debug_parser(t_node *node);
 // free_parser.c
 void	free_parser(t_node *node);
 
@@ -177,21 +170,14 @@ void	free_parser(t_node *node);
 
 // expander.c
 void	expander(t_node *node);
-void	expander_for_debug(t_node *node);
-// debug_expander.c
-void	debug_expander(t_node *node, char *name);
 // expand_var.c
 void	expand_var(t_node *node);
-void	expand_var_for_debug(t_node *node);
 // generate_pathname.c
 void	generate_pathname(t_node *node);
-void	generate_pathname_for_debug(t_node *node);
 // split_space.c
 void	split_space(t_node *node);
-void	split_space_for_debug(t_node *node);
 // delete_quote.c
 void	delete_quote(t_node *node);
-void	delete_quote_for_debug(t_node *node);
 void	delete_quote_in_heredoc(t_redir *redir);
 // expander_set_heredoc.c
 void	expander_set_heredoc(t_node *node);
@@ -211,8 +197,6 @@ t_shell	*create_shell(char **envp);
 t_env	*create_env(char **envp);
 // get_env.c
 char	*get_env_body(char *name);
-// debug_env.c
-void	debug_env(void);
 // envp.c
 char	**create_envp(void);
 void	free_envp(char **envp);

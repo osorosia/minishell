@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:23:46 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 16:49:34 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 20:07:12 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,25 +96,5 @@ void	generate_pathname(t_node *node)
 	{
 		generate_pathname(node->lhs);
 		generate_pathname(node->rhs);
-	}
-}
-
-void	generate_pathname_for_debug(t_node *node)
-{
-	if (node == NULL)
-		return ;
-	if (node->kind == ND_CMD)
-	{
-		if (node->cmd->word == NULL)
-			return ;
-		if (is_builtin(node->cmd->word->str))
-			node->cmd->is_builtin = true;
-		else
-			node->cmd->pathname = get_pathname_str(node->cmd->word->str);
-	}
-	else
-	{
-		generate_pathname_for_debug(node->lhs);
-		generate_pathname_for_debug(node->rhs);
 	}
 }
