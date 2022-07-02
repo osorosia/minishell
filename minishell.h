@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:40:22 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 23:44:18 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 23:48:05 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,7 +179,6 @@ t_node	*_new_node_cmd(void);
 void	_add_word(t_cmd *cmd, char *str, long len);
 void	_add_redir_in(t_cmd *cmd, t_redir_kind kind, char *str, long len);
 void	_add_redir_out(t_cmd *cmd, t_redir_kind kind, char *str, long len);
-
 
 //
 // expander ----------------------------------------------
