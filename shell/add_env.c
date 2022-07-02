@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:12:45 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 16:06:41 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 22:57:14 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,13 @@ void	add_env_plus(char *str)
 	char	*body;
 	t_env	*env;
 
+	name = create_env_name_plus(str);
+	body = create_env_body_plus(str);
 	if (g_shell->env == NULL)
 	{
 		g_shell->env = new_env(name, body);
 		return ;
 	}
-	name = create_env_name_plus(str);
-	body = create_env_body_plus(str);
 	env = g_shell->env;
 	while (true)
 	{
