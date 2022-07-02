@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 17:00:48 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 21:54:28 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 22:02:46 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ bool	check_syntax(char *str)
 		exit(0);
 	}
 	wait(&sts);
-	return (sts != 0);
+	return (sts == 0);
 }
 
 void	run_command(char *str)
@@ -47,9 +47,6 @@ void	run_command(char *str)
 int	main(int argc, char **argv, char **envp)
 {
 	char	*str;
-	int		pid;
-	int		sts;
-	t_node	*tmp;
 
 	rl_outstream = stderr;
 	g_shell = create_shell(envp);
@@ -61,19 +58,14 @@ int	main(int argc, char **argv, char **envp)
 		str = readline("% ");
 		if (str == NULL)
 			break ;
-		if (is_only_space(str))
+		if (!is_only_space(str))
 		{
-			free(str);
-			continue ;
+			add_history(str);
+			if (check_syntax(str))
+				run_command(str);
+			else
+				g_shell->sts = 258;
 		}
-		add_history(str);
-		if (check_syntax(str))
-		{
-			free(str);
-			g_shell->sts = 258;
-			continue ;
-		}
-		run_command(str);
 		free(str);
 	}
 	ft_putstr_fd("exit\n", 2);
