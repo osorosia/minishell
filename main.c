@@ -6,11 +6,29 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 17:00:48 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 20:06:12 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 20:25:25 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+
+bool	check_syntax(char *str)
+{
+	t_token	*tok;
+	t_node	*node;
+	int		sts;
+	int		pid;
+
+	pid = fork();
+	if (pid == 0)
+	{
+		tok = lexer(str);
+		node = parser(tok);
+		exit(0);
+	}
+	wait(&sts);
+	return (sts != 0);
+}
 
 int	main(int argc, char **argv, char **envp)
 {
@@ -37,21 +55,11 @@ int	main(int argc, char **argv, char **envp)
 			continue ;
 		}
 		add_history(str);
+		if (check_syntax(str))
 		{
-			pid = fork();
-			if (pid == 0)
-			{
-				tok = lexer(str);
-				node = parser(tok);
-				exit(0);
-			}
-			wait(&sts);
-			if (sts != 0)
-			{
-				free(str);
-				g_shell->sts = 258;
-				continue ;
-			}
+			free(str);
+			g_shell->sts = 258;
+			continue ;
 		}
 		tok = lexer(str);
 		node = parser(tok);
