@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:55:14 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 16:58:48 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 23:08:57 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,13 +91,8 @@ t_token	*lexer(char *p)
 			continue ;
 		}
 		len = _get_word_len(p);
-		if (len > 0)
-		{
-			_add_new_token(&tok, TK_WORD, p, len);
-			p += len;
-			continue ;
-		}
-		error("lexer error: unexpected character");
+		_add_new_token(&tok, TK_WORD, p, len);
+		p += len;
 	}
 	_add_new_token(&tok, TK_EOF, p, 0);
 	return (tok.next);
