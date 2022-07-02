@@ -24,13 +24,14 @@ OBJ_DIR := $(addprefix obj/, $(OBJ_DIR))
 OBJ_DIR := $(addsuffix .keep, $(OBJ_DIR))
 
 LIBFT = ./libft/libft.a
+# CFLAGS = -Wall -Wextra -Werror
 
 OS = $(shell uname)
 ifeq ($(OS), Linux)
-	CFLAGS = -g3
+	CFLAGS += -g3
 	READLINE = -L/usr/include -lreadline
 else
-	CFLAGS = -g3 -I $(shell brew --prefix readline)/include 
+	CFLAGS += -g3 -I $(shell brew --prefix readline)/include 
 	READLINE = -L/usr/include -lreadline -lhistory -L$(shell brew --prefix readline)/lib
 endif
 
