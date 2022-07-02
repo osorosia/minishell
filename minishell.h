@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:40:22 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 23:48:05 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 23:53:59 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,13 +137,13 @@ void	syntax_error(char *str, long len);
 
 // is_builtin.c
 bool	is_builtin(char *str);
-int		exec_echo(t_word *word);
-int		exec_cd(t_word *word);
-int		exec_pwd(t_word *word);
-int		exec_export(t_word *word);
-int		exec_unset(t_word *word);
-int		exec_env(t_word *word);
-int		exec_exit(t_word *word);
+int		builtin_echo(t_word *word);
+int		builtin_cd(t_word *word);
+int		builtin_pwd(t_word *word);
+int		builtin_export(t_word *word);
+int		builtin_unset(t_word *word);
+int		builtin_env(t_word *word);
+int		builtin_exit(t_word *word);
 
 //
 // lexer ----------------------------------------------

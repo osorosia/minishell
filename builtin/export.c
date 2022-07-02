@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:58:18 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 20:58:24 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 23:53:31 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ bool	validate_name(char *str)
 	return (true);
 }
 
-int	exec_export(t_word *word)
+int	builtin_export(t_word *word)
 {
 	int	ret;
 

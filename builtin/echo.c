@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:41:55 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 15:53:50 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 23:51:55 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ bool	is_opt_n(char *str)
 	return (true);
 }
 
-int	exec_echo(t_word *word)
+int	builtin_echo(t_word *word)
 {
 	bool	opt_n;
 	t_word	*w;

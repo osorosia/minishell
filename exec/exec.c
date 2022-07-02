@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:26:05 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 20:58:24 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 23:53:59 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ void	exec_builtin(t_node *node)
 	t_cmd		*cmd;
 	long		i;
 	static	int	(*builtin_fn[])(t_word *) = {
-		exec_echo, exec_cd, exec_pwd, exec_export,
-		exec_unset, exec_env, exec_exit, NULL};
+		builtin_echo, builtin_cd, builtin_pwd, builtin_export,
+		builtin_unset, builtin_env, builtin_exit, NULL};
 	static char	*kw[] = {
 		"echo", "cd", "pwd", "export", "unset", "env", "exit", NULL};
 

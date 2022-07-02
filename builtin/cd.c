@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:30:33 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 21:22:57 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 23:52:41 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	cd_home(void)
 	return (0);
 }
 
-int	exec_cd(t_word *word)
+int	builtin_cd(t_word *word)
 {
 	char	*str;
 	int		ret;

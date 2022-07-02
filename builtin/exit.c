@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:54:40 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 20:58:24 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 23:53:59 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ bool	_is_too_many_arguments(t_word *word)
 	return (word->next->next != NULL);
 }
 
-int	exec_exit(t_word *word)
+int	builtin_exit(t_word *word)
 {
 	if (word->next == NULL)
 		exit(g_shell->sts);

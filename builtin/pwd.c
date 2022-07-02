@@ -6,13 +6,13 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:01:32 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 18:51:55 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 23:53:10 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-int	exec_pwd(t_word *word)
+int	builtin_pwd(t_word *word)
 {
 	char	cwd[PATH_MAX];
 
