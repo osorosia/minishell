@@ -63,7 +63,7 @@ bonus: all
 
 .PHONY: norm
 norm:
-	python3 -m norminette $(SRCS) minishell.h | grep Error | cat
+	python3 -m norminette $(SRCS) minishell.h libft | grep Error | cat
 
 .PHONY: ok
 ok: all
