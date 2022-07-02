@@ -6,18 +6,18 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 19:25:08 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 20:50:20 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 21:07:10 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	_vdprintf_x(int fd, const char *format, va_list ap)
+char	*_convert_format(va_list ap, const char *format)
 {
-	long	i;
-	long	len;
 	char	*str;
 	char	*spec_str;
+	long	i;
+	long	len;
 
 	str = ft_xstrdup("");
 	i = 0;
@@ -35,8 +35,19 @@ int	_vdprintf_x(int fd, const char *format, va_list ap)
 					str, true, ft_xstrndup(&(format[i]), len), true);
 		i += len;
 	}
+	return (str);
+}
+
+int	_vdprintf_x(int fd, const char *format, va_list ap)
+{
+	char	*str;
+	int		print_size;
+
+	str = _convert_format(ap, format);
 	ft_putstr_fd(str, fd);
-	return ((int)ft_strlen(str));
+	print_size = (int)ft_strlen(str);
+	free(str);
+	return (print_size);
 }
 
 int	ft_printf_x(const char *format, ...)
