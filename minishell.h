@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:40:22 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 20:09:45 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 23:17:44 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,8 +162,23 @@ void	free_lexer(t_token *tok);
 
 // parser.c
 t_node	*parser(t_token *tok);
+t_node	*stmt(t_token **tok);
+t_node	*bracket(t_token **tok);
+t_node	*pipe_cmd(t_token **tok);
+t_node	*cmd(t_token **tok);
 // free_parser.c
 void	free_parser(t_node *node);
+// parser_utils.c
+t_node	*_new_node_stmt(t_node_kind kind, t_node *pipe_cmd_node);
+void	_add_node_stmt(t_node *node, t_node_kind kind, t_node *bracket_node);
+void	*_new_node_bracket(t_node *stmt_node);
+t_node	*_new_node_pipe(t_node *cmd_node);
+t_node	*_add_node_pipe(t_node *node, t_node *cmd_node);
+t_node	*_new_node_cmd(void);
+void	_add_word(t_cmd *cmd, char *str, long len);
+void	_add_redir_in(t_cmd *cmd, t_redir_kind kind, char *str, long len);
+void	_add_redir_out(t_cmd *cmd, t_redir_kind kind, char *str, long len);
+
 
 //
 // expander ----------------------------------------------

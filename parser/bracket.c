@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser.c                                           :+:      :+:    :+:   */
+/*   bracket.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:07:28 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 23:31:32 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 23:26:05 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-// parser = stmt EOF
-t_node	*parser(t_token *tok)
+// bracket = "(" stmt ")"
+//         | cmd
+t_node	*bracket(t_token **tok)
 {
 	t_node	*node;
 
-	node = stmt(&tok);
-	tok = skip(tok, TK_EOF, NULL);
+	if (equal(*tok, TK_OP, "("))
+	{
+		*tok = skip(*tok, TK_OP, "(");
+		node = _new_node_bracket(stmt(tok));
+		*tok = skip(*tok, TK_OP, ")");
+	}
+	else
+		node = cmd(tok);
 	return (node);
 }
