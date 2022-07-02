@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:40:22 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 23:17:44 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 23:44:18 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,7 @@ bool	starts_with(const char *dest, const char *src);
 void	error(char *str);
 char	*ft_str_add_char(char *str, char c);
 bool	is_only_space(char *str);
+void	syntax_error(char *str, long len);
 
 //
 // builtin ----------------------------------------------

@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:53:25 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 16:54:55 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 23:46:36 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,11 @@
 t_token	*skip(t_token *tok, t_token_kind kind, char *str)
 {
 	if (tok->kind != kind)
-	{
-		ft_putstr_fd("minishell: syntax error near unexpected token `", 2);
-		ft_putnstr_fd(tok->str, tok->len, 2);
-		ft_putstr_fd("'\n", 2);
-		exit(1);
-	}
+		syntax_error(tok->str, tok->len);
 	if (str != NULL
 		&& (tok->len != ft_strlen(str)
 			|| ft_strncmp(tok->str, str, tok->len) != 0))
-	{
-		ft_putstr_fd("minishell: syntax error near unexpected token `", 2);
-		ft_putnstr_fd(tok->str, tok->len, 2);
-		ft_putstr_fd("'\n", 2);
-		exit(1);
-	}
+		syntax_error(tok->str, tok->len);
 	return (tok->next);
 }
 
