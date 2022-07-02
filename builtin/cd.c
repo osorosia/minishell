@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:30:33 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 19:08:47 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 21:22:57 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,13 @@ int	cd_home(void)
 	home = get_env_body("HOME");
 	if (home == NULL)
 	{
-		ft_dprintf(2, "minishell: cd: HOME not set\n");
+		ft_putstr_fd("minishell: cd: HOME not set\n", 2);
 		return (1);
 	}
 	ret = chdir(home);
 	if (ret != 0)
 	{
-		ft_dprintf(2, "minishell: cd: %s: %s\n", home, strerror(errno));
+		ft_dprintf_x(2, "minishell: cd: %s: %s\n", home, strerror(errno));
 		return (1);
 	}
 	after_cd();
@@ -67,7 +67,7 @@ int	exec_cd(t_word *word)
 	ret = chdir(word->next->str);
 	if (ret != 0)
 	{
-		ft_dprintf(2, "minishell: cd: %s: %s\n",
+		ft_dprintf_x(2, "minishell: cd: %s: %s\n",
 			word->next->str, strerror(errno));
 		return (1);
 	}

@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:58:18 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 16:00:19 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 20:58:24 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	show_envs(void)
 	while (env)
 	{
 		if (env->body)
-			ft_printf("declare -x %s=\"%s\"\n", env->name, env->body);
+			ft_printf_x("declare -x %s=\"%s\"\n", env->name, env->body);
 		else
-			ft_printf("declare -x %s\n", env->name);
+			ft_printf_x("declare -x %s\n", env->name);
 		env = env->next;
 	}
 }
@@ -60,7 +60,7 @@ int	exec_export(t_word *word)
 	{
 		if (!validate_name(word->str))
 		{
-			ft_dprintf(2, "minishell: export: `%s': not a valid identifier\n",
+			ft_dprintf_x(2, "minishell: export: `%s': not a valid identifier\n",
 				word->str);
 			ret = 1;
 		}

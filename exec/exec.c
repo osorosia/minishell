@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:26:05 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 19:55:04 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 20:58:24 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ bool	set_redir_in(t_redir *redir_in)
 		fd = open(redir_in->str, O_RDONLY);
 		if (fd < 0)
 		{
-			ft_dprintf(2, "minishell: %s: %s\n", redir_in->str, strerror(errno));
+			ft_dprintf_x(2, "minishell: %s: %s\n", redir_in->str, strerror(errno));
 			return (false);
 		}
 		dup2(fd, 0);
@@ -110,7 +110,7 @@ bool	set_redir_out(t_redir *redir_out)
 		fd = open(redir_out->str, (O_WRONLY | O_CREAT | O_TRUNC), 0664);
 		if (fd < 0)
 		{
-			ft_dprintf(2, "minishell: %s: %s\n",
+			ft_dprintf_x(2, "minishell: %s: %s\n",
 				redir_out->str, strerror(errno));
 			return (false);
 		}
@@ -122,7 +122,7 @@ bool	set_redir_out(t_redir *redir_out)
 		fd = open(redir_out->str, (O_WRONLY | O_CREAT | O_APPEND), 0664);
 		if (fd < 0)
 		{
-			ft_dprintf(2, "minishell: %s: %s\n",
+			ft_dprintf_x(2, "minishell: %s: %s\n",
 				redir_out->str, strerror(errno));
 			return (false);
 		}
@@ -175,13 +175,13 @@ void	exec_cmd(t_node *node)
 		{
 			if (node->cmd->pathname == NULL)
 			{
-				ft_dprintf(2, "minishell: %s: command not found\n",
+				ft_dprintf_x(2, "minishell: %s: command not found\n",
 					node->cmd->word->str);
 				exit(127);
 			}
 			if (is_directory(node->cmd->pathname))
 			{
-				ft_dprintf(2, "minishell: %s: is a directory\n", node->cmd->pathname);
+				ft_dprintf_x(2, "minishell: %s: is a directory\n", node->cmd->pathname);
 				exit(126);
 			}
 			cmd_argv = create_argv(node->cmd->word);
@@ -190,7 +190,7 @@ void	exec_cmd(t_node *node)
 			sts = 126;
 			if (errno == ENOENT)
 				sts = 127;
-			ft_dprintf(2, "minishell: %s: %s\n", node->cmd->pathname, strerror(errno));
+			ft_dprintf_x(2, "minishell: %s: %s\n", node->cmd->pathname, strerror(errno));
 			free(cmd_argv);
 			free_envp(cmd_envp);
 			exit(sts);

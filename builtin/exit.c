@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:54:40 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 15:57:58 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 20:58:24 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ int	exec_exit(t_word *word)
 	if (!is_number(word->next->str)
 		|| !check_overflow(word->next->str))
 	{
-		ft_dprintf(2, "minishell: exit: %s: numeric argument required\n",
+		ft_dprintf_x(2, "minishell: exit: %s: numeric argument required\n",
 			word->next->str);
 		exit(255);
 	}

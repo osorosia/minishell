@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:54:00 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 15:54:30 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 20:58:17 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	exec_env(t_word *word)
 	while (env)
 	{
 		if (env->body)
-			ft_printf("%s=%s\n", env->name, env->body);
+			ft_printf_x("%s=%s\n", env->name, env->body);
 		env = env->next;
 	}
 	return (0);
