@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 20:47:03 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 12:05:47 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 20:53:48 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # include <sys/types.h>
 
 # include "./ft_printf/ft_printf.h"
+# include "./ft_printf_x/ft_printf_x.h"
 
 # define FD_MAX 256
 # ifndef BUFFER_SIZE
@@ -61,6 +62,10 @@ long		ft_unumlen(size_t num, long base);
 // ft_printf
 int			ft_printf(const char *format, ...);
 int			ft_dprintf(int fd, const char *format, ...);
+
+// ft_printf_x
+int			ft_printf_x(const char *format, ...);
+int			ft_dprintf_x(int fd, const char *format, ...);
 
 // ft_put
 void		ft_putchar_fd(char c, int fd);

@@ -6,7 +6,7 @@
 #    By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/08 19:29:20 by rnishimo          #+#    #+#              #
-#    Updated: 2022/07/01 08:59:21 by rnishimo         ###   ########.fr        #
+#    Updated: 2022/07/02 20:52:55 by rnishimo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,6 +56,14 @@ SRCS += $(addprefix ft_printf/, \
 	spec_u.c \
 	spec_xX.c \
 	spec.c \
+	)
+
+OBJ_DIR += ft_printf_x/
+SRCS += $(addprefix ft_printf_x/, \
+	ft_printf_x.c \
+	xspec_d.c \
+	xspec_s.c \
+	xspec.c \
 	)
 
 OBJ_DIR += ft_put/
