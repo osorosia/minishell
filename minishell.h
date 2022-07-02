@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:40:22 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 16:46:07 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 17:23:20 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,8 +115,8 @@ typedef struct s_shell		t_shell;
 struct s_shell {
 	t_env	*env;
 	int		sts;
-	int		stdout;
-	int		stdin;
+	int		fd_stdout;
+	int		fd_stdin;
 	bool	interrupt;
 	bool	is_debug;
 	bool	is_debug_heredoc;

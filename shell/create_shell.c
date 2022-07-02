@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:14:57 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 16:15:10 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 18:01:23 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_shell	*create_shell(char **envp)
 
 	shell = ft_xcalloc(1, sizeof(t_shell));
 	shell->env = create_env(envp);
-	shell->stdout = dup(1);
-	shell->stdin = dup(0);
+	shell->fd_stdout = dup(1);
+	shell->fd_stdin = dup(0);
 	return (shell);
 }
