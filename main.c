@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 17:00:48 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 20:25:25 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/02 21:54:28 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,22 @@ bool	check_syntax(char *str)
 	return (sts != 0);
 }
 
-int	main(int argc, char **argv, char **envp)
+void	run_command(char *str)
 {
 	t_token	*tok;
 	t_node	*node;
+
+	tok = lexer(str);
+	node = parser(tok);
+	free_lexer(tok);
+	expander_set_heredoc(node);
+	signal_exec();
+	exec(node);
+	free_parser(node);
+}
+
+int	main(int argc, char **argv, char **envp)
+{
 	char	*str;
 	int		pid;
 	int		sts;
@@ -61,13 +73,7 @@ int	main(int argc, char **argv, char **envp)
 			g_shell->sts = 258;
 			continue ;
 		}
-		tok = lexer(str);
-		node = parser(tok);
-		free_lexer(tok);
-		expander_set_heredoc(node);
-		signal_exec();
-		exec(node);
-		free_parser(node);
+		run_command(str);
 		free(str);
 	}
 	ft_putstr_fd("exit\n", 2);
