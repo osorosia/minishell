@@ -47,29 +47,23 @@ $(OBJ_DIR):
 	mkdir -p $(@D)
 	touch $@
 
-.PHONY: all
 all: $(NAME)
 
-.PHONY: clean
 clean:
 	rm -f $(OBJS)
 
-.PHONY: fclean
 fclean: clean
 	rm -f $(NAME)
 
-.PHONY: re
 re: fclean all
+
+bonus: all
+
+.PHONY: all clean fclean re bonus
 
 .PHONY: norm
 norm:
 	python3 -m norminette $(SRCS) minishell.h | grep Error | cat
-
-.PHONY: test
-test: all
-	cd tests && ./test.sh 2>/dev/null
-	cd ./tests/testcase && ./diff.sh 2>/dev/null
-	cat ./tests/testcase/diff_file
 
 .PHONY: ok
 ok: all
