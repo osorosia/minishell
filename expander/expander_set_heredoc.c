@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:21:53 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/03 12:22:30 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 13:44:15 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	write_heredoc_to_fd(t_redir *redir, int fd)
 void	set_heredoc(t_redir *redir)
 {
 	int		fd[2];
-	char	*line;
 
 	if (redir == NULL)
 		return ;

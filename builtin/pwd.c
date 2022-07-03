@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:01:32 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 23:53:10 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 13:43:08 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int	builtin_pwd(t_word *word)
 {
 	char	cwd[PATH_MAX];
 
+	(void)word;
 	ft_memset(cwd, 0, PATH_MAX);
 	if (!getcwd(cwd, sizeof(cwd)))
 	{

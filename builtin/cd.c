@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:30:33 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 23:52:41 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 13:42:35 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int	cd_home(void)
 {
 	char	*home;
 	int		ret;
-	char	*str;
 
 	home = get_env_body("HOME");
 	if (home == NULL)
@@ -58,9 +57,7 @@ int	cd_home(void)
 
 int	builtin_cd(t_word *word)
 {
-	char	*str;
 	int		ret;
-	char	path[PATH_MAX + 1];
 
 	if (word->next == NULL)
 		return (cd_home());

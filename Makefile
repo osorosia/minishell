@@ -24,7 +24,7 @@ OBJ_DIR := $(addprefix obj/, $(OBJ_DIR))
 OBJ_DIR := $(addsuffix .keep, $(OBJ_DIR))
 
 LIBFT = ./libft/libft.a
-# CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 OS = $(shell uname)
 ifeq ($(OS), Linux)

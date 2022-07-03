@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:26:05 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/03 11:45:06 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 13:47:04 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ bool	set_redir_in(t_redir *redir_in)
 
 	if (redir_in == NULL)
 		return (true);
+	fd = -1;
 	if (redir_in->kind == RD_IN)
 	{
 		fd = open(redir_in->str, O_RDONLY);
@@ -44,6 +45,7 @@ bool	set_redir_out(t_redir *redir_out)
 
 	if (redir_out == NULL)
 		return (true);
+	oflag = 0;
 	if (redir_out->kind == RD_OUT)
 		oflag = O_WRONLY | O_CREAT | O_TRUNC;
 	else if (redir_out->kind == RD_APPEND)

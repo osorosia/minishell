@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:26:18 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/03 10:45:45 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 13:44:27 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ void	word_add_back(t_word *word, char *str)
 t_word	*_split_space_in_word(t_word *word)
 {
 	t_word	new_word;
-	char	*str;
 	long	i;
 	long	len;
 	t_word	*last;
