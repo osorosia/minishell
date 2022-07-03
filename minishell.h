@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:40:22 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/03 11:07:35 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 11:19:26 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -211,6 +211,10 @@ bool	is_var_name_char_1st(char c);
 // exec ----------------------------------------------
 //
 void	exec(t_node *node);
+void	exec_cmd(t_node *node);
+void	exec_bracket(t_node *pipe_node);
+void	exec_pipe(t_node *pipe_node);
+void	exec_stmt(t_node *stmt_node);
 
 //
 // shell ----------------------------------------------
