@@ -1,24 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_shell.c                                     :+:      :+:    :+:   */
+/*   x_dup.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/01 16:14:57 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/03 11:06:58 by rnishimo         ###   ########.fr       */
+/*   Created: 2022/07/03 10:57:02 by rnishimo          #+#    #+#             */
+/*   Updated: 2022/07/03 11:05:53 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
-t_shell	*create_shell(char **envp)
+int	x_dup(int fd)
 {
-	t_shell	*shell;
+	int	new_fd;
 
-	shell = ft_xcalloc(1, sizeof(t_shell));
-	shell->env = create_env(envp);
-	shell->fd_stdout = x_dup(1);
-	shell->fd_stdin = x_dup(0);
-	return (shell);
+	new_fd = dup(fd);
+	if (new_fd == -1)
+	{
+		perror("dup");
+		exit(1);
+	}
+	return (new_fd);
+}
+
+int	x_dup2(int fd1, int fd2)
+{
+	int	new_fd;
+
+	new_fd = dup2(fd1, fd2);
+	if (new_fd == -1)
+	{
+		perror("dup");
+		exit(1);
+	}
+	return (new_fd);
 }

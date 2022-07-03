@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:26:05 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/03 11:03:05 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 11:07:08 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,13 +82,13 @@ bool	set_redir_in(t_redir *redir_in)
 			ft_dprintf_x(2, "minishell: %s: %s\n", redir_in->str, strerror(errno));
 			return (false);
 		}
-		dup2(fd, 0);
+		x_dup2(fd, 0);
 		close(fd);
 	}
 	else if (redir_in->kind == RD_HEREDOC)
 	{
 		if (redir_in->fd >= 0)
-			dup2(redir_in->fd, 0);
+			x_dup2(redir_in->fd, 0);
 		else
 			error("error: redir_in: heredoc");
 	}
@@ -114,7 +114,7 @@ bool	set_redir_out(t_redir *redir_out)
 				redir_out->str, strerror(errno));
 			return (false);
 		}
-		dup2(fd, 1);
+		x_dup2(fd, 1);
 		close(fd);
 	}
 	else if (redir_out->kind == RD_APPEND)
@@ -126,7 +126,7 @@ bool	set_redir_out(t_redir *redir_out)
 				redir_out->str, strerror(errno));
 			return (false);
 		}
-		dup2(fd, 1);
+		x_dup2(fd, 1);
 		close(fd);
 	}
 	else
@@ -155,14 +155,14 @@ void	exec_cmd(t_node *node)
 	if (!set_redir_in(node->cmd->redir_in) || !set_redir_out(node->cmd->redir_out))
 	{
 		g_shell->sts = 1;
-		dup2(g_shell->fd_stdout, 1);
-		dup2(g_shell->fd_stdin, 0);
+		x_dup2(g_shell->fd_stdout, 1);
+		x_dup2(g_shell->fd_stdin, 0);
 		return ;
 	}
 	if (node->cmd->word == NULL)
 	{
-		dup2(g_shell->fd_stdout, 1);
-		dup2(g_shell->fd_stdin, 0);
+		x_dup2(g_shell->fd_stdout, 1);
+		x_dup2(g_shell->fd_stdin, 0);
 		g_shell->sts = 0;
 		return ;
 	}
@@ -198,8 +198,8 @@ void	exec_cmd(t_node *node)
 		waitpid(pid, &sts, 0);
 		g_shell->sts = WEXITSTATUS(sts);
 	}
-	dup2(g_shell->fd_stdout, 1);
-	dup2(g_shell->fd_stdin, 0);
+	x_dup2(g_shell->fd_stdout, 1);
+	x_dup2(g_shell->fd_stdin, 0);
 }
 
 void	exec_bracket(t_node *bracket_node)
@@ -241,7 +241,7 @@ void	exec_pipes(t_node *pipe_node)
 	if (pid == 0)
 	{
 		if (pipe_node->lhs)
-			dup2(fd[0], 0);
+			x_dup2(fd[0], 0);
 		close(fd[1]);
 		close(fd[0]);
 		exec_bracket(pipe_node->rhs);
@@ -249,7 +249,7 @@ void	exec_pipes(t_node *pipe_node)
 	}
 	else
 	{
-		dup2(fd[1], 1);
+		x_dup2(fd[1], 1);
 		close(fd[1]);
 		close(fd[0]);
 		exec_pipes(pipe_node->lhs);

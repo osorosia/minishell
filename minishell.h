@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:40:22 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/03 11:02:09 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 11:07:35 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,6 +132,8 @@ bool	is_only_space(char *str);
 void	syntax_error(char *str, long len);
 pid_t	x_fork(void);
 int		x_pipe(int fd[2]);
+int		x_dup(int fd);
+int		x_dup2(int fd1, int fd2);
 
 //
 // builtin ----------------------------------------------
