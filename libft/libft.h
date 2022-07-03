@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/07 20:47:03 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 20:53:48 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 15:07:28 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int			ft_atoi(const char *str);
 char		*ft_itoa(int n);
 char		**ft_split(char const *s, char c);
 char		*ft_strchr(const char *s, int c);
-bool		ft_strcmp(char *s1, char *s2);
+int			ft_strcmp(char *s1, char *s2);
 char		*ft_strdup(const char *s1);
 char		*ft_strdup_to_c(const char *s1, char c);
 void		ft_striteri(char *s, void (*f)(unsigned int, char *));

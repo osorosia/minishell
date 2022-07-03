@@ -6,13 +6,13 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 07:31:42 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/01 07:32:09 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 15:06:46 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-bool	ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
 	size_t	i;
 
