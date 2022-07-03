@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:40:22 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/03 15:17:41 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 16:25:44 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ typedef struct s_word		t_word;
 struct s_word {
 	t_word	*next;
 	char	*str;
+	bool	dont_expand;
 };
 
 typedef struct s_cmd		t_cmd;
@@ -206,7 +207,14 @@ void	delete_quote_in_heredoc(t_redir *redir);
 void	expander_set_heredoc(t_node *node);
 // expand_asterisk.c
 void	expand_asterisk(t_node *node);
-
+bool	exist_asterisk(char *str);
+void	sort_arr(char **arr);
+bool	is_hidden_file(char *str);
+bool	is_match_asterisk(char *pattern, char *str, long p_i, long str_i);
+char	**arr_add_back(char **arr, char *str);
+char	**matched_arr_asterisk(char *str);
+void	word_add_back_asterisk(t_word *word, char *str);
+t_word	*create_word_expanded_asterisk(char *str);
 // expander_utils.c
 bool	is_var_name_char(char c);
 bool	is_var_name_char_1st(char c);

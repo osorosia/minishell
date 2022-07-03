@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:15:04 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 20:06:51 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 15:52:53 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ void	_delete_quote_in_word(t_word *word)
 {
 	if (word == NULL)
 		return ;
-	word->str = _delete_quote_in_str(word->str);
+	if (!word->dont_expand)
+		word->str = _delete_quote_in_str(word->str);
 	_delete_quote_in_word(word->next);
 }
 

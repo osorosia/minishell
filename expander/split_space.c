@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:26:18 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/03 15:15:13 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 16:16:06 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,27 +38,40 @@ long	_get_word_len_to_space(char *str)
 	return (i);
 }
 
-t_word	*_split_space_in_word(t_word *word)
+t_word	*_create_splited_words(char *str)
 {
 	t_word	new_word;
 	long	i;
 	long	len;
+
+	new_word.next = NULL;
+	i = 0;
+	while (str[i])
+	{
+		while (str[i] == ' ')
+			i++;
+		if (str[i] == '\0')
+			break ;
+		len = _get_word_len_to_space(&(str[i]));
+		word_add_back(&new_word, ft_xstrndup(&(str[i]), len));
+		i += len;
+	}
+	return (new_word.next);
+}
+
+t_word	*_split_space_in_word(t_word *word)
+{
+	t_word	new_word;
 	t_word	*last;
 
 	if (word == NULL)
 		return (NULL);
-	new_word.next = NULL;
-	i = 0;
-	while (word->str[i])
+	if (word->dont_expand)
 	{
-		while (word->str[i] == ' ')
-			i++;
-		if (word->str[i] == '\0')
-			break ;
-		len = _get_word_len_to_space(&(word->str[i]));
-		word_add_back(&new_word, ft_xstrndup(&(word->str[i]), len));
-		i += len;
+		word->next = _split_space_in_word(word->next);
+		return (word);
 	}
+	new_word.next = _create_splited_words(word->str);
 	last = word_last(&new_word);
 	last->next = _split_space_in_word(word->next);
 	free(word->str);
