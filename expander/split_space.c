@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:26:18 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/03 13:44:27 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 15:15:13 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,26 +36,6 @@ long	_get_word_len_to_space(char *str)
 		i++;
 	}
 	return (i);
-}
-
-t_word	*word_last(t_word *word)
-{
-	while (word->next)
-		word = word->next;
-	return (word);
-}
-
-void	word_add_back(t_word *word, char *str)
-{
-	t_word	*new;
-	t_word	*last;
-
-	if (str == NULL)
-		return ;
-	new = ft_xcalloc(1, sizeof(t_word));
-	new->str = str;
-	last = word_last(word);
-	last->next = new;
 }
 
 t_word	*_split_space_in_word(t_word *word)
