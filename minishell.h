@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:40:22 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/03 11:38:59 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 14:03:17 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -206,6 +206,8 @@ void	expander_set_heredoc(t_node *node);
 // expander_utils.c
 bool	is_var_name_char(char c);
 bool	is_var_name_char_1st(char c);
+// expand_asterisk.c
+void	expand_asterisk(t_node *node);
 
 //
 // exec ----------------------------------------------
