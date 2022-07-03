@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:26:05 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/03 11:21:04 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 11:24:23 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	exec_multi_pipes(t_node *pipe_node)
 {
 	int	fd[2];
 	int	pid;
-	int	sts;
 
 	if (pipe_node == NULL)
 		return ;
@@ -43,9 +42,8 @@ void	exec_multi_pipes(t_node *pipe_node)
 		close(fd[0]);
 		exec_multi_pipes(pipe_node->lhs);
 	}
-	sts = 0;
-	waitpid(pid, &sts, 0);
-	g_shell->sts = WEXITSTATUS(sts);
+	waitpid(pid, &(g_shell->sts), 0);
+	g_shell->sts = WEXITSTATUS(g_shell->sts);
 }
 
 void	exec_pipe(t_node *pipe_node)
