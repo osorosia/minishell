@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:26:18 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 20:07:17 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 10:45:45 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,7 @@ t_word	*_split_space_in_word(t_word *word)
 		if (word->str[i] == '\0')
 			break ;
 		len = _get_word_len_to_space(&(word->str[i]));
-		str = ft_xstrndup(&(word->str[i]), len);
-		word_add_back(&new_word, str);
+		word_add_back(&new_word, ft_xstrndup(&(word->str[i]), len));
 		i += len;
 	}
 	last = word_last(&new_word);
