@@ -26,9 +26,8 @@ bool ok(char *pattern, char *str, long i, long j) {
             return false;
     }
 
-    if (j == strlen(str)) {
-        long len = strlen(pattern);
-        while (i < len) {
+    if (str[j] == '\0') {
+        while (pattern[i] != '\0') {
             if (pattern[i] != '*')
                 return false;
             i++;
@@ -92,7 +91,7 @@ char **asta(char *str) {
 }
 
 int main(int c, char **v, char **p) {
-    char **arr = asta(strdup(".*"));
+    char **arr = asta(strdup("*"));
 
     for (int i = 0; arr[i]; i++) {
         printf("%s\n", arr[i]);
