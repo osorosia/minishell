@@ -6,19 +6,32 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 13:51:31 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/03 16:25:04 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 17:35:21 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../minishell.h"
 
+bool	is_match_asterisk_in_quote(
+	char *pattern, char *str, long p_i, long str_i)
+{
+	char	quote;
+	long	len;
+
+	quote = pattern[p_i++];
+	len = ft_strlen_to_c(&(pattern[p_i]), quote);
+	if (ft_strncmp(&(pattern[p_i]), str, len) != 0)
+		return (false);
+	return (is_match_asterisk(pattern, str, p_i + len + 1, str_i + len));
+}
+
 bool	is_match_asterisk(char *pattern, char *str, long p_i, long str_i)
 {
 	if (p_i == 0 && str_i == 0 && pattern[p_i] != '.' && is_hidden_file(str))
 		return (false);
-	if (str[str_i] == '\0')
+	if (str_i >= (long)ft_strlen(str))
 	{
-		while (pattern[p_i] != '\0')
+		while (p_i < (long)ft_strlen(pattern))
 		{
 			if (pattern[p_i] != '*')
 				return (false);
@@ -26,7 +39,10 @@ bool	is_match_asterisk(char *pattern, char *str, long p_i, long str_i)
 		}
 		return (true);
 	}
-	if (pattern[p_i] == '*')
+	if ((pattern[p_i] == '\'' && ft_strchr(&(pattern[p_i + 1]), '\''))
+		|| (pattern[p_i] == '\"' && ft_strchr(&(pattern[p_i + 1]), '"')))
+		return (is_match_asterisk_in_quote(pattern, str, p_i, str_i));
+	else if (pattern[p_i] == '*')
 		return (is_match_asterisk(pattern, str, p_i, str_i + 1)
 			|| is_match_asterisk(pattern, str, p_i + 1, str_i));
 	else if (pattern[p_i] == str[str_i])
