@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 13:51:31 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/03 15:51:39 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 16:48:59 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,25 @@ t_word	*_expand_asterisk_in_word(t_word *word)
 
 void	_expand_asterisk_in_redir(t_redir *redir)
 {
+	char	**arr;
+	long	i;
+
 	if (redir == NULL)
 		return ;
+	if (redir->kind != RD_HEREDOC && exist_asterisk(redir->str))
+	{
+		arr = matched_arr_asterisk(redir->str);
+		if (arr != NULL)
+		{
+			free(redir->str);
+			redir->str = arr[0];
+			redir->dont_expand = true;
+			i = 1;
+			while (arr[i])
+				free(arr[i++]);
+			free(arr);
+		}
+	}
 	_expand_asterisk_in_redir(redir->next);
 }
 

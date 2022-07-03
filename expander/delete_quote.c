@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:15:04 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/03 15:52:53 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 16:46:29 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ void	_delete_quote_in_redir(t_redir *redir)
 {
 	if (redir == NULL)
 		return ;
-	redir->str = _delete_quote_in_str(redir->str);
+	if (!redir->dont_expand)
+		redir->str = _delete_quote_in_str(redir->str);
 	_delete_quote_in_redir(redir->next);
 }
 

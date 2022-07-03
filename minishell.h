@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:40:22 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/03 16:25:44 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 16:44:45 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ struct s_redir {
 	t_redir			*next;
 	char			*str;
 	int				fd;
+	bool			dont_expand;
 };
 
 typedef struct s_word		t_word;
