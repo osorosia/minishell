@@ -60,18 +60,12 @@ re: fclean all
 
 bonus: all
 
-.PHONY: all clean fclean re bonus
-
-.PHONY: norm
 norm:
 	norminette $(SRCS) minishell.h libft | grep -v 'OK!' || echo norm: OK
 
-.PHONY: n
 n:
 	norminette $(SRCS) minishell.h libft | grep Error! || echo norm: OK
 
-
-.PHONY: ok
 ok: all
 ifeq ($(OS), Linux)
 	@cd tests && cat test.sh case.sh > temp.sh && bash temp.sh 2>/dev/null
@@ -79,7 +73,6 @@ else
 	@cd tests && cat test.sh case.sh > temp.sh && zsh temp.sh 2>/dev/null
 endif
 
-.PHONY: leak
 leak: all
 ifeq ($(OS), Linux)
 	@cd tests && cat leak.sh case.sh > temp.sh && bash temp.sh 2>/dev/null
@@ -87,7 +80,6 @@ else
 	@cd tests && cat leak.sh case.sh > temp.sh && zsh temp.sh 2>/dev/null
 endif
 
-.PHONY: gen
 gen: all
 	cd tests/gen && bash gen.sh
 ifeq ($(OS), Linux)
@@ -98,10 +90,12 @@ else
 	@cd tests && cat leak.sh init.sh case_gen.sh > temp.sh && zsh temp.sh 2>/dev/null
 endif
 
-.PHONY: msg
 msg: all
 ifeq ($(OS), Linux)
 	@cd tests && cat msg.sh init.sh case_msg.sh > temp.sh && bash temp.sh
 else
 	@cd tests && cat msg.sh init.sh case_msg.sh > temp.sh && zsh temp.sh
 endif
+
+.PHONY: all clean fclean re bonus
+.PHONY: norm n ok leak gen msg
