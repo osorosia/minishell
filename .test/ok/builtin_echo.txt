@@ -39,7 +39,7 @@ echo $?
 echo
 echo $?
 
-echo a -n a hello
+echo a -n a	hello
 echo $?
 
 echo - hello
