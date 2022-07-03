@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:40:22 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/03 11:19:26 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 11:38:59 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -215,6 +215,12 @@ void	exec_cmd(t_node *node);
 void	exec_bracket(t_node *pipe_node);
 void	exec_pipe(t_node *pipe_node);
 void	exec_stmt(t_node *stmt_node);
+void	exec_builtin(t_node *node);
+void	exec_file(t_node *node);
+
+// exec_utils.c
+bool	is_directory(char *pathname);
+char	**create_argv(t_word *word);
 
 //
 // shell ----------------------------------------------
