@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 17:00:48 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/03 10:58:15 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 12:19:26 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	run_command(char *str)
 	tok = lexer(str);
 	node = parser(tok);
 	free_lexer(tok);
+	signal_heredoc();
 	expander_set_heredoc(node);
 	signal_exec();
 	exec(node);
