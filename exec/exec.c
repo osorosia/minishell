@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:26:05 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 23:53:59 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 10:58:16 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,7 +170,7 @@ void	exec_cmd(t_node *node)
 		exec_builtin(node);
 	else
 	{
-		pid = fork();
+		pid = x_fork();
 		if (pid == 0)
 		{
 			if (node->cmd->pathname == NULL)
@@ -209,7 +209,7 @@ void	exec_bracket(t_node *bracket_node)
 
 	if (bracket_node->kind == ND_BRACKET)
 	{
-		pid = fork();
+		pid = x_fork();
 		if (pid == 0)
 		{
 			exec_stmt(bracket_node->lhs);
@@ -237,7 +237,7 @@ void	exec_pipes(t_node *pipe_node)
 	if (pipe_node == NULL)
 		return ;
 	pipe(fd);
-	pid = fork();
+	pid = x_fork();
 	if (pid == 0)
 	{
 		if (pipe_node->lhs)
@@ -269,7 +269,7 @@ void	exec_pipe(t_node *pipe_node)
 		exec_no_pipe(pipe_node);
 	else
 	{
-		pid = fork();
+		pid = x_fork();
 		if (pid == 0)
 		{
 			exec_pipes(pipe_node);

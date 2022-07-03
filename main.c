@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 17:00:48 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 22:02:46 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 10:58:15 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ bool	check_syntax(char *str)
 	int		sts;
 	int		pid;
 
-	pid = fork();
+	pid = x_fork();
 	if (pid == 0)
 	{
 		tok = lexer(str);
