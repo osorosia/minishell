@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:40:22 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 23:53:59 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 10:32:45 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,6 +188,8 @@ void	_add_redir_out(t_cmd *cmd, t_redir_kind kind, char *str, long len);
 void	expander(t_node *node);
 // expand_var.c
 void	expand_var(t_node *node);
+long	_expand_var_at_doller_mark(char *str, char **new, long i);
+char	*_get_var_name(char *str);
 // generate_pathname.c
 void	generate_pathname(t_node *node);
 // split_space.c
@@ -197,6 +199,9 @@ void	delete_quote(t_node *node);
 void	delete_quote_in_heredoc(t_redir *redir);
 // expander_set_heredoc.c
 void	expander_set_heredoc(t_node *node);
+// expander_utils.c
+bool	is_var_name_char(char c);
+bool	is_var_name_char_1st(char c);
 
 //
 // exec ----------------------------------------------
