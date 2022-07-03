@@ -1,0 +1,34 @@
+echo -n ***
+echo -n * -n *
+echo -nn *
+echo "*"
+echo '*'
+echo ** ** ** ** **
+echo ******************* *********************
+echo *******
+
+echo *.c
+echo *.c*
+echo *.c .*
+echo **.c
+echo .c**
+echo .*
+
+export wildcard='*'
+echo $wildcard
+echo $wildcard $wildcard
+echo $wildcard $wildcard $wildcard
+
+echo "$wildcard"
+echo '$wildcard'
+echo $wildcard "$wildcard" '$wildcard'
+
+echo *c*
+echo **c
+echo c**
+echo *****c******
+echo *********c
+echo c*********
+echo * *c*
+echo *c* *
+echo *
