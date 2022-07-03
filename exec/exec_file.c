@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 11:36:55 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/03 11:58:03 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 13:40:15 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,18 @@ bool	check_cmd(t_cmd *cmd)
 	return (true);
 }
 
+void	set_exit_status(void)
+{
+	if (WIFSIGNALED(g_shell->sts))
+	{
+		g_shell->sts = 128 + WTERMSIG(g_shell->sts);
+		if (g_shell->sts == 128 + SIGQUIT)
+			ft_putstr_fd("Quit: 3\n", 2);
+	}
+	else
+		g_shell->sts = WEXITSTATUS(g_shell->sts);
+}
+
 void	exec_file(t_node *node)
 {
 	int		pid;
@@ -50,6 +62,7 @@ void	exec_file(t_node *node)
 	pid = x_fork();
 	if (pid == 0)
 	{
+		signal(SIGQUIT, SIG_DFL);
 		if (!check_cmd(node->cmd))
 			exit(g_shell->sts);
 		cmd_argv = create_argv(node->cmd->word);
@@ -60,5 +73,5 @@ void	exec_file(t_node *node)
 		exit(fail_exec(node));
 	}
 	waitpid(pid, &(g_shell->sts), 0);
-	g_shell->sts = WEXITSTATUS(g_shell->sts);
+	set_exit_status();
 }
