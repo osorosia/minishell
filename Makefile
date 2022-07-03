@@ -136,33 +136,33 @@ n:
 
 ok: all
 ifeq ($(OS), Linux)
-	@cd tests && cat test.sh case.sh > temp.sh && bash temp.sh 2>/dev/null
+	@cd .test && cat test.sh case.sh > temp.sh && bash temp.sh 2>/dev/null
 else
-	@cd tests && cat test.sh case.sh > temp.sh && zsh temp.sh 2>/dev/null
+	@cd .test && cat test.sh case.sh > temp.sh && zsh temp.sh 2>/dev/null
 endif
 
 leak: all
 ifeq ($(OS), Linux)
-	@cd tests && cat leak.sh case.sh > temp.sh && bash temp.sh 2>/dev/null
+	@cd .test && cat leak.sh case.sh > temp.sh && bash temp.sh 2>/dev/null
 else
-	@cd tests && cat leak.sh case.sh > temp.sh && zsh temp.sh 2>/dev/null
+	@cd .test && cat leak.sh case.sh > temp.sh && zsh temp.sh 2>/dev/null
 endif
 
 gen: all
-	cd tests/gen && bash gen.sh
+	cd .test/gen && bash gen.sh
 ifeq ($(OS), Linux)
-	@cd tests && cat test.sh init.sh case_gen.sh > temp.sh && bash temp.sh 2>/dev/null
-	@cd tests && cat leak.sh init.sh case_gen.sh > temp.sh && bash temp.sh 2>/dev/null
+	@cd .test && cat test.sh init.sh case_gen.sh > temp.sh && bash temp.sh 2>/dev/null
+	@cd .test && cat leak.sh init.sh case_gen.sh > temp.sh && bash temp.sh 2>/dev/null
 else
-	@cd tests && cat test.sh init.sh case_gen.sh > temp.sh && zsh temp.sh 2>/dev/null
-	@cd tests && cat leak.sh init.sh case_gen.sh > temp.sh && zsh temp.sh 2>/dev/null
+	@cd .test && cat test.sh init.sh case_gen.sh > temp.sh && zsh temp.sh 2>/dev/null
+	@cd .test && cat leak.sh init.sh case_gen.sh > temp.sh && zsh temp.sh 2>/dev/null
 endif
 
 msg: all
 ifeq ($(OS), Linux)
-	@cd tests && cat msg.sh init.sh case_msg.sh > temp.sh && bash temp.sh
+	@cd .test && cat msg.sh init.sh case_msg.sh > temp.sh && bash temp.sh
 else
-	@cd tests && cat msg.sh init.sh case_msg.sh > temp.sh && zsh temp.sh
+	@cd .test && cat msg.sh init.sh case_msg.sh > temp.sh && zsh temp.sh
 endif
 
 .PHONY: all clean fclean re bonus
