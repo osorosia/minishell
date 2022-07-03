@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:26:05 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/03 10:58:16 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 11:03:05 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -236,7 +236,7 @@ void	exec_pipes(t_node *pipe_node)
 
 	if (pipe_node == NULL)
 		return ;
-	pipe(fd);
+	x_pipe(fd);
 	pid = x_fork();
 	if (pid == 0)
 	{

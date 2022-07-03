@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:21:53 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 20:11:02 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/03 11:03:06 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	set_heredoc(t_redir *redir)
 		return ;
 	if (redir->kind == RD_HEREDOC)
 	{
-		pipe(fd);
+		x_pipe(fd);
 		redir->fd = fd[0];
 		while (1)
 		{
