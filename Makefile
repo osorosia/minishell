@@ -1,24 +1,92 @@
 NAME = minishell
 
 OBJ_DIR += ./
-SRCS += $(wildcard *.c)
+SRCS += $(addprefix ./, \
+	main.c \
+	)
 OBJ_DIR += utils/
-SRCS += $(wildcard utils/*.c)
+SRCS += $(addprefix utils/, \
+	error.c \
+	ft_str_add_char.c \
+	is_only_space.c \
+	starts_with.c \
+	syntax_error.c \
+	x_dup.c \
+	x_fork.c \
+	x_pipe.c \
+	)
 OBJ_DIR += shell/
-SRCS += $(wildcard shell/*.c)
+SRCS += $(addprefix shell/, \
+	add_env.c \
+	create_shell.c \
+	del_env.c \
+	env.c \
+	env_utils.c \
+	envp.c \
+	free_env.c \
+	get_env.c \
+	new_env.c \
+	)
 OBJ_DIR += signal/
-SRCS += $(wildcard signal/*.c)
+SRCS += $(addprefix signal/, \
+	signai_exec.c \
+	signal_heredoc.c \
+	signal_init.c \
+	)
 OBJ_DIR += builtin/
-SRCS += $(wildcard builtin/*.c)
+SRCS += $(addprefix builtin/, \
+	cd.c \
+	echo.c \
+	env.c \
+	exit.c \
+	export.c \
+	is_builtin.c \
+	pwd.c \
+	unset.c \
+	)
 OBJ_DIR += lexer/
-SRCS += $(wildcard lexer/*.c)
+SRCS += $(addprefix lexer/, \
+	free_lexer.c \
+	lexer.c \
+	lexer_utils.c \
+	)
 OBJ_DIR += parser/
-SRCS += $(wildcard parser/*.c)
+SRCS += $(addprefix parser/, \
+	bracket.c \
+	cmd.c \
+	free_parser.c \
+	parser.c \
+	parser_utils.c \
+	parser_utils1.c \
+	pipe_cmd.c \
+	stmt.c \
+	)
 OBJ_DIR += expander/
-SRCS += $(wildcard expander/*.c)
+SRCS += $(addprefix expander/, \
+	delete_quote.c \
+	expand_asterisk.c \
+	expand_asterisk1.c \
+	expand_asterisk2.c \
+	expand_var.c \
+	expand_var1.c \
+	expander.c \
+	expander_set_heredoc.c \
+	expander_utils.c \
+	generate_pathname.c \
+	generate_pathname1.c \
+	split_space.c \
+	)
 OBJ_DIR += exec/
-SRCS += $(wildcard exec/*.c)
-
+SRCS += $(addprefix exec/, \
+	exec.c \
+	exec_bracket.c \
+	exec_builtin.c \
+	exec_cmd.c \
+	exec_file.c \
+	exec_pipe.c \
+	exec_stmt.c \
+	exec_utils.c \
+	)
 OBJS = $(SRCS:%.c=obj/%.o)
 OBJ_DIR := $(addprefix obj/, $(OBJ_DIR))
 OBJ_DIR := $(addsuffix .keep, $(OBJ_DIR))
