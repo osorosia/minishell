@@ -163,3 +163,10 @@ c
 d
 d
 e
+
+cat << abc
+echo hello
+abcd
+a
+echo world
+abc

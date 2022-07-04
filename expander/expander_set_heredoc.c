@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:21:53 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/03 13:44:15 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/04 17:16:02 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,12 @@
 bool	is_heredoc_eof(char *line, char *eof)
 {
 	long	line_len;
+	long	eof_len;
 
 	line_len = ft_strlen(line) - 1;
-	return (line_len > 0 && ft_strncmp(line, eof, line_len) == 0);
+	eof_len = ft_strlen(eof);
+	return (line_len > 0 && line_len == eof_len
+		&& ft_strncmp(line, eof, line_len) == 0);
 }
 
 void	write_heredoc_to_fd(t_redir *redir, int fd)
