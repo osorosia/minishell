@@ -104,13 +104,13 @@ else
 endif
 
 $(NAME): $(OBJS) $(LIBFT) ./minishell.h
-	gcc $(CFLAGS) -o $@ $(OBJS) $(LIBFT) $(READLINE)
+	cc $(CFLAGS) -o $@ $(OBJS) $(LIBFT) $(READLINE)
 
 $(LIBFT):
 	make -C ./libft
 
 obj/%.o: %.c $(OBJ_DIR)
-	gcc $(CFLAGS) -c -o $@ $<
+	cc $(CFLAGS) -c -o $@ $<
 
 $(OBJ_DIR):
 	mkdir -p $(@D)
