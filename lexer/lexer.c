@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:55:14 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/02 23:08:57 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/04 17:19:36 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	_add_new_token(t_token *tok, t_token_kind kind, char *str, long len)
 long	_get_operator_len(char *p)
 {
 	static char	*kw[] = {
-		"||", "&&", "<<", ">>", "<", ">", "|", ";", "(", ")", NULL};
+		"||", "|", "&&", "&", "<<", ">>", "<", ">", ";", "(", ")", NULL};
 	long		i;
 
 	i = 0;
