@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 13:51:31 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/07 11:16:51 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/07 11:19:41 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ bool	is_match_asterisk(char *pattern, char *str, long p_i, long str_i)
 	}
 	if ((pattern[p_i] == '\'' && ft_strchr(&(pattern[p_i + 1]), '\''))
 		|| (pattern[p_i] == '\"' && ft_strchr(&(pattern[p_i + 1]), '"')))
-		return (is_match_asterisk_in_quote(Tpattern, str, p_i, str_i));
+		return (is_match_asterisk_in_quote(pattern, str, p_i, str_i));
 	else if (pattern[p_i] == '*')
 		return (is_match_asterisk(pattern, str, p_i, str_i + 1)
 			|| is_match_asterisk(pattern, str, p_i + 1, str_i));
