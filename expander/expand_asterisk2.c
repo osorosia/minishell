@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 13:51:31 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/03 16:25:28 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/07 11:10:33 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,23 @@ void	sort_arr(char **arr)
 bool	is_hidden_file(char *str)
 {
 	return (str[0] == '.');
+}
+
+bool	is_hidden_file_pattern(char *pattern)
+{
+	long	i;
+
+	i = 0;
+	while (pattern[i] == '"' || pattern[i] == '\'')
+	{
+		i++;
+		if (pattern[i] != pattern[i - 1])
+			break ;
+		i++;
+	}
+	if (pattern[i] == '.')
+		return (true);
+	return (false);
 }
 
 char	**arr_add_back(char **arr, char *str)

@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 16:40:22 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/03 16:44:45 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/07 11:10:56 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -211,6 +211,7 @@ void	expand_asterisk(t_node *node);
 bool	exist_asterisk(char *str);
 void	sort_arr(char **arr);
 bool	is_hidden_file(char *str);
+bool	is_hidden_file_pattern(char *pattern);
 bool	is_match_asterisk(char *pattern, char *str, long p_i, long str_i);
 char	**arr_add_back(char **arr, char *str);
 char	**matched_arr_asterisk(char *str);

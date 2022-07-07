@@ -6,7 +6,7 @@
 /*   By: rnishimo <rnishimo@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 13:51:31 by rnishimo          #+#    #+#             */
-/*   Updated: 2022/07/03 17:35:21 by rnishimo         ###   ########.fr       */
+/*   Updated: 2022/07/07 11:16:51 by rnishimo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ bool	is_match_asterisk_in_quote(
 
 bool	is_match_asterisk(char *pattern, char *str, long p_i, long str_i)
 {
-	if (p_i == 0 && str_i == 0 && pattern[p_i] != '.' && is_hidden_file(str))
+	if (p_i == 0 && str_i == 0
+		&& is_hidden_file(str) && !is_hidden_file_pattern(pattern))
 		return (false);
 	if (str_i >= (long)ft_strlen(str))
 	{
@@ -41,7 +42,7 @@ bool	is_match_asterisk(char *pattern, char *str, long p_i, long str_i)
 	}
 	if ((pattern[p_i] == '\'' && ft_strchr(&(pattern[p_i + 1]), '\''))
 		|| (pattern[p_i] == '\"' && ft_strchr(&(pattern[p_i + 1]), '"')))
-		return (is_match_asterisk_in_quote(pattern, str, p_i, str_i));
+		return (is_match_asterisk_in_quote(Tpattern, str, p_i, str_i));
 	else if (pattern[p_i] == '*')
 		return (is_match_asterisk(pattern, str, p_i, str_i + 1)
 			|| is_match_asterisk(pattern, str, p_i + 1, str_i));
