@@ -1,5 +1,5 @@
 # minishell
-minishellは42のペア課題です。
+minishellは42tokyoの課題です。2人1組で取り組むペア課題です。
 
 ## EBNF
 ```ebnf
