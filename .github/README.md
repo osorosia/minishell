@@ -1,4 +1,5 @@
 # minishell
+minishellは42の課題です。
 
 ## EBNF
 ```ebnf
