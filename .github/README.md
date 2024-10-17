@@ -1,5 +1,5 @@
 # minishell
-minishellは42の課題です。
+minishellは42のペア課題です。
 
 ## EBNF
 ```ebnf
